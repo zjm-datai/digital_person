@@ -1,5 +1,6 @@
 
-
+import os
+from typing import Any
 from urllib.parse import parse_qsl, quote_plus
 
 from pydantic_settings import BaseSettings
@@ -48,7 +49,7 @@ class DatabaseConfig(BaseSettings):
         default="postgresql",
     )
 
-    @computed_field  # type: ignore[prop-decorator]
+    @computed_field
     @property
     def SQLALCHEMY_DATABASE_URI(self) -> str:
         db_extras = (

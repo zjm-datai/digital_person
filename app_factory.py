@@ -4,7 +4,7 @@ import logging
 
 from flask import Flask
 
-from contexts.wrapper import RecyclableContextVar
+# from contexts.wrapper import RecyclableContextVar
 
 from configs import app_config
 
@@ -20,21 +20,24 @@ def create_flask_app_with_configs() -> Flask:
     @app.before_request
     def before_request():
         # add an unique identifier to each request
-        RecyclableContextVar.increment_thread_recycles()
+        # RecyclableContextVar.increment_thread_recycles()
+        pass
 
     # Capture the decorator's return value to avoid pyright reportUnusedFunction
     _ = before_request
 
     return app
 
-def initialize_app(app: Flask):
+def initialize_extensions(app: Flask):
 
     from extensions import (
         ext_app_metrics,
-        ext_blueprints,
+        # ext_blueprints,
+        ext_command,
         ext_database,
         ext_logging,
-        ext_timezone
+        ext_timezone,
+        ext_migrate,
     )
 
     extensions = [
@@ -42,7 +45,9 @@ def initialize_app(app: Flask):
         ext_logging,
         ext_database,
         ext_app_metrics,
-        ext_blueprints,
+        ext_migrate,
+        # ext_blueprints,
+        ext_command,
     ]
 
     for ext in extensions:
@@ -59,3 +64,21 @@ def initialize_app(app: Flask):
         if app_config.DEBUG:
             logger.info("Loaded %s (%s ms)", short_name, round((end_time - start_time) * 1000, 2))
 
+def create_app() -> Flask:
+    start_time = time.perf_counter()
+    app = create_flask_app_with_configs()
+    initialize_extensions(app=app)
+    end_time = time.perf_counter()
+    if app_config.DEBUG:
+        logger.info("Finished create_app (%s ms)", round((end_time - start_time) * 1000, 2))
+    return app
+
+def create_migrations_app():
+    app = create_flask_app_with_configs()
+    from extensions import ext_database, ext_migrate
+
+    # Initialize only required extensions
+    ext_database.init_app(app)
+    ext_migrate.init_app(app)
+
+    return app

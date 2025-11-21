@@ -1,3 +1,28 @@
 {
-    "python-envs.pythonProjects": []
+  "files.exclude": {
+    "**/__pycache__/": true
+  },
+  "editor.tokenColorCustomizations": {
+  "textMateRules": [
+      {
+        "scope": "comment",
+        "settings": {
+          "foreground": "#6A9955", // 默认注释绿色
+          "fontStyle": "italic"
+        }
+      },
+      {
+        "name": "TODO Custom",
+        "scope": [
+          "keyword.other.todo",   // 插件可能使用的 scope
+          "comment.todo",         // Fallback
+          "markup.bold.comment.todo"
+        ],
+        "settings": {
+          "foreground": "#FF6B6B", // 红色
+          "fontStyle": "bold"
+        }
+      }
+    ]
+  }
 }
