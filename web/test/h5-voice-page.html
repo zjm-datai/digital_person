@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>录音控制页面</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+      }
+
+      .container {
+        background: white;
+        border-radius: 20px;
+        padding: 40px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        max-width: 400px;
+        width: 100%;
+      }
+
+      .title {
+        font-size: 28px;
+        color: #333;
+        margin-bottom: 10px;
+        font-weight: 600;
+      }
+
+      .subtitle {
+        color: #666;
+        margin-bottom: 30px;
+        font-size: 16px;
+      }
+
+      .record-button {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        border: none;
+        background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+        color: white;
+        font-size: 18px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 10px 30px rgba(255, 107, 107, 0.3);
+        margin: 20px auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+
+      .record-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 15px 35px rgba(255, 107, 107, 0.4);
+      }
+
+      .record-button:active {
+        transform: translateY(0);
+      }
+
+      .record-button.recording {
+        background: linear-gradient(135deg, #ff4757, #c44569);
+        animation: pulse 1.5s infinite;
+      }
+
+      @keyframes pulse {
+        0% {
+          box-shadow: 0 0 0 0 rgba(255, 71, 87, 0.7);
+        }
+        70% {
+          box-shadow: 0 0 0 20px rgba(255, 71, 87, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(255, 71, 87, 0);
+        }
+      }
+
+      .status {
+        margin-top: 20px;
+        padding: 15px;
+        border-radius: 10px;
+        background: #f8f9fa;
+        color: #495057;
+        font-size: 14px;
+      }
+
+      .status.recording {
+        background: #fff3cd;
+        color: #856404;
+        border: 1px solid #ffeaa7;
+      }
+
+      .audio-list {
+        margin-top: 30px;
+        text-align: left;
+      }
+
+      .audio-list h3 {
+        color: #333;
+        margin-bottom: 15px;
+        font-size: 18px;
+      }
+
+      .audio-item {
+        background: #f8f9fa;
+        padding: 15px;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .audio-item .filename {
+        font-weight: 500;
+        color: #333;
+      }
+
+      .audio-item .time {
+        color: #666;
+        font-size: 12px;
+      }
+
+      .play-button {
+        background: #007bff;
+        color: white;
+        border: none;
+        padding: 8px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 12px;
+      }
+
+      .play-button:hover {
+        background: #0056b3;
+      }
+
+      .debug-info {
+        margin-top: 20px;
+        padding: 15px;
+        background: #e9ecef;
+        border-radius: 10px;
+        font-size: 12px;
+        color: #495057;
+        text-align: left;
+      }
+
+      .icon {
+        font-size: 24px;
+        margin-bottom: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="title">🎙️ 录音控制中心</h1>
+
+      <button id="recordButton" class="record-button">
+        <span class="icon">🎤</span>
+        <span id="buttonText">点击录音</span>
+      </button>
+
+      <div id="status" class="status">状态: 准备就绪</div>
+
+      <div class="audio-list">
+        <h3>录音文件</h3>
+        <div id="audioList">
+          <div class="audio-item">
+            <span class="filename">暂无录音文件</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="./uni.webview.1.5.6.js"></script>
+    <script>
+      let isRecording = false;
+      let audioFiles = [];
+
+      // DOM 元素
+      const recordButton = document.getElementById("recordButton");
+      const buttonText = document.getElementById("buttonText");
+      const status = document.getElementById("status");
+      const audioList = document.getElementById("audioList");
+
+      /**
+       * 向 App 发送消息的函数
+       * @description 通过uni.postMessage向原生App发送消息，用于控制录音功能
+       * @param {Object} message - 要发送的消息对象
+       * @param {string} message.type - 消息类型，如'startRecording'或'stopRecording'
+       * @returns {void}
+       * @example
+       * sendMessageToApp({ type: 'startRecording' });
+       */
+      function sendMessageToApp(message) {
+        console.log("发送消息到App:", message);
+        if (window.uni && window.uni.postMessage) {
+          window.uni.postMessage({
+            data: [message],
+          });
+          updateStatus("已发送消息到App: " + message.type);
+        } else {
+          updateStatus("未检测到App环境，无法发送消息");
+          console.log("未检测到App环境");
+        }
+      }
+
+      /**
+       * 接收来自 App 的录音数据
+       * @description 全局函数，用于接收原生App传递的录音文件数据
+       * @param {Object} audioData - 录音数据对象
+       * @param {string} audioData.fileName - 录音文件名
+       * @param {string} audioData.data - 录音文件的base64数据
+       * @returns {void}
+       * @throws {Error} 当处理录音数据失败时抛出错误
+       * @example
+       * window.receiveAudioFromApp({
+       *   fileName: 'recording_001.mp3',
+       *   data: 'data:audio/mp3;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEA...'
+       * });
+       */
+      window.receiveAudioFromApp = function (audioData) {
+        console.log("收到来自App的录音数据:", audioData);
+
+        try {
+          const audioItem = {
+            fileName: audioData.fileName,
+            data: audioData.data,
+            time: new Date().toLocaleString(),
+          };
+
+          audioFiles.push(audioItem);
+          updateAudioList();
+          updateStatus("录音文件已接收: " + audioData.fileName);
+          console.log("录音数据处理成功");
+        } catch (error) {
+          console.error("处理录音数据时出错:", error);
+          updateStatus("处理录音数据失败: " + error.message);
+        }
+      };
+
+      /**
+       * 更新状态显示
+       * @description 更新页面状态文本并根据录音状态添加或移除CSS类
+       * @param {string} message - 要显示的状态消息
+       * @returns {void}
+       * @example
+       * updateStatus('正在录音...');
+       */
+      function updateStatus(message) {
+        status.textContent = "状态: " + message;
+        if (isRecording) {
+          status.classList.add("recording");
+        } else {
+          status.classList.remove("recording");
+        }
+      }
+
+      /**
+       * 更新录音文件列表
+       * @description 根据audioFiles数组动态生成录音文件列表的HTML内容
+       * @returns {void}
+       * @example
+       * updateAudioList(); // 刷新显示所有录音文件
+       */
+      function updateAudioList() {
+        if (audioFiles.length === 0) {
+          audioList.innerHTML =
+            '<div class="audio-item"><span class="filename">暂无录音文件</span></div>';
+          return;
+        }
+
+        audioList.innerHTML = audioFiles
+          .map(
+            (audio, index) => `
+                <div class="audio-item">
+                    <div>
+                        <div class="filename">${audio.fileName}</div>
+                        <div class="time">${audio.time}</div>
+                    </div>
+                    <button class="play-button" onclick="playAudio(${index})">播放</button>
+                </div>
+            `
+          )
+          .join("");
+      }
+
+      /**
+       * 播放录音文件
+       * @description 根据索引播放指定的录音文件
+       * @param {number} index - 录音文件在audioFiles数组中的索引
+       * @returns {void}
+       * @throws {Error} 当音频播放失败时在控制台输出错误信息
+       * @example
+       * playAudio(0); // 播放第一个录音文件
+       */
+      function playAudio(index) {
+        const audio = audioFiles[index];
+        if (audio && audio.data) {
+          const audioElement = new Audio(audio.data);
+          audioElement.play().catch((e) => {
+            console.error("播放失败:", e);
+            updateStatus("播放失败: " + e.message);
+          });
+          updateStatus("正在播放: " + audio.fileName);
+        }
+      }
+
+      /**
+       * 录音按钮点击事件处理函数
+       * @description 处理录音按钮的点击事件，切换录音状态并发送相应消息到App
+       * @returns {void}
+       * @listens click
+       * @example
+       * recordButton.addEventListener('click', function() {
+       *   // 自动调用此函数处理录音状态切换
+       * });
+       */
+      recordButton.addEventListener("click", function () {
+        if (!isRecording) {
+          // 开始录音
+          isRecording = true;
+          recordButton.classList.add("recording");
+          buttonText.textContent = "停止录音";
+          updateStatus("正在录音...");
+
+          // 发送开始录音消息到App
+          sendMessageToApp({ type: "startRecording" });
+        } else {
+          // 停止录音
+          isRecording = false;
+          recordButton.classList.remove("recording");
+          buttonText.textContent = "点击录音";
+          updateStatus("录音已停止，等待文件传输...");
+
+          // 发送停止录音消息到App
+          sendMessageToApp({ type: "stopRecording" });
+        }
+      });
+    </script>
+  </body>
+</html>

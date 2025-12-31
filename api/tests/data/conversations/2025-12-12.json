@@ -1,0 +1,187 @@
+[
+  {
+    "chat_session_id": "08f4afe0-55a9-4f3f-8b26-b07ca961eb2f",
+    "history": [
+      {
+        "role": "user",
+        "content": "{\"patientIdentity\":{\"patientId\":\"PID1234565\",\"idType\":\"01\",\"idNumber\":\"110101199001011235\",\"patientName\":\"李铁\"},\"visitInfo\":{\"department\":\"皮肤医美中心\",\"visitNumber\":\"V0000222\"},\"latestMedicalRecord\":{\"basicInfo\":{\"gender\":\"男\",\"birthday\":\"1985-05-20\",\"aboBloodType\":\"A\",\"rhBloodType\":\"+\"},\"vitalSigns\":{\"systolicPressure\":118,\"diastolicPressure\":76,\"height\":178,\"weight\":75},\"marriageChildInfo\":{\"marriageStatus\":\"已婚\",\"fullTermCount\":0,\"prematureCount\":0,\"abortionCount\":0,\"livingChildrenCount\":0},\"pastHistory\":{\"personalHistory\":\"\",\"bloodTransfusionHistory\":\"2015年输过2U红细胞\",\"diseaseHistory\":\"\",\"epidemiologicalHistory\":\"否认出国及接触史\",\"surgeryHistory\":\"无手术史\",\"familyHistory\":\"否认家族性遗传病、精神病、肿瘤等类似病史\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"}},\"allergyHistory\":\"无\",\"childGrowthInfo\":null},\"revisitInfo\":{\"isRevisit\":0,\"lastRecord\":{\"chiefComplaint\":\"\",\"presentIllness\":\"\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"},\"tcmFourExams\":{\"inspection\":\"\",\"inquiry\":\"\",\"listeningAndSmelling\":\"\",\"palpation\":\"\"},\"physicalExam\":\"\",\"auxiliaryExam\":\"\",\"diagnosis\":{\"tcmDiagnosisName\":\"\",\"tcmDiagnosisCode\":\"\",\"tcmSyndromeName\":\"\",\"westernDiagnosisName\":\"\",\"westernDiagnosisCode\":\"\"},\"treatmentPrinciple\":\"\",\"treatmentAdvice\":\"\",\"prescription\":{\"prescriptionName\":\"\",\"herbs\":[]}}}}",
+        "created_at": "2025-12-12T09:15:34.980476"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近有没有感觉到皮肤上有任何不舒服的地方，比如红、痒、脱皮或者起疹子之类的呢？",
+        "created_at": "2025-12-12T09:15:34.981373"
+      },
+      {
+        "role": "user",
+        "content": "有脱皮现象",
+        "created_at": "2025-12-12T09:15:37.604034"
+      },
+      {
+        "role": "assistant",
+        "content": "了解啦～这个脱皮的情况大概从什么时候开始的呢？持续了多久？",
+        "created_at": "2025-12-12T09:15:37.605276"
+      },
+      {
+        "role": "user",
+        "content": "最近三天开始的",
+        "created_at": "2025-12-12T09:15:40.143535"
+      },
+      {
+        "role": "assistant",
+        "content": "哦，这个症状的严重程度如何呢？是轻微的，还是比较明显影响到您的生活？",
+        "created_at": "2025-12-12T09:15:40.144297"
+      },
+      {
+        "role": "user",
+        "content": "轻微影响生活",
+        "created_at": "2025-12-12T09:15:42.508010"
+      },
+      {
+        "role": "assistant",
+        "content": "那除了脱皮，您还有其他不舒服的感觉吗？比如发红、发痒、疼痛或者有分泌物之类的？",
+        "created_at": "2025-12-12T09:15:42.508486"
+      }
+    ]
+  },
+  {
+    "chat_session_id": "65be2d23-01f0-418b-aa54-afc6360802b8",
+    "history": [
+      {
+        "role": "user",
+        "content": "{\"patientIdentity\":{\"patientId\":\"PID1234562\",\"idType\":\"01\",\"idNumber\":\"110101199001011234\",\"patientName\":\"王雨\"},\"visitInfo\":{\"department\":\"皮肤医美中心\",\"visitNumber\":\"V0000123\"},\"latestMedicalRecord\":{\"basicInfo\":{\"gender\":\"女\",\"birthday\":\"1985-05-20\",\"aboBloodType\":\"A\",\"rhBloodType\":\"+\"},\"vitalSigns\":{\"systolicPressure\":120,\"diastolicPressure\":80,\"height\":165,\"weight\":60},\"marriageChildInfo\":{\"marriageStatus\":\"已婚\",\"fullTermCount\":1,\"prematureCount\":0,\"abortionCount\":0,\"livingChildrenCount\":1},\"pastHistory\":{\"personalHistory\":\"无烟酒不良嗜好，否认冶游史。\",\"bloodTransfusionHistory\":\"无\",\"diseaseHistory\":\"患者平素体健，无重大慢性疾病无传染病史\",\"epidemiologicalHistory\":\"无传染病史，流行病学史\",\"menstrualHistory\":{\"menarcheAge\":13,\"intervalDays\":28,\"durationDays\":5,\"isSterilization\":false,\"lastMenstrualDate\":\"2025-10-25\"},\"surgeryHistory\":\"无\",\"familyHistory\":\"否认家族性遗传病、精神病、肿瘤等类似病史。\"},\"allergyHistory\":\"未发现\",\"childGrowthInfo\":null},\"revisitInfo\":{\"isRevisit\":1,\"lastRecord\":{\"chiefComplaint\":\"颈项部红斑、抓痕伴瘙痒2月\",\"presentIllness\":\"2月前无明显诱因下颈项部红斑、抓痕，伴瘙痒，未予特殊处理食欲减退，睡眠安，大便溏结不调，小便尿次正常\",\"menstrualHistory\":{\"menarcheAge\":13,\"intervalDays\":28,\"durationDays\":5,\"isSterilization\":false,\"lastMenstrualDate\":\"2024-09-25\"},\"tcmFourExams\":{\"inspection\":\"红黄隐隐，明润含蓄\",\"inquiry\":\"时有腹胀便溏，倦怠乏力\",\"listeningAndSmelling\":\"口气\",\"palpation\":\"脉弦\"},\"physicalExam\":\"无\",\"auxiliaryExam\":\"血常规：WBC 9.5×10^9/L，CRP 12 mg/L\",\"diagnosis\":{\"tcmDiagnosisName\":\"湿疮\",\"tcmDiagnosisCode\":\"A08.01.07\",\"tcmSyndromeName\":\"脾虚湿困证\",\"westernDiagnosisName\":\"特应性皮炎\",\"westernDiagnosisCode\":\"L20.900\"},\"treatmentPrinciple\":\"健脾化湿\",\"treatmentAdvice\":\"少食多餐，避免辛辣油腻\",\"prescription\":{\"prescriptionName\":\"复方参蝉汤\",\"herbs\":[\"党参\",\"蝉蜕\",\"生白术\",\"茯苓\",\"温山药\",\"炒白扁豆\",\"薏苡仁\",\"生黄芪\",\"炒麦芽\",\"炒稻芽\",\"炒鸡内金\",\"大枣\",\"生甘草\",\"蚕砂\"]}}}}",
+        "created_at": "2025-12-12T09:15:21.136018"
+      },
+      {
+        "role": "assistant",
+        "content": "这次的红斑和抓痕情况，比起上次有改善吗？",
+        "created_at": "2025-12-12T09:15:21.136818"
+      },
+      {
+        "role": "user",
+        "content": "比上次轻了",
+        "created_at": "2025-12-12T09:15:25.647667"
+      },
+      {
+        "role": "assistant",
+        "content": "那这次食欲减退的情况有改善吗？",
+        "created_at": "2025-12-12T09:15:25.648663"
+      }
+    ]
+  },
+  {
+    "chat_session_id": "71d44af5-b76a-46fc-91d1-6777b76d35f4",
+    "history": [
+      {
+        "role": "user",
+        "content": "{\"patientIdentity\":{\"patientId\":\"PID1234569\",\"idType\":\"01\",\"idNumber\":\"110101199001011234\",\"patientName\":\"王雨西\"},\"visitInfo\":{\"department\":\"肛肠科\",\"visitNumber\":\"V0000123\"},\"latestMedicalRecord\":{\"basicInfo\":{\"gender\":\"女\",\"birthday\":\"1985-05-20\",\"aboBloodType\":\"A\",\"rhBloodType\":\"+\"},\"vitalSigns\":{\"systolicPressure\":120,\"diastolicPressure\":80,\"height\":165,\"weight\":60},\"marriageChildInfo\":{\"marriageStatus\":\"已婚\",\"fullTermCount\":1,\"prematureCount\":0,\"abortionCount\":0,\"livingChildrenCount\":1},\"pastHistory\":{\"personalHistory\":\"无烟酒不良嗜好，否认冶游史。\",\"bloodTransfusionHistory\":\"无\",\"diseaseHistory\":\"患者平素体健，无重大慢性疾病无传染病史\",\"epidemiologicalHistory\":\"无传染病史，流行病学史\",\"menstrualHistory\":{\"menarcheAge\":13,\"intervalDays\":28,\"durationDays\":5,\"isSterilization\":false,\"lastMenstrualDate\":\"2025-10-25\"},\"surgeryHistory\":\"无\",\"familyHistory\":\"无家族性遗传病、精神病、肿瘤等类似病史。\"},\"allergyHistory\":\"未发现\",\"childGrowthInfo\":null},\"revisitInfo\":{\"isRevisit\":1,\"lastRecord\":{\"chiefComplaint\":\"反复肛门肿物脱出伴便血3年，加重1周。\",\"presentIllness\":\"患者近3年来反复出现排便时肛门肿物脱出，初始可自行回纳，偶伴便后滴血，色鲜红，量少，无黏液脓血便，无腹痛、腹泻或便秘。偏好辛辣饮食，睡眠状态差，盗汗早醒。\",\"menstrualHistory\":{\"menarcheAge\":13,\"intervalDays\":28,\"durationDays\":5,\"isSterilization\":false,\"lastMenstrualDate\":\"2024-09-25\"},\"tcmFourExams\":{\"inspection\":\"红黄隐隐，明润含蓄\",\"inquiry\":\"时有腹胀便溏，倦怠乏力\",\"listeningAndSmelling\":\"口气\",\"palpation\":\"脉弦\"},\"physicalExam\":\"无\",\"auxiliaryExam\":\"血常规：WBC 9.5×10^9/L，CRP 12 mg/L\",\"diagnosis\":{\"tcmDiagnosisName\":\"湿疮\",\"tcmDiagnosisCode\":\"A08.01.07\",\"tcmSyndromeName\":\"脾虚湿困证\",\"westernDiagnosisName\":\"特应性皮炎\",\"westernDiagnosisCode\":\"L20.900\"},\"treatmentPrinciple\":\"健脾化湿\",\"treatmentAdvice\":\"少食多餐，避免辛辣油腻\",\"prescription\":{\"prescriptionName\":\"复方参蝉汤\",\"herbs\":[\"党参\",\"蝉蜕\",\"生白术\",\"茯苓\",\"温山药\",\"炒白扁豆\",\"薏苡仁\",\"生黄芪\",\"炒麦芽\",\"炒稻芽\",\"炒鸡内金\",\"大枣\",\"生甘草\",\"蚕砂\"]}}}}",
+        "created_at": "2025-12-12T09:19:22.458627"
+      },
+      {
+        "role": "assistant",
+        "content": "这次肛门肿物脱出和便血的情况比起上次有变化吗？是更严重了，还是有所缓解呢？",
+        "created_at": "2025-12-12T09:19:22.459512"
+      },
+      {
+        "role": "user",
+        "content": "排便时疼痛减轻",
+        "created_at": "2025-12-12T09:19:29.200606"
+      },
+      {
+        "role": "assistant",
+        "content": "那这次饮食上有没有调整，比如少吃点辛辣的食物了？",
+        "created_at": "2025-12-12T09:19:29.202085"
+      },
+      {
+        "role": "user",
+        "content": "吃了点辣的",
+        "created_at": "2025-12-12T09:19:33.031405"
+      },
+      {
+        "role": "assistant",
+        "content": "那最近睡眠状态有没有好一点呢？比如盗汗和早醒的情况是不是减轻了？",
+        "created_at": "2025-12-12T09:19:33.031985"
+      },
+      {
+        "role": "user",
+        "content": "睡眠有所改善",
+        "created_at": "2025-12-12T09:19:36.206522"
+      },
+      {
+        "role": "assistant",
+        "content": "那这次排便时有没有再出现出血的情况呢？",
+        "created_at": "2025-12-12T09:19:36.207067"
+      },
+      {
+        "role": "user",
+        "content": "大便有血",
+        "created_at": "2025-12-12T09:19:38.419291"
+      },
+      {
+        "role": "assistant",
+        "content": "那最近有没有其他不舒服的地方，比如肛门周围有异物感或者坠胀的感觉吗？",
+        "created_at": "2025-12-12T09:19:38.420003"
+      },
+      {
+        "role": "user",
+        "content": "无其他不适",
+        "created_at": "2025-12-12T09:19:44.294686"
+      },
+      {
+        "role": "assistant",
+        "content": "主诉：反复肛门肿物脱出伴便血3年，加重1周，较上次无明显变化。\n\n现病史：本次饮食口味较上次有所改变，吃了点辣的；睡眠状态较上次有所改善，盗汗早醒情况减轻；大小便情况较上次无明显变化，大便仍有血；无其他不适。\n\n既往史：长期用药无记录，过敏无记录，不良习惯为嗜辛辣饮食，月经史无记录。\n\n家族史：无家族性遗传病、精神病、肿瘤等类似病史。",
+        "created_at": "2025-12-12T09:19:44.295434"
+      }
+    ]
+  },
+  {
+    "chat_session_id": "865811b0-78ad-45c9-a546-ffbd7bf3e78e",
+    "history": [
+      {
+        "role": "user",
+        "content": "{\"patientIdentity\":{\"patientId\":\"PID1234549\",\"idType\":\"01\",\"idNumber\":\"110101199001011235\",\"patientName\":\"王刚惠\"},\"visitInfo\":{\"department\":\"呼吸科\",\"visitNumber\":\"V0000222\"},\"latestMedicalRecord\":{\"basicInfo\":{\"gender\":\"男\",\"birthday\":\"1985-05-20\",\"aboBloodType\":\"A\",\"rhBloodType\":\"+\"},\"vitalSigns\":{\"systolicPressure\":118,\"diastolicPressure\":76,\"height\":178,\"weight\":75},\"marriageChildInfo\":{\"marriageStatus\":\"已婚\",\"fullTermCount\":0,\"prematureCount\":0,\"abortionCount\":0,\"livingChildrenCount\":0},\"pastHistory\":{\"personalHistory\":\"无烟酒不良嗜好，否认冶游史。\",\"bloodTransfusionHistory\":\"无\",\"diseaseHistory\":\"患者平素体健，有过敏性鼻炎，无重大慢性疾病无传染病史\",\"epidemiologicalHistory\":\"无传染病史，流行病学史\",\"surgeryHistory\":\"无手术史\",\"familyHistory\":\"无家族性遗传病、精神病、肿瘤等类似病史.\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"}},\"allergyHistory\":\"未发现\",\"childGrowthInfo\":null},\"revisitInfo\":{\"isRevisit\":1,\"lastRecord\":{\"chiefComplaint\":\"反复咳嗽、咳痰10年，活动后气促5年，加重1周。\",\"presentIllness\":\"患者近10年来每于冬春季节出现咳嗽、咳白色黏痰，晨起明显。近5年逐渐出现登楼或快走时气促，休息后可缓解。1周前受凉后咳嗽加剧，痰量增多呈黄脓性，气促加重，日常活动受限，无发热、咯血、夜间阵发性呼吸困难。自服“头孢类抗生素”及止咳药效果不佳，今来诊。\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"},\"tcmFourExams\":{\"inspection\":\"红黄隐隐，明润含蓄\",\"inquiry\":\"时有腹胀便溏，倦怠乏力\",\"listeningAndSmelling\":\"口气\",\"palpation\":\"脉弦\"},\"physicalExam\":\"无\",\"auxiliaryExam\":\"血常规：WBC 9.5×10^9/L，CRP 12 mg/L\",\"diagnosis\":{\"tcmDiagnosisName\":\"湿疮\",\"tcmDiagnosisCode\":\"A08.01.07\",\"tcmSyndromeName\":\"脾虚湿困证\",\"westernDiagnosisName\":\"特应性皮炎\",\"westernDiagnosisCode\":\"L20.900\"},\"treatmentPrinciple\":\"健脾化湿\",\"treatmentAdvice\":\"少食多餐，避免辛辣油腻\",\"prescription\":{\"prescriptionName\":\"复方参蝉汤\",\"herbs\":[\"党参\",\"蝉蜕\",\"生白术\",\"茯苓\",\"温山药\",\"炒白扁豆\",\"薏苡仁\",\"生黄芪\",\"炒麦芽\",\"炒稻芽\",\"炒鸡内金\",\"大枣\",\"生甘草\",\"蚕砂\"]}}}}",
+        "created_at": "2025-12-12T10:05:50.623518"
+      },
+      {
+        "role": "assistant",
+        "content": "这次咳嗽和咳痰的情况比起上次有变化吗？现在是不是比之前好一点，还是更严重了呢？",
+        "created_at": "2025-12-12T10:05:50.624365"
+      }
+    ]
+  },
+  {
+    "chat_session_id": "c153fbc3-06d0-4e0b-9175-bfda61fdb904",
+    "history": [
+      {
+        "role": "user",
+        "content": "{\"patientIdentity\":{\"patientId\":\"PID1234543\",\"idType\":\"01\",\"idNumber\":\"110101199001011235\",\"patientName\":\"李铁惠\"},\"visitInfo\":{\"department\":\"呼吸科\",\"visitNumber\":\"V0000222\"},\"latestMedicalRecord\":{\"basicInfo\":{\"gender\":\"男\",\"birthday\":\"1985-05-20\",\"aboBloodType\":\"A\",\"rhBloodType\":\"+\"},\"vitalSigns\":{\"systolicPressure\":118,\"diastolicPressure\":76,\"height\":178,\"weight\":75},\"marriageChildInfo\":{\"marriageStatus\":\"已婚\",\"fullTermCount\":0,\"prematureCount\":0,\"abortionCount\":0,\"livingChildrenCount\":0},\"pastHistory\":{\"personalHistory\":\"\",\"bloodTransfusionHistory\":\"2015年输过2U红细胞\",\"diseaseHistory\":\"\",\"epidemiologicalHistory\":\"否认出国及接触史\",\"surgeryHistory\":\"无手术史\",\"familyHistory\":\"否认家族性遗传病、精神病、肿瘤等类似病史\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"}},\"allergyHistory\":\"无\",\"childGrowthInfo\":null},\"revisitInfo\":{\"isRevisit\":0,\"lastRecord\":{\"chiefComplaint\":\"\",\"presentIllness\":\"\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"},\"tcmFourExams\":{\"inspection\":\"\",\"inquiry\":\"\",\"listeningAndSmelling\":\"\",\"palpation\":\"\"},\"physicalExam\":\"\",\"auxiliaryExam\":\"\",\"diagnosis\":{\"tcmDiagnosisName\":\"\",\"tcmDiagnosisCode\":\"\",\"tcmSyndromeName\":\"\",\"westernDiagnosisName\":\"\",\"westernDiagnosisCode\":\"\"},\"treatmentPrinciple\":\"\",\"treatmentAdvice\":\"\",\"prescription\":{\"prescriptionName\":\"\",\"herbs\":[]}}}}",
+        "created_at": "2025-12-12T08:37:04.545221"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近有没有感到特别不舒服的症状呢？比如咳嗽、胸闷、呼吸困难或者痰多等等？",
+        "created_at": "2025-12-12T08:37:04.546228"
+      },
+      {
+        "role": "user",
+        "content": "胸闷气短",
+        "created_at": "2025-12-12T08:37:59.364482"
+      },
+      {
+        "role": "assistant",
+        "content": "了解～这个胸闷气短的情况大概从什么时候开始的呢？持续了多久了？",
+        "created_at": "2025-12-12T08:37:59.365474"
+      },
+      {
+        "role": "user",
+        "content": "持续了两周左右",
+        "created_at": "2025-12-12T08:40:08.422168"
+      },
+      {
+        "role": "assistant",
+        "content": "您这个胸闷气短的感觉主要是在胸部的哪个位置呢？比如心口、胸部两侧或者背后？",
+        "created_at": "2025-12-12T08:40:08.423677"
+      }
+    ]
+  }
+]

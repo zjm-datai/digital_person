@@ -1,0 +1,512 @@
+[
+  {
+    "chat_session_id": "03678457-53bb-4333-926a-d49d32d33d32",
+    "history": [
+      {
+        "role": "user",
+        "content": "{\"patientIdentity\":{\"patientId\":\"PID1234565\",\"idType\":\"01\",\"idNumber\":\"110101199001011235\",\"patientName\":\"李铁\"},\"visitInfo\":{\"department\":\"皮肤医美中心\",\"visitNumber\":\"V0000222\"},\"latestMedicalRecord\":{\"basicInfo\":{\"gender\":\"男\",\"birthday\":\"1985-05-20\",\"aboBloodType\":\"A\",\"rhBloodType\":\"+\"},\"vitalSigns\":{\"systolicPressure\":118,\"diastolicPressure\":76,\"height\":178,\"weight\":75},\"marriageChildInfo\":{\"marriageStatus\":\"已婚\",\"fullTermCount\":0,\"prematureCount\":0,\"abortionCount\":0,\"livingChildrenCount\":0},\"pastHistory\":{\"personalHistory\":\"\",\"bloodTransfusionHistory\":\"2015年输过2U红细胞\",\"diseaseHistory\":\"\",\"epidemiologicalHistory\":\"否认出国及接触史\",\"surgeryHistory\":\"无手术史\",\"familyHistory\":\"否认家族性遗传病、精神病、肿瘤等类似病史\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"}},\"allergyHistory\":\"无\",\"childGrowthInfo\":null},\"revisitInfo\":{\"isRevisit\":0,\"lastRecord\":{\"chiefComplaint\":\"\",\"presentIllness\":\"\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"},\"tcmFourExams\":{\"inspection\":\"\",\"inquiry\":\"\",\"listeningAndSmelling\":\"\",\"palpation\":\"\"},\"physicalExam\":\"\",\"auxiliaryExam\":\"\",\"diagnosis\":{\"tcmDiagnosisName\":\"\",\"tcmDiagnosisCode\":\"\",\"tcmSyndromeName\":\"\",\"westernDiagnosisName\":\"\",\"westernDiagnosisCode\":\"\"},\"treatmentPrinciple\":\"\",\"treatmentAdvice\":\"\",\"prescription\":{\"prescriptionName\":\"\",\"herbs\":[]}}}}",
+        "created_at": "2025-12-22T09:47:09.874509"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近有没有感觉到皮肤上有任何不舒服的地方，比如红肿、瘙痒、脱皮或者起疹子之类的？",
+        "created_at": "2025-12-22T09:47:09.874973"
+      }
+    ]
+  },
+  {
+    "chat_session_id": "0dc3583b-0414-4d90-83be-b904a74b883c",
+    "history": [
+      {
+        "role": "user",
+        "content": "{\"patientIdentity\":{\"patientId\":\"PID1234565\",\"idType\":\"01\",\"idNumber\":\"110101199001011235\",\"patientName\":\"李铁\"},\"visitInfo\":{\"department\":\"皮肤医美中心\",\"visitNumber\":\"V0000222\"},\"latestMedicalRecord\":{\"basicInfo\":{\"gender\":\"男\",\"birthday\":\"1985-05-20\",\"aboBloodType\":\"A\",\"rhBloodType\":\"+\"},\"vitalSigns\":{\"systolicPressure\":118,\"diastolicPressure\":76,\"height\":178,\"weight\":75},\"marriageChildInfo\":{\"marriageStatus\":\"已婚\",\"fullTermCount\":0,\"prematureCount\":0,\"abortionCount\":0,\"livingChildrenCount\":0},\"pastHistory\":{\"personalHistory\":\"\",\"bloodTransfusionHistory\":\"2015年输过2U红细胞\",\"diseaseHistory\":\"\",\"epidemiologicalHistory\":\"否认出国及接触史\",\"surgeryHistory\":\"无手术史\",\"familyHistory\":\"否认家族性遗传病、精神病、肿瘤等类似病史\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"}},\"allergyHistory\":\"无\",\"childGrowthInfo\":null},\"revisitInfo\":{\"isRevisit\":0,\"lastRecord\":{\"chiefComplaint\":\"\",\"presentIllness\":\"\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"},\"tcmFourExams\":{\"inspection\":\"\",\"inquiry\":\"\",\"listeningAndSmelling\":\"\",\"palpation\":\"\"},\"physicalExam\":\"\",\"auxiliaryExam\":\"\",\"diagnosis\":{\"tcmDiagnosisName\":\"\",\"tcmDiagnosisCode\":\"\",\"tcmSyndromeName\":\"\",\"westernDiagnosisName\":\"\",\"westernDiagnosisCode\":\"\"},\"treatmentPrinciple\":\"\",\"treatmentAdvice\":\"\",\"prescription\":{\"prescriptionName\":\"\",\"herbs\":[]}}}}",
+        "created_at": "2025-12-22T10:09:23.461759"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近有没有感觉到皮肤上有任何异常的情况呢？比如红肿、瘙痒、脱皮或者起疹子之类的？",
+        "created_at": "2025-12-22T10:09:23.462226"
+      },
+      {
+        "role": "user",
+        "content": "皮肤红肿",
+        "created_at": "2025-12-22T10:09:27.866854"
+      },
+      {
+        "role": "assistant",
+        "content": "了解啦～这个皮肤红肿的情况大概从什么时候开始的呢？大约持续了多久？",
+        "created_at": "2025-12-22T10:09:27.867221"
+      },
+      {
+        "role": "user",
+        "content": "一周前开始的",
+        "created_at": "2025-12-22T10:10:32.921358"
+      },
+      {
+        "role": "assistant",
+        "content": "您这个红肿的部位是在身体的哪个地方呢？比如脸部、手臂、腿部，还是其他部位？",
+        "created_at": "2025-12-22T10:10:32.921674"
+      },
+      {
+        "role": "user",
+        "content": "脸部红肿",
+        "created_at": "2025-12-22T10:11:38.728057"
+      },
+      {
+        "role": "assistant",
+        "content": "哦，这个症状的严重程度如何呢？比如是轻微的红肿，还是特别明显、影响日常活动？",
+        "created_at": "2025-12-22T10:11:38.728389"
+      },
+      {
+        "role": "user",
+        "content": "轻微红肿",
+        "created_at": "2025-12-22T10:15:07.059576"
+      },
+      {
+        "role": "assistant",
+        "content": "您还有其他不舒服的症状吗？比如皮肤有没有发痒、脱皮或者有疼痛感？",
+        "created_at": "2025-12-22T10:15:07.060048"
+      },
+      {
+        "role": "user",
+        "content": "皮肤发痒",
+        "created_at": "2025-12-22T10:15:25.394763"
+      },
+      {
+        "role": "assistant",
+        "content": "您之前有去看过医生或者接受过治疗吗？",
+        "created_at": "2025-12-22T10:15:25.395078"
+      },
+      {
+        "role": "user",
+        "content": "之前没看过医生",
+        "created_at": "2025-12-22T10:15:40.913889"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近有没有吃过或使用过什么可能引起过敏的食物或药物呢？",
+        "created_at": "2025-12-22T10:15:40.914245"
+      },
+      {
+        "role": "user",
+        "content": "海鲜",
+        "created_at": "2025-12-22T10:16:00.055352"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近有没有长期服用什么药物或者使用什么外用药呢？",
+        "created_at": "2025-12-22T10:16:00.055975"
+      },
+      {
+        "role": "user",
+        "content": "长期服用阿司匹林",
+        "created_at": "2025-12-22T10:16:39.667864"
+      },
+      {
+        "role": "assistant",
+        "content": "您家里有没有人有过类似的皮肤问题或者过敏史呢？",
+        "created_at": "2025-12-22T10:16:39.668888"
+      }
+    ]
+  },
+  {
+    "chat_session_id": "1a73641c-00ac-4a01-9ec3-f1711c00d14c",
+    "history": [
+      {
+        "role": "user",
+        "content": "{\"patientIdentity\":{\"patientId\":\"PID1234565\",\"idType\":\"01\",\"idNumber\":\"110101199001011235\",\"patientName\":\"李铁\"},\"visitInfo\":{\"department\":\"皮肤医美中心\",\"visitNumber\":\"V0000222\"},\"latestMedicalRecord\":{\"basicInfo\":{\"gender\":\"男\",\"birthday\":\"1985-05-20\",\"aboBloodType\":\"A\",\"rhBloodType\":\"+\"},\"vitalSigns\":{\"systolicPressure\":118,\"diastolicPressure\":76,\"height\":178,\"weight\":75},\"marriageChildInfo\":{\"marriageStatus\":\"已婚\",\"fullTermCount\":0,\"prematureCount\":0,\"abortionCount\":0,\"livingChildrenCount\":0},\"pastHistory\":{\"personalHistory\":\"\",\"bloodTransfusionHistory\":\"2015年输过2U红细胞\",\"diseaseHistory\":\"\",\"epidemiologicalHistory\":\"否认出国及接触史\",\"surgeryHistory\":\"无手术史\",\"familyHistory\":\"否认家族性遗传病、精神病、肿瘤等类似病史\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"}},\"allergyHistory\":\"无\",\"childGrowthInfo\":null},\"revisitInfo\":{\"isRevisit\":0,\"lastRecord\":{\"chiefComplaint\":\"\",\"presentIllness\":\"\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"},\"tcmFourExams\":{\"inspection\":\"\",\"inquiry\":\"\",\"listeningAndSmelling\":\"\",\"palpation\":\"\"},\"physicalExam\":\"\",\"auxiliaryExam\":\"\",\"diagnosis\":{\"tcmDiagnosisName\":\"\",\"tcmDiagnosisCode\":\"\",\"tcmSyndromeName\":\"\",\"westernDiagnosisName\":\"\",\"westernDiagnosisCode\":\"\"},\"treatmentPrinciple\":\"\",\"treatmentAdvice\":\"\",\"prescription\":{\"prescriptionName\":\"\",\"herbs\":[]}}}}",
+        "created_at": "2025-12-23T06:04:58.048652"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近有感觉到皮肤上有任何不舒服或者异常的情况吗？比如红肿、瘙痒、脱皮之类的？",
+        "created_at": "2025-12-23T06:04:58.049179"
+      }
+    ]
+  },
+  {
+    "chat_session_id": "1aa82000-d222-4cfc-8428-80149353ea43",
+    "history": [
+      {
+        "role": "user",
+        "content": "{\"patientIdentity\":{\"patientId\":\"PID1234565\",\"idType\":\"01\",\"idNumber\":\"110101199001011235\",\"patientName\":\"李铁\"},\"visitInfo\":{\"department\":\"皮肤医美中心\",\"visitNumber\":\"V0000222\"},\"latestMedicalRecord\":{\"basicInfo\":{\"gender\":\"男\",\"birthday\":\"1985-05-20\",\"aboBloodType\":\"A\",\"rhBloodType\":\"+\"},\"vitalSigns\":{\"systolicPressure\":118,\"diastolicPressure\":76,\"height\":178,\"weight\":75},\"marriageChildInfo\":{\"marriageStatus\":\"已婚\",\"fullTermCount\":0,\"prematureCount\":0,\"abortionCount\":0,\"livingChildrenCount\":0},\"pastHistory\":{\"personalHistory\":\"\",\"bloodTransfusionHistory\":\"2015年输过2U红细胞\",\"diseaseHistory\":\"\",\"epidemiologicalHistory\":\"否认出国及接触史\",\"surgeryHistory\":\"无手术史\",\"familyHistory\":\"否认家族性遗传病、精神病、肿瘤等类似病史\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"}},\"allergyHistory\":\"无\",\"childGrowthInfo\":null},\"revisitInfo\":{\"isRevisit\":0,\"lastRecord\":{\"chiefComplaint\":\"\",\"presentIllness\":\"\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"},\"tcmFourExams\":{\"inspection\":\"\",\"inquiry\":\"\",\"listeningAndSmelling\":\"\",\"palpation\":\"\"},\"physicalExam\":\"\",\"auxiliaryExam\":\"\",\"diagnosis\":{\"tcmDiagnosisName\":\"\",\"tcmDiagnosisCode\":\"\",\"tcmSyndromeName\":\"\",\"westernDiagnosisName\":\"\",\"westernDiagnosisCode\":\"\"},\"treatmentPrinciple\":\"\",\"treatmentAdvice\":\"\",\"prescription\":{\"prescriptionName\":\"\",\"herbs\":[]}}}}",
+        "created_at": "2025-12-22T09:56:03.529256"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近有没有感觉到皮肤上有特别明显的异常，比如红肿、瘙痒、脱皮或者起疹子呢？",
+        "created_at": "2025-12-22T09:56:03.529703"
+      },
+      {
+        "role": "user",
+        "content": "有明显瘙痒感",
+        "created_at": "2025-12-22T09:56:44.924876"
+      },
+      {
+        "role": "assistant",
+        "content": "",
+        "created_at": "2025-12-22T09:56:44.925189"
+      }
+    ]
+  },
+  {
+    "chat_session_id": "50ded699-8427-4b84-9c7b-ccc54f838d57",
+    "history": [
+      {
+        "role": "user",
+        "content": "{\"patientIdentity\":{\"patientId\":\"PID1234565\",\"idType\":\"01\",\"idNumber\":\"110101199001011235\",\"patientName\":\"李铁\"},\"visitInfo\":{\"department\":\"皮肤医美中心\",\"visitNumber\":\"V0000222\"},\"latestMedicalRecord\":{\"basicInfo\":{\"gender\":\"男\",\"birthday\":\"1985-05-20\",\"aboBloodType\":\"A\",\"rhBloodType\":\"+\"},\"vitalSigns\":{\"systolicPressure\":118,\"diastolicPressure\":76,\"height\":178,\"weight\":75},\"marriageChildInfo\":{\"marriageStatus\":\"已婚\",\"fullTermCount\":0,\"prematureCount\":0,\"abortionCount\":0,\"livingChildrenCount\":0},\"pastHistory\":{\"personalHistory\":\"\",\"bloodTransfusionHistory\":\"2015年输过2U红细胞\",\"diseaseHistory\":\"\",\"epidemiologicalHistory\":\"否认出国及接触史\",\"surgeryHistory\":\"无手术史\",\"familyHistory\":\"否认家族性遗传病、精神病、肿瘤等类似病史\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"}},\"allergyHistory\":\"无\",\"childGrowthInfo\":null},\"revisitInfo\":{\"isRevisit\":0,\"lastRecord\":{\"chiefComplaint\":\"\",\"presentIllness\":\"\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"},\"tcmFourExams\":{\"inspection\":\"\",\"inquiry\":\"\",\"listeningAndSmelling\":\"\",\"palpation\":\"\"},\"physicalExam\":\"\",\"auxiliaryExam\":\"\",\"diagnosis\":{\"tcmDiagnosisName\":\"\",\"tcmDiagnosisCode\":\"\",\"tcmSyndromeName\":\"\",\"westernDiagnosisName\":\"\",\"westernDiagnosisCode\":\"\"},\"treatmentPrinciple\":\"\",\"treatmentAdvice\":\"\",\"prescription\":{\"prescriptionName\":\"\",\"herbs\":[]}}}}",
+        "created_at": "2025-12-22T09:52:49.248019"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近有没有感觉到皮肤上有特别明显的异常呢？比如红斑、瘙痒、脱皮或者起疹子之类的？",
+        "created_at": "2025-12-22T09:52:49.248526"
+      },
+      {
+        "role": "user",
+        "content": "脱皮严重",
+        "created_at": "2025-12-22T09:53:34.802157"
+      },
+      {
+        "role": "assistant",
+        "content": "了解～这个脱皮的情况大概从什么时候开始的呢？持续了多久？",
+        "created_at": "2025-12-22T09:53:34.802737"
+      },
+      {
+        "role": "user",
+        "content": "持续了两周左右",
+        "created_at": "2025-12-22T09:55:17.610441"
+      },
+      {
+        "role": "assistant",
+        "content": "",
+        "created_at": "2025-12-22T09:55:17.610926"
+      }
+    ]
+  },
+  {
+    "chat_session_id": "57a4abaf-6d28-41d6-a6d2-a0e6630e27f3",
+    "history": [
+      {
+        "role": "user",
+        "content": "{\"patientIdentity\":{\"patientId\":\"PID1234565\",\"idType\":\"01\",\"idNumber\":\"110101199001011235\",\"patientName\":\"李铁\"},\"visitInfo\":{\"department\":\"皮肤医美中心\",\"visitNumber\":\"V0000222\"},\"latestMedicalRecord\":{\"basicInfo\":{\"gender\":\"男\",\"birthday\":\"1985-05-20\",\"aboBloodType\":\"A\",\"rhBloodType\":\"+\"},\"vitalSigns\":{\"systolicPressure\":118,\"diastolicPressure\":76,\"height\":178,\"weight\":75},\"marriageChildInfo\":{\"marriageStatus\":\"已婚\",\"fullTermCount\":0,\"prematureCount\":0,\"abortionCount\":0,\"livingChildrenCount\":0},\"pastHistory\":{\"personalHistory\":\"\",\"bloodTransfusionHistory\":\"2015年输过2U红细胞\",\"diseaseHistory\":\"\",\"epidemiologicalHistory\":\"否认出国及接触史\",\"surgeryHistory\":\"无手术史\",\"familyHistory\":\"否认家族性遗传病、精神病、肿瘤等类似病史\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"}},\"allergyHistory\":\"无\",\"childGrowthInfo\":null},\"revisitInfo\":{\"isRevisit\":0,\"lastRecord\":{\"chiefComplaint\":\"\",\"presentIllness\":\"\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"},\"tcmFourExams\":{\"inspection\":\"\",\"inquiry\":\"\",\"listeningAndSmelling\":\"\",\"palpation\":\"\"},\"physicalExam\":\"\",\"auxiliaryExam\":\"\",\"diagnosis\":{\"tcmDiagnosisName\":\"\",\"tcmDiagnosisCode\":\"\",\"tcmSyndromeName\":\"\",\"westernDiagnosisName\":\"\",\"westernDiagnosisCode\":\"\"},\"treatmentPrinciple\":\"\",\"treatmentAdvice\":\"\",\"prescription\":{\"prescriptionName\":\"\",\"herbs\":[]}}}}",
+        "created_at": "2025-12-23T06:38:01.341020"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近有注意到皮肤上有任何特别的变化或不适吗？比如红肿、瘙痒、脱皮之类的？",
+        "created_at": "2025-12-23T06:38:01.342035"
+      },
+      {
+        "role": "user",
+        "content": "皮肤红肿",
+        "created_at": "2025-12-23T06:39:45.773930"
+      },
+      {
+        "role": "assistant",
+        "content": "了解啦～这个皮肤红肿的情况大概从什么时候开始的呢？大约持续了多久？",
+        "created_at": "2025-12-23T06:39:45.774924"
+      },
+      {
+        "role": "user",
+        "content": "一周前开始的",
+        "created_at": "2025-12-23T06:41:06.434064"
+      },
+      {
+        "role": "assistant",
+        "content": "您这个红肿的部位是在身体的哪个地方呢？比如脸、手臂、腿，还是其他部位？",
+        "created_at": "2025-12-23T06:41:06.435064"
+      },
+      {
+        "role": "user",
+        "content": "脸部红肿",
+        "created_at": "2025-12-23T06:41:42.723316"
+      },
+      {
+        "role": "assistant",
+        "content": "哦，这个红肿的严重程度怎么样呢？有没有觉得特别痒、疼，或者影响到日常活动？",
+        "created_at": "2025-12-23T06:41:42.724311"
+      }
+    ]
+  },
+  {
+    "chat_session_id": "5c14377e-8583-409a-b1cb-f82de408763c",
+    "history": [
+      {
+        "role": "user",
+        "content": "{\"patientIdentity\":{\"patientId\":\"PID1234565\",\"idType\":\"01\",\"idNumber\":\"110101199001011235\",\"patientName\":\"李铁\"},\"visitInfo\":{\"department\":\"皮肤医美中心\",\"visitNumber\":\"V0000222\"},\"latestMedicalRecord\":{\"basicInfo\":{\"gender\":\"男\",\"birthday\":\"1985-05-20\",\"aboBloodType\":\"A\",\"rhBloodType\":\"+\"},\"vitalSigns\":{\"systolicPressure\":118,\"diastolicPressure\":76,\"height\":178,\"weight\":75},\"marriageChildInfo\":{\"marriageStatus\":\"已婚\",\"fullTermCount\":0,\"prematureCount\":0,\"abortionCount\":0,\"livingChildrenCount\":0},\"pastHistory\":{\"personalHistory\":\"\",\"bloodTransfusionHistory\":\"2015年输过2U红细胞\",\"diseaseHistory\":\"\",\"epidemiologicalHistory\":\"否认出国及接触史\",\"surgeryHistory\":\"无手术史\",\"familyHistory\":\"否认家族性遗传病、精神病、肿瘤等类似病史\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"}},\"allergyHistory\":\"无\",\"childGrowthInfo\":null},\"revisitInfo\":{\"isRevisit\":0,\"lastRecord\":{\"chiefComplaint\":\"\",\"presentIllness\":\"\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"},\"tcmFourExams\":{\"inspection\":\"\",\"inquiry\":\"\",\"listeningAndSmelling\":\"\",\"palpation\":\"\"},\"physicalExam\":\"\",\"auxiliaryExam\":\"\",\"diagnosis\":{\"tcmDiagnosisName\":\"\",\"tcmDiagnosisCode\":\"\",\"tcmSyndromeName\":\"\",\"westernDiagnosisName\":\"\",\"westernDiagnosisCode\":\"\"},\"treatmentPrinciple\":\"\",\"treatmentAdvice\":\"\",\"prescription\":{\"prescriptionName\":\"\",\"herbs\":[]}}}}",
+        "created_at": "2025-12-22T10:00:57.788135"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近有没有感觉到皮肤上有任何异常的情况呢？比如红肿、瘙痒、脱皮或者起疹子之类的？",
+        "created_at": "2025-12-22T10:00:57.788669"
+      },
+      {
+        "role": "user",
+        "content": "脱皮严重",
+        "created_at": "2025-12-22T10:01:03.188331"
+      },
+      {
+        "role": "assistant",
+        "content": "了解啦～这个脱皮的情况大概从什么时候开始的呢？持续了多久？",
+        "created_at": "2025-12-22T10:01:03.188724"
+      }
+    ]
+  },
+  {
+    "chat_session_id": "627ea962-497f-4425-8a68-bd38402876ae",
+    "history": [
+      {
+        "role": "user",
+        "content": "{\"patientIdentity\":{\"patientId\":\"PID1234565\",\"idType\":\"01\",\"idNumber\":\"110101199001011235\",\"patientName\":\"李铁\"},\"visitInfo\":{\"department\":\"皮肤医美中心\",\"visitNumber\":\"V0000222\"},\"latestMedicalRecord\":{\"basicInfo\":{\"gender\":\"男\",\"birthday\":\"1985-05-20\",\"aboBloodType\":\"A\",\"rhBloodType\":\"+\"},\"vitalSigns\":{\"systolicPressure\":118,\"diastolicPressure\":76,\"height\":178,\"weight\":75},\"marriageChildInfo\":{\"marriageStatus\":\"已婚\",\"fullTermCount\":0,\"prematureCount\":0,\"abortionCount\":0,\"livingChildrenCount\":0},\"pastHistory\":{\"personalHistory\":\"\",\"bloodTransfusionHistory\":\"2015年输过2U红细胞\",\"diseaseHistory\":\"\",\"epidemiologicalHistory\":\"否认出国及接触史\",\"surgeryHistory\":\"无手术史\",\"familyHistory\":\"否认家族性遗传病、精神病、肿瘤等类似病史\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"}},\"allergyHistory\":\"无\",\"childGrowthInfo\":null},\"revisitInfo\":{\"isRevisit\":0,\"lastRecord\":{\"chiefComplaint\":\"\",\"presentIllness\":\"\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"},\"tcmFourExams\":{\"inspection\":\"\",\"inquiry\":\"\",\"listeningAndSmelling\":\"\",\"palpation\":\"\"},\"physicalExam\":\"\",\"auxiliaryExam\":\"\",\"diagnosis\":{\"tcmDiagnosisName\":\"\",\"tcmDiagnosisCode\":\"\",\"tcmSyndromeName\":\"\",\"westernDiagnosisName\":\"\",\"westernDiagnosisCode\":\"\"},\"treatmentPrinciple\":\"\",\"treatmentAdvice\":\"\",\"prescription\":{\"prescriptionName\":\"\",\"herbs\":[]}}}}",
+        "created_at": "2025-12-22T09:59:30.891238"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近有没有感觉到皮肤上有特别的不适或者异常呢？比如红肿、瘙痒、脱皮之类的？",
+        "created_at": "2025-12-22T09:59:30.891753"
+      },
+      {
+        "role": "user",
+        "content": "红肿明显",
+        "created_at": "2025-12-22T09:59:36.272800"
+      },
+      {
+        "role": "assistant",
+        "content": "",
+        "created_at": "2025-12-22T09:59:36.273138"
+      }
+    ]
+  },
+  {
+    "chat_session_id": "92b3666b-8520-4171-a7f4-36d1127fb583",
+    "history": [
+      {
+        "role": "user",
+        "content": "{\"patientIdentity\":{\"patientId\":\"PID1234565\",\"idType\":\"01\",\"idNumber\":\"110101199001011235\",\"patientName\":\"李铁\"},\"visitInfo\":{\"department\":\"皮肤医美中心\",\"visitNumber\":\"V0000222\"},\"latestMedicalRecord\":{\"basicInfo\":{\"gender\":\"男\",\"birthday\":\"1985-05-20\",\"aboBloodType\":\"A\",\"rhBloodType\":\"+\"},\"vitalSigns\":{\"systolicPressure\":118,\"diastolicPressure\":76,\"height\":178,\"weight\":75},\"marriageChildInfo\":{\"marriageStatus\":\"已婚\",\"fullTermCount\":0,\"prematureCount\":0,\"abortionCount\":0,\"livingChildrenCount\":0},\"pastHistory\":{\"personalHistory\":\"\",\"bloodTransfusionHistory\":\"2015年输过2U红细胞\",\"diseaseHistory\":\"\",\"epidemiologicalHistory\":\"否认出国及接触史\",\"surgeryHistory\":\"无手术史\",\"familyHistory\":\"否认家族性遗传病、精神病、肿瘤等类似病史\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"}},\"allergyHistory\":\"无\",\"childGrowthInfo\":null},\"revisitInfo\":{\"isRevisit\":0,\"lastRecord\":{\"chiefComplaint\":\"\",\"presentIllness\":\"\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"},\"tcmFourExams\":{\"inspection\":\"\",\"inquiry\":\"\",\"listeningAndSmelling\":\"\",\"palpation\":\"\"},\"physicalExam\":\"\",\"auxiliaryExam\":\"\",\"diagnosis\":{\"tcmDiagnosisName\":\"\",\"tcmDiagnosisCode\":\"\",\"tcmSyndromeName\":\"\",\"westernDiagnosisName\":\"\",\"westernDiagnosisCode\":\"\"},\"treatmentPrinciple\":\"\",\"treatmentAdvice\":\"\",\"prescription\":{\"prescriptionName\":\"\",\"herbs\":[]}}}}",
+        "created_at": "2025-12-22T10:23:34.336408"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近有没有感觉到皮肤上有特别的不适或者异常呢？比如红、痒、脱皮、起疹子之类的？",
+        "created_at": "2025-12-22T10:23:34.336743"
+      },
+      {
+        "role": "user",
+        "content": "皮肤发红",
+        "created_at": "2025-12-22T10:23:38.712891"
+      },
+      {
+        "role": "assistant",
+        "content": "了解啦～皮肤发红的情况大概从什么时候开始的呢？大约持续了多久？",
+        "created_at": "2025-12-22T10:23:38.713204"
+      },
+      {
+        "role": "user",
+        "content": "一个月前开始的",
+        "created_at": "2025-12-22T10:25:40.774887"
+      },
+      {
+        "role": "assistant",
+        "content": "您这个皮肤发红的情况，出现在身体的哪个部位呢？",
+        "created_at": "2025-12-22T10:25:40.775352"
+      },
+      {
+        "role": "user",
+        "content": "面部发红",
+        "created_at": "2025-12-22T10:27:55.848071"
+      },
+      {
+        "role": "assistant",
+        "content": "哦，这个症状的严重程度如何呢？是轻微的红，还是特别明显或者伴有其他不适？",
+        "created_at": "2025-12-22T10:27:55.848829"
+      },
+      {
+        "role": "user",
+        "content": "轻微发红",
+        "created_at": "2025-12-22T10:29:15.556782"
+      },
+      {
+        "role": "assistant",
+        "content": "您在皮肤发红的同时，还有其他感觉吗？比如痒、脱皮、干燥或者有刺痛感？",
+        "created_at": "2025-12-22T10:29:15.557289"
+      },
+      {
+        "role": "user",
+        "content": "皮肤发红发痒",
+        "created_at": "2025-12-22T10:29:49.887531"
+      },
+      {
+        "role": "assistant",
+        "content": "您之前有去看过医生或者接受过治疗吗？",
+        "created_at": "2025-12-22T10:29:49.888007"
+      },
+      {
+        "role": "user",
+        "content": "接受过激光治疗",
+        "created_at": "2025-12-22T10:30:16.145216"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近有没有吃过或用过什么特别的食物或药物？比如海鲜、坚果、抗生素之类的？",
+        "created_at": "2025-12-22T10:30:16.145676"
+      }
+    ]
+  },
+  {
+    "chat_session_id": "97e78659-07d7-40de-b478-82c7617efd20",
+    "history": [
+      {
+        "role": "user",
+        "content": "{\"patientIdentity\":{\"patientId\":\"PID1234563\",\"idType\":\"01\",\"idNumber\":\"110101199001011235\",\"patientName\":\"王刚\"},\"visitInfo\":{\"department\":\"皮肤医美中心\",\"visitNumber\":\"V0000222\"},\"latestMedicalRecord\":{\"basicInfo\":{\"gender\":\"男\",\"birthday\":\"1985-05-20\",\"aboBloodType\":\"A\",\"rhBloodType\":\"+\"},\"vitalSigns\":{\"systolicPressure\":118,\"diastolicPressure\":76,\"height\":178,\"weight\":75},\"marriageChildInfo\":{\"marriageStatus\":\"已婚\",\"fullTermCount\":0,\"prematureCount\":0,\"abortionCount\":0,\"livingChildrenCount\":0},\"pastHistory\":{\"personalHistory\":\"无烟酒不良嗜好，否认冶游史。\",\"bloodTransfusionHistory\":\"无\",\"diseaseHistory\":\"患者平素体健，有过敏性鼻炎，无重大慢性疾病无传染病史\",\"epidemiologicalHistory\":\"无传染病史，流行病学史\",\"surgeryHistory\":\"无手术史\",\"familyHistory\":\"否认家族性遗传病、精神病、肿瘤等类似病史.\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"}},\"allergyHistory\":\"未发现\",\"childGrowthInfo\":null},\"revisitInfo\":{\"isRevisit\":1,\"lastRecord\":{\"chiefComplaint\":\"下肢红斑、丘疹、抓痕伴瘙痒8日\",\"presentIllness\":\"8日前无明显诱因下下肢红斑、丘疹、抓痕，伴瘙痒，外院多次就诊（卤米松乳膏 外用应急软膏 氯雷他定片 ），皮疹仍反复发作口不渴，睡眠安，大便便次正常，小便尿次正常\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"},\"tcmFourExams\":{\"inspection\":\"红黄隐隐，明润含蓄\",\"inquiry\":\"时有腹胀便溏，倦怠乏力\",\"listeningAndSmelling\":\"口气\",\"palpation\":\"脉弦\"},\"physicalExam\":\"无\",\"auxiliaryExam\":\"血常规：WBC 9.5×10^9/L，CRP 12 mg/L\",\"diagnosis\":{\"tcmDiagnosisName\":\"湿疮\",\"tcmDiagnosisCode\":\"A08.01.07\",\"tcmSyndromeName\":\"脾虚湿困证\",\"westernDiagnosisName\":\"特应性皮炎\",\"westernDiagnosisCode\":\"L20.900\"},\"treatmentPrinciple\":\"健脾化湿\",\"treatmentAdvice\":\"少食多餐，避免辛辣油腻\",\"prescription\":{\"prescriptionName\":\"复方参蝉汤\",\"herbs\":[\"党参\",\"蝉蜕\",\"生白术\",\"茯苓\",\"温山药\",\"炒白扁豆\",\"薏苡仁\",\"生黄芪\",\"炒麦芽\",\"炒稻芽\",\"炒鸡内金\",\"大枣\",\"生甘草\",\"蚕砂\"]}}}}",
+        "created_at": "2025-12-22T10:49:07.464769"
+      },
+      {
+        "role": "assistant",
+        "content": "这次皮肤的红斑、丘疹和抓痕情况，比起上次有好转吗？",
+        "created_at": "2025-12-22T10:49:07.465234"
+      },
+      {
+        "role": "user",
+        "content": "有好转",
+        "created_at": "2025-12-22T10:49:12.047396"
+      },
+      {
+        "role": "assistant",
+        "content": "那这次饮食方面有注意到什么变化吗？比如有没有特别少吃或吃多了什么食物？",
+        "created_at": "2025-12-22T10:49:12.047741"
+      }
+    ]
+  },
+  {
+    "chat_session_id": "d19725fe-5ce4-4744-80ee-80b7e5b7f2fb",
+    "history": [
+      {
+        "role": "user",
+        "content": "{\"patientIdentity\":{\"patientId\":\"PID1234565\",\"idType\":\"01\",\"idNumber\":\"110101199001011235\",\"patientName\":\"李铁\"},\"visitInfo\":{\"department\":\"皮肤医美中心\",\"visitNumber\":\"V0000222\"},\"latestMedicalRecord\":{\"basicInfo\":{\"gender\":\"男\",\"birthday\":\"1985-05-20\",\"aboBloodType\":\"A\",\"rhBloodType\":\"+\"},\"vitalSigns\":{\"systolicPressure\":118,\"diastolicPressure\":76,\"height\":178,\"weight\":75},\"marriageChildInfo\":{\"marriageStatus\":\"已婚\",\"fullTermCount\":0,\"prematureCount\":0,\"abortionCount\":0,\"livingChildrenCount\":0},\"pastHistory\":{\"personalHistory\":\"\",\"bloodTransfusionHistory\":\"2015年输过2U红细胞\",\"diseaseHistory\":\"\",\"epidemiologicalHistory\":\"否认出国及接触史\",\"surgeryHistory\":\"无手术史\",\"familyHistory\":\"否认家族性遗传病、精神病、肿瘤等类似病史\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"}},\"allergyHistory\":\"无\",\"childGrowthInfo\":null},\"revisitInfo\":{\"isRevisit\":0,\"lastRecord\":{\"chiefComplaint\":\"\",\"presentIllness\":\"\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"},\"tcmFourExams\":{\"inspection\":\"\",\"inquiry\":\"\",\"listeningAndSmelling\":\"\",\"palpation\":\"\"},\"physicalExam\":\"\",\"auxiliaryExam\":\"\",\"diagnosis\":{\"tcmDiagnosisName\":\"\",\"tcmDiagnosisCode\":\"\",\"tcmSyndromeName\":\"\",\"westernDiagnosisName\":\"\",\"westernDiagnosisCode\":\"\"},\"treatmentPrinciple\":\"\",\"treatmentAdvice\":\"\",\"prescription\":{\"prescriptionName\":\"\",\"herbs\":[]}}}}",
+        "created_at": "2025-12-22T10:17:07.099326"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近有没有感觉到皮肤上有特别的不适或者异常呢？比如红肿、瘙痒、脱皮之类的？",
+        "created_at": "2025-12-22T10:17:07.099648"
+      },
+      {
+        "role": "user",
+        "content": "皮肤红肿",
+        "created_at": "2025-12-22T10:17:14.455911"
+      },
+      {
+        "role": "assistant",
+        "content": "了解啦～这个皮肤红肿的情况大概从什么时候开始的呢？大约持续了多久？",
+        "created_at": "2025-12-22T10:17:14.456225"
+      },
+      {
+        "role": "user",
+        "content": "大概一周前开始的",
+        "created_at": "2025-12-22T10:18:29.006456"
+      },
+      {
+        "role": "assistant",
+        "content": "您这个红肿的皮肤出现在身体的哪个部位呢？",
+        "created_at": "2025-12-22T10:18:29.006941"
+      },
+      {
+        "role": "user",
+        "content": "面部红肿",
+        "created_at": "2025-12-22T10:20:08.999686"
+      },
+      {
+        "role": "assistant",
+        "content": "哦，这个症状的严重程度如何呢？是轻微的红肿，还是比较明显、影响日常活动了？",
+        "created_at": "2025-12-22T10:20:09.000182"
+      },
+      {
+        "role": "user",
+        "content": "轻微红肿",
+        "created_at": "2025-12-22T10:21:13.502343"
+      },
+      {
+        "role": "assistant",
+        "content": "您还有其他不舒服的症状吗？比如发痒、脱皮、疼痛或者有小疙瘩之类的？",
+        "created_at": "2025-12-22T10:21:13.502814"
+      },
+      {
+        "role": "user",
+        "content": "皮肤发痒",
+        "created_at": "2025-12-22T10:21:23.761693"
+      },
+      {
+        "role": "assistant",
+        "content": "您之前有去看过医生或者接受过治疗吗？",
+        "created_at": "2025-12-22T10:21:23.762006"
+      },
+      {
+        "role": "user",
+        "content": "之前没治疗过",
+        "created_at": "2025-12-22T10:23:02.681720"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近有没有吃过或用过什么可能引起过敏的食物或药物呢？",
+        "created_at": "2025-12-22T10:23:02.682219"
+      },
+      {
+        "role": "user",
+        "content": "海鲜",
+        "created_at": "2025-12-22T10:23:09.724192"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近有没有长期服用什么药物或者使用什么外用药呢？",
+        "created_at": "2025-12-22T10:23:09.724518"
+      }
+    ]
+  },
+  {
+    "chat_session_id": "f784e06f-405e-4a58-95ff-cbb970992c5a",
+    "history": [
+      {
+        "role": "user",
+        "content": "{\"patientIdentity\":{\"patientId\":\"PID1234565\",\"idType\":\"01\",\"idNumber\":\"110101199001011235\",\"patientName\":\"李铁\"},\"visitInfo\":{\"department\":\"皮肤医美中心\",\"visitNumber\":\"V0000222\"},\"latestMedicalRecord\":{\"basicInfo\":{\"gender\":\"男\",\"birthday\":\"1985-05-20\",\"aboBloodType\":\"A\",\"rhBloodType\":\"+\"},\"vitalSigns\":{\"systolicPressure\":118,\"diastolicPressure\":76,\"height\":178,\"weight\":75},\"marriageChildInfo\":{\"marriageStatus\":\"已婚\",\"fullTermCount\":0,\"prematureCount\":0,\"abortionCount\":0,\"livingChildrenCount\":0},\"pastHistory\":{\"personalHistory\":\"\",\"bloodTransfusionHistory\":\"2015年输过2U红细胞\",\"diseaseHistory\":\"\",\"epidemiologicalHistory\":\"否认出国及接触史\",\"surgeryHistory\":\"无手术史\",\"familyHistory\":\"否认家族性遗传病、精神病、肿瘤等类似病史\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"}},\"allergyHistory\":\"无\",\"childGrowthInfo\":null},\"revisitInfo\":{\"isRevisit\":0,\"lastRecord\":{\"chiefComplaint\":\"\",\"presentIllness\":\"\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"},\"tcmFourExams\":{\"inspection\":\"\",\"inquiry\":\"\",\"listeningAndSmelling\":\"\",\"palpation\":\"\"},\"physicalExam\":\"\",\"auxiliaryExam\":\"\",\"diagnosis\":{\"tcmDiagnosisName\":\"\",\"tcmDiagnosisCode\":\"\",\"tcmSyndromeName\":\"\",\"westernDiagnosisName\":\"\",\"westernDiagnosisCode\":\"\"},\"treatmentPrinciple\":\"\",\"treatmentAdvice\":\"\",\"prescription\":{\"prescriptionName\":\"\",\"herbs\":[]}}}}",
+        "created_at": "2025-12-23T05:38:41.302183"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近有没有感觉到皮肤上有特别明显的异常呢？比如红肿、瘙痒、脱皮或者起疹子之类的？",
+        "created_at": "2025-12-23T05:38:41.303382"
+      },
+      {
+        "role": "user",
+        "content": "皮肤红肿明显",
+        "created_at": "2025-12-23T05:38:53.556311"
+      },
+      {
+        "role": "assistant",
+        "content": "了解啦～这个皮肤红肿的情况大概从什么时候开始的呢？大约持续了多久？",
+        "created_at": "2025-12-23T05:38:53.557446"
+      },
+      {
+        "role": "user",
+        "content": "大概一周了",
+        "created_at": "2025-12-23T05:41:39.448098"
+      },
+      {
+        "role": "assistant",
+        "content": "您这个红肿的皮肤出现在身体的哪个部位呢？比如脸上、手臂、腿上，还是其他地方？",
+        "created_at": "2025-12-23T05:41:39.449108"
+      },
+      {
+        "role": "user",
+        "content": "脸上红肿",
+        "created_at": "2025-12-23T05:48:11.087397"
+      },
+      {
+        "role": "assistant",
+        "content": "哦，这个红肿的严重程度怎么样呢？有没有觉得特别痒、疼，或者影响到日常活动？",
+        "created_at": "2025-12-23T05:48:11.090658"
+      }
+    ]
+  }
+]

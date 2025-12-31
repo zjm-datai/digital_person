@@ -1,0 +1,17 @@
+[
+  {
+    "chat_session_id": "b2727848-439d-4657-800a-de9a051e4af4",
+    "history": [
+      {
+        "role": "user",
+        "content": "{\"patientIdentity\":{\"patientId\":\"PID1234565\",\"idType\":\"01\",\"idNumber\":\"110101199001011235\",\"patientName\":\"李铁\"},\"visitInfo\":{\"department\":\"皮肤医美中心\",\"visitNumber\":\"V0000222\"},\"latestMedicalRecord\":{\"basicInfo\":{\"gender\":\"男\",\"birthday\":\"1985-05-20\",\"aboBloodType\":\"A\",\"rhBloodType\":\"+\"},\"vitalSigns\":{\"systolicPressure\":118,\"diastolicPressure\":76,\"height\":178,\"weight\":75},\"marriageChildInfo\":{\"marriageStatus\":\"已婚\",\"fullTermCount\":0,\"prematureCount\":0,\"abortionCount\":0,\"livingChildrenCount\":0},\"pastHistory\":{\"personalHistory\":\"\",\"bloodTransfusionHistory\":\"2015年输过2U红细胞\",\"diseaseHistory\":\"\",\"epidemiologicalHistory\":\"否认出国及接触史\",\"surgeryHistory\":\"无手术史\",\"familyHistory\":\"否认家族性遗传病、精神病、肿瘤等类似病史\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"}},\"allergyHistory\":\"无\",\"childGrowthInfo\":null},\"revisitInfo\":{\"isRevisit\":0,\"lastRecord\":{\"chiefComplaint\":\"\",\"presentIllness\":\"\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"},\"tcmFourExams\":{\"inspection\":\"\",\"inquiry\":\"\",\"listeningAndSmelling\":\"\",\"palpation\":\"\"},\"physicalExam\":\"\",\"auxiliaryExam\":\"\",\"diagnosis\":{\"tcmDiagnosisName\":\"\",\"tcmDiagnosisCode\":\"\",\"tcmSyndromeName\":\"\",\"westernDiagnosisName\":\"\",\"westernDiagnosisCode\":\"\"},\"treatmentPrinciple\":\"\",\"treatmentAdvice\":\"\",\"prescription\":{\"prescriptionName\":\"\",\"herbs\":[]}}}}",
+        "created_at": "2025-12-17T14:55:57.544841"
+      },
+      {
+        "role": "assistant",
+        "content": "您好，能跟我描述一下您现在皮肤有什么样的不适吗？比如有没有红肿、瘙痒、脱皮或者起疹子之类的？",
+        "created_at": "2025-12-17T14:55:57.545295"
+      }
+    ]
+  }
+]

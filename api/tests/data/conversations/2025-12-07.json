@@ -1,0 +1,397 @@
+[
+  {
+    "chat_session_id": "02c8e29d-b36f-4c02-8ce4-b7f2fee24775",
+    "history": [
+      {
+        "role": "user",
+        "content": "{\"patientIdentity\":{\"patientId\":\"PID1234588\",\"idType\":\"01\",\"idNumber\":\"110101199001011235\",\"patientName\":\"李铁西\"},\"visitInfo\":{\"department\":\"肛肠科\",\"visitNumber\":\"V0000222\"},\"latestMedicalRecord\":{\"basicInfo\":{\"gender\":\"男\",\"birthday\":\"1985-05-20\",\"aboBloodType\":\"A\",\"rhBloodType\":\"+\"},\"vitalSigns\":{\"systolicPressure\":118,\"diastolicPressure\":76,\"height\":178,\"weight\":75},\"marriageChildInfo\":{\"marriageStatus\":\"已婚\",\"fullTermCount\":0,\"prematureCount\":0,\"abortionCount\":0,\"livingChildrenCount\":0},\"pastHistory\":{\"personalHistory\":\"\",\"bloodTransfusionHistory\":\"2015年输过2U红细胞\",\"diseaseHistory\":\"\",\"epidemiologicalHistory\":\"否认出国及接触史\",\"surgeryHistory\":\"无手术史\",\"familyHistory\":\"否认家族性遗传病、精神病、肿瘤等类似病史\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"}},\"allergyHistory\":\"无\",\"childGrowthInfo\":null},\"revisitInfo\":{\"isRevisit\":0,\"lastRecord\":{\"chiefComplaint\":\"\",\"presentIllness\":\"\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"},\"tcmFourExams\":{\"inspection\":\"\",\"inquiry\":\"\",\"listeningAndSmelling\":\"\",\"palpation\":\"\"},\"physicalExam\":\"\",\"auxiliaryExam\":\"\",\"diagnosis\":{\"tcmDiagnosisName\":\"\",\"tcmDiagnosisCode\":\"\",\"tcmSyndromeName\":\"\",\"westernDiagnosisName\":\"\",\"westernDiagnosisCode\":\"\"},\"treatmentPrinciple\":\"\",\"treatmentAdvice\":\"\",\"prescription\":{\"prescriptionName\":\"\",\"herbs\":[]}}}}",
+        "created_at": "2025-12-08T03:34:09.884835"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近有没有感觉到肛门部位有不适或者疼痛的情况呢？",
+        "created_at": "2025-12-08T03:34:09.885828"
+      }
+    ]
+  },
+  {
+    "chat_session_id": "8b78f8c4-319c-4b07-a4d3-3788ae995edf",
+    "history": [
+      {
+        "role": "user",
+        "content": "{\"patientIdentity\":{\"patientId\":\"PID1234588\",\"idType\":\"01\",\"idNumber\":\"110101199001011235\",\"patientName\":\"李铁西\"},\"visitInfo\":{\"department\":\"肛肠科\",\"visitNumber\":\"V0000222\"},\"latestMedicalRecord\":{\"basicInfo\":{\"gender\":\"男\",\"birthday\":\"1985-05-20\",\"aboBloodType\":\"A\",\"rhBloodType\":\"+\"},\"vitalSigns\":{\"systolicPressure\":118,\"diastolicPressure\":76,\"height\":178,\"weight\":75},\"marriageChildInfo\":{\"marriageStatus\":\"已婚\",\"fullTermCount\":0,\"prematureCount\":0,\"abortionCount\":0,\"livingChildrenCount\":0},\"pastHistory\":{\"personalHistory\":\"\",\"bloodTransfusionHistory\":\"2015年输过2U红细胞\",\"diseaseHistory\":\"\",\"epidemiologicalHistory\":\"否认出国及接触史\",\"surgeryHistory\":\"无手术史\",\"familyHistory\":\"否认家族性遗传病、精神病、肿瘤等类似病史\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"}},\"allergyHistory\":\"无\",\"childGrowthInfo\":null},\"revisitInfo\":{\"isRevisit\":0,\"lastRecord\":{\"chiefComplaint\":\"\",\"presentIllness\":\"\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"},\"tcmFourExams\":{\"inspection\":\"\",\"inquiry\":\"\",\"listeningAndSmelling\":\"\",\"palpation\":\"\"},\"physicalExam\":\"\",\"auxiliaryExam\":\"\",\"diagnosis\":{\"tcmDiagnosisName\":\"\",\"tcmDiagnosisCode\":\"\",\"tcmSyndromeName\":\"\",\"westernDiagnosisName\":\"\",\"westernDiagnosisCode\":\"\"},\"treatmentPrinciple\":\"\",\"treatmentAdvice\":\"\",\"prescription\":{\"prescriptionName\":\"\",\"herbs\":[]}}}}",
+        "created_at": "2025-12-08T06:38:51.619871"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近有没有感到身体不适，比如咳嗽、咳痰、胸闷或者呼吸不畅这些症状呢？",
+        "created_at": "2025-12-08T06:38:51.620372"
+      }
+    ]
+  },
+  {
+    "chat_session_id": "8c96b2fa-aa9c-4d5a-b99a-326d65e8673d",
+    "history": [
+      {
+        "role": "user",
+        "content": "{\"patientIdentity\":{\"patientId\":\"PID1234588\",\"idType\":\"01\",\"idNumber\":\"110101199001011235\",\"patientName\":\"李铁西\"},\"visitInfo\":{\"department\":\"肛肠科\",\"visitNumber\":\"V0000222\"},\"latestMedicalRecord\":{\"basicInfo\":{\"gender\":\"男\",\"birthday\":\"1985-05-20\",\"aboBloodType\":\"A\",\"rhBloodType\":\"+\"},\"vitalSigns\":{\"systolicPressure\":118,\"diastolicPressure\":76,\"height\":178,\"weight\":75},\"marriageChildInfo\":{\"marriageStatus\":\"已婚\",\"fullTermCount\":0,\"prematureCount\":0,\"abortionCount\":0,\"livingChildrenCount\":0},\"pastHistory\":{\"personalHistory\":\"\",\"bloodTransfusionHistory\":\"2015年输过2U红细胞\",\"diseaseHistory\":\"\",\"epidemiologicalHistory\":\"否认出国及接触史\",\"surgeryHistory\":\"无手术史\",\"familyHistory\":\"否认家族性遗传病、精神病、肿瘤等类似病史\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"}},\"allergyHistory\":\"无\",\"childGrowthInfo\":null},\"revisitInfo\":{\"isRevisit\":0,\"lastRecord\":{\"chiefComplaint\":\"\",\"presentIllness\":\"\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"},\"tcmFourExams\":{\"inspection\":\"\",\"inquiry\":\"\",\"listeningAndSmelling\":\"\",\"palpation\":\"\"},\"physicalExam\":\"\",\"auxiliaryExam\":\"\",\"diagnosis\":{\"tcmDiagnosisName\":\"\",\"tcmDiagnosisCode\":\"\",\"tcmSyndromeName\":\"\",\"westernDiagnosisName\":\"\",\"westernDiagnosisCode\":\"\"},\"treatmentPrinciple\":\"\",\"treatmentAdvice\":\"\",\"prescription\":{\"prescriptionName\":\"\",\"herbs\":[]}}}}",
+        "created_at": "2025-12-08T03:32:11.813731"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近有没有感到肛门部位有不适或者异常的情况呢？比如疼痛、肿胀、瘙痒之类的？",
+        "created_at": "2025-12-08T03:32:11.814625"
+      }
+    ]
+  },
+  {
+    "chat_session_id": "c1434015-9f0f-40a1-97c4-eac353c7b0a3",
+    "history": [
+      {
+        "role": "user",
+        "content": "{\"patientIdentity\":{\"patientId\":\"PID1234588\",\"idType\":\"01\",\"idNumber\":\"110101199001011235\",\"patientName\":\"李铁西\"},\"visitInfo\":{\"department\":\"肛肠科\",\"visitNumber\":\"V0000222\"},\"latestMedicalRecord\":{\"basicInfo\":{\"gender\":\"男\",\"birthday\":\"1985-05-20\",\"aboBloodType\":\"A\",\"rhBloodType\":\"+\"},\"vitalSigns\":{\"systolicPressure\":118,\"diastolicPressure\":76,\"height\":178,\"weight\":75},\"marriageChildInfo\":{\"marriageStatus\":\"已婚\",\"fullTermCount\":0,\"prematureCount\":0,\"abortionCount\":0,\"livingChildrenCount\":0},\"pastHistory\":{\"personalHistory\":\"\",\"bloodTransfusionHistory\":\"2015年输过2U红细胞\",\"diseaseHistory\":\"\",\"epidemiologicalHistory\":\"否认出国及接触史\",\"surgeryHistory\":\"无手术史\",\"familyHistory\":\"否认家族性遗传病、精神病、肿瘤等类似病史\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"}},\"allergyHistory\":\"无\",\"childGrowthInfo\":null},\"revisitInfo\":{\"isRevisit\":0,\"lastRecord\":{\"chiefComplaint\":\"\",\"presentIllness\":\"\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"},\"tcmFourExams\":{\"inspection\":\"\",\"inquiry\":\"\",\"listeningAndSmelling\":\"\",\"palpation\":\"\"},\"physicalExam\":\"\",\"auxiliaryExam\":\"\",\"diagnosis\":{\"tcmDiagnosisName\":\"\",\"tcmDiagnosisCode\":\"\",\"tcmSyndromeName\":\"\",\"westernDiagnosisName\":\"\",\"westernDiagnosisCode\":\"\"},\"treatmentPrinciple\":\"\",\"treatmentAdvice\":\"\",\"prescription\":{\"prescriptionName\":\"\",\"herbs\":[]}}}}",
+        "created_at": "2025-12-08T06:37:51.259052"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近有没有感到特别不舒服的症状呢？比如咳嗽、咳痰、胸闷、气喘或者发热之类的？",
+        "created_at": "2025-12-08T06:37:51.259806"
+      }
+    ]
+  },
+  {
+    "chat_session_id": "dbadd8a0-09cd-4cf4-b4ca-8beb25d92b7b",
+    "history": [
+      {
+        "role": "user",
+        "content": "{\"patientIdentity\":{\"patientId\":\"PID1234588\",\"idType\":\"01\",\"idNumber\":\"110101199001011235\",\"patientName\":\"李铁西\"},\"visitInfo\":{\"department\":\"肛肠科\",\"visitNumber\":\"V0000222\"},\"latestMedicalRecord\":{\"basicInfo\":{\"gender\":\"男\",\"birthday\":\"1985-05-20\",\"aboBloodType\":\"A\",\"rhBloodType\":\"+\"},\"vitalSigns\":{\"systolicPressure\":118,\"diastolicPressure\":76,\"height\":178,\"weight\":75},\"marriageChildInfo\":{\"marriageStatus\":\"已婚\",\"fullTermCount\":0,\"prematureCount\":0,\"abortionCount\":0,\"livingChildrenCount\":0},\"pastHistory\":{\"personalHistory\":\"\",\"bloodTransfusionHistory\":\"2015年输过2U红细胞\",\"diseaseHistory\":\"\",\"epidemiologicalHistory\":\"否认出国及接触史\",\"surgeryHistory\":\"无手术史\",\"familyHistory\":\"否认家族性遗传病、精神病、肿瘤等类似病史\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"}},\"allergyHistory\":\"无\",\"childGrowthInfo\":null},\"revisitInfo\":{\"isRevisit\":0,\"lastRecord\":{\"chiefComplaint\":\"\",\"presentIllness\":\"\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"},\"tcmFourExams\":{\"inspection\":\"\",\"inquiry\":\"\",\"listeningAndSmelling\":\"\",\"palpation\":\"\"},\"physicalExam\":\"\",\"auxiliaryExam\":\"\",\"diagnosis\":{\"tcmDiagnosisName\":\"\",\"tcmDiagnosisCode\":\"\",\"tcmSyndromeName\":\"\",\"westernDiagnosisName\":\"\",\"westernDiagnosisCode\":\"\"},\"treatmentPrinciple\":\"\",\"treatmentAdvice\":\"\",\"prescription\":{\"prescriptionName\":\"\",\"herbs\":[]}}}}",
+        "created_at": "2025-12-08T07:50:02.289982"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近有没有感到呼吸道不舒服，比如咳嗽、咳痰、胸闷或者呼吸不畅这些情况呢？",
+        "created_at": "2025-12-08T07:50:02.290495"
+      },
+      {
+        "role": "user",
+        "content": "咳痰",
+        "created_at": "2025-12-08T07:54:30.214545"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近咳痰的情况大概持续了多久呢？",
+        "created_at": "2025-12-08T07:54:30.215027"
+      },
+      {
+        "role": "user",
+        "content": "大概两星期",
+        "created_at": "2025-12-08T07:54:32.883666"
+      },
+      {
+        "role": "assistant",
+        "content": "您咳痰的时候，痰是在喉咙里、胸部还是其他部位呢？",
+        "created_at": "2025-12-08T07:54:32.884435"
+      },
+      {
+        "role": "user",
+        "content": "痰在喉咙里",
+        "created_at": "2025-12-08T07:54:36.030761"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近咳痰的严重程度怎么样呢？是偶尔有，还是经常有？有没有觉得特别难受或者影响到日常活动？",
+        "created_at": "2025-12-08T07:54:36.031239"
+      },
+      {
+        "role": "user",
+        "content": "经常咳痰",
+        "created_at": "2025-12-08T07:54:38.789556"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近咳痰的时候，痰的颜色是白色、黄色还是其他颜色呢？",
+        "created_at": "2025-12-08T07:54:38.790046"
+      },
+      {
+        "role": "user",
+        "content": "痰多且粘稠",
+        "created_at": "2025-12-08T07:54:41.357951"
+      },
+      {
+        "role": "assistant",
+        "content": "您之前有去看过医生或者接受过治疗吗？",
+        "created_at": "2025-12-08T07:54:41.358439"
+      },
+      {
+        "role": "user",
+        "content": "之前看过医生",
+        "created_at": "2025-12-08T07:54:44.450895"
+      },
+      {
+        "role": "assistant",
+        "content": "您平时有没有对某些食物或药物特别过敏的情况呢？比如海鲜、花粉、青霉素之类的。",
+        "created_at": "2025-12-08T07:54:44.451628"
+      },
+      {
+        "role": "user",
+        "content": "没有",
+        "created_at": "2025-12-08T07:54:47.798268"
+      },
+      {
+        "role": "assistant",
+        "content": "您平时有长期服用什么药物吗？比如降压药、降糖药或者治疗慢性病的药。",
+        "created_at": "2025-12-08T07:54:47.798753"
+      },
+      {
+        "role": "user",
+        "content": "没有",
+        "created_at": "2025-12-08T07:54:50.677249"
+      },
+      {
+        "role": "assistant",
+        "content": "您家里有没有人有类似的呼吸道问题或者哮喘、慢性支气管炎之类的病史呢？",
+        "created_at": "2025-12-08T07:54:50.678524"
+      },
+      {
+        "role": "user",
+        "content": "父亲有哮喘",
+        "created_at": "2025-12-08T07:54:53.533419"
+      },
+      {
+        "role": "assistant",
+        "content": "您平时抽烟的频率是怎样的呢？比如每天抽几支，或者多久抽一次？",
+        "created_at": "2025-12-08T07:54:53.533918"
+      },
+      {
+        "role": "user",
+        "content": "已戒烟",
+        "created_at": "2025-12-08T07:54:55.954771"
+      },
+      {
+        "role": "assistant",
+        "content": "您平时喝酒的频率是怎样的呢？比如每周喝几次，或者每次喝多少？",
+        "created_at": "2025-12-08T07:54:55.955272"
+      },
+      {
+        "role": "user",
+        "content": "社交性饮酒",
+        "created_at": "2025-12-08T07:54:58.118803"
+      },
+      {
+        "role": "assistant",
+        "content": "您平时的饮食习惯是怎样的呢？比如喜欢吃辣的、油腻的，还是偏清淡的？",
+        "created_at": "2025-12-08T07:54:58.119304"
+      },
+      {
+        "role": "user",
+        "content": "喜欢吃辣的",
+        "created_at": "2025-12-08T07:55:00.862833"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近的睡眠状况怎么样呢？通常每天能睡几个小时，有没有觉得睡不踏实或者容易醒？",
+        "created_at": "2025-12-08T07:55:00.863381"
+      },
+      {
+        "role": "user",
+        "content": "每天睡5小时左右",
+        "created_at": "2025-12-08T07:55:03.733687"
+      },
+      {
+        "role": "assistant",
+        "content": "近期排便、排尿情况怎么样？有没有便秘、腹泻或尿频、尿痛这些问题？",
+        "created_at": "2025-12-08T07:55:03.734205"
+      },
+      {
+        "role": "user",
+        "content": "排便困难",
+        "created_at": "2025-12-08T07:55:10.557156"
+      },
+      {
+        "role": "assistant",
+        "content": "主诉：\n\n咳痰 喉咙两星期。\n\n现病史：\n\n症状为中度咳痰，伴随痰多且粘稠，未进行就诊治疗，无自行使用药物情况，饮食喜好为喜欢，睡眠状况为每天睡5小时左右，大小便状况为排便困难，无明显加重因素，无特殊小便异常。\n\n既往史：\n\n无长期用药记录，无过敏食物或药物记录，无不良生活习惯记录。\n\n家族史：\n\n父亲有哮喘病史，母亲健康，无遗传病家族史。",
+        "created_at": "2025-12-08T07:55:10.558066"
+      }
+    ]
+  },
+  {
+    "chat_session_id": "e415c70a-f453-40e5-ac0d-71d9c1b421c0",
+    "history": [
+      {
+        "role": "user",
+        "content": "{\"patientIdentity\":{\"patientId\":\"PID1234588\",\"idType\":\"01\",\"idNumber\":\"110101199001011235\",\"patientName\":\"李铁西\"},\"visitInfo\":{\"department\":\"肛肠科\",\"visitNumber\":\"V0000222\"},\"latestMedicalRecord\":{\"basicInfo\":{\"gender\":\"男\",\"birthday\":\"1985-05-20\",\"aboBloodType\":\"A\",\"rhBloodType\":\"+\"},\"vitalSigns\":{\"systolicPressure\":118,\"diastolicPressure\":76,\"height\":178,\"weight\":75},\"marriageChildInfo\":{\"marriageStatus\":\"已婚\",\"fullTermCount\":0,\"prematureCount\":0,\"abortionCount\":0,\"livingChildrenCount\":0},\"pastHistory\":{\"personalHistory\":\"\",\"bloodTransfusionHistory\":\"2015年输过2U红细胞\",\"diseaseHistory\":\"\",\"epidemiologicalHistory\":\"否认出国及接触史\",\"surgeryHistory\":\"无手术史\",\"familyHistory\":\"否认家族性遗传病、精神病、肿瘤等类似病史\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"}},\"allergyHistory\":\"无\",\"childGrowthInfo\":null},\"revisitInfo\":{\"isRevisit\":0,\"lastRecord\":{\"chiefComplaint\":\"\",\"presentIllness\":\"\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"},\"tcmFourExams\":{\"inspection\":\"\",\"inquiry\":\"\",\"listeningAndSmelling\":\"\",\"palpation\":\"\"},\"physicalExam\":\"\",\"auxiliaryExam\":\"\",\"diagnosis\":{\"tcmDiagnosisName\":\"\",\"tcmDiagnosisCode\":\"\",\"tcmSyndromeName\":\"\",\"westernDiagnosisName\":\"\",\"westernDiagnosisCode\":\"\"},\"treatmentPrinciple\":\"\",\"treatmentAdvice\":\"\",\"prescription\":{\"prescriptionName\":\"\",\"herbs\":[]}}}}",
+        "created_at": "2025-12-08T07:45:39.934350"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近有没有感到哪里不舒服？比如咳嗽、喉咙痛、胸闷或者呼吸急促这些症状？",
+        "created_at": "2025-12-08T07:45:39.935001"
+      },
+      {
+        "role": "user",
+        "content": "呼吸急促",
+        "created_at": "2025-12-08T07:45:49.530896"
+      },
+      {
+        "role": "assistant",
+        "content": "了解啦～这个呼吸急促的情况大概从什么时候开始的呢？持续了多久？",
+        "created_at": "2025-12-08T07:45:49.532234"
+      },
+      {
+        "role": "user",
+        "content": "持续了三天",
+        "created_at": "2025-12-08T07:45:52.558188"
+      },
+      {
+        "role": "assistant",
+        "content": "您这个呼吸急促主要是在胸部哪个位置感觉的呢？比如胸口、肺部或者喉咙附近？",
+        "created_at": "2025-12-08T07:45:52.558708"
+      },
+      {
+        "role": "user",
+        "content": "肺部有压迫感",
+        "created_at": "2025-12-08T07:46:19.582977"
+      },
+      {
+        "role": "assistant",
+        "content": "哦，这个呼吸急促的感觉是轻微的，还是比较严重呢？比如有没有觉得特别喘，或者影响到日常活动？",
+        "created_at": "2025-12-08T07:46:19.583493"
+      },
+      {
+        "role": "user",
+        "content": "呼吸有点困难",
+        "created_at": "2025-12-08T07:46:28.282774"
+      },
+      {
+        "role": "assistant",
+        "content": "您还有其他不舒服的感觉吗？比如有没有发热、胸痛、咳痰或者乏力这些情况？",
+        "created_at": "2025-12-08T07:46:28.283318"
+      },
+      {
+        "role": "user",
+        "content": "乏力",
+        "created_at": "2025-12-08T07:46:30.988129"
+      },
+      {
+        "role": "assistant",
+        "content": "您之前有去看过医生或者接受过治疗吗？",
+        "created_at": "2025-12-08T07:46:30.991667"
+      },
+      {
+        "role": "user",
+        "content": "没有",
+        "created_at": "2025-12-08T07:46:35.138819"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近有没有吃过或用过什么食物、药物，感觉可能会引起过敏的情况呢？",
+        "created_at": "2025-12-08T07:46:35.139339"
+      },
+      {
+        "role": "user",
+        "content": "没有",
+        "created_at": "2025-12-08T07:46:38.405948"
+      },
+      {
+        "role": "assistant",
+        "content": "您平时有长期服用什么药物吗？比如哮喘药、降压药或者慢性病的药物？",
+        "created_at": "2025-12-08T07:46:38.406406"
+      },
+      {
+        "role": "user",
+        "content": "长期服用降压药",
+        "created_at": "2025-12-08T07:46:41.383209"
+      },
+      {
+        "role": "assistant",
+        "content": "您家里有人有过类似的呼吸问题或者哮喘、慢性支气管炎之类的病史吗？",
+        "created_at": "2025-12-08T07:46:41.383691"
+      },
+      {
+        "role": "user",
+        "content": "没有",
+        "created_at": "2025-12-08T07:46:44.818173"
+      },
+      {
+        "role": "assistant",
+        "content": "您平时抽烟频繁吗？一天大概抽多少支呢？",
+        "created_at": "2025-12-08T07:46:44.818673"
+      },
+      {
+        "role": "user",
+        "content": "已戒烟",
+        "created_at": "2025-12-08T07:46:48.696137"
+      },
+      {
+        "role": "assistant",
+        "content": "您平时喝酒的频率是怎样的呢？比如每周喝几次，或者每次喝多少？",
+        "created_at": "2025-12-08T07:46:48.696646"
+      },
+      {
+        "role": "user",
+        "content": "不喝酒",
+        "created_at": "2025-12-08T07:46:51.246757"
+      },
+      {
+        "role": "assistant",
+        "content": "您平时的饮食习惯是怎样的呢？比如有没有特别喜欢的口味，或者最近有没有吃辛辣、油腻的食物？",
+        "created_at": "2025-12-08T07:46:51.247692"
+      },
+      {
+        "role": "user",
+        "content": "清淡饮食",
+        "created_at": "2025-12-08T07:46:54.518707"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近的睡眠情况怎么样？有没有觉得晚上睡不好，或者白天特别容易困？",
+        "created_at": "2025-12-08T07:46:54.519202"
+      },
+      {
+        "role": "user",
+        "content": "经常失眠",
+        "created_at": "2025-12-08T07:46:59.015772"
+      },
+      {
+        "role": "assistant",
+        "content": "近期排便、排尿情况怎么样？有没有便秘、腹泻或尿频、尿痛这些问题？",
+        "created_at": "2025-12-08T07:46:59.016266"
+      },
+      {
+        "role": "user",
+        "content": "尿频尿痛",
+        "created_at": "2025-12-08T07:47:05.461351"
+      },
+      {
+        "role": "assistant",
+        "content": "主诉：\n\n呼吸急促三天。\n\n现病史：\n\n呼吸急促为中度，伴随乏力症状，未进行就诊治疗，无自行使用药物情况，饮食口味偏清淡，睡眠状况为经常失眠，大小便情况为尿频尿痛。\n\n既往史：\n\n长期用药为降压药，无过敏食物或药物记录，无不良生活习惯，无月经史记录。\n\n婚育史：\n\n已婚，足月生产个数0，早产个数0，流产个数0，现存子女数量0，已育子女数量0。\n\n家族史：\n\n直系亲属无特殊健康问题或遗传病记录。",
+        "created_at": "2025-12-08T07:47:05.462111"
+      }
+    ]
+  },
+  {
+    "chat_session_id": "f01c4266-ab9d-49c4-8104-0a9fad9c599b",
+    "history": [
+      {
+        "role": "user",
+        "content": "{\"patientIdentity\":{\"patientId\":\"PID1234588\",\"idType\":\"01\",\"idNumber\":\"110101199001011235\",\"patientName\":\"李铁西\"},\"visitInfo\":{\"department\":\"肛肠科\",\"visitNumber\":\"V0000222\"},\"latestMedicalRecord\":{\"basicInfo\":{\"gender\":\"男\",\"birthday\":\"1985-05-20\",\"aboBloodType\":\"A\",\"rhBloodType\":\"+\"},\"vitalSigns\":{\"systolicPressure\":118,\"diastolicPressure\":76,\"height\":178,\"weight\":75},\"marriageChildInfo\":{\"marriageStatus\":\"已婚\",\"fullTermCount\":0,\"prematureCount\":0,\"abortionCount\":0,\"livingChildrenCount\":0},\"pastHistory\":{\"personalHistory\":\"\",\"bloodTransfusionHistory\":\"2015年输过2U红细胞\",\"diseaseHistory\":\"\",\"epidemiologicalHistory\":\"否认出国及接触史\",\"surgeryHistory\":\"无手术史\",\"familyHistory\":\"否认家族性遗传病、精神病、肿瘤等类似病史\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"}},\"allergyHistory\":\"无\",\"childGrowthInfo\":null},\"revisitInfo\":{\"isRevisit\":0,\"lastRecord\":{\"chiefComplaint\":\"\",\"presentIllness\":\"\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"},\"tcmFourExams\":{\"inspection\":\"\",\"inquiry\":\"\",\"listeningAndSmelling\":\"\",\"palpation\":\"\"},\"physicalExam\":\"\",\"auxiliaryExam\":\"\",\"diagnosis\":{\"tcmDiagnosisName\":\"\",\"tcmDiagnosisCode\":\"\",\"tcmSyndromeName\":\"\",\"westernDiagnosisName\":\"\",\"westernDiagnosisCode\":\"\"},\"treatmentPrinciple\":\"\",\"treatmentAdvice\":\"\",\"prescription\":{\"prescriptionName\":\"\",\"herbs\":[]}}}}",
+        "created_at": "2025-12-08T03:35:31.235604"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近有没有感觉到特别不舒服的症状，比如咳嗽、胸闷、气喘或者呼吸困难呢？",
+        "created_at": "2025-12-08T03:35:31.236297"
+      },
+      {
+        "role": "user",
+        "content": "无咳嗽胸闷",
+        "created_at": "2025-12-08T06:37:23.357740"
+      },
+      {
+        "role": "assistant",
+        "content": "了解～这个不舒服的情况大概从什么时候开始的呢？持续了多久？",
+        "created_at": "2025-12-08T06:37:23.358769"
+      }
+    ]
+  }
+]

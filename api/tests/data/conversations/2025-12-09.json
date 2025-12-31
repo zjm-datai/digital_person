@@ -1,0 +1,3447 @@
+[
+  {
+    "chat_session_id": "034eec71-cf41-4564-8f26-c9c09b6acb7f",
+    "history": [
+      {
+        "role": "user",
+        "content": "{\"patientIdentity\":{\"patientId\":\"PID1234565\",\"idType\":\"01\",\"idNumber\":\"110101199001011235\",\"patientName\":\"李铁\"},\"visitInfo\":{\"department\":\"皮肤医美中心\",\"visitNumber\":\"V0000222\"},\"latestMedicalRecord\":{\"basicInfo\":{\"gender\":\"男\",\"birthday\":\"1985-05-20\",\"aboBloodType\":\"A\",\"rhBloodType\":\"+\"},\"vitalSigns\":{\"systolicPressure\":118,\"diastolicPressure\":76,\"height\":178,\"weight\":75},\"marriageChildInfo\":{\"marriageStatus\":\"已婚\",\"fullTermCount\":0,\"prematureCount\":0,\"abortionCount\":0,\"livingChildrenCount\":0},\"pastHistory\":{\"personalHistory\":\"\",\"bloodTransfusionHistory\":\"2015年输过2U红细胞\",\"diseaseHistory\":\"\",\"epidemiologicalHistory\":\"否认出国及接触史\",\"surgeryHistory\":\"无手术史\",\"familyHistory\":\"否认家族性遗传病、精神病、肿瘤等类似病史\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"}},\"allergyHistory\":\"无\",\"childGrowthInfo\":null},\"revisitInfo\":{\"isRevisit\":0,\"lastRecord\":{\"chiefComplaint\":\"\",\"presentIllness\":\"\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"},\"tcmFourExams\":{\"inspection\":\"\",\"inquiry\":\"\",\"listeningAndSmelling\":\"\",\"palpation\":\"\"},\"physicalExam\":\"\",\"auxiliaryExam\":\"\",\"diagnosis\":{\"tcmDiagnosisName\":\"\",\"tcmDiagnosisCode\":\"\",\"tcmSyndromeName\":\"\",\"westernDiagnosisName\":\"\",\"westernDiagnosisCode\":\"\"},\"treatmentPrinciple\":\"\",\"treatmentAdvice\":\"\",\"prescription\":{\"prescriptionName\":\"\",\"herbs\":[]}}}}",
+        "created_at": "2025-12-09T08:43:32.514507"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近有没有感到身体不适，比如咳嗽、咳痰、胸闷、气喘或者发热这些情况呢？",
+        "created_at": "2025-12-09T08:43:32.515059"
+      },
+      {
+        "role": "user",
+        "content": "发热",
+        "created_at": "2025-12-09T08:43:36.366457"
+      },
+      {
+        "role": "assistant",
+        "content": "了解啦～这个发热的情况大概从什么时候开始的呢？持续了多久？",
+        "created_at": "2025-12-09T08:43:36.367189"
+      },
+      {
+        "role": "user",
+        "content": "症状持续一周",
+        "created_at": "2025-12-09T08:44:13.558358"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近发热的时候，有没有其他部位也感到不适，比如咳嗽、胸痛或者头痛呢？",
+        "created_at": "2025-12-09T08:44:13.560416"
+      },
+      {
+        "role": "user",
+        "content": "无发热症状",
+        "created_at": "2025-12-09T08:44:32.008212"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近有没有对某些食物或者药物过敏的情况呢？",
+        "created_at": "2025-12-09T08:44:32.009351"
+      },
+      {
+        "role": "user",
+        "content": "头孢过敏反应",
+        "created_at": "2025-12-09T08:44:46.837304"
+      },
+      {
+        "role": "assistant",
+        "content": "您平时有长期服用的药物吗？比如降压药、降糖药或者慢性病相关的药物？",
+        "created_at": "2025-12-09T08:44:46.837928"
+      },
+      {
+        "role": "user",
+        "content": "没有家族病史",
+        "created_at": "2025-12-09T08:45:04.168092"
+      },
+      {
+        "role": "assistant",
+        "content": "您平时有长期服用的药物吗？比如降压药、降糖药或者慢性病相关的药物？",
+        "created_at": "2025-12-09T08:45:04.168729"
+      },
+      {
+        "role": "user",
+        "content": "没有",
+        "created_at": "2025-12-09T08:45:09.235016"
+      },
+      {
+        "role": "assistant",
+        "content": "您平时有抽烟的习惯吗？一般一天抽多少支呢？",
+        "created_at": "2025-12-09T08:45:09.235734"
+      },
+      {
+        "role": "user",
+        "content": "每周抽烟10包",
+        "created_at": "2025-12-09T08:45:28.392431"
+      },
+      {
+        "role": "assistant",
+        "content": "您平时喝酒的频率是怎样的呢？比如每周喝几次，每次喝多少？",
+        "created_at": "2025-12-09T08:45:28.393000"
+      },
+      {
+        "role": "user",
+        "content": "每天喝一瓶白酒",
+        "created_at": "2025-12-09T08:46:56.644067"
+      },
+      {
+        "role": "assistant",
+        "content": "您平时的饮食习惯是怎样的呢？喜欢吃什么样的食物，口味偏重还是清淡？",
+        "created_at": "2025-12-09T08:46:56.644784"
+      },
+      {
+        "role": "user",
+        "content": "每天吃很多辣椒",
+        "created_at": "2025-12-09T08:47:15.565711"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近的睡眠情况怎么样？通常每天能睡几个小时，有没有经常失眠或者半夜醒来的情况呢？",
+        "created_at": "2025-12-09T08:47:15.566494"
+      },
+      {
+        "role": "user",
+        "content": "睡眠不好，经常失眠",
+        "created_at": "2025-12-09T08:47:22.906119"
+      },
+      {
+        "role": "assistant",
+        "content": "主诉：\n\n发热一周。\n\n现病史：\n\n发热为持续性，程度较轻，无伴随症状，未进行特殊治疗，无明显加重因素，饮食口味偏重，睡眠质量不好，大小便正常。\n\n既往史：\n\n无长期用药，无药物或食物过敏，无不良生活习惯。\n\n家族史：\n\n父亲患有糖尿病，母亲健康，无遗传病家族史。",
+        "created_at": "2025-12-09T08:47:22.907127"
+      }
+    ]
+  },
+  {
+    "chat_session_id": "0f0047f5-2ae4-4491-bd7c-a3c5d420c3a0",
+    "history": [
+      {
+        "role": "user",
+        "content": "{\"patientIdentity\":{\"patientId\":\"PID1234563\",\"idType\":\"01\",\"idNumber\":\"110101199001011235\",\"patientName\":\"王刚\"},\"visitInfo\":{\"department\":\"皮肤医美中心\",\"visitNumber\":\"V0000222\"},\"latestMedicalRecord\":{\"basicInfo\":{\"gender\":\"男\",\"birthday\":\"1985-05-20\",\"aboBloodType\":\"A\",\"rhBloodType\":\"+\"},\"vitalSigns\":{\"systolicPressure\":118,\"diastolicPressure\":76,\"height\":178,\"weight\":75},\"marriageChildInfo\":{\"marriageStatus\":\"已婚\",\"fullTermCount\":0,\"prematureCount\":0,\"abortionCount\":0,\"livingChildrenCount\":0},\"pastHistory\":{\"personalHistory\":\"无烟酒不良嗜好，否认冶游史。\",\"bloodTransfusionHistory\":\"无\",\"diseaseHistory\":\"患者平素体健，有过敏性鼻炎，无重大慢性疾病无传染病史\",\"epidemiologicalHistory\":\"无传染病史，流行病学史\",\"surgeryHistory\":\"无手术史\",\"familyHistory\":\"否认家族性遗传病、精神病、肿瘤等类似病史.\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"}},\"allergyHistory\":\"未发现\",\"childGrowthInfo\":null},\"revisitInfo\":{\"isRevisit\":1,\"lastRecord\":{\"chiefComplaint\":\"下肢红斑、丘疹、抓痕伴瘙痒8日\",\"presentIllness\":\"8日前无明显诱因下下肢红斑、丘疹、抓痕，伴瘙痒，外院多次就诊（卤米松乳膏 外用应急软膏 氯雷他定片 ），皮疹仍反复发作口不渴，睡眠安，大便便次正常，小便尿次正常\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"},\"tcmFourExams\":{\"inspection\":\"红黄隐隐，明润含蓄\",\"inquiry\":\"时有腹胀便溏，倦怠乏力\",\"listeningAndSmelling\":\"口气\",\"palpation\":\"脉弦\"},\"physicalExam\":\"无\",\"auxiliaryExam\":\"血常规：WBC 9.5×10^9/L，CRP 12 mg/L\",\"diagnosis\":{\"tcmDiagnosisName\":\"湿疮\",\"tcmDiagnosisCode\":\"A08.01.07\",\"tcmSyndromeName\":\"脾虚湿困证\",\"westernDiagnosisName\":\"特应性皮炎\",\"westernDiagnosisCode\":\"L20.900\"},\"treatmentPrinciple\":\"健脾化湿\",\"treatmentAdvice\":\"少食多餐，避免辛辣油腻\",\"prescription\":{\"prescriptionName\":\"复方参蝉汤\",\"herbs\":[\"党参\",\"蝉蜕\",\"生白术\",\"茯苓\",\"温山药\",\"炒白扁豆\",\"薏苡仁\",\"生黄芪\",\"炒麦芽\",\"炒稻芽\",\"炒鸡内金\",\"大枣\",\"生甘草\",\"蚕砂\"]}}}}",
+        "created_at": "2025-12-10T01:11:28.887755"
+      },
+      {
+        "role": "assistant",
+        "content": "",
+        "created_at": "2025-12-10T01:11:28.888260"
+      }
+    ]
+  },
+  {
+    "chat_session_id": "1387dc89-29b8-40ab-a6da-7c0a2dc8f616",
+    "history": [
+      {
+        "role": "user",
+        "content": "{\"patientIdentity\":{\"patientId\":\"PID1234565\",\"idType\":\"01\",\"idNumber\":\"110101199001011235\",\"patientName\":\"李铁\"},\"visitInfo\":{\"department\":\"皮肤医美中心\",\"visitNumber\":\"V0000222\"},\"latestMedicalRecord\":{\"basicInfo\":{\"gender\":\"男\",\"birthday\":\"1985-05-20\",\"aboBloodType\":\"A\",\"rhBloodType\":\"+\"},\"vitalSigns\":{\"systolicPressure\":118,\"diastolicPressure\":76,\"height\":178,\"weight\":75},\"marriageChildInfo\":{\"marriageStatus\":\"已婚\",\"fullTermCount\":0,\"prematureCount\":0,\"abortionCount\":0,\"livingChildrenCount\":0},\"pastHistory\":{\"personalHistory\":\"\",\"bloodTransfusionHistory\":\"2015年输过2U红细胞\",\"diseaseHistory\":\"\",\"epidemiologicalHistory\":\"否认出国及接触史\",\"surgeryHistory\":\"无手术史\",\"familyHistory\":\"否认家族性遗传病、精神病、肿瘤等类似病史\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"}},\"allergyHistory\":\"无\",\"childGrowthInfo\":null},\"revisitInfo\":{\"isRevisit\":0,\"lastRecord\":{\"chiefComplaint\":\"\",\"presentIllness\":\"\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"},\"tcmFourExams\":{\"inspection\":\"\",\"inquiry\":\"\",\"listeningAndSmelling\":\"\",\"palpation\":\"\"},\"physicalExam\":\"\",\"auxiliaryExam\":\"\",\"diagnosis\":{\"tcmDiagnosisName\":\"\",\"tcmDiagnosisCode\":\"\",\"tcmSyndromeName\":\"\",\"westernDiagnosisName\":\"\",\"westernDiagnosisCode\":\"\"},\"treatmentPrinciple\":\"\",\"treatmentAdvice\":\"\",\"prescription\":{\"prescriptionName\":\"\",\"herbs\":[]}}}}",
+        "created_at": "2025-12-10T01:18:24.023391"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近有感觉到皮肤上有什么特别的不适或者变化吗？比如红肿、瘙痒、脱皮之类的？",
+        "created_at": "2025-12-10T01:18:24.025025"
+      },
+      {
+        "role": "user",
+        "content": "皮肤瘙痒",
+        "created_at": "2025-12-10T01:20:49.122754"
+      },
+      {
+        "role": "assistant",
+        "content": "了解啦～这个皮肤瘙痒的情况大概从什么时候开始的呢？大约持续了多久？",
+        "created_at": "2025-12-10T01:20:49.123415"
+      },
+      {
+        "role": "user",
+        "content": "一个月前开始的",
+        "created_at": "2025-12-10T01:20:52.574315"
+      },
+      {
+        "role": "assistant",
+        "content": "您这个瘙痒主要出现在身体的哪个部位呢？",
+        "created_at": "2025-12-10T01:20:52.574801"
+      },
+      {
+        "role": "user",
+        "content": "手臂有瘙痒",
+        "created_at": "2025-12-10T01:20:56.674114"
+      },
+      {
+        "role": "assistant",
+        "content": "哦，这个瘙痒的严重程度如何呢？会特别难受，还是可以忍受？",
+        "created_at": "2025-12-10T01:20:56.674621"
+      },
+      {
+        "role": "user",
+        "content": "有点痒，可以忍受",
+        "created_at": "2025-12-10T01:21:05.161628"
+      },
+      {
+        "role": "assistant",
+        "content": "您还有其他不舒服的症状吗？比如有没有红斑、脱皮、起疹子或者皮肤干燥的情况？",
+        "created_at": "2025-12-10T01:21:05.162074"
+      },
+      {
+        "role": "user",
+        "content": "脱皮严重",
+        "created_at": "2025-12-10T01:21:15.448116"
+      },
+      {
+        "role": "assistant",
+        "content": "您之前有去看过医生或者接受过治疗吗？",
+        "created_at": "2025-12-10T01:21:15.452902"
+      },
+      {
+        "role": "user",
+        "content": "没有",
+        "created_at": "2025-12-10T01:21:20.200946"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近有没有吃过或用过什么特别的食物或药物，感觉可能和皮肤瘙痒有关呢？",
+        "created_at": "2025-12-10T01:21:20.201512"
+      },
+      {
+        "role": "user",
+        "content": "没有",
+        "created_at": "2025-12-10T01:21:26.093129"
+      },
+      {
+        "role": "assistant",
+        "content": "您平时有抽烟的习惯吗？一般一天抽多少支呢？",
+        "created_at": "2025-12-10T01:21:26.093884"
+      },
+      {
+        "role": "user",
+        "content": "不吸烟",
+        "created_at": "2025-12-10T01:21:28.779951"
+      },
+      {
+        "role": "assistant",
+        "content": "您平时喝酒的频率是怎样的呢？比如每周喝几次，或者每次喝多少？",
+        "created_at": "2025-12-10T01:21:28.780493"
+      },
+      {
+        "role": "user",
+        "content": "不喝酒",
+        "created_at": "2025-12-10T01:21:31.315019"
+      },
+      {
+        "role": "assistant",
+        "content": "您平时的饮食习惯是怎样的呢？比如喜欢吃辣的、油腻的，还是偏清淡？",
+        "created_at": "2025-12-10T01:21:31.315497"
+      },
+      {
+        "role": "user",
+        "content": "饮食比较清淡",
+        "created_at": "2025-12-10T01:21:35.147614"
+      },
+      {
+        "role": "assistant",
+        "content": "您平时的睡眠情况怎么样呀？一般每天能睡几个小时，作息时间规律吗？",
+        "created_at": "2025-12-10T01:21:35.148100"
+      },
+      {
+        "role": "user",
+        "content": "每天睡6小时左右",
+        "created_at": "2025-12-10T01:22:01.873584"
+      },
+      {
+        "role": "assistant",
+        "content": "您平时的大小便情况怎么样呀？有没有什么特别需要注意的地方？",
+        "created_at": "2025-12-10T01:22:01.874065"
+      },
+      {
+        "role": "user",
+        "content": "排便正常",
+        "created_at": "2025-12-10T01:22:08.435429"
+      },
+      {
+        "role": "assistant",
+        "content": "主诉：\n\n手臂皮肤瘙痒一个月。\n\n现病史：\n\n症状为轻度瘙痒，伴随脱皮，发病后未进行就诊治疗，无自行使用药物，症状无明显加重因素，饮食口味清淡，睡眠每天约6小时，大便正常，小便正常。\n\n既往史：\n\n无长期用药记录，无过敏食物或药物记录，无不良生活习惯，无月经史记录。\n\n婚育史：\n\n已婚，足月生产个数0，早产个数0，流产个数0，现存子女数量0，已育子女数量0。\n\n家族史：\n\n无记录。",
+        "created_at": "2025-12-10T01:22:08.436149"
+      }
+    ]
+  },
+  {
+    "chat_session_id": "1be768f8-63b5-4ab9-9fed-cdb3ce7ccd00",
+    "history": [
+      {
+        "role": "user",
+        "content": "{\"patientIdentity\":{\"patientId\":\"PID1234565\",\"idType\":\"01\",\"idNumber\":\"110101199001011235\",\"patientName\":\"李铁\"},\"visitInfo\":{\"department\":\"皮肤医美中心\",\"visitNumber\":\"V0000222\"},\"latestMedicalRecord\":{\"basicInfo\":{\"gender\":\"男\",\"birthday\":\"1985-05-20\",\"aboBloodType\":\"A\",\"rhBloodType\":\"+\"},\"vitalSigns\":{\"systolicPressure\":118,\"diastolicPressure\":76,\"height\":178,\"weight\":75},\"marriageChildInfo\":{\"marriageStatus\":\"已婚\",\"fullTermCount\":0,\"prematureCount\":0,\"abortionCount\":0,\"livingChildrenCount\":0},\"pastHistory\":{\"personalHistory\":\"\",\"bloodTransfusionHistory\":\"2015年输过2U红细胞\",\"diseaseHistory\":\"\",\"epidemiologicalHistory\":\"否认出国及接触史\",\"surgeryHistory\":\"无手术史\",\"familyHistory\":\"否认家族性遗传病、精神病、肿瘤等类似病史\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"}},\"allergyHistory\":\"无\",\"childGrowthInfo\":null},\"revisitInfo\":{\"isRevisit\":0,\"lastRecord\":{\"chiefComplaint\":\"\",\"presentIllness\":\"\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"},\"tcmFourExams\":{\"inspection\":\"\",\"inquiry\":\"\",\"listeningAndSmelling\":\"\",\"palpation\":\"\"},\"physicalExam\":\"\",\"auxiliaryExam\":\"\",\"diagnosis\":{\"tcmDiagnosisName\":\"\",\"tcmDiagnosisCode\":\"\",\"tcmSyndromeName\":\"\",\"westernDiagnosisName\":\"\",\"westernDiagnosisCode\":\"\"},\"treatmentPrinciple\":\"\",\"treatmentAdvice\":\"\",\"prescription\":{\"prescriptionName\":\"\",\"herbs\":[]}}}}",
+        "created_at": "2025-12-10T02:06:21.180891"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近有没有感觉到皮肤上有任何不舒服的地方或者明显的异常呢？比如红肿、瘙痒、脱皮之类的？",
+        "created_at": "2025-12-10T02:06:21.181410"
+      },
+      {
+        "role": "user",
+        "content": "皮肤瘙痒",
+        "created_at": "2025-12-10T02:06:23.980432"
+      },
+      {
+        "role": "assistant",
+        "content": "了解啦～这个皮肤瘙痒的情况大概从什么时候开始的呢？持续了多久？",
+        "created_at": "2025-12-10T02:06:23.981197"
+      },
+      {
+        "role": "user",
+        "content": "一个月前开始的",
+        "created_at": "2025-12-10T02:06:26.691933"
+      },
+      {
+        "role": "assistant",
+        "content": "您这个瘙痒主要出现在身体的哪个部位呢？",
+        "created_at": "2025-12-10T02:06:26.692472"
+      },
+      {
+        "role": "user",
+        "content": "手臂有瘙痒",
+        "created_at": "2025-12-10T02:06:31.939451"
+      },
+      {
+        "role": "assistant",
+        "content": "哦，这个瘙痒的严重程度如何呢？是轻微的还是特别难受？",
+        "created_at": "2025-12-10T02:06:31.940205"
+      },
+      {
+        "role": "user",
+        "content": "轻微瘙痒",
+        "created_at": "2025-12-10T02:06:35.239627"
+      },
+      {
+        "role": "assistant",
+        "content": "您还有其他不舒服的感觉吗？比如有没有红斑、脱皮或者皮肤干燥的情况？",
+        "created_at": "2025-12-10T02:06:35.240325"
+      },
+      {
+        "role": "user",
+        "content": "皮肤脱皮严重",
+        "created_at": "2025-12-10T02:06:39.015443"
+      },
+      {
+        "role": "assistant",
+        "content": "您之前有去看过医生或者接受过治疗吗？",
+        "created_at": "2025-12-10T02:06:39.016300"
+      },
+      {
+        "role": "user",
+        "content": "没有",
+        "created_at": "2025-12-10T02:06:41.842641"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近有没有吃过或用过什么特别的食物、药物，感觉可能引起皮肤不适呢？",
+        "created_at": "2025-12-10T02:06:41.843127"
+      },
+      {
+        "role": "user",
+        "content": "没有",
+        "created_at": "2025-12-10T02:06:45.363788"
+      },
+      {
+        "role": "assistant",
+        "content": "您平时有长期服用什么药物吗？比如高血压、糖尿病或者其他慢性病的用药？",
+        "created_at": "2025-12-10T02:06:45.364356"
+      },
+      {
+        "role": "user",
+        "content": "没有",
+        "created_at": "2025-12-10T02:06:48.320909"
+      },
+      {
+        "role": "assistant",
+        "content": "您平时抽烟频繁吗？一天大概抽多少支呢？",
+        "created_at": "2025-12-10T02:06:48.321387"
+      },
+      {
+        "role": "user",
+        "content": "不吸烟",
+        "created_at": "2025-12-10T02:06:50.892279"
+      },
+      {
+        "role": "assistant",
+        "content": "您平时喝酒频率怎么样呢？比如每周喝几次，每次喝多少？",
+        "created_at": "2025-12-10T02:06:50.892798"
+      },
+      {
+        "role": "user",
+        "content": "不喝酒",
+        "created_at": "2025-12-10T02:06:52.936194"
+      },
+      {
+        "role": "assistant",
+        "content": "您平时的饮食习惯怎么样？喜欢吃辣的、油腻的，还是偏清淡呢？",
+        "created_at": "2025-12-10T02:06:52.936800"
+      },
+      {
+        "role": "user",
+        "content": "饮食比较清淡",
+        "created_at": "2025-12-10T02:06:56.151525"
+      },
+      {
+        "role": "assistant",
+        "content": "您平时的睡眠情况怎么样呀？一般每天能睡几个小时呢？",
+        "created_at": "2025-12-10T02:06:56.152448"
+      },
+      {
+        "role": "user",
+        "content": "每天睡6小时左右",
+        "created_at": "2025-12-10T02:07:00.208023"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近的大小便情况怎么样呢？有没有什么特别的变化或者不适感？",
+        "created_at": "2025-12-10T02:07:00.208525"
+      },
+      {
+        "role": "user",
+        "content": "排便次数增多",
+        "created_at": "2025-12-10T02:07:05.006584"
+      },
+      {
+        "role": "assistant",
+        "content": "主诉：\n\n手臂皮肤瘙痒一个月。\n\n现病史：\n\n症状为轻度皮肤瘙痒，伴随皮肤脱皮，发病后未进行就诊治疗，无自行使用药物情况，无明显加重因素，饮食口味清淡，睡眠每日6 小时左右，排便次数增多，小便无特殊异常。\n\n既往史：\n\n无长期用药记录，无过敏食物或药物记录，无不良生活习惯。\n\n家族史：\n\n无直系亲属健康问题或遗传病记录。",
+        "created_at": "2025-12-10T02:07:05.007456"
+      }
+    ]
+  },
+  {
+    "chat_session_id": "1ca9a1b5-2890-4063-a4e7-1a8c920b5918",
+    "history": [
+      {
+        "role": "user",
+        "content": "{\"patientIdentity\":{\"patientId\":\"PID1234565\",\"idType\":\"01\",\"idNumber\":\"110101199001011235\",\"patientName\":\"李铁\"},\"visitInfo\":{\"department\":\"皮肤医美中心\",\"visitNumber\":\"V0000222\"},\"latestMedicalRecord\":{\"basicInfo\":{\"gender\":\"男\",\"birthday\":\"1985-05-20\",\"aboBloodType\":\"A\",\"rhBloodType\":\"+\"},\"vitalSigns\":{\"systolicPressure\":118,\"diastolicPressure\":76,\"height\":178,\"weight\":75},\"marriageChildInfo\":{\"marriageStatus\":\"已婚\",\"fullTermCount\":0,\"prematureCount\":0,\"abortionCount\":0,\"livingChildrenCount\":0},\"pastHistory\":{\"personalHistory\":\"\",\"bloodTransfusionHistory\":\"2015年输过2U红细胞\",\"diseaseHistory\":\"\",\"epidemiologicalHistory\":\"否认出国及接触史\",\"surgeryHistory\":\"无手术史\",\"familyHistory\":\"否认家族性遗传病、精神病、肿瘤等类似病史\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"}},\"allergyHistory\":\"无\",\"childGrowthInfo\":null},\"revisitInfo\":{\"isRevisit\":0,\"lastRecord\":{\"chiefComplaint\":\"\",\"presentIllness\":\"\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"},\"tcmFourExams\":{\"inspection\":\"\",\"inquiry\":\"\",\"listeningAndSmelling\":\"\",\"palpation\":\"\"},\"physicalExam\":\"\",\"auxiliaryExam\":\"\",\"diagnosis\":{\"tcmDiagnosisName\":\"\",\"tcmDiagnosisCode\":\"\",\"tcmSyndromeName\":\"\",\"westernDiagnosisName\":\"\",\"westernDiagnosisCode\":\"\"},\"treatmentPrinciple\":\"\",\"treatmentAdvice\":\"\",\"prescription\":{\"prescriptionName\":\"\",\"herbs\":[]}}}}",
+        "created_at": "2025-12-10T01:52:06.846576"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近有没有感觉到皮肤上有特别明显的异常呢？比如红肿、瘙痒、脱皮或者起疹子之类的？",
+        "created_at": "2025-12-10T01:52:06.847203"
+      },
+      {
+        "role": "user",
+        "content": "脱皮严重",
+        "created_at": "2025-12-10T01:52:10.597909"
+      },
+      {
+        "role": "assistant",
+        "content": "了解啦～这个脱皮的情况大概从什么时候开始的呢？持续了多久了？",
+        "created_at": "2025-12-10T01:52:10.598495"
+      },
+      {
+        "role": "user",
+        "content": "持续了两周左右",
+        "created_at": "2025-12-10T01:52:13.819401"
+      },
+      {
+        "role": "assistant",
+        "content": "那除了脱皮，还有没有其他感觉，比如发痒、发热或者疼痛呢？",
+        "created_at": "2025-12-10T01:52:13.819918"
+      },
+      {
+        "role": "user",
+        "content": "皮肤发痒",
+        "created_at": "2025-12-10T01:52:16.838226"
+      },
+      {
+        "role": "assistant",
+        "content": "您之前有去看过医生或者接受过治疗吗？",
+        "created_at": "2025-12-10T01:52:16.838735"
+      },
+      {
+        "role": "user",
+        "content": "没有",
+        "created_at": "2025-12-10T01:52:20.296791"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近有没有吃过或用过什么特别的食物、药物，或者接触过什么可能引起过敏的东西呢？",
+        "created_at": "2025-12-10T01:52:20.297849"
+      },
+      {
+        "role": "user",
+        "content": "青霉素",
+        "created_at": "2025-12-10T01:52:23.671760"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近有没有长期服用什么药物呢？比如降压药、降糖药或者其他慢性病药物？",
+        "created_at": "2025-12-10T01:52:23.672631"
+      },
+      {
+        "role": "user",
+        "content": "没有",
+        "created_at": "2025-12-10T01:52:27.062812"
+      },
+      {
+        "role": "assistant",
+        "content": "您平时抽烟频繁吗？大概每天抽多少支呢？",
+        "created_at": "2025-12-10T01:52:27.063254"
+      },
+      {
+        "role": "user",
+        "content": "不吸烟",
+        "created_at": "2025-12-10T01:52:33.231037"
+      },
+      {
+        "role": "assistant",
+        "content": "您平时喝酒频率是怎样的呢？比如每周喝几次，每次喝多少？",
+        "created_at": "2025-12-10T01:52:33.231591"
+      },
+      {
+        "role": "user",
+        "content": "社交性饮酒",
+        "created_at": "2025-12-10T01:52:38.605755"
+      },
+      {
+        "role": "assistant",
+        "content": "那您平时的饮食习惯是怎样的呢？比如有没有特别喜欢吃辣、油腻或者甜食？",
+        "created_at": "2025-12-10T01:52:38.606858"
+      },
+      {
+        "role": "user",
+        "content": "爱吃甜食",
+        "created_at": "2025-12-10T01:52:43.059518"
+      },
+      {
+        "role": "assistant",
+        "content": "您平时的睡眠状况怎么样呢？一般每天能睡几个小时，作息时间规律吗？",
+        "created_at": "2025-12-10T01:52:43.060012"
+      },
+      {
+        "role": "user",
+        "content": "睡眠不好，经常失眠",
+        "created_at": "2025-12-10T01:52:46.133345"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近的大小便情况怎么样呢？有没有什么特别的变化或者不适感？",
+        "created_at": "2025-12-10T01:52:46.133807"
+      },
+      {
+        "role": "user",
+        "content": "排便正常",
+        "created_at": "2025-12-10T01:52:49.641491"
+      },
+      {
+        "role": "assistant",
+        "content": "",
+        "created_at": "2025-12-10T01:52:49.641954"
+      }
+    ]
+  },
+  {
+    "chat_session_id": "1e10e692-ada7-4d18-adcf-add1bec8b4d0",
+    "history": [
+      {
+        "role": "user",
+        "content": "{\"patientIdentity\":{\"patientId\":\"PID1234566\",\"idType\":\"01\",\"idNumber\":\"110101199001011235\",\"patientName\":\"李雨\"},\"visitInfo\":{\"department\":\"皮肤医美中心\",\"visitNumber\":\"V0000222\"},\"latestMedicalRecord\":{\"basicInfo\":{\"gender\":\"女\",\"birthday\":\"1985-05-20\",\"aboBloodType\":\"A\",\"rhBloodType\":\"+\"},\"vitalSigns\":{\"systolicPressure\":118,\"diastolicPressure\":76,\"height\":178,\"weight\":75},\"marriageChildInfo\":{\"marriageStatus\":\"\",\"fullTermCount\":0,\"prematureCount\":0,\"abortionCount\":0,\"livingChildrenCount\":0},\"pastHistory\":{\"personalHistory\":\"\",\"bloodTransfusionHistory\":\"无记录\",\"diseaseHistory\":\"\",\"epidemiologicalHistory\":\"否认出国及接触史\",\"surgeryHistory\":\"无手术史\",\"familyHistory\":\"否认家族性遗传病、精神病、肿瘤等类似病史。\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"}},\"allergyHistory\":\"无\",\"childGrowthInfo\":null},\"revisitInfo\":{\"isRevisit\":0,\"lastRecord\":{\"chiefComplaint\":\"\",\"presentIllness\":\"\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"},\"tcmFourExams\":{\"inspection\":\"\",\"inquiry\":\"\",\"listeningAndSmelling\":\"\",\"palpation\":\"\"},\"physicalExam\":\"\",\"auxiliaryExam\":\"\",\"diagnosis\":{\"tcmDiagnosisName\":\"\",\"tcmDiagnosisCode\":\"\",\"tcmSyndromeName\":\"\",\"westernDiagnosisName\":\"\",\"westernDiagnosisCode\":\"\"},\"treatmentPrinciple\":\"\",\"treatmentAdvice\":\"\",\"prescription\":{\"prescriptionName\":\"\",\"herbs\":[]}}}}",
+        "created_at": "2025-12-10T01:20:35.588066"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近有没有感觉到皮肤上有什么特别的不适或变化呢？比如红肿、瘙痒、脱皮之类的？",
+        "created_at": "2025-12-10T01:20:35.588904"
+      },
+      {
+        "role": "user",
+        "content": "脱皮严重",
+        "created_at": "2025-12-10T01:20:38.385955"
+      },
+      {
+        "role": "assistant",
+        "content": "了解～您这个脱皮的情况大概持续了多久呢？",
+        "created_at": "2025-12-10T01:20:38.386460"
+      },
+      {
+        "role": "user",
+        "content": "大概两周了",
+        "created_at": "2025-12-10T01:20:41.371592"
+      },
+      {
+        "role": "assistant",
+        "content": "那您脱皮的地方有没有发红、发痒或者有其他不舒服的感觉呢？",
+        "created_at": "2025-12-10T01:20:41.372912"
+      },
+      {
+        "role": "user",
+        "content": "脱皮处发红",
+        "created_at": "2025-12-10T01:20:45.053697"
+      },
+      {
+        "role": "assistant",
+        "content": "您之前有去看过医生或者接受过治疗吗？",
+        "created_at": "2025-12-10T01:20:45.054181"
+      },
+      {
+        "role": "user",
+        "content": "没有",
+        "created_at": "2025-12-10T01:20:48.254317"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近有没有吃过或用过什么特别的食物、药物，或者接触过什么可能引起过敏的东西呢？",
+        "created_at": "2025-12-10T01:20:48.254837"
+      },
+      {
+        "role": "user",
+        "content": "青霉素",
+        "created_at": "2025-12-10T01:20:52.301475"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近有没有长期服用什么药物呢？比如降压药、降糖药或者其他慢性病的用药？",
+        "created_at": "2025-12-10T01:20:52.301954"
+      },
+      {
+        "role": "user",
+        "content": "服用降压药",
+        "created_at": "2025-12-10T01:20:56.830425"
+      },
+      {
+        "role": "assistant",
+        "content": "您平时抽烟的频率是怎样的呢？比如每天抽多少支，或者多久抽一次？",
+        "created_at": "2025-12-10T01:20:56.830943"
+      },
+      {
+        "role": "user",
+        "content": "已戒烟",
+        "created_at": "2025-12-10T01:21:01.927081"
+      },
+      {
+        "role": "assistant",
+        "content": "您平时喝酒的频率是怎样的呢？比如每周喝几次，或者每次喝多少？",
+        "created_at": "2025-12-10T01:21:01.927852"
+      },
+      {
+        "role": "user",
+        "content": "社交性饮酒",
+        "created_at": "2025-12-10T01:21:05.089467"
+      },
+      {
+        "role": "assistant",
+        "content": "您平时的饮食习惯是怎样的呢？比如喜欢吃辣的、油腻的，还是偏清淡？",
+        "created_at": "2025-12-10T01:21:05.089960"
+      },
+      {
+        "role": "user",
+        "content": "偏爱油腻食物",
+        "created_at": "2025-12-10T01:21:08.623349"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近的睡眠情况怎么样呢？通常每天能睡几个小时？",
+        "created_at": "2025-12-10T01:21:08.623957"
+      },
+      {
+        "role": "user",
+        "content": "睡眠不好，经常失眠",
+        "created_at": "2025-12-10T01:21:12.137656"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近的大小便情况怎么样呢？有没有特别的变化或者不适感？",
+        "created_at": "2025-12-10T01:21:12.138195"
+      },
+      {
+        "role": "user",
+        "content": "小便灼热感",
+        "created_at": "2025-12-10T01:21:15.753081"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近的月经周期是怎样的呢？多久来一次，每次持续几天？",
+        "created_at": "2025-12-10T01:21:15.753576"
+      },
+      {
+        "role": "user",
+        "content": "经期延长",
+        "created_at": "2025-12-10T01:21:19.845517"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近的月经周期是怎样的呢？多久来一次，每次持续几天？",
+        "created_at": "2025-12-10T01:21:19.846085"
+      },
+      {
+        "role": "user",
+        "content": "月经周期正常",
+        "created_at": "2025-12-10T01:21:26.289739"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近的月经量是偏多、正常还是偏少呢？",
+        "created_at": "2025-12-10T01:21:26.290241"
+      },
+      {
+        "role": "user",
+        "content": "有血块",
+        "created_at": "2025-12-10T01:21:29.838734"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近的月经量是偏多、正常还是偏少呢？",
+        "created_at": "2025-12-10T01:21:29.839232"
+      },
+      {
+        "role": "user",
+        "content": "中等",
+        "created_at": "2025-12-10T01:21:32.595026"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近的月经颜色是怎样的呢？比如偏暗、偏红，或者有其他颜色变化？",
+        "created_at": "2025-12-10T01:21:32.595593"
+      },
+      {
+        "role": "user",
+        "content": "暗红",
+        "created_at": "2025-12-10T01:21:35.460665"
+      },
+      {
+        "role": "assistant",
+        "content": "您有结婚生育过吗？",
+        "created_at": "2025-12-10T01:21:35.464652"
+      },
+      {
+        "role": "user",
+        "content": "已婚未育",
+        "created_at": "2025-12-10T01:21:40.819636"
+      },
+      {
+        "role": "assistant",
+        "content": "您之前有过足月生产吗？生产过几次呢？",
+        "created_at": "2025-12-10T01:21:40.820534"
+      },
+      {
+        "role": "user",
+        "content": "2个",
+        "created_at": "2025-12-10T01:21:43.867546"
+      },
+      {
+        "role": "assistant",
+        "content": "您之前有过早产的情况吗？如果有，大概产过几次呢？",
+        "created_at": "2025-12-10T01:21:43.868049"
+      },
+      {
+        "role": "user",
+        "content": "0个",
+        "created_at": "2025-12-10T01:21:46.320828"
+      },
+      {
+        "role": "assistant",
+        "content": "您之前有过流产的情况吗？如果有，大概流过几次呢？",
+        "created_at": "2025-12-10T01:21:46.321367"
+      },
+      {
+        "role": "user",
+        "content": "≥2次",
+        "created_at": "2025-12-10T01:21:48.516806"
+      },
+      {
+        "role": "assistant",
+        "content": "您现在有孩子吗？有几个呢？",
+        "created_at": "2025-12-10T01:21:48.517826"
+      },
+      {
+        "role": "user",
+        "content": "2个",
+        "created_at": "2025-12-10T01:21:52.923793"
+      },
+      {
+        "role": "assistant",
+        "content": "主诉：\n\n皮肤脱皮两周。\n\n现病史：\n\n症状为重度脱皮，伴随发红，发病后未进行特殊治疗，无自行使用药物，无明显加重因素，饮食偏油腻，睡眠质量不好，经常失眠，小便有灼热感，大便正常。\n\n既往史：\n\n长期服用降压药，对青霉素过敏，无不良生活习惯。\n\n婚育史：\n\n已婚未育，足月生产2，早产0，流产2，现存子女2，已育子女2。\n\n家族史：\n\n无记录。",
+        "created_at": "2025-12-10T01:21:52.924273"
+      }
+    ]
+  },
+  {
+    "chat_session_id": "25263343-3be3-4d32-a032-b6a2adb61598",
+    "history": [
+      {
+        "role": "user",
+        "content": "{\"patientIdentity\":{\"patientId\":\"PID1234565\",\"idType\":\"01\",\"idNumber\":\"110101199001011235\",\"patientName\":\"李铁\"},\"visitInfo\":{\"department\":\"皮肤医美中心\",\"visitNumber\":\"V0000222\"},\"latestMedicalRecord\":{\"basicInfo\":{\"gender\":\"男\",\"birthday\":\"1985-05-20\",\"aboBloodType\":\"A\",\"rhBloodType\":\"+\"},\"vitalSigns\":{\"systolicPressure\":118,\"diastolicPressure\":76,\"height\":178,\"weight\":75},\"marriageChildInfo\":{\"marriageStatus\":\"已婚\",\"fullTermCount\":0,\"prematureCount\":0,\"abortionCount\":0,\"livingChildrenCount\":0},\"pastHistory\":{\"personalHistory\":\"\",\"bloodTransfusionHistory\":\"2015年输过2U红细胞\",\"diseaseHistory\":\"\",\"epidemiologicalHistory\":\"否认出国及接触史\",\"surgeryHistory\":\"无手术史\",\"familyHistory\":\"否认家族性遗传病、精神病、肿瘤等类似病史\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"}},\"allergyHistory\":\"无\",\"childGrowthInfo\":null},\"revisitInfo\":{\"isRevisit\":0,\"lastRecord\":{\"chiefComplaint\":\"\",\"presentIllness\":\"\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"},\"tcmFourExams\":{\"inspection\":\"\",\"inquiry\":\"\",\"listeningAndSmelling\":\"\",\"palpation\":\"\"},\"physicalExam\":\"\",\"auxiliaryExam\":\"\",\"diagnosis\":{\"tcmDiagnosisName\":\"\",\"tcmDiagnosisCode\":\"\",\"tcmSyndromeName\":\"\",\"westernDiagnosisName\":\"\",\"westernDiagnosisCode\":\"\"},\"treatmentPrinciple\":\"\",\"treatmentAdvice\":\"\",\"prescription\":{\"prescriptionName\":\"\",\"herbs\":[]}}}}",
+        "created_at": "2025-12-10T01:51:56.384985"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近有没有感觉到皮肤上有任何不舒服的地方，比如红肿、瘙痒、脱皮或者起疹子之类的？",
+        "created_at": "2025-12-10T01:51:56.386001"
+      },
+      {
+        "role": "user",
+        "content": "皮肤瘙痒",
+        "created_at": "2025-12-10T01:51:59.502288"
+      },
+      {
+        "role": "assistant",
+        "content": "了解啦～这个皮肤瘙痒的情况大概从什么时候开始的呢？持续了多久呢？",
+        "created_at": "2025-12-10T01:51:59.502966"
+      },
+      {
+        "role": "user",
+        "content": "一个月前开始的",
+        "created_at": "2025-12-10T01:52:02.643095"
+      },
+      {
+        "role": "assistant",
+        "content": "您这个瘙痒主要出现在身体的哪些部位呢？",
+        "created_at": "2025-12-10T01:52:02.643682"
+      },
+      {
+        "role": "user",
+        "content": "全身瘙痒",
+        "created_at": "2025-12-10T01:52:05.642804"
+      },
+      {
+        "role": "assistant",
+        "content": "哦，这个症状的严重程度如何呢？是轻微的不适，还是影响到日常活动和休息了？",
+        "created_at": "2025-12-10T01:52:05.643464"
+      },
+      {
+        "role": "user",
+        "content": "轻微不适",
+        "created_at": "2025-12-10T01:52:09.265634"
+      },
+      {
+        "role": "assistant",
+        "content": "您有没有其他不舒服的症状，比如皮肤发红、起皮、出疹子或者有灼热感之类的？",
+        "created_at": "2025-12-10T01:52:09.266444"
+      },
+      {
+        "role": "user",
+        "content": "皮肤发红",
+        "created_at": "2025-12-10T01:52:13.058839"
+      },
+      {
+        "role": "assistant",
+        "content": "您之前有去看过医生或者接受过治疗吗？",
+        "created_at": "2025-12-10T01:52:13.059368"
+      },
+      {
+        "role": "user",
+        "content": "没有",
+        "created_at": "2025-12-10T01:52:16.601710"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近有没有吃过或用过什么特别的食物、药物，或者接触过什么可能引起过敏的东西？",
+        "created_at": "2025-12-10T01:52:16.602208"
+      },
+      {
+        "role": "user",
+        "content": "没有",
+        "created_at": "2025-12-10T01:52:20.052376"
+      },
+      {
+        "role": "assistant",
+        "content": "您平时抽烟的频率是怎样的呢？比如每天抽多少支，或者每周抽几次？",
+        "created_at": "2025-12-10T01:52:20.054042"
+      },
+      {
+        "role": "user",
+        "content": "不吸烟",
+        "created_at": "2025-12-10T01:52:23.255392"
+      },
+      {
+        "role": "assistant",
+        "content": "您平时喝酒的频率是怎样的呢？比如每周喝几次，或者每次喝多少？",
+        "created_at": "2025-12-10T01:52:23.256651"
+      },
+      {
+        "role": "user",
+        "content": "不喝酒",
+        "created_at": "2025-12-10T01:52:26.916501"
+      },
+      {
+        "role": "assistant",
+        "content": "您平时的饮食习惯怎么样？比如喜欢吃辣的、油腻的，还是偏清淡？",
+        "created_at": "2025-12-10T01:52:26.917092"
+      },
+      {
+        "role": "user",
+        "content": "饮食比较清淡",
+        "created_at": "2025-12-10T01:52:36.420360"
+      },
+      {
+        "role": "assistant",
+        "content": "您平时的睡眠情况怎么样呢？一般每天能睡几个小时，作息时间规律吗？",
+        "created_at": "2025-12-10T01:52:36.421357"
+      },
+      {
+        "role": "user",
+        "content": "睡眠不好，经常失眠",
+        "created_at": "2025-12-10T01:52:41.711141"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近的大小便情况怎么样呢？比如有没有便秘或者腹泻的情况？",
+        "created_at": "2025-12-10T01:52:41.711622"
+      },
+      {
+        "role": "user",
+        "content": "排便正常",
+        "created_at": "2025-12-10T01:52:45.801083"
+      },
+      {
+        "role": "assistant",
+        "content": "",
+        "created_at": "2025-12-10T01:52:45.801594"
+      }
+    ]
+  },
+  {
+    "chat_session_id": "382166b6-46b0-4ce9-a1e3-ffb5d0c75110",
+    "history": [
+      {
+        "role": "user",
+        "content": "{\"patientIdentity\":{\"patientId\":\"PID1234563\",\"idType\":\"01\",\"idNumber\":\"110101199001011235\",\"patientName\":\"王刚\"},\"visitInfo\":{\"department\":\"皮肤医美中心\",\"visitNumber\":\"V0000222\"},\"latestMedicalRecord\":{\"basicInfo\":{\"gender\":\"男\",\"birthday\":\"1985-05-20\",\"aboBloodType\":\"A\",\"rhBloodType\":\"+\"},\"vitalSigns\":{\"systolicPressure\":118,\"diastolicPressure\":76,\"height\":178,\"weight\":75},\"marriageChildInfo\":{\"marriageStatus\":\"已婚\",\"fullTermCount\":0,\"prematureCount\":0,\"abortionCount\":0,\"livingChildrenCount\":0},\"pastHistory\":{\"personalHistory\":\"无烟酒不良嗜好，否认冶游史。\",\"bloodTransfusionHistory\":\"无\",\"diseaseHistory\":\"患者平素体健，有过敏性鼻炎，无重大慢性疾病无传染病史\",\"epidemiologicalHistory\":\"无传染病史，流行病学史\",\"surgeryHistory\":\"无手术史\",\"familyHistory\":\"否认家族性遗传病、精神病、肿瘤等类似病史.\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"}},\"allergyHistory\":\"未发现\",\"childGrowthInfo\":null},\"revisitInfo\":{\"isRevisit\":1,\"lastRecord\":{\"chiefComplaint\":\"下肢红斑、丘疹、抓痕伴瘙痒8日\",\"presentIllness\":\"8日前无明显诱因下下肢红斑、丘疹、抓痕，伴瘙痒，外院多次就诊（卤米松乳膏 外用应急软膏 氯雷他定片 ），皮疹仍反复发作口不渴，睡眠安，大便便次正常，小便尿次正常\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"},\"tcmFourExams\":{\"inspection\":\"红黄隐隐，明润含蓄\",\"inquiry\":\"时有腹胀便溏，倦怠乏力\",\"listeningAndSmelling\":\"口气\",\"palpation\":\"脉弦\"},\"physicalExam\":\"无\",\"auxiliaryExam\":\"血常规：WBC 9.5×10^9/L，CRP 12 mg/L\",\"diagnosis\":{\"tcmDiagnosisName\":\"湿疮\",\"tcmDiagnosisCode\":\"A08.01.07\",\"tcmSyndromeName\":\"脾虚湿困证\",\"westernDiagnosisName\":\"特应性皮炎\",\"westernDiagnosisCode\":\"L20.900\"},\"treatmentPrinciple\":\"健脾化湿\",\"treatmentAdvice\":\"少食多餐，避免辛辣油腻\",\"prescription\":{\"prescriptionName\":\"复方参蝉汤\",\"herbs\":[\"党参\",\"蝉蜕\",\"生白术\",\"茯苓\",\"温山药\",\"炒白扁豆\",\"薏苡仁\",\"生黄芪\",\"炒麦芽\",\"炒稻芽\",\"炒鸡内金\",\"大枣\",\"生甘草\",\"蚕砂\"]}}}}",
+        "created_at": "2025-12-10T01:16:56.021396"
+      },
+      {
+        "role": "assistant",
+        "content": "这次的下肢红斑、丘疹和抓痕的情况，比上次有改善吗？",
+        "created_at": "2025-12-10T01:16:56.022628"
+      },
+      {
+        "role": "user",
+        "content": "比上次好些了",
+        "created_at": "2025-12-10T01:17:25.662401"
+      },
+      {
+        "role": "assistant",
+        "content": "那这次的饮食习惯有没有什么变化呢？比如有没有特别注意忌口或者吃了一些新的食物？",
+        "created_at": "2025-12-10T01:17:25.662881"
+      },
+      {
+        "role": "user",
+        "content": "开始吃素了",
+        "created_at": "2025-12-10T01:17:29.524863"
+      },
+      {
+        "role": "assistant",
+        "content": "那最近睡觉的情况怎么样？有没有比之前更安稳一些？",
+        "created_at": "2025-12-10T01:17:29.533490"
+      },
+      {
+        "role": "user",
+        "content": "睡得比以前好",
+        "created_at": "2025-12-10T01:17:31.814621"
+      },
+      {
+        "role": "assistant",
+        "content": "那这次的大便和小便情况还和之前一样正常吗？",
+        "created_at": "2025-12-10T01:17:31.815316"
+      },
+      {
+        "role": "user",
+        "content": "大便正常",
+        "created_at": "2025-12-10T01:17:34.982599"
+      },
+      {
+        "role": "assistant",
+        "content": "那这次皮肤上的红斑相比上次，有没有感觉更轻了呢？",
+        "created_at": "2025-12-10T01:17:34.983097"
+      },
+      {
+        "role": "user",
+        "content": "红斑颜色很淡，比较轻微",
+        "created_at": "2025-12-10T01:17:37.553231"
+      },
+      {
+        "role": "assistant",
+        "content": "那这次皮肤上的水肿和丘疹相比上次，有没有感觉更轻了呢？",
+        "created_at": "2025-12-10T01:17:37.553801"
+      },
+      {
+        "role": "user",
+        "content": "疙瘩非常多，而且还有出水的情况，比较严重",
+        "created_at": "2025-12-10T01:17:39.870428"
+      },
+      {
+        "role": "assistant",
+        "content": "那这次皮肤上的鳞屑情况相比上次有改善吗？或者现在还明显吗？",
+        "created_at": "2025-12-10T01:17:39.871371"
+      },
+      {
+        "role": "user",
+        "content": "好多地方都在脱屑，鳞屑比较多",
+        "created_at": "2025-12-10T01:17:42.484426"
+      },
+      {
+        "role": "assistant",
+        "content": "那这次皮肤上的苔藓样改变相比上次，有没有感觉更明显或者有变化呢？",
+        "created_at": "2025-12-10T01:17:42.485249"
+      },
+      {
+        "role": "user",
+        "content": "肉眼就能看到皮肤纹理增厚了，程度中等",
+        "created_at": "2025-12-10T01:17:44.874631"
+      },
+      {
+        "role": "assistant",
+        "content": "那这次除了皮肤的问题，还有没有其他地方觉得不舒服呢？比如身体哪个部位还有异样的感觉？",
+        "created_at": "2025-12-10T01:17:44.875142"
+      },
+      {
+        "role": "user",
+        "content": "轻微乏力",
+        "created_at": "2025-12-10T01:17:48.264759"
+      },
+      {
+        "role": "assistant",
+        "content": "主诉：下肢红斑、丘疹、抓痕伴瘙痒较上次有所好转，但仍有明显皮肤纹理增厚表现。\n\n现病史：本次饮食习惯开始吃素，较上次有所改变；睡眠状态良好，较上次改善；大小便情况正常，较上次无明显变化；仍有脱屑现象，较上次增多；皮肤苔藓样改变较上次明显，程度中等；伴有轻微乏力，较上次未提及。\n\n既往史：无长期用药记录，无药物过敏史，无不良习惯。\n\n家族史：无直系亲属慢病或遗传病史记录。",
+        "created_at": "2025-12-10T01:17:48.265397"
+      }
+    ]
+  },
+  {
+    "chat_session_id": "3f33e202-77b3-4156-956d-cd7331c639fc",
+    "history": [
+      {
+        "role": "user",
+        "content": "{\"patientIdentity\":{\"patientId\":\"PID1234565\",\"idType\":\"01\",\"idNumber\":\"110101199001011235\",\"patientName\":\"李铁\"},\"visitInfo\":{\"department\":\"皮肤医美中心\",\"visitNumber\":\"V0000222\"},\"latestMedicalRecord\":{\"basicInfo\":{\"gender\":\"男\",\"birthday\":\"1985-05-20\",\"aboBloodType\":\"A\",\"rhBloodType\":\"+\"},\"vitalSigns\":{\"systolicPressure\":118,\"diastolicPressure\":76,\"height\":178,\"weight\":75},\"marriageChildInfo\":{\"marriageStatus\":\"已婚\",\"fullTermCount\":0,\"prematureCount\":0,\"abortionCount\":0,\"livingChildrenCount\":0},\"pastHistory\":{\"personalHistory\":\"\",\"bloodTransfusionHistory\":\"2015年输过2U红细胞\",\"diseaseHistory\":\"\",\"epidemiologicalHistory\":\"否认出国及接触史\",\"surgeryHistory\":\"无手术史\",\"familyHistory\":\"否认家族性遗传病、精神病、肿瘤等类似病史\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"}},\"allergyHistory\":\"无\",\"childGrowthInfo\":null},\"revisitInfo\":{\"isRevisit\":0,\"lastRecord\":{\"chiefComplaint\":\"\",\"presentIllness\":\"\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"},\"tcmFourExams\":{\"inspection\":\"\",\"inquiry\":\"\",\"listeningAndSmelling\":\"\",\"palpation\":\"\"},\"physicalExam\":\"\",\"auxiliaryExam\":\"\",\"diagnosis\":{\"tcmDiagnosisName\":\"\",\"tcmDiagnosisCode\":\"\",\"tcmSyndromeName\":\"\",\"westernDiagnosisName\":\"\",\"westernDiagnosisCode\":\"\"},\"treatmentPrinciple\":\"\",\"treatmentAdvice\":\"\",\"prescription\":{\"prescriptionName\":\"\",\"herbs\":[]}}}}",
+        "created_at": "2025-12-10T02:42:50.163391"
+      },
+      {
+        "role": "assistant",
+        "content": "您好，能跟我描述一下您现在皮肤有什么样的不适吗？比如红、痒、脱皮、起疹子等等。",
+        "created_at": "2025-12-10T02:42:50.164231"
+      },
+      {
+        "role": "user",
+        "content": "红斑起疹子",
+        "created_at": "2025-12-10T02:43:18.092267"
+      },
+      {
+        "role": "assistant",
+        "content": "了解啦～这个红斑和起疹子的情况大概持续多久了呢？",
+        "created_at": "2025-12-10T02:43:18.093001"
+      },
+      {
+        "role": "user",
+        "content": "一个月了",
+        "created_at": "2025-12-10T02:43:20.795076"
+      },
+      {
+        "role": "assistant",
+        "content": "好的，那这个红斑和疹子主要出现在身体的哪个部位呢？",
+        "created_at": "2025-12-10T02:43:20.795827"
+      },
+      {
+        "role": "user",
+        "content": "手臂出现疹子",
+        "created_at": "2025-12-10T02:43:23.752960"
+      },
+      {
+        "role": "assistant",
+        "content": "哦，这个症状的严重程度如何呢？是轻微、中等还是比较严重？",
+        "created_at": "2025-12-10T02:43:23.753722"
+      },
+      {
+        "role": "user",
+        "content": "中等程度",
+        "created_at": "2025-12-10T02:43:26.538790"
+      },
+      {
+        "role": "assistant",
+        "content": "您之前有去看过医生或者接受过治疗吗？",
+        "created_at": "2025-12-10T02:43:26.539283"
+      },
+      {
+        "role": "user",
+        "content": "接受过治疗",
+        "created_at": "2025-12-10T02:43:29.562231"
+      },
+      {
+        "role": "assistant",
+        "content": "您之前就诊时，医生给出的诊断是什么呢？",
+        "created_at": "2025-12-10T02:43:29.562722"
+      },
+      {
+        "role": "user",
+        "content": "银屑病",
+        "created_at": "2025-12-10T02:43:32.430574"
+      },
+      {
+        "role": "assistant",
+        "content": "您之前有自行使用过什么药物吗？",
+        "created_at": "2025-12-10T02:43:32.431072"
+      },
+      {
+        "role": "user",
+        "content": "使用过炉甘石洗剂",
+        "created_at": "2025-12-10T02:43:35.500196"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近有没有对某些食物或药物出现过过敏反应呢？",
+        "created_at": "2025-12-10T02:43:35.500716"
+      },
+      {
+        "role": "user",
+        "content": "花生过敏",
+        "created_at": "2025-12-10T02:43:38.216639"
+      },
+      {
+        "role": "assistant",
+        "content": "您现在有没有长期在使用什么药物呢？",
+        "created_at": "2025-12-10T02:43:38.217162"
+      },
+      {
+        "role": "user",
+        "content": "长期使用激素药",
+        "created_at": "2025-12-10T02:43:41.199025"
+      },
+      {
+        "role": "assistant",
+        "content": "您平时抽烟的频率是怎样的呢？比如每天抽几支，或者多久抽一次？",
+        "created_at": "2025-12-10T02:43:41.199729"
+      },
+      {
+        "role": "user",
+        "content": "不吸烟",
+        "created_at": "2025-12-10T02:43:43.551594"
+      },
+      {
+        "role": "assistant",
+        "content": "您平时喝酒的频率是怎样的呢？比如每周喝几次，或者每次喝多少？",
+        "created_at": "2025-12-10T02:43:43.552144"
+      },
+      {
+        "role": "user",
+        "content": "不喝酒",
+        "created_at": "2025-12-10T02:43:46.518222"
+      },
+      {
+        "role": "assistant",
+        "content": "您平时的饮食习惯是怎样的呢？比如有没有特别喜欢吃辣、油腻或者甜食？",
+        "created_at": "2025-12-10T02:43:46.518743"
+      },
+      {
+        "role": "user",
+        "content": "喜欢吃辣的",
+        "created_at": "2025-12-10T02:43:49.467581"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近的睡眠情况怎么样呢？通常每天能睡几个小时？",
+        "created_at": "2025-12-10T02:43:49.468185"
+      },
+      {
+        "role": "user",
+        "content": "睡眠不好，经常失眠",
+        "created_at": "2025-12-10T02:43:52.788134"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近的大小便情况怎么样呢？比如有没有出现便秘、腹泻或者其他异常？",
+        "created_at": "2025-12-10T02:43:52.789114"
+      },
+      {
+        "role": "user",
+        "content": "排便正常",
+        "created_at": "2025-12-10T02:43:56.537162"
+      },
+      {
+        "role": "assistant",
+        "content": "主诉：\n\n手臂红斑起疹子1个月。\n\n现病史：\n\n症状为中度红斑起疹子，伴随皮疹，发病后未进行特殊治疗，无明确加重因素，饮食喜欢吃辣的，睡眠不好，经常失眠，大小便正常。\n\n既往史：\n\n无长期用药记录，无过敏食物或药物记录，无不良生活习惯。\n\n家族史：\n\n无记录。",
+        "created_at": "2025-12-10T02:43:56.537670"
+      }
+    ]
+  },
+  {
+    "chat_session_id": "435bfc3f-fdef-4197-809b-52d6cdf9bc8d",
+    "history": [
+      {
+        "role": "user",
+        "content": "{\"patientIdentity\":{\"patientId\":\"PID1234563\",\"idType\":\"01\",\"idNumber\":\"110101199001011235\",\"patientName\":\"王刚\"},\"visitInfo\":{\"department\":\"皮肤医美中心\",\"visitNumber\":\"V0000222\"},\"latestMedicalRecord\":{\"basicInfo\":{\"gender\":\"男\",\"birthday\":\"1985-05-20\",\"aboBloodType\":\"A\",\"rhBloodType\":\"+\"},\"vitalSigns\":{\"systolicPressure\":118,\"diastolicPressure\":76,\"height\":178,\"weight\":75},\"marriageChildInfo\":{\"marriageStatus\":\"已婚\",\"fullTermCount\":0,\"prematureCount\":0,\"abortionCount\":0,\"livingChildrenCount\":0},\"pastHistory\":{\"personalHistory\":\"无烟酒不良嗜好，否认冶游史。\",\"bloodTransfusionHistory\":\"无\",\"diseaseHistory\":\"患者平素体健，有过敏性鼻炎，无重大慢性疾病无传染病史\",\"epidemiologicalHistory\":\"无传染病史，流行病学史\",\"surgeryHistory\":\"无手术史\",\"familyHistory\":\"否认家族性遗传病、精神病、肿瘤等类似病史.\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"}},\"allergyHistory\":\"未发现\",\"childGrowthInfo\":null},\"revisitInfo\":{\"isRevisit\":1,\"lastRecord\":{\"chiefComplaint\":\"下肢红斑、丘疹、抓痕伴瘙痒8日\",\"presentIllness\":\"8日前无明显诱因下下肢红斑、丘疹、抓痕，伴瘙痒，外院多次就诊（卤米松乳膏 外用应急软膏 氯雷他定片 ），皮疹仍反复发作口不渴，睡眠安，大便便次正常，小便尿次正常\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"},\"tcmFourExams\":{\"inspection\":\"红黄隐隐，明润含蓄\",\"inquiry\":\"时有腹胀便溏，倦怠乏力\",\"listeningAndSmelling\":\"口气\",\"palpation\":\"脉弦\"},\"physicalExam\":\"无\",\"auxiliaryExam\":\"血常规：WBC 9.5×10^9/L，CRP 12 mg/L\",\"diagnosis\":{\"tcmDiagnosisName\":\"湿疮\",\"tcmDiagnosisCode\":\"A08.01.07\",\"tcmSyndromeName\":\"脾虚湿困证\",\"westernDiagnosisName\":\"特应性皮炎\",\"westernDiagnosisCode\":\"L20.900\"},\"treatmentPrinciple\":\"健脾化湿\",\"treatmentAdvice\":\"少食多餐，避免辛辣油腻\",\"prescription\":{\"prescriptionName\":\"复方参蝉汤\",\"herbs\":[\"党参\",\"蝉蜕\",\"生白术\",\"茯苓\",\"温山药\",\"炒白扁豆\",\"薏苡仁\",\"生黄芪\",\"炒麦芽\",\"炒稻芽\",\"炒鸡内金\",\"大枣\",\"生甘草\",\"蚕砂\"]}}}}",
+        "created_at": "2025-12-10T02:24:52.322278"
+      },
+      {
+        "role": "assistant",
+        "content": "这次的下肢红斑、丘疹和抓痕，相比上次有没有好转或者有什么变化呢？",
+        "created_at": "2025-12-10T02:24:52.323013"
+      },
+      {
+        "role": "user",
+        "content": "比上次轻了一些",
+        "created_at": "2025-12-10T02:24:56.628329"
+      },
+      {
+        "role": "assistant",
+        "content": "那这次饮食方面有没有什么变化呢？比如有没有注意忌口或者吃了一些特别的食物？",
+        "created_at": "2025-12-10T02:24:56.629271"
+      },
+      {
+        "role": "user",
+        "content": "吃了辛辣食物",
+        "created_at": "2025-12-10T02:24:58.787974"
+      },
+      {
+        "role": "assistant",
+        "content": "那这次睡眠情况有没有比上次更好一些呢？",
+        "created_at": "2025-12-10T02:24:58.788598"
+      },
+      {
+        "role": "user",
+        "content": "睡眠质量一般",
+        "created_at": "2025-12-10T02:25:01.392118"
+      },
+      {
+        "role": "assistant",
+        "content": "那这次小便的情况和上次相比有变化吗？比如有没有感觉尿频或者尿急？",
+        "created_at": "2025-12-10T02:25:01.392718"
+      },
+      {
+        "role": "user",
+        "content": "排尿有灼热感",
+        "created_at": "2025-12-10T02:25:16.090067"
+      },
+      {
+        "role": "assistant",
+        "content": "那这次红斑的情况相比上次有改善吗？",
+        "created_at": "2025-12-10T02:25:16.090783"
+      },
+      {
+        "role": "user",
+        "content": "红斑颜色鲜红或者深红，看着就很严重",
+        "created_at": "2025-12-10T02:25:17.993383"
+      },
+      {
+        "role": "assistant",
+        "content": "这次的水肿、浸润和丘疹相比上次有没有减轻一点呢？",
+        "created_at": "2025-12-10T02:25:17.993871"
+      },
+      {
+        "role": "user",
+        "content": "疙瘩非常多，而且还有出水的情况，比较严重",
+        "created_at": "2025-12-10T02:25:19.936013"
+      },
+      {
+        "role": "assistant",
+        "content": "这次的鳞屑情况相比上次有变化吗？比如有没有减少或者变得更明显？",
+        "created_at": "2025-12-10T02:25:19.936814"
+      },
+      {
+        "role": "user",
+        "content": "好多地方都在脱屑，鳞屑比较多",
+        "created_at": "2025-12-10T02:25:22.295247"
+      },
+      {
+        "role": "assistant",
+        "content": "这次的苔藓样改变相比上次有改善吗？还是说情况更明显了？",
+        "created_at": "2025-12-10T02:25:22.295750"
+      },
+      {
+        "role": "user",
+        "content": "肉眼就能看到皮肤纹理增厚了，程度中等",
+        "created_at": "2025-12-10T02:25:25.120479"
+      },
+      {
+        "role": "assistant",
+        "content": "最近除了皮肤的问题，还有没有其他身体上的不适感呢？比如有没有觉得特别疲劳或者哪里不舒服？",
+        "created_at": "2025-12-10T02:25:25.121193"
+      },
+      {
+        "role": "user",
+        "content": "轻微乏力",
+        "created_at": "2025-12-10T02:25:28.010904"
+      },
+      {
+        "role": "assistant",
+        "content": "主诉：下肢红斑、丘疹、抓痕伴瘙痒较上次轻了一些。\n\n现病史：本次饮食习惯有变化，吃了辛辣食物；睡眠质量一般，较上次不详；排尿有灼热感，较上次加重；其他无明显变化。\n\n既往史：无长期用药、过敏及不良习惯记录。\n\n家族史：无直系亲属慢病或遗传病史记录。",
+        "created_at": "2025-12-10T02:25:28.011425"
+      }
+    ]
+  },
+  {
+    "chat_session_id": "4afd9804-a389-4186-ab60-9610bc058167",
+    "history": [
+      {
+        "role": "user",
+        "content": "{\"patientIdentity\":{\"patientId\":\"PID1234565\",\"idType\":\"01\",\"idNumber\":\"110101199001011235\",\"patientName\":\"李铁\"},\"visitInfo\":{\"department\":\"皮肤医美中心\",\"visitNumber\":\"V0000222\"},\"latestMedicalRecord\":{\"basicInfo\":{\"gender\":\"男\",\"birthday\":\"1985-05-20\",\"aboBloodType\":\"A\",\"rhBloodType\":\"+\"},\"vitalSigns\":{\"systolicPressure\":118,\"diastolicPressure\":76,\"height\":178,\"weight\":75},\"marriageChildInfo\":{\"marriageStatus\":\"已婚\",\"fullTermCount\":0,\"prematureCount\":0,\"abortionCount\":0,\"livingChildrenCount\":0},\"pastHistory\":{\"personalHistory\":\"\",\"bloodTransfusionHistory\":\"2015年输过2U红细胞\",\"diseaseHistory\":\"\",\"epidemiologicalHistory\":\"否认出国及接触史\",\"surgeryHistory\":\"无手术史\",\"familyHistory\":\"否认家族性遗传病、精神病、肿瘤等类似病史\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"}},\"allergyHistory\":\"无\",\"childGrowthInfo\":null},\"revisitInfo\":{\"isRevisit\":0,\"lastRecord\":{\"chiefComplaint\":\"\",\"presentIllness\":\"\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"},\"tcmFourExams\":{\"inspection\":\"\",\"inquiry\":\"\",\"listeningAndSmelling\":\"\",\"palpation\":\"\"},\"physicalExam\":\"\",\"auxiliaryExam\":\"\",\"diagnosis\":{\"tcmDiagnosisName\":\"\",\"tcmDiagnosisCode\":\"\",\"tcmSyndromeName\":\"\",\"westernDiagnosisName\":\"\",\"westernDiagnosisCode\":\"\"},\"treatmentPrinciple\":\"\",\"treatmentAdvice\":\"\",\"prescription\":{\"prescriptionName\":\"\",\"herbs\":[]}}}}",
+        "created_at": "2025-12-10T01:14:05.750388"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近有没有感觉到皮肤上有特别的不适或者异常呢？比如红、痒、脱皮、起疹子之类的？",
+        "created_at": "2025-12-10T01:14:05.750864"
+      },
+      {
+        "role": "user",
+        "content": "皮肤瘙痒",
+        "created_at": "2025-12-10T01:14:13.996139"
+      },
+      {
+        "role": "assistant",
+        "content": "了解啦～这个皮肤瘙痒的情况大概从什么时候开始的呢？大约持续了多久？",
+        "created_at": "2025-12-10T01:14:13.996804"
+      },
+      {
+        "role": "user",
+        "content": "一个月前开始的",
+        "created_at": "2025-12-10T01:14:22.007343"
+      },
+      {
+        "role": "assistant",
+        "content": "您这个瘙痒主要出现在身体的哪个部位呢？",
+        "created_at": "2025-12-10T01:14:22.008496"
+      },
+      {
+        "role": "user",
+        "content": "手臂有瘙痒",
+        "created_at": "2025-12-10T01:14:26.575677"
+      },
+      {
+        "role": "assistant",
+        "content": "哦，这个瘙痒的严重程度如何呢？是不是特别影响您的生活？",
+        "created_at": "2025-12-10T01:14:26.576172"
+      },
+      {
+        "role": "user",
+        "content": "瘙痒严重，影响睡眠",
+        "created_at": "2025-12-10T01:14:33.288697"
+      },
+      {
+        "role": "assistant",
+        "content": "您之前有去看过医生或者接受过治疗吗？",
+        "created_at": "2025-12-10T01:14:33.289247"
+      },
+      {
+        "role": "user",
+        "content": "看过医生",
+        "created_at": "2025-12-10T01:14:36.589699"
+      },
+      {
+        "role": "assistant",
+        "content": "您之前看医生的时候，医生给出的诊断是什么？比如是湿疹、皮炎，或者其他什么情况吗？",
+        "created_at": "2025-12-10T01:14:36.590459"
+      },
+      {
+        "role": "user",
+        "content": "湿疹",
+        "created_at": "2025-12-10T01:14:40.583449"
+      },
+      {
+        "role": "assistant",
+        "content": "您之前有自行使用过什么药物吗？",
+        "created_at": "2025-12-10T01:14:40.583922"
+      },
+      {
+        "role": "user",
+        "content": "没有",
+        "created_at": "2025-12-10T01:14:44.085249"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近有没有接触或食用过什么可能让您过敏的食物或药物呢？",
+        "created_at": "2025-12-10T01:14:44.086392"
+      },
+      {
+        "role": "user",
+        "content": "没有",
+        "created_at": "2025-12-10T01:15:22.481810"
+      },
+      {
+        "role": "assistant",
+        "content": "您平时有长期服用什么药物吗？",
+        "created_at": "2025-12-10T01:15:22.482690"
+      },
+      {
+        "role": "user",
+        "content": "没有",
+        "created_at": "2025-12-10T01:15:25.935885"
+      },
+      {
+        "role": "assistant",
+        "content": "您平时有抽烟的习惯吗？一般一天抽多少支呢？",
+        "created_at": "2025-12-10T01:15:25.936790"
+      },
+      {
+        "role": "user",
+        "content": "不吸烟",
+        "created_at": "2025-12-10T01:15:29.625189"
+      },
+      {
+        "role": "assistant",
+        "content": "您平时有喝酒的习惯吗？一般一周喝几次呢？",
+        "created_at": "2025-12-10T01:15:29.625678"
+      },
+      {
+        "role": "user",
+        "content": "不喝酒",
+        "created_at": "2025-12-10T01:15:31.831192"
+      },
+      {
+        "role": "assistant",
+        "content": "您平时的饮食习惯是怎样的呢？比如喜欢吃辣的、油腻的，还是偏清淡？",
+        "created_at": "2025-12-10T01:15:31.831663"
+      },
+      {
+        "role": "user",
+        "content": "饮食比较清淡",
+        "created_at": "2025-12-10T01:15:36.332058"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近的睡眠情况怎么样呢？通常每天能睡几个小时？",
+        "created_at": "2025-12-10T01:15:36.333151"
+      },
+      {
+        "role": "user",
+        "content": "睡眠不好，经常失眠",
+        "created_at": "2025-12-10T01:15:39.429671"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近的大小便情况怎么样呢？有没有什么异常？",
+        "created_at": "2025-12-10T01:15:39.430185"
+      },
+      {
+        "role": "user",
+        "content": "无异常",
+        "created_at": "2025-12-10T01:15:44.524292"
+      },
+      {
+        "role": "assistant",
+        "content": "主诉：\n\n手臂皮肤瘙痒一个月。\n\n现病史：\n\n症状为重度皮肤瘙痒，影响睡眠，发病后未进行特殊治疗，未自行使用药物，饮食口味清淡，睡眠状况不好，经常失眠，大小便无异常。\n\n既往史：\n\n无长期用药记录，无过敏食物或药物记录，无不良生活习惯，无月经史记录。\n\n婚育史：\n\n已婚，足月生产个数0，早产个数0，流产个数0，现存子女数量0，已育子女数量0。\n\n家族史：\n\n直系亲属无健康问题或遗传病记录。",
+        "created_at": "2025-12-10T01:15:44.524936"
+      }
+    ]
+  },
+  {
+    "chat_session_id": "4df6c9cd-a791-46b8-b0c4-969f189ef7d1",
+    "history": [
+      {
+        "role": "user",
+        "content": "{\"patientIdentity\":{\"patientId\":\"PID1234588\",\"idType\":\"01\",\"idNumber\":\"110101199001011235\",\"patientName\":\"李铁西\"},\"visitInfo\":{\"department\":\"肛肠科\",\"visitNumber\":\"V0000222\"},\"latestMedicalRecord\":{\"basicInfo\":{\"gender\":\"男\",\"birthday\":\"1985-05-20\",\"aboBloodType\":\"A\",\"rhBloodType\":\"+\"},\"vitalSigns\":{\"systolicPressure\":118,\"diastolicPressure\":76,\"height\":178,\"weight\":75},\"marriageChildInfo\":{\"marriageStatus\":\"已婚\",\"fullTermCount\":0,\"prematureCount\":0,\"abortionCount\":0,\"livingChildrenCount\":0},\"pastHistory\":{\"personalHistory\":\"\",\"bloodTransfusionHistory\":\"2015年输过2U红细胞\",\"diseaseHistory\":\"\",\"epidemiologicalHistory\":\"否认出国及接触史\",\"surgeryHistory\":\"无手术史\",\"familyHistory\":\"否认家族性遗传病、精神病、肿瘤等类似病史\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"}},\"allergyHistory\":\"无\",\"childGrowthInfo\":null},\"revisitInfo\":{\"isRevisit\":0,\"lastRecord\":{\"chiefComplaint\":\"\",\"presentIllness\":\"\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"},\"tcmFourExams\":{\"inspection\":\"\",\"inquiry\":\"\",\"listeningAndSmelling\":\"\",\"palpation\":\"\"},\"physicalExam\":\"\",\"auxiliaryExam\":\"\",\"diagnosis\":{\"tcmDiagnosisName\":\"\",\"tcmDiagnosisCode\":\"\",\"tcmSyndromeName\":\"\",\"westernDiagnosisName\":\"\",\"westernDiagnosisCode\":\"\"},\"treatmentPrinciple\":\"\",\"treatmentAdvice\":\"\",\"prescription\":{\"prescriptionName\":\"\",\"herbs\":[]}}}}",
+        "created_at": "2025-12-10T00:19:18.589587"
+      },
+      {
+        "role": "assistant",
+        "content": "您好，您现在有什么不舒服的症状呢？比如咳嗽、胸闷、呼吸急促或者痰多等等？",
+        "created_at": "2025-12-10T00:19:18.590402"
+      },
+      {
+        "role": "user",
+        "content": "呼吸急促",
+        "created_at": "2025-12-10T00:19:31.837982"
+      },
+      {
+        "role": "assistant",
+        "content": "了解啦～这个呼吸急促的情况大概持续了多久呢？",
+        "created_at": "2025-12-10T00:19:31.838901"
+      },
+      {
+        "role": "user",
+        "content": "持续了半个月",
+        "created_at": "2025-12-10T00:19:40.576135"
+      },
+      {
+        "role": "assistant",
+        "content": "那这个呼吸急促主要是在胸部的哪个位置感觉明显呢？比如胸闷、呼吸费力或者在活动后更明显？",
+        "created_at": "2025-12-10T00:19:40.576780"
+      },
+      {
+        "role": "user",
+        "content": "左侧胸痛",
+        "created_at": "2025-12-10T00:19:44.533043"
+      },
+      {
+        "role": "assistant",
+        "content": "哦，这个呼吸急促和左侧胸痛的情况，现在严重吗？比如是不是经常感到呼吸困难，或者在活动后更明显？",
+        "created_at": "2025-12-10T00:19:44.533894"
+      },
+      {
+        "role": "user",
+        "content": "经常感觉呼吸困难",
+        "created_at": "2025-12-10T00:19:54.766018"
+      },
+      {
+        "role": "assistant",
+        "content": "那除了呼吸急促和左侧胸痛，还有没有其他不舒服的症状呢？比如发烧、咳嗽、痰多或者乏力等？",
+        "created_at": "2025-12-10T00:19:54.766543"
+      },
+      {
+        "role": "user",
+        "content": "乏力",
+        "created_at": "2025-12-10T00:19:58.045512"
+      },
+      {
+        "role": "assistant",
+        "content": "您之前有去看过医生或者接受过治疗吗？",
+        "created_at": "2025-12-10T00:19:58.046011"
+      },
+      {
+        "role": "user",
+        "content": "接受过治疗",
+        "created_at": "2025-12-10T00:20:00.766578"
+      },
+      {
+        "role": "assistant",
+        "content": "您之前去医院就诊时，医生给出的诊断是什么呢？",
+        "created_at": "2025-12-10T00:20:00.767102"
+      },
+      {
+        "role": "user",
+        "content": "皮炎",
+        "created_at": "2025-12-10T00:20:04.030268"
+      },
+      {
+        "role": "assistant",
+        "content": "您之前有自行使用过什么药物吗？",
+        "created_at": "2025-12-10T00:20:04.030805"
+      },
+      {
+        "role": "user",
+        "content": "使用过炉甘石洗剂",
+        "created_at": "2025-12-10T00:20:07.587360"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近有没有对某些食物或药物出现过过敏反应呢？比如海鲜、坚果、青霉素类药物等。",
+        "created_at": "2025-12-10T00:20:07.587912"
+      },
+      {
+        "role": "user",
+        "content": "没有",
+        "created_at": "2025-12-10T00:20:10.530292"
+      },
+      {
+        "role": "assistant",
+        "content": "您平时有长期服用什么药物吗？比如哮喘药、降压药或者其他的慢性病药物？",
+        "created_at": "2025-12-10T00:20:10.530834"
+      },
+      {
+        "role": "user",
+        "content": "没有",
+        "created_at": "2025-12-10T00:20:13.318773"
+      },
+      {
+        "role": "assistant",
+        "content": "您家里有没有人有类似的呼吸系统疾病或者过敏史呢？",
+        "created_at": "2025-12-10T00:20:13.319336"
+      },
+      {
+        "role": "user",
+        "content": "没有",
+        "created_at": "2025-12-10T00:20:16.159949"
+      },
+      {
+        "role": "assistant",
+        "content": "您平时有抽烟的习惯吗？大概每天抽多少支呢？",
+        "created_at": "2025-12-10T00:20:16.160575"
+      },
+      {
+        "role": "user",
+        "content": "偶尔",
+        "created_at": "2025-12-10T00:20:18.749026"
+      },
+      {
+        "role": "assistant",
+        "content": "您平时喝酒频率怎么样呢？比如每周喝几次，每次喝多少？",
+        "created_at": "2025-12-10T00:20:18.749562"
+      },
+      {
+        "role": "user",
+        "content": "社交性饮酒",
+        "created_at": "2025-12-10T00:20:21.333264"
+      },
+      {
+        "role": "assistant",
+        "content": "您平时的饮食习惯怎么样？比如喜欢吃辣的、油腻的，还是偏清淡？",
+        "created_at": "2025-12-10T00:20:21.333814"
+      },
+      {
+        "role": "user",
+        "content": "喜欢吃辣的",
+        "created_at": "2025-12-10T00:20:24.597369"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近的睡眠情况怎么样呢？有没有觉得晚上睡不好、容易醒或者有其他睡眠问题？",
+        "created_at": "2025-12-10T00:20:24.598092"
+      },
+      {
+        "role": "user",
+        "content": "晚上容易醒，睡不踏实",
+        "created_at": "2025-12-10T00:20:27.667122"
+      },
+      {
+        "role": "assistant",
+        "content": "近期排便、排尿情况怎么样？有没有便秘、腹泻或尿频、尿痛这些问题？",
+        "created_at": "2025-12-10T00:20:27.667735"
+      },
+      {
+        "role": "user",
+        "content": "尿频",
+        "created_at": "2025-12-10T00:20:32.305455"
+      },
+      {
+        "role": "assistant",
+        "content": "主诉：\n\n左侧胸痛 半个月。\n\n现病史：\n\n症状为中度，伴随乏力，发病后曾就诊并诊断为皮炎，有自行使用炉甘石洗剂，症状未明确加重因素，饮食喜欢吃辣的，睡眠较差，容易醒，睡不踏实，大小便状况为尿频。\n\n既往史：\n\n无长期用药记录，无过敏食物或药物记录，无不良生活习惯记录，无月经史记录。\n\n婚育史：\n\n已婚，足月生产个数0，早产个数0，流产个数0，现存子女数量0，已育子女数量0。\n\n家族史：\n\n直系亲属无明显健康问题或遗传病记录。",
+        "created_at": "2025-12-10T00:20:32.306338"
+      }
+    ]
+  },
+  {
+    "chat_session_id": "4e50361c-7a4e-403f-9d75-f5c9e42af4db",
+    "history": [
+      {
+        "role": "user",
+        "content": "{\"patientIdentity\":{\"patientId\":\"PID1234565\",\"idType\":\"01\",\"idNumber\":\"110101199001011235\",\"patientName\":\"李铁\"},\"visitInfo\":{\"department\":\"皮肤医美中心\",\"visitNumber\":\"V0000222\"},\"latestMedicalRecord\":{\"basicInfo\":{\"gender\":\"男\",\"birthday\":\"1985-05-20\",\"aboBloodType\":\"A\",\"rhBloodType\":\"+\"},\"vitalSigns\":{\"systolicPressure\":118,\"diastolicPressure\":76,\"height\":178,\"weight\":75},\"marriageChildInfo\":{\"marriageStatus\":\"已婚\",\"fullTermCount\":0,\"prematureCount\":0,\"abortionCount\":0,\"livingChildrenCount\":0},\"pastHistory\":{\"personalHistory\":\"\",\"bloodTransfusionHistory\":\"2015年输过2U红细胞\",\"diseaseHistory\":\"\",\"epidemiologicalHistory\":\"否认出国及接触史\",\"surgeryHistory\":\"无手术史\",\"familyHistory\":\"否认家族性遗传病、精神病、肿瘤等类似病史\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"}},\"allergyHistory\":\"无\",\"childGrowthInfo\":null},\"revisitInfo\":{\"isRevisit\":0,\"lastRecord\":{\"chiefComplaint\":\"\",\"presentIllness\":\"\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"},\"tcmFourExams\":{\"inspection\":\"\",\"inquiry\":\"\",\"listeningAndSmelling\":\"\",\"palpation\":\"\"},\"physicalExam\":\"\",\"auxiliaryExam\":\"\",\"diagnosis\":{\"tcmDiagnosisName\":\"\",\"tcmDiagnosisCode\":\"\",\"tcmSyndromeName\":\"\",\"westernDiagnosisName\":\"\",\"westernDiagnosisCode\":\"\"},\"treatmentPrinciple\":\"\",\"treatmentAdvice\":\"\",\"prescription\":{\"prescriptionName\":\"\",\"herbs\":[]}}}}",
+        "created_at": "2025-12-10T02:00:52.386267"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近有感觉到皮肤上有什么特别的异常吗？比如红肿、瘙痒、脱皮或者起疹子之类的？",
+        "created_at": "2025-12-10T02:00:52.387106"
+      },
+      {
+        "role": "user",
+        "content": "脱皮严重",
+        "created_at": "2025-12-10T02:00:57.367003"
+      },
+      {
+        "role": "assistant",
+        "content": "了解～您这个脱皮的情况大概持续了多久呢？",
+        "created_at": "2025-12-10T02:00:57.367755"
+      },
+      {
+        "role": "user",
+        "content": "一个月左右",
+        "created_at": "2025-12-10T02:01:00.326859"
+      },
+      {
+        "role": "assistant",
+        "content": "您还有其他不舒服的感觉吗？比如有没有发痒、红肿或者疼痛的情况？",
+        "created_at": "2025-12-10T02:01:00.327819"
+      },
+      {
+        "role": "user",
+        "content": "有红肿现象",
+        "created_at": "2025-12-10T02:01:03.282901"
+      },
+      {
+        "role": "assistant",
+        "content": "您之前有去看过医生或者接受过治疗吗？",
+        "created_at": "2025-12-10T02:01:03.283410"
+      },
+      {
+        "role": "user",
+        "content": "没看过医生",
+        "created_at": "2025-12-10T02:01:06.608599"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近有没有吃过或用过什么特别的食物或药物，感觉可能和皮肤脱皮有关呢？",
+        "created_at": "2025-12-10T02:01:06.609107"
+      },
+      {
+        "role": "user",
+        "content": "海鲜",
+        "created_at": "2025-12-10T02:01:09.146414"
+      },
+      {
+        "role": "assistant",
+        "content": "您平时有长期服用什么药物吗？比如高血压药、降糖药或者其他的慢性病药物？",
+        "created_at": "2025-12-10T02:01:09.146893"
+      },
+      {
+        "role": "user",
+        "content": "有服用阿司匹林",
+        "created_at": "2025-12-10T02:01:12.156882"
+      },
+      {
+        "role": "assistant",
+        "content": "您平时有抽烟的习惯吗？大概每天抽多少支呢？",
+        "created_at": "2025-12-10T02:01:12.157693"
+      },
+      {
+        "role": "user",
+        "content": "已戒烟",
+        "created_at": "2025-12-10T02:01:14.366687"
+      },
+      {
+        "role": "assistant",
+        "content": "您平时喝酒的频率是怎样的呢？比如每周喝几次，或者每次喝多少？",
+        "created_at": "2025-12-10T02:01:14.367189"
+      },
+      {
+        "role": "user",
+        "content": "每周1次",
+        "created_at": "2025-12-10T02:01:26.675084"
+      },
+      {
+        "role": "assistant",
+        "content": "您平时的饮食口味是偏辣、偏咸，还是比较清淡呢？",
+        "created_at": "2025-12-10T02:01:26.675822"
+      },
+      {
+        "role": "user",
+        "content": "喜欢吃辣的",
+        "created_at": "2025-12-10T02:01:30.594828"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近的睡眠情况怎么样呢？通常每天能睡几个小时，作息规律吗？",
+        "created_at": "2025-12-10T02:01:30.595362"
+      },
+      {
+        "role": "user",
+        "content": "每天睡6小时左右",
+        "created_at": "2025-12-10T02:01:33.685752"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近的大小便情况怎么样呢？有没有觉得特别干燥或者有其他不适？",
+        "created_at": "2025-12-10T02:01:33.686997"
+      }
+    ]
+  },
+  {
+    "chat_session_id": "4eb99238-8a5c-407b-acb6-be95ac25f126",
+    "history": [
+      {
+        "role": "user",
+        "content": "{\"patientIdentity\":{\"patientId\":\"PID1234565\",\"idType\":\"01\",\"idNumber\":\"110101199001011235\",\"patientName\":\"李铁\"},\"visitInfo\":{\"department\":\"皮肤医美中心\",\"visitNumber\":\"V0000222\"},\"latestMedicalRecord\":{\"basicInfo\":{\"gender\":\"男\",\"birthday\":\"1985-05-20\",\"aboBloodType\":\"A\",\"rhBloodType\":\"+\"},\"vitalSigns\":{\"systolicPressure\":118,\"diastolicPressure\":76,\"height\":178,\"weight\":75},\"marriageChildInfo\":{\"marriageStatus\":\"已婚\",\"fullTermCount\":0,\"prematureCount\":0,\"abortionCount\":0,\"livingChildrenCount\":0},\"pastHistory\":{\"personalHistory\":\"\",\"bloodTransfusionHistory\":\"2015年输过2U红细胞\",\"diseaseHistory\":\"\",\"epidemiologicalHistory\":\"否认出国及接触史\",\"surgeryHistory\":\"无手术史\",\"familyHistory\":\"否认家族性遗传病、精神病、肿瘤等类似病史\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"}},\"allergyHistory\":\"无\",\"childGrowthInfo\":null},\"revisitInfo\":{\"isRevisit\":0,\"lastRecord\":{\"chiefComplaint\":\"\",\"presentIllness\":\"\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"},\"tcmFourExams\":{\"inspection\":\"\",\"inquiry\":\"\",\"listeningAndSmelling\":\"\",\"palpation\":\"\"},\"physicalExam\":\"\",\"auxiliaryExam\":\"\",\"diagnosis\":{\"tcmDiagnosisName\":\"\",\"tcmDiagnosisCode\":\"\",\"tcmSyndromeName\":\"\",\"westernDiagnosisName\":\"\",\"westernDiagnosisCode\":\"\"},\"treatmentPrinciple\":\"\",\"treatmentAdvice\":\"\",\"prescription\":{\"prescriptionName\":\"\",\"herbs\":[]}}}}",
+        "created_at": "2025-12-10T01:55:35.721619"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近有没有感觉到皮肤上有什么特别的不适或异常呢？比如红肿、瘙痒、脱皮之类的？",
+        "created_at": "2025-12-10T01:55:35.722961"
+      },
+      {
+        "role": "user",
+        "content": "红肿有刺痛感",
+        "created_at": "2025-12-10T01:55:38.759460"
+      },
+      {
+        "role": "assistant",
+        "content": "了解啦～这个红肿和刺痛感大概从什么时候开始的呢？持续了多久？",
+        "created_at": "2025-12-10T01:55:38.760029"
+      },
+      {
+        "role": "user",
+        "content": "大概一周了",
+        "created_at": "2025-12-10T01:55:41.842769"
+      },
+      {
+        "role": "assistant",
+        "content": "那这个红肿和刺痛感主要出现在身体的哪个部位呢？",
+        "created_at": "2025-12-10T01:55:41.843525"
+      },
+      {
+        "role": "user",
+        "content": "腿部出现红肿刺痛",
+        "created_at": "2025-12-10T01:55:44.928457"
+      },
+      {
+        "role": "assistant",
+        "content": "您之前有去看过医生或者接受过治疗吗？",
+        "created_at": "2025-12-10T01:55:44.930254"
+      },
+      {
+        "role": "user",
+        "content": "之前看过医生",
+        "created_at": "2025-12-10T01:55:47.723413"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近有没有接触或食用过什么可能引起过敏的食物或药物呢？",
+        "created_at": "2025-12-10T01:55:47.724546"
+      },
+      {
+        "role": "user",
+        "content": "芒果",
+        "created_at": "2025-12-10T01:55:51.027723"
+      },
+      {
+        "role": "assistant",
+        "content": "您平时有长期服用什么药物吗？",
+        "created_at": "2025-12-10T01:55:51.028873"
+      },
+      {
+        "role": "user",
+        "content": "没有",
+        "created_at": "2025-12-10T01:55:53.882668"
+      },
+      {
+        "role": "assistant",
+        "content": "您平时抽烟频率是怎样的呢？比如每天抽多少支，或者多久抽一次？",
+        "created_at": "2025-12-10T01:55:53.883214"
+      },
+      {
+        "role": "user",
+        "content": "不吸烟",
+        "created_at": "2025-12-10T01:55:55.977842"
+      },
+      {
+        "role": "assistant",
+        "content": "您平时喝酒的频率是怎样的呢？比如每周喝几次，或者每次喝多少？",
+        "created_at": "2025-12-10T01:55:55.978400"
+      },
+      {
+        "role": "user",
+        "content": "社交性饮酒",
+        "created_at": "2025-12-10T01:56:03.890290"
+      },
+      {
+        "role": "assistant",
+        "content": "您平时的饮食习惯是怎样的呢？比如喜欢吃辣的、油腻的，或者有特别偏好的口味吗？",
+        "created_at": "2025-12-10T01:56:03.891834"
+      },
+      {
+        "role": "user",
+        "content": "偏爱油腻食物",
+        "created_at": "2025-12-10T01:56:06.765179"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近的睡眠情况怎么样呢？通常每天能睡几个小时，睡眠质量如何？",
+        "created_at": "2025-12-10T01:56:06.766112"
+      },
+      {
+        "role": "user",
+        "content": "睡眠不好，经常失眠",
+        "created_at": "2025-12-10T01:56:09.746824"
+      },
+      {
+        "role": "assistant",
+        "content": "",
+        "created_at": "2025-12-10T01:56:09.747352"
+      }
+    ]
+  },
+  {
+    "chat_session_id": "5ded0c75-f66f-44cf-b24c-97fd2e3e1a11",
+    "history": [
+      {
+        "role": "user",
+        "content": "{\"patientIdentity\":{\"patientId\":\"PID1234562\",\"idType\":\"01\",\"idNumber\":\"110101199001011234\",\"patientName\":\"王雨\"},\"visitInfo\":{\"department\":\"皮肤医美中心\",\"visitNumber\":\"V0000123\"},\"latestMedicalRecord\":{\"basicInfo\":{\"gender\":\"女\",\"birthday\":\"1985-05-20\",\"aboBloodType\":\"A\",\"rhBloodType\":\"+\"},\"vitalSigns\":{\"systolicPressure\":120,\"diastolicPressure\":80,\"height\":165,\"weight\":60},\"marriageChildInfo\":{\"marriageStatus\":\"已婚\",\"fullTermCount\":1,\"prematureCount\":0,\"abortionCount\":0,\"livingChildrenCount\":1},\"pastHistory\":{\"personalHistory\":\"无烟酒不良嗜好，否认冶游史。\",\"bloodTransfusionHistory\":\"无\",\"diseaseHistory\":\"患者平素体健，无重大慢性疾病无传染病史\",\"epidemiologicalHistory\":\"无传染病史，流行病学史\",\"menstrualHistory\":{\"menarcheAge\":13,\"intervalDays\":28,\"durationDays\":5,\"isSterilization\":false,\"lastMenstrualDate\":\"2025-10-25\"},\"surgeryHistory\":\"无\",\"familyHistory\":\"否认家族性遗传病、精神病、肿瘤等类似病史。\"},\"allergyHistory\":\"未发现\",\"childGrowthInfo\":null},\"revisitInfo\":{\"isRevisit\":1,\"lastRecord\":{\"chiefComplaint\":\"颈项部红斑、抓痕伴瘙痒2月\",\"presentIllness\":\"2月前无明显诱因下颈项部红斑、抓痕，伴瘙痒，未予特殊处理食欲减退，睡眠安，大便溏结不调，小便尿次正常\",\"menstrualHistory\":{\"menarcheAge\":13,\"intervalDays\":28,\"durationDays\":5,\"isSterilization\":false,\"lastMenstrualDate\":\"2024-09-25\"},\"tcmFourExams\":{\"inspection\":\"红黄隐隐，明润含蓄\",\"inquiry\":\"时有腹胀便溏，倦怠乏力\",\"listeningAndSmelling\":\"口气\",\"palpation\":\"脉弦\"},\"physicalExam\":\"无\",\"auxiliaryExam\":\"血常规：WBC 9.5×10^9/L，CRP 12 mg/L\",\"diagnosis\":{\"tcmDiagnosisName\":\"湿疮\",\"tcmDiagnosisCode\":\"A08.01.07\",\"tcmSyndromeName\":\"脾虚湿困证\",\"westernDiagnosisName\":\"特应性皮炎\",\"westernDiagnosisCode\":\"L20.900\"},\"treatmentPrinciple\":\"健脾化湿\",\"treatmentAdvice\":\"少食多餐，避免辛辣油腻\",\"prescription\":{\"prescriptionName\":\"复方参蝉汤\",\"herbs\":[\"党参\",\"蝉蜕\",\"生白术\",\"茯苓\",\"温山药\",\"炒白扁豆\",\"薏苡仁\",\"生黄芪\",\"炒麦芽\",\"炒稻芽\",\"炒鸡内金\",\"大枣\",\"生甘草\",\"蚕砂\"]}}}}",
+        "created_at": "2025-12-10T01:37:13.596711"
+      },
+      {
+        "role": "assistant",
+        "content": "这次的红斑和抓痕情况，比起上次有没有好转或者有变化呢？",
+        "created_at": "2025-12-10T01:37:13.598230"
+      },
+      {
+        "role": "user",
+        "content": "红斑范围变小了",
+        "created_at": "2025-12-10T01:37:17.029575"
+      },
+      {
+        "role": "assistant",
+        "content": "那这次饮食方面有没有什么变化呢？比如吃的东西有没有更规律或者更注意忌口了？",
+        "created_at": "2025-12-10T01:37:17.030046"
+      },
+      {
+        "role": "user",
+        "content": "开始忌口了",
+        "created_at": "2025-12-10T01:37:33.706370"
+      },
+      {
+        "role": "assistant",
+        "content": "那最近睡觉的情况怎么样？比上次好些了吗？",
+        "created_at": "2025-12-10T01:37:33.706924"
+      },
+      {
+        "role": "user",
+        "content": "睡眠质量一般",
+        "created_at": "2025-12-10T01:37:39.020544"
+      },
+      {
+        "role": "assistant",
+        "content": "那这次大便的情况有没有什么变化呢？比上次好些了吗？",
+        "created_at": "2025-12-10T01:37:39.021241"
+      },
+      {
+        "role": "user",
+        "content": "排便次数增多",
+        "created_at": "2025-12-10T01:37:44.610627"
+      },
+      {
+        "role": "assistant",
+        "content": "那这次红斑的情况相比上次有改善吗？",
+        "created_at": "2025-12-10T01:37:44.611246"
+      },
+      {
+        "role": "user",
+        "content": "无红斑",
+        "created_at": "2025-12-10T01:37:47.565716"
+      },
+      {
+        "role": "assistant",
+        "content": "那这次皮肤的水肿和丘疹情况相比上次有改善吗？",
+        "created_at": "2025-12-10T01:37:47.566292"
+      },
+      {
+        "role": "user",
+        "content": "无",
+        "created_at": "2025-12-10T01:37:49.568888"
+      },
+      {
+        "role": "assistant",
+        "content": "那这次皮肤上的鳞屑情况相比上次有变化吗？",
+        "created_at": "2025-12-10T01:37:49.569396"
+      },
+      {
+        "role": "user",
+        "content": "无脱屑",
+        "created_at": "2025-12-10T01:37:51.082021"
+      },
+      {
+        "role": "assistant",
+        "content": "那这次皮肤上的苔藓样改变情况，相比上次有改善吗？",
+        "created_at": "2025-12-10T01:37:51.082577"
+      },
+      {
+        "role": "user",
+        "content": "无",
+        "created_at": "2025-12-10T01:37:53.177643"
+      },
+      {
+        "role": "assistant",
+        "content": "那最近除了皮肤的情况，还有没有其他不舒服的地方呢？比如身体哪里觉得累、或者有没有什么新的症状出现？",
+        "created_at": "2025-12-10T01:37:53.178147"
+      },
+      {
+        "role": "user",
+        "content": "无其他不适",
+        "created_at": "2025-12-10T01:37:56.619970"
+      },
+      {
+        "role": "assistant",
+        "content": "主诉：颈项部红斑、抓痕伴瘙痒较上次减轻，范围变小，但仍有持续性瘙痒。\n\n现病史：本次食欲较上次减退，已开始忌口；睡眠质量一般，较上次无明显变化；大便溏结不调，排便次数较上次增多，小便尿次正常。\n\n既往史：无长期用药记录，无过敏史，无不良习惯，无月经史记录。\n\n家族史：无直系亲属慢病或遗传病史。",
+        "created_at": "2025-12-10T01:37:56.620597"
+      }
+    ]
+  },
+  {
+    "chat_session_id": "6542ee98-cd2b-42e2-a23a-c268a7f13dfa",
+    "history": [
+      {
+        "role": "user",
+        "content": "{\"patientIdentity\":{\"patientId\":\"PID1234565\",\"idType\":\"01\",\"idNumber\":\"110101199001011235\",\"patientName\":\"李铁\"},\"visitInfo\":{\"department\":\"皮肤医美中心\",\"visitNumber\":\"V0000222\"},\"latestMedicalRecord\":{\"basicInfo\":{\"gender\":\"男\",\"birthday\":\"1985-05-20\",\"aboBloodType\":\"A\",\"rhBloodType\":\"+\"},\"vitalSigns\":{\"systolicPressure\":118,\"diastolicPressure\":76,\"height\":178,\"weight\":75},\"marriageChildInfo\":{\"marriageStatus\":\"已婚\",\"fullTermCount\":0,\"prematureCount\":0,\"abortionCount\":0,\"livingChildrenCount\":0},\"pastHistory\":{\"personalHistory\":\"\",\"bloodTransfusionHistory\":\"2015年输过2U红细胞\",\"diseaseHistory\":\"\",\"epidemiologicalHistory\":\"否认出国及接触史\",\"surgeryHistory\":\"无手术史\",\"familyHistory\":\"否认家族性遗传病、精神病、肿瘤等类似病史\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"}},\"allergyHistory\":\"无\",\"childGrowthInfo\":null},\"revisitInfo\":{\"isRevisit\":0,\"lastRecord\":{\"chiefComplaint\":\"\",\"presentIllness\":\"\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"},\"tcmFourExams\":{\"inspection\":\"\",\"inquiry\":\"\",\"listeningAndSmelling\":\"\",\"palpation\":\"\"},\"physicalExam\":\"\",\"auxiliaryExam\":\"\",\"diagnosis\":{\"tcmDiagnosisName\":\"\",\"tcmDiagnosisCode\":\"\",\"tcmSyndromeName\":\"\",\"westernDiagnosisName\":\"\",\"westernDiagnosisCode\":\"\"},\"treatmentPrinciple\":\"\",\"treatmentAdvice\":\"\",\"prescription\":{\"prescriptionName\":\"\",\"herbs\":[]}}}}",
+        "created_at": "2025-12-10T01:05:41.693639"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近有没有感觉到皮肤上有任何异常的情况呢？比如红肿、瘙痒、脱皮或者起疹子之类的？",
+        "created_at": "2025-12-10T01:05:41.694664"
+      },
+      {
+        "role": "user",
+        "content": "有红斑起疹子",
+        "created_at": "2025-12-10T01:05:44.801938"
+      },
+      {
+        "role": "assistant",
+        "content": "了解啦～这个红斑和起疹子的情况大概从什么时候开始的呢？大约持续了多久？",
+        "created_at": "2025-12-10T01:05:44.802922"
+      },
+      {
+        "role": "user",
+        "content": "大概有一个月了",
+        "created_at": "2025-12-10T01:05:47.548520"
+      },
+      {
+        "role": "assistant",
+        "content": "您这个红斑和疹子主要出现在身体的哪个部位呢？",
+        "created_at": "2025-12-10T01:05:47.549050"
+      },
+      {
+        "role": "user",
+        "content": "手臂出现疹子",
+        "created_at": "2025-12-10T01:05:51.086682"
+      },
+      {
+        "role": "assistant",
+        "content": "哦，这个症状的严重程度如何呢？比如有没有特别痒、疼，或者影响到日常活动？",
+        "created_at": "2025-12-10T01:05:51.087363"
+      },
+      {
+        "role": "user",
+        "content": "影响睡眠",
+        "created_at": "2025-12-10T01:05:53.909448"
+      },
+      {
+        "role": "assistant",
+        "content": "您有没有感觉到其他不舒服的症状呢？比如发热、头晕或者身体其他部位也有类似的情况？",
+        "created_at": "2025-12-10T01:05:53.910446"
+      },
+      {
+        "role": "user",
+        "content": "发热",
+        "created_at": "2025-12-10T01:05:56.522930"
+      },
+      {
+        "role": "assistant",
+        "content": "您之前有去看过医生或者接受过治疗吗？",
+        "created_at": "2025-12-10T01:05:56.523573"
+      },
+      {
+        "role": "user",
+        "content": "接受过治疗",
+        "created_at": "2025-12-10T01:05:59.543999"
+      },
+      {
+        "role": "assistant",
+        "content": "您之前就诊时，医生给出的诊断是什么？比如是湿疹、皮炎，还是其他什么皮肤问题呢？",
+        "created_at": "2025-12-10T01:05:59.544616"
+      },
+      {
+        "role": "user",
+        "content": "过敏性皮炎",
+        "created_at": "2025-12-10T01:06:02.872810"
+      },
+      {
+        "role": "assistant",
+        "content": "您之前有自行使用过什么药物吗？",
+        "created_at": "2025-12-10T01:06:02.873395"
+      },
+      {
+        "role": "user",
+        "content": "涂抹过炉甘石洗剂",
+        "created_at": "2025-12-10T01:06:06.204034"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近有没有接触或食用过可能引起过敏的食物或药物呢？比如海鲜、坚果、某些药物等。",
+        "created_at": "2025-12-10T01:06:06.204525"
+      },
+      {
+        "role": "user",
+        "content": "没有",
+        "created_at": "2025-12-10T01:06:08.946639"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近有没有长期服用什么药物呢？比如降压药、降糖药或者其他的慢性病药物？",
+        "created_at": "2025-12-10T01:06:08.947622"
+      },
+      {
+        "role": "user",
+        "content": "没有",
+        "created_at": "2025-12-10T01:06:12.537424"
+      },
+      {
+        "role": "assistant",
+        "content": "您平时抽烟频率是怎样的呢？比如每天抽多少支，或者多久抽一次？",
+        "created_at": "2025-12-10T01:06:12.537919"
+      },
+      {
+        "role": "user",
+        "content": "不吸烟",
+        "created_at": "2025-12-10T01:06:15.111274"
+      },
+      {
+        "role": "assistant",
+        "content": "您平时喝酒的频率是怎样的呢？比如每周喝几次，或者每次喝多少？",
+        "created_at": "2025-12-10T01:06:15.111778"
+      },
+      {
+        "role": "user",
+        "content": "社交性饮酒",
+        "created_at": "2025-12-10T01:06:17.256104"
+      },
+      {
+        "role": "assistant",
+        "content": "您平时的饮食习惯是怎样的呢？比如喜欢吃辣的、油腻的，或者有特别偏好的口味？",
+        "created_at": "2025-12-10T01:06:17.256614"
+      },
+      {
+        "role": "user",
+        "content": "偏爱油腻食物",
+        "created_at": "2025-12-10T01:06:20.073936"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近的睡眠情况怎么样呢？比如晚上容易醒、睡不踏实，还是经常熬夜？",
+        "created_at": "2025-12-10T01:06:20.074611"
+      },
+      {
+        "role": "user",
+        "content": "晚上睡不着，很焦虑",
+        "created_at": "2025-12-10T01:06:23.280109"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近的大小便情况怎么样呢？比如有没有出现便秘、腹泻或者尿液颜色变化等？",
+        "created_at": "2025-12-10T01:06:23.280790"
+      },
+      {
+        "role": "user",
+        "content": "腹泻",
+        "created_at": "2025-12-10T01:06:28.265784"
+      },
+      {
+        "role": "assistant",
+        "content": "主诉：\n\n手臂红斑起疹子一个月。\n\n现病史：\n\n症状为中度红斑起疹子，伴随发热，发病后曾就诊并诊断为过敏性皮炎，曾自行使用炉甘石洗剂进行治疗，症状无明显缓解，饮食偏爱油腻食物，睡眠较差，常因焦虑导致晚上睡不着，大便每日1 次、成形，小便正常。\n\n既往史：\n\n无长期用药记录，无过敏食物或药物记录，无不良生活习惯，月经史无记录。\n\n婚育史：\n\n已婚，足月生产个数为0，早产个数为0，流产个数为0，现存子女数量为0，已育子女数量为0。\n\n家族史：\n\n无直系亲属健康问题或遗传病记录。",
+        "created_at": "2025-12-10T01:06:28.266560"
+      }
+    ]
+  },
+  {
+    "chat_session_id": "7331a3cf-f6e9-48f1-b454-c694ab539924",
+    "history": [
+      {
+        "role": "user",
+        "content": "{\"patientIdentity\":{\"patientId\":\"PID1234565\",\"idType\":\"01\",\"idNumber\":\"110101199001011235\",\"patientName\":\"李铁\"},\"visitInfo\":{\"department\":\"皮肤医美中心\",\"visitNumber\":\"V0000222\"},\"latestMedicalRecord\":{\"basicInfo\":{\"gender\":\"男\",\"birthday\":\"1985-05-20\",\"aboBloodType\":\"A\",\"rhBloodType\":\"+\"},\"vitalSigns\":{\"systolicPressure\":118,\"diastolicPressure\":76,\"height\":178,\"weight\":75},\"marriageChildInfo\":{\"marriageStatus\":\"已婚\",\"fullTermCount\":0,\"prematureCount\":0,\"abortionCount\":0,\"livingChildrenCount\":0},\"pastHistory\":{\"personalHistory\":\"\",\"bloodTransfusionHistory\":\"2015年输过2U红细胞\",\"diseaseHistory\":\"\",\"epidemiologicalHistory\":\"否认出国及接触史\",\"surgeryHistory\":\"无手术史\",\"familyHistory\":\"否认家族性遗传病、精神病、肿瘤等类似病史\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"}},\"allergyHistory\":\"无\",\"childGrowthInfo\":null},\"revisitInfo\":{\"isRevisit\":0,\"lastRecord\":{\"chiefComplaint\":\"\",\"presentIllness\":\"\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"},\"tcmFourExams\":{\"inspection\":\"\",\"inquiry\":\"\",\"listeningAndSmelling\":\"\",\"palpation\":\"\"},\"physicalExam\":\"\",\"auxiliaryExam\":\"\",\"diagnosis\":{\"tcmDiagnosisName\":\"\",\"tcmDiagnosisCode\":\"\",\"tcmSyndromeName\":\"\",\"westernDiagnosisName\":\"\",\"westernDiagnosisCode\":\"\"},\"treatmentPrinciple\":\"\",\"treatmentAdvice\":\"\",\"prescription\":{\"prescriptionName\":\"\",\"herbs\":[]}}}}",
+        "created_at": "2025-12-10T01:53:36.625000"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近有没有感觉到皮肤上有特别不舒服的地方，比如红、痒、脱皮或者起疹子之类的？",
+        "created_at": "2025-12-10T01:53:36.625508"
+      },
+      {
+        "role": "user",
+        "content": "皮肤瘙痒",
+        "created_at": "2025-12-10T02:19:15.302532"
+      },
+      {
+        "role": "assistant",
+        "content": "了解啦～这个皮肤瘙痒的情况大概从什么时候开始的呢？持续了多久？",
+        "created_at": "2025-12-10T02:19:15.303305"
+      },
+      {
+        "role": "user",
+        "content": "持续数日",
+        "created_at": "2025-12-10T02:19:41.240509"
+      },
+      {
+        "role": "assistant",
+        "content": "您这个瘙痒主要出现在身体的哪个部位呢？",
+        "created_at": "2025-12-10T02:19:41.242242"
+      },
+      {
+        "role": "user",
+        "content": "手臂有瘙痒",
+        "created_at": "2025-12-10T02:19:45.121420"
+      },
+      {
+        "role": "assistant",
+        "content": "哦，这个瘙痒的严重程度怎么样呢？是轻微的还是特别难受？",
+        "created_at": "2025-12-10T02:19:45.121978"
+      },
+      {
+        "role": "user",
+        "content": "轻微瘙痒",
+        "created_at": "2025-12-10T02:19:49.370886"
+      },
+      {
+        "role": "assistant",
+        "content": "您还有其他不舒服的感觉吗？比如皮肤有没有发红、脱皮或者有小疙瘩之类的？",
+        "created_at": "2025-12-10T02:19:49.371617"
+      },
+      {
+        "role": "user",
+        "content": "脱皮严重",
+        "created_at": "2025-12-10T02:19:54.715213"
+      },
+      {
+        "role": "assistant",
+        "content": "您之前有去看过医生或者接受过治疗吗？",
+        "created_at": "2025-12-10T02:19:54.716847"
+      },
+      {
+        "role": "user",
+        "content": "接受过治疗",
+        "created_at": "2025-12-10T02:19:58.269719"
+      },
+      {
+        "role": "assistant",
+        "content": "您之前就诊时，医生给出的诊断是什么呢？",
+        "created_at": "2025-12-10T02:19:58.270253"
+      },
+      {
+        "role": "user",
+        "content": "皮炎",
+        "created_at": "2025-12-10T02:20:02.364064"
+      },
+      {
+        "role": "assistant",
+        "content": "您之前有自行使用过什么药物吗？",
+        "created_at": "2025-12-10T02:20:02.365042"
+      },
+      {
+        "role": "user",
+        "content": "外用激素药膏",
+        "created_at": "2025-12-10T02:20:06.293080"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近有没有接触或食用过什么可能引起过敏的食物或药物呢？",
+        "created_at": "2025-12-10T02:20:06.293694"
+      },
+      {
+        "role": "user",
+        "content": "没有",
+        "created_at": "2025-12-10T02:20:09.556453"
+      },
+      {
+        "role": "assistant",
+        "content": "您平时有长期服用什么药物吗？比如降压药、降糖药或者慢性病相关的药物？",
+        "created_at": "2025-12-10T02:20:09.557279"
+      },
+      {
+        "role": "user",
+        "content": "降压药每天吃",
+        "created_at": "2025-12-10T02:20:18.114336"
+      },
+      {
+        "role": "assistant",
+        "content": "您平时抽烟的频率是怎样的呢？比如每天抽几支，或者每周抽几天？",
+        "created_at": "2025-12-10T02:20:18.114830"
+      },
+      {
+        "role": "user",
+        "content": "偶尔",
+        "created_at": "2025-12-10T02:20:22.337061"
+      },
+      {
+        "role": "assistant",
+        "content": "您平时喝酒的频率是怎样的呢？比如每周喝几次，或者每次喝多少？",
+        "created_at": "2025-12-10T02:20:22.337612"
+      },
+      {
+        "role": "user",
+        "content": "偶尔小酌",
+        "created_at": "2025-12-10T02:20:25.459252"
+      },
+      {
+        "role": "assistant",
+        "content": "您平时的饮食习惯怎么样？喜欢吃辣的、油腻的，还是偏清淡？",
+        "created_at": "2025-12-10T02:20:25.459877"
+      },
+      {
+        "role": "user",
+        "content": "偏爱清淡饮食",
+        "created_at": "2025-12-10T02:20:29.930069"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近的睡眠情况怎么样呢？通常每天能睡几个小时？",
+        "created_at": "2025-12-10T02:20:29.930575"
+      },
+      {
+        "role": "user",
+        "content": "晚上容易惊醒",
+        "created_at": "2025-12-10T02:20:36.357129"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近的大小便情况怎么样呢？有没有什么特别的变化或不适感？",
+        "created_at": "2025-12-10T02:20:36.357692"
+      },
+      {
+        "role": "user",
+        "content": "排便正常",
+        "created_at": "2025-12-10T02:20:41.977120"
+      },
+      {
+        "role": "assistant",
+        "content": "主诉：\n\n手臂皮肤瘙痒 数日。\n\n现病史：\n\n症状为轻度瘙痒，伴随脱皮现象，未进行特殊治疗，有自行使用激素药膏，未明确说明是否有效，饮食口味清淡，睡眠状况为晚上容易惊醒，大小便正常。\n\n既往史：\n\n长期用药为降压药，无过敏食物或药物记录，无不良生活习惯，抽烟频率为偶尔，喝酒频率为偶尔。\n\n家族史：\n\n无记录。",
+        "created_at": "2025-12-10T02:20:41.977629"
+      }
+    ]
+  },
+  {
+    "chat_session_id": "76198b03-8107-41da-9d4d-7724ff850e55",
+    "history": [
+      {
+        "role": "user",
+        "content": "{\"patientIdentity\":{\"patientId\":\"PID1234565\",\"idType\":\"01\",\"idNumber\":\"110101199001011235\",\"patientName\":\"李铁\"},\"visitInfo\":{\"department\":\"皮肤医美中心\",\"visitNumber\":\"V0000222\"},\"latestMedicalRecord\":{\"basicInfo\":{\"gender\":\"男\",\"birthday\":\"1985-05-20\",\"aboBloodType\":\"A\",\"rhBloodType\":\"+\"},\"vitalSigns\":{\"systolicPressure\":118,\"diastolicPressure\":76,\"height\":178,\"weight\":75},\"marriageChildInfo\":{\"marriageStatus\":\"已婚\",\"fullTermCount\":0,\"prematureCount\":0,\"abortionCount\":0,\"livingChildrenCount\":0},\"pastHistory\":{\"personalHistory\":\"\",\"bloodTransfusionHistory\":\"2015年输过2U红细胞\",\"diseaseHistory\":\"\",\"epidemiologicalHistory\":\"否认出国及接触史\",\"surgeryHistory\":\"无手术史\",\"familyHistory\":\"否认家族性遗传病、精神病、肿瘤等类似病史\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"}},\"allergyHistory\":\"无\",\"childGrowthInfo\":null},\"revisitInfo\":{\"isRevisit\":0,\"lastRecord\":{\"chiefComplaint\":\"\",\"presentIllness\":\"\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"},\"tcmFourExams\":{\"inspection\":\"\",\"inquiry\":\"\",\"listeningAndSmelling\":\"\",\"palpation\":\"\"},\"physicalExam\":\"\",\"auxiliaryExam\":\"\",\"diagnosis\":{\"tcmDiagnosisName\":\"\",\"tcmDiagnosisCode\":\"\",\"tcmSyndromeName\":\"\",\"westernDiagnosisName\":\"\",\"westernDiagnosisCode\":\"\"},\"treatmentPrinciple\":\"\",\"treatmentAdvice\":\"\",\"prescription\":{\"prescriptionName\":\"\",\"herbs\":[]}}}}",
+        "created_at": "2025-12-10T03:00:06.974341"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近有没有感觉到皮肤上有特别明显的症状呢？比如红肿、瘙痒、脱皮或者起疹子之类的？",
+        "created_at": "2025-12-10T03:00:06.975441"
+      }
+    ]
+  },
+  {
+    "chat_session_id": "897122ca-215a-4f92-b128-26ebb4187d14",
+    "history": [
+      {
+        "role": "user",
+        "content": "{\"patientIdentity\":{\"patientId\":\"PID1234565\",\"idType\":\"01\",\"idNumber\":\"110101199001011235\",\"patientName\":\"李铁\"},\"visitInfo\":{\"department\":\"皮肤医美中心\",\"visitNumber\":\"V0000222\"},\"latestMedicalRecord\":{\"basicInfo\":{\"gender\":\"男\",\"birthday\":\"1985-05-20\",\"aboBloodType\":\"A\",\"rhBloodType\":\"+\"},\"vitalSigns\":{\"systolicPressure\":118,\"diastolicPressure\":76,\"height\":178,\"weight\":75},\"marriageChildInfo\":{\"marriageStatus\":\"已婚\",\"fullTermCount\":0,\"prematureCount\":0,\"abortionCount\":0,\"livingChildrenCount\":0},\"pastHistory\":{\"personalHistory\":\"\",\"bloodTransfusionHistory\":\"2015年输过2U红细胞\",\"diseaseHistory\":\"\",\"epidemiologicalHistory\":\"否认出国及接触史\",\"surgeryHistory\":\"无手术史\",\"familyHistory\":\"否认家族性遗传病、精神病、肿瘤等类似病史\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"}},\"allergyHistory\":\"无\",\"childGrowthInfo\":null},\"revisitInfo\":{\"isRevisit\":0,\"lastRecord\":{\"chiefComplaint\":\"\",\"presentIllness\":\"\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"},\"tcmFourExams\":{\"inspection\":\"\",\"inquiry\":\"\",\"listeningAndSmelling\":\"\",\"palpation\":\"\"},\"physicalExam\":\"\",\"auxiliaryExam\":\"\",\"diagnosis\":{\"tcmDiagnosisName\":\"\",\"tcmDiagnosisCode\":\"\",\"tcmSyndromeName\":\"\",\"westernDiagnosisName\":\"\",\"westernDiagnosisCode\":\"\"},\"treatmentPrinciple\":\"\",\"treatmentAdvice\":\"\",\"prescription\":{\"prescriptionName\":\"\",\"herbs\":[]}}}}",
+        "created_at": "2025-12-09T09:17:03.137565"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近有没有感到身体有什么不舒服的地方？比如咳嗽、咳痰、胸闷、气喘或者发热这些情况？",
+        "created_at": "2025-12-09T09:17:03.138211"
+      },
+      {
+        "role": "user",
+        "content": "发热",
+        "created_at": "2025-12-09T09:17:06.035709"
+      },
+      {
+        "role": "assistant",
+        "content": "了解～这个发热的情况大概从什么时候开始的呢？持续了多久？",
+        "created_at": "2025-12-09T09:17:06.036640"
+      },
+      {
+        "role": "user",
+        "content": "持续了五天",
+        "created_at": "2025-12-09T09:17:08.846816"
+      },
+      {
+        "role": "assistant",
+        "content": "您发热的时候，身体哪个部位特别明显？比如是全身发热，还是只在某个部位感觉热？",
+        "created_at": "2025-12-09T09:17:08.847573"
+      },
+      {
+        "role": "user",
+        "content": "手脚发热较重",
+        "created_at": "2025-12-09T09:17:11.422298"
+      },
+      {
+        "role": "assistant",
+        "content": "哦，这个发热的严重程度如何呢？有没有觉得特别难受，或者只是轻微的？",
+        "created_at": "2025-12-09T09:17:11.422826"
+      },
+      {
+        "role": "user",
+        "content": "体温38度左右",
+        "created_at": "2025-12-09T09:17:14.200685"
+      },
+      {
+        "role": "assistant",
+        "content": "您还有其他不舒服的感觉吗？比如有没有咳嗽、流鼻涕、乏力或者头痛这些症状？",
+        "created_at": "2025-12-09T09:17:14.201206"
+      },
+      {
+        "role": "user",
+        "content": "流鼻涕",
+        "created_at": "2025-12-09T09:17:17.533704"
+      },
+      {
+        "role": "assistant",
+        "content": "您之前有去看过医生或者接受过治疗吗？",
+        "created_at": "2025-12-09T09:17:17.534209"
+      },
+      {
+        "role": "user",
+        "content": "之前看过医生",
+        "created_at": "2025-12-09T09:17:20.864133"
+      },
+      {
+        "role": "assistant",
+        "content": "您之前在看医生的时候，有没有对某些食物或药物出现过过敏反应呢？",
+        "created_at": "2025-12-09T09:17:20.864763"
+      },
+      {
+        "role": "user",
+        "content": "青霉素过敏",
+        "created_at": "2025-12-09T09:17:23.759140"
+      },
+      {
+        "role": "assistant",
+        "content": "您平时有长期服用什么药物吗？比如高血压、糖尿病或者哮喘之类的药物。",
+        "created_at": "2025-12-09T09:17:23.759693"
+      },
+      {
+        "role": "user",
+        "content": "糖尿病药物",
+        "created_at": "2025-12-09T09:17:27.082861"
+      },
+      {
+        "role": "assistant",
+        "content": "您家里有人有呼吸系统方面的疾病吗？比如哮喘、慢性支气管炎或者肺部感染之类的？",
+        "created_at": "2025-12-09T09:17:27.083408"
+      },
+      {
+        "role": "user",
+        "content": "母亲有慢性支气管炎",
+        "created_at": "2025-12-09T09:17:30.297851"
+      },
+      {
+        "role": "assistant",
+        "content": "您平时有抽烟的习惯吗？一般一天抽多少支呢？",
+        "created_at": "2025-12-09T09:17:30.298417"
+      },
+      {
+        "role": "user",
+        "content": "每天半包",
+        "created_at": "2025-12-09T09:17:34.625672"
+      },
+      {
+        "role": "assistant",
+        "content": "您平时喝酒的频率是怎样的呢？比如每周喝几次，或者每次喝多少？",
+        "created_at": "2025-12-09T09:17:34.627490"
+      },
+      {
+        "role": "user",
+        "content": "偶尔小酌",
+        "created_at": "2025-12-09T09:17:37.242425"
+      },
+      {
+        "role": "assistant",
+        "content": "您平时的饮食习惯怎么样？喜欢吃什么口味的食物，比如偏咸、偏辣，还是清淡一些？",
+        "created_at": "2025-12-09T09:17:37.243120"
+      },
+      {
+        "role": "user",
+        "content": "口味偏咸",
+        "created_at": "2025-12-09T09:17:41.075166"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近的睡眠情况怎么样？晚上通常能睡几个小时，有没有经常醒来或者感觉睡不踏实？",
+        "created_at": "2025-12-09T09:17:41.075760"
+      },
+      {
+        "role": "user",
+        "content": "睡眠不好，经常醒",
+        "created_at": "2025-12-09T09:17:44.613706"
+      },
+      {
+        "role": "assistant",
+        "content": "近期排便、排尿情况怎么样？有没有便秘、腹泻或尿频、尿痛这些问题？",
+        "created_at": "2025-12-09T09:17:44.614347"
+      },
+      {
+        "role": "user",
+        "content": "腹泻",
+        "created_at": "2025-12-09T09:17:49.082171"
+      },
+      {
+        "role": "assistant",
+        "content": "主诉：\n\n手脚发热5 天。\n\n现病史：\n\n发热程度为中度，伴随流鼻涕症状，未进行就诊治疗，无自行使用药物，发热无明显加重因素，饮食口味偏咸，睡眠较差，常于夜间醒来，大小便正常。\n\n既往史：\n\n无长期用药记录，对青霉素过敏，有抽烟习惯，频率为每天，偶尔饮酒。\n\n家族史：\n\n母亲有慢性支气管炎病史，无其他直系亲属健康问题，无遗传病家族史。",
+        "created_at": "2025-12-09T09:17:49.082748"
+      }
+    ]
+  },
+  {
+    "chat_session_id": "8dc6e23f-f938-43b1-a240-5a1d991d9a3d",
+    "history": [
+      {
+        "role": "user",
+        "content": "{\"patientIdentity\":{\"patientId\":\"PID1234563\",\"idType\":\"01\",\"idNumber\":\"110101199001011235\",\"patientName\":\"王刚\"},\"visitInfo\":{\"department\":\"皮肤医美中心\",\"visitNumber\":\"V0000222\"},\"latestMedicalRecord\":{\"basicInfo\":{\"gender\":\"男\",\"birthday\":\"1985-05-20\",\"aboBloodType\":\"A\",\"rhBloodType\":\"+\"},\"vitalSigns\":{\"systolicPressure\":118,\"diastolicPressure\":76,\"height\":178,\"weight\":75},\"marriageChildInfo\":{\"marriageStatus\":\"已婚\",\"fullTermCount\":0,\"prematureCount\":0,\"abortionCount\":0,\"livingChildrenCount\":0},\"pastHistory\":{\"personalHistory\":\"无烟酒不良嗜好，否认冶游史。\",\"bloodTransfusionHistory\":\"无\",\"diseaseHistory\":\"患者平素体健，有过敏性鼻炎，无重大慢性疾病无传染病史\",\"epidemiologicalHistory\":\"无传染病史，流行病学史\",\"surgeryHistory\":\"无手术史\",\"familyHistory\":\"否认家族性遗传病、精神病、肿瘤等类似病史.\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"}},\"allergyHistory\":\"未发现\",\"childGrowthInfo\":null},\"revisitInfo\":{\"isRevisit\":1,\"lastRecord\":{\"chiefComplaint\":\"下肢红斑、丘疹、抓痕伴瘙痒8日\",\"presentIllness\":\"8日前无明显诱因下下肢红斑、丘疹、抓痕，伴瘙痒，外院多次就诊（卤米松乳膏 外用应急软膏 氯雷他定片 ），皮疹仍反复发作口不渴，睡眠安，大便便次正常，小便尿次正常\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"},\"tcmFourExams\":{\"inspection\":\"红黄隐隐，明润含蓄\",\"inquiry\":\"时有腹胀便溏，倦怠乏力\",\"listeningAndSmelling\":\"口气\",\"palpation\":\"脉弦\"},\"physicalExam\":\"无\",\"auxiliaryExam\":\"血常规：WBC 9.5×10^9/L，CRP 12 mg/L\",\"diagnosis\":{\"tcmDiagnosisName\":\"湿疮\",\"tcmDiagnosisCode\":\"A08.01.07\",\"tcmSyndromeName\":\"脾虚湿困证\",\"westernDiagnosisName\":\"特应性皮炎\",\"westernDiagnosisCode\":\"L20.900\"},\"treatmentPrinciple\":\"健脾化湿\",\"treatmentAdvice\":\"少食多餐，避免辛辣油腻\",\"prescription\":{\"prescriptionName\":\"复方参蝉汤\",\"herbs\":[\"党参\",\"蝉蜕\",\"生白术\",\"茯苓\",\"温山药\",\"炒白扁豆\",\"薏苡仁\",\"生黄芪\",\"炒麦芽\",\"炒稻芽\",\"炒鸡内金\",\"大枣\",\"生甘草\",\"蚕砂\"]}}}}",
+        "created_at": "2025-12-10T01:13:17.197251"
+      },
+      {
+        "role": "assistant",
+        "content": "",
+        "created_at": "2025-12-10T01:13:17.197785"
+      }
+    ]
+  },
+  {
+    "chat_session_id": "9e51de44-577c-4dd0-a7e3-4b3360678bbf",
+    "history": [
+      {
+        "role": "user",
+        "content": "{\"patientIdentity\":{\"patientId\":\"PID1234588\",\"idType\":\"01\",\"idNumber\":\"110101199001011235\",\"patientName\":\"李铁西\"},\"visitInfo\":{\"department\":\"肛肠科\",\"visitNumber\":\"V0000222\"},\"latestMedicalRecord\":{\"basicInfo\":{\"gender\":\"男\",\"birthday\":\"1985-05-20\",\"aboBloodType\":\"A\",\"rhBloodType\":\"+\"},\"vitalSigns\":{\"systolicPressure\":118,\"diastolicPressure\":76,\"height\":178,\"weight\":75},\"marriageChildInfo\":{\"marriageStatus\":\"已婚\",\"fullTermCount\":0,\"prematureCount\":0,\"abortionCount\":0,\"livingChildrenCount\":0},\"pastHistory\":{\"personalHistory\":\"\",\"bloodTransfusionHistory\":\"2015年输过2U红细胞\",\"diseaseHistory\":\"\",\"epidemiologicalHistory\":\"否认出国及接触史\",\"surgeryHistory\":\"无手术史\",\"familyHistory\":\"否认家族性遗传病、精神病、肿瘤等类似病史\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"}},\"allergyHistory\":\"无\",\"childGrowthInfo\":null},\"revisitInfo\":{\"isRevisit\":0,\"lastRecord\":{\"chiefComplaint\":\"\",\"presentIllness\":\"\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"},\"tcmFourExams\":{\"inspection\":\"\",\"inquiry\":\"\",\"listeningAndSmelling\":\"\",\"palpation\":\"\"},\"physicalExam\":\"\",\"auxiliaryExam\":\"\",\"diagnosis\":{\"tcmDiagnosisName\":\"\",\"tcmDiagnosisCode\":\"\",\"tcmSyndromeName\":\"\",\"westernDiagnosisName\":\"\",\"westernDiagnosisCode\":\"\"},\"treatmentPrinciple\":\"\",\"treatmentAdvice\":\"\",\"prescription\":{\"prescriptionName\":\"\",\"herbs\":[]}}}}",
+        "created_at": "2025-12-09T23:57:59.581090"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近有没有感到咳嗽、咳痰、胸闷或者呼吸不畅这些基本症状呢？",
+        "created_at": "2025-12-09T23:57:59.582767"
+      },
+      {
+        "role": "user",
+        "content": "呼吸不畅",
+        "created_at": "2025-12-09T23:58:17.290634"
+      },
+      {
+        "role": "assistant",
+        "content": "了解啦～这个呼吸不畅的情况大概持续多久了呢？",
+        "created_at": "2025-12-09T23:58:17.291345"
+      },
+      {
+        "role": "user",
+        "content": "一周左右",
+        "created_at": "2025-12-09T23:58:30.507321"
+      },
+      {
+        "role": "assistant",
+        "content": "您这个呼吸不畅的感觉主要是在胸部哪个位置呢？比如胸口、喉咙，还是其他地方？",
+        "created_at": "2025-12-09T23:58:30.508210"
+      },
+      {
+        "role": "user",
+        "content": "胸口疼痛",
+        "created_at": "2025-12-09T23:59:16.242963"
+      },
+      {
+        "role": "assistant",
+        "content": "哦，这个胸口疼痛的严重程度如何呢？是轻微的隐痛，还是比较剧烈的疼痛？",
+        "created_at": "2025-12-09T23:59:16.243778"
+      },
+      {
+        "role": "user",
+        "content": "轻微隐痛",
+        "created_at": "2025-12-09T23:59:28.119865"
+      },
+      {
+        "role": "assistant",
+        "content": "您还有其他不舒服的感觉吗？比如发热、乏力、喉咙痛或者有痰？",
+        "created_at": "2025-12-09T23:59:28.121118"
+      },
+      {
+        "role": "user",
+        "content": "乏力",
+        "created_at": "2025-12-09T23:59:31.172123"
+      },
+      {
+        "role": "assistant",
+        "content": "您之前有去看过医生或者接受过治疗吗？",
+        "created_at": "2025-12-09T23:59:31.172666"
+      },
+      {
+        "role": "user",
+        "content": "接受过治疗",
+        "created_at": "2025-12-09T23:59:35.629281"
+      },
+      {
+        "role": "assistant",
+        "content": "您之前接受的治疗是针对什么诊断进行的呢？",
+        "created_at": "2025-12-09T23:59:35.629869"
+      },
+      {
+        "role": "user",
+        "content": "皮炎",
+        "created_at": "2025-12-09T23:59:53.958461"
+      },
+      {
+        "role": "assistant",
+        "content": "您之前有自行使用过什么药物吗？",
+        "created_at": "2025-12-09T23:59:53.958987"
+      },
+      {
+        "role": "user",
+        "content": "外用激素药膏",
+        "created_at": "2025-12-09T23:59:59.738981"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近有没有对某些食物或药物出现过过敏反应呢？比如海鲜、坚果、青霉素类药物等。",
+        "created_at": "2025-12-09T23:59:59.739578"
+      },
+      {
+        "role": "user",
+        "content": "坚果过敏",
+        "created_at": "2025-12-10T00:00:06.912131"
+      },
+      {
+        "role": "assistant",
+        "content": "您平时有长期服用的药物吗？比如哮喘药、降压药或者其他慢性病的药物？",
+        "created_at": "2025-12-10T00:00:06.912656"
+      }
+    ]
+  },
+  {
+    "chat_session_id": "9f683f93-9e7c-407a-b949-42ced7f39957",
+    "history": [
+      {
+        "role": "user",
+        "content": "{\"patientIdentity\":{\"patientId\":\"PID1234565\",\"idType\":\"01\",\"idNumber\":\"110101199001011235\",\"patientName\":\"李铁\"},\"visitInfo\":{\"department\":\"皮肤医美中心\",\"visitNumber\":\"V0000222\"},\"latestMedicalRecord\":{\"basicInfo\":{\"gender\":\"男\",\"birthday\":\"1985-05-20\",\"aboBloodType\":\"A\",\"rhBloodType\":\"+\"},\"vitalSigns\":{\"systolicPressure\":118,\"diastolicPressure\":76,\"height\":178,\"weight\":75},\"marriageChildInfo\":{\"marriageStatus\":\"已婚\",\"fullTermCount\":0,\"prematureCount\":0,\"abortionCount\":0,\"livingChildrenCount\":0},\"pastHistory\":{\"personalHistory\":\"\",\"bloodTransfusionHistory\":\"2015年输过2U红细胞\",\"diseaseHistory\":\"\",\"epidemiologicalHistory\":\"否认出国及接触史\",\"surgeryHistory\":\"无手术史\",\"familyHistory\":\"否认家族性遗传病、精神病、肿瘤等类似病史\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"}},\"allergyHistory\":\"无\",\"childGrowthInfo\":null},\"revisitInfo\":{\"isRevisit\":0,\"lastRecord\":{\"chiefComplaint\":\"\",\"presentIllness\":\"\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"},\"tcmFourExams\":{\"inspection\":\"\",\"inquiry\":\"\",\"listeningAndSmelling\":\"\",\"palpation\":\"\"},\"physicalExam\":\"\",\"auxiliaryExam\":\"\",\"diagnosis\":{\"tcmDiagnosisName\":\"\",\"tcmDiagnosisCode\":\"\",\"tcmSyndromeName\":\"\",\"westernDiagnosisName\":\"\",\"westernDiagnosisCode\":\"\"},\"treatmentPrinciple\":\"\",\"treatmentAdvice\":\"\",\"prescription\":{\"prescriptionName\":\"\",\"herbs\":[]}}}}",
+        "created_at": "2025-12-10T02:02:36.757623"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近有没有感觉到皮肤上有任何异常的情况呢？比如红肿、瘙痒、脱皮或者起疹子之类的？",
+        "created_at": "2025-12-10T02:02:36.758495"
+      },
+      {
+        "role": "user",
+        "content": "红肿起疹子",
+        "created_at": "2025-12-10T02:02:40.857044"
+      },
+      {
+        "role": "assistant",
+        "content": "了解啦～这个红肿起疹子的情况大概从什么时候开始的呢？持续了多久？",
+        "created_at": "2025-12-10T02:02:40.857647"
+      },
+      {
+        "role": "user",
+        "content": "持续了三天",
+        "created_at": "2025-12-10T02:02:43.328698"
+      },
+      {
+        "role": "assistant",
+        "content": "您这个红肿起疹子的情况出现在身体的哪个部位呢？",
+        "created_at": "2025-12-10T02:02:43.329217"
+      },
+      {
+        "role": "user",
+        "content": "腿部有红斑",
+        "created_at": "2025-12-10T02:02:45.878460"
+      },
+      {
+        "role": "assistant",
+        "content": "哦，这个红斑的严重程度怎么样呢？有没有觉得特别痒或者疼？",
+        "created_at": "2025-12-10T02:02:45.878950"
+      },
+      {
+        "role": "user",
+        "content": "红斑有点痒",
+        "created_at": "2025-12-10T02:02:48.505927"
+      },
+      {
+        "role": "assistant",
+        "content": "您之前有去看过医生或者接受过治疗吗？",
+        "created_at": "2025-12-10T02:02:48.506756"
+      },
+      {
+        "role": "user",
+        "content": "没有看过医生",
+        "created_at": "2025-12-10T02:02:51.833939"
+      },
+      {
+        "role": "assistant",
+        "content": "您之前有自行使用过什么药物吗？",
+        "created_at": "2025-12-10T02:02:51.834426"
+      },
+      {
+        "role": "user",
+        "content": "口服抗过敏药",
+        "created_at": "2025-12-10T02:02:55.100237"
+      },
+      {
+        "role": "assistant",
+        "content": "您之前有自行使用过什么药物吗？",
+        "created_at": "2025-12-10T02:02:55.100778"
+      },
+      {
+        "role": "user",
+        "content": "涂抹药水",
+        "created_at": "2025-12-10T02:02:57.738110"
+      },
+      {
+        "role": "assistant",
+        "content": "您之前有自行使用过什么药物吗？",
+        "created_at": "2025-12-10T02:02:57.738845"
+      },
+      {
+        "role": "user",
+        "content": "口服抗过敏药",
+        "created_at": "2025-12-10T02:03:00.657710"
+      },
+      {
+        "role": "assistant",
+        "content": "您之前有自行使用过什么药物吗？",
+        "created_at": "2025-12-10T02:03:00.658527"
+      },
+      {
+        "role": "user",
+        "content": "涂抹抗生素软膏",
+        "created_at": "2025-12-10T02:03:03.957015"
+      },
+      {
+        "role": "assistant",
+        "content": "您之前有自行使用过什么药物吗？",
+        "created_at": "2025-12-10T02:03:03.957904"
+      },
+      {
+        "role": "user",
+        "content": "外用激素药膏",
+        "created_at": "2025-12-10T02:03:14.235902"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近有去医院看过医生吗？医生给出的诊断是什么？",
+        "created_at": "2025-12-10T02:03:14.236375"
+      },
+      {
+        "role": "user",
+        "content": "医生说是湿疹",
+        "created_at": "2025-12-10T02:03:32.274921"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近有没有接触或食用过可能引起过敏的食物或药物呢？",
+        "created_at": "2025-12-10T02:03:32.275443"
+      },
+      {
+        "role": "user",
+        "content": "没有",
+        "created_at": "2025-12-10T02:03:35.665628"
+      },
+      {
+        "role": "assistant",
+        "content": "您平时有长期服用什么药物吗？比如高血压、糖尿病之类的慢性病药物？",
+        "created_at": "2025-12-10T02:03:35.666091"
+      },
+      {
+        "role": "user",
+        "content": "没有",
+        "created_at": "2025-12-10T02:03:39.063003"
+      },
+      {
+        "role": "assistant",
+        "content": "您平时有抽烟的习惯吗？一般一天抽多少支呢？",
+        "created_at": "2025-12-10T02:03:39.063557"
+      },
+      {
+        "role": "user",
+        "content": "已戒烟",
+        "created_at": "2025-12-10T02:03:42.977114"
+      },
+      {
+        "role": "assistant",
+        "content": "您平时喝酒的频率是怎样的呢？比如每周喝几次，或者每次喝酒的量多不多？",
+        "created_at": "2025-12-10T02:03:42.977627"
+      },
+      {
+        "role": "user",
+        "content": "社交性饮酒",
+        "created_at": "2025-12-10T02:03:53.358481"
+      },
+      {
+        "role": "assistant",
+        "content": "您平时的饮食习惯怎么样？喜欢吃哪些口味的食物呢？比如辛辣、油腻还是清淡的？",
+        "created_at": "2025-12-10T02:03:53.358963"
+      },
+      {
+        "role": "user",
+        "content": "喜欢吃辣的",
+        "created_at": "2025-12-10T02:03:56.714330"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近的睡眠情况怎么样？通常每天能睡几个小时呢？",
+        "created_at": "2025-12-10T02:03:56.715403"
+      },
+      {
+        "role": "user",
+        "content": "经常失眠",
+        "created_at": "2025-12-10T02:03:59.755966"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近的大小便情况怎么样呢？有没有什么特别的变化或者不适感？",
+        "created_at": "2025-12-10T02:03:59.756471"
+      },
+      {
+        "role": "user",
+        "content": "排便次数增多",
+        "created_at": "2025-12-10T02:04:03.891914"
+      },
+      {
+        "role": "assistant",
+        "content": "主诉：\n\n腿部红肿起疹子3 天。\n\n现病史：\n\n症状为中度红肿起疹子，伴随红斑，未进行特殊治疗，无自行使用药物，饮食口味偏辛辣，睡眠状况为经常失眠，大小便状况为排便次数增多，无明显加重因素。\n\n既往史：\n\n无长期用药记录，无过敏食物或药物记录，无不良生活习惯。\n\n家族史：\n\n直系亲属无明显健康问题或遗传病记录。",
+        "created_at": "2025-12-10T02:04:03.893103"
+      }
+    ]
+  },
+  {
+    "chat_session_id": "a0cac107-4ce3-4dc8-917d-9193292728e6",
+    "history": [
+      {
+        "role": "user",
+        "content": "{\"patientIdentity\":{\"patientId\":\"PID1234565\",\"idType\":\"01\",\"idNumber\":\"110101199001011235\",\"patientName\":\"李铁\"},\"visitInfo\":{\"department\":\"皮肤医美中心\",\"visitNumber\":\"V0000222\"},\"latestMedicalRecord\":{\"basicInfo\":{\"gender\":\"男\",\"birthday\":\"1985-05-20\",\"aboBloodType\":\"A\",\"rhBloodType\":\"+\"},\"vitalSigns\":{\"systolicPressure\":118,\"diastolicPressure\":76,\"height\":178,\"weight\":75},\"marriageChildInfo\":{\"marriageStatus\":\"已婚\",\"fullTermCount\":0,\"prematureCount\":0,\"abortionCount\":0,\"livingChildrenCount\":0},\"pastHistory\":{\"personalHistory\":\"\",\"bloodTransfusionHistory\":\"2015年输过2U红细胞\",\"diseaseHistory\":\"\",\"epidemiologicalHistory\":\"否认出国及接触史\",\"surgeryHistory\":\"无手术史\",\"familyHistory\":\"否认家族性遗传病、精神病、肿瘤等类似病史\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"}},\"allergyHistory\":\"无\",\"childGrowthInfo\":null},\"revisitInfo\":{\"isRevisit\":0,\"lastRecord\":{\"chiefComplaint\":\"\",\"presentIllness\":\"\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"},\"tcmFourExams\":{\"inspection\":\"\",\"inquiry\":\"\",\"listeningAndSmelling\":\"\",\"palpation\":\"\"},\"physicalExam\":\"\",\"auxiliaryExam\":\"\",\"diagnosis\":{\"tcmDiagnosisName\":\"\",\"tcmDiagnosisCode\":\"\",\"tcmSyndromeName\":\"\",\"westernDiagnosisName\":\"\",\"westernDiagnosisCode\":\"\"},\"treatmentPrinciple\":\"\",\"treatmentAdvice\":\"\",\"prescription\":{\"prescriptionName\":\"\",\"herbs\":[]}}}}",
+        "created_at": "2025-12-09T08:58:14.871158"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近有没有感觉到什么不舒服的症状呢？比如咳嗽、胸闷、呼吸困难或者痰多之类的？",
+        "created_at": "2025-12-09T08:58:14.872191"
+      },
+      {
+        "role": "user",
+        "content": "有症状",
+        "created_at": "2025-12-09T08:58:29.270720"
+      },
+      {
+        "role": "assistant",
+        "content": "了解～这个症状大概从什么时候开始的呢？持续了多久？",
+        "created_at": "2025-12-09T08:58:29.272080"
+      },
+      {
+        "role": "user",
+        "content": "症状持续三个月",
+        "created_at": "2025-12-09T08:58:42.234864"
+      },
+      {
+        "role": "assistant",
+        "content": "您能告诉我这个症状出现在身体的哪个部位吗？比如胸部、喉咙或者鼻子等？",
+        "created_at": "2025-12-09T08:58:42.235756"
+      },
+      {
+        "role": "user",
+        "content": "手部和鼻部症状",
+        "created_at": "2025-12-09T08:59:05.238485"
+      },
+      {
+        "role": "assistant",
+        "content": "哦，这个症状的严重程度如何呢？比如是轻微的，还是影响到日常活动了？",
+        "created_at": "2025-12-09T08:59:05.238982"
+      },
+      {
+        "role": "user",
+        "content": "夜间瘙痒严重",
+        "created_at": "2025-12-09T08:59:21.039669"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近有没有其他不舒服的症状，比如打喷嚏、流鼻涕、皮肤红肿或者手部有皮疹、脱皮等情况呢？",
+        "created_at": "2025-12-09T08:59:21.041048"
+      },
+      {
+        "role": "user",
+        "content": "手部有皮疹",
+        "created_at": "2025-12-09T08:59:24.641486"
+      },
+      {
+        "role": "assistant",
+        "content": "您之前有去看过医生或者接受过治疗吗？",
+        "created_at": "2025-12-09T08:59:24.642007"
+      },
+      {
+        "role": "user",
+        "content": "之前看过医生",
+        "created_at": "2025-12-09T08:59:28.647871"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近有没有接触或食用过什么可能引起过敏的食物或药物呢？",
+        "created_at": "2025-12-09T08:59:28.648478"
+      },
+      {
+        "role": "user",
+        "content": "青霉素",
+        "created_at": "2025-12-09T08:59:31.886478"
+      },
+      {
+        "role": "assistant",
+        "content": "您平时有长期服用什么药物吗？",
+        "created_at": "2025-12-09T08:59:31.887049"
+      }
+    ]
+  },
+  {
+    "chat_session_id": "ab803fe1-48c6-4234-9d61-6ac9b85cd634",
+    "history": [
+      {
+        "role": "user",
+        "content": "{\"patientIdentity\":{\"patientId\":\"PID1234565\",\"idType\":\"01\",\"idNumber\":\"110101199001011235\",\"patientName\":\"李铁\"},\"visitInfo\":{\"department\":\"皮肤医美中心\",\"visitNumber\":\"V0000222\"},\"latestMedicalRecord\":{\"basicInfo\":{\"gender\":\"男\",\"birthday\":\"1985-05-20\",\"aboBloodType\":\"A\",\"rhBloodType\":\"+\"},\"vitalSigns\":{\"systolicPressure\":118,\"diastolicPressure\":76,\"height\":178,\"weight\":75},\"marriageChildInfo\":{\"marriageStatus\":\"已婚\",\"fullTermCount\":0,\"prematureCount\":0,\"abortionCount\":0,\"livingChildrenCount\":0},\"pastHistory\":{\"personalHistory\":\"\",\"bloodTransfusionHistory\":\"2015年输过2U红细胞\",\"diseaseHistory\":\"\",\"epidemiologicalHistory\":\"否认出国及接触史\",\"surgeryHistory\":\"无手术史\",\"familyHistory\":\"否认家族性遗传病、精神病、肿瘤等类似病史\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"}},\"allergyHistory\":\"无\",\"childGrowthInfo\":null},\"revisitInfo\":{\"isRevisit\":0,\"lastRecord\":{\"chiefComplaint\":\"\",\"presentIllness\":\"\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"},\"tcmFourExams\":{\"inspection\":\"\",\"inquiry\":\"\",\"listeningAndSmelling\":\"\",\"palpation\":\"\"},\"physicalExam\":\"\",\"auxiliaryExam\":\"\",\"diagnosis\":{\"tcmDiagnosisName\":\"\",\"tcmDiagnosisCode\":\"\",\"tcmSyndromeName\":\"\",\"westernDiagnosisName\":\"\",\"westernDiagnosisCode\":\"\"},\"treatmentPrinciple\":\"\",\"treatmentAdvice\":\"\",\"prescription\":{\"prescriptionName\":\"\",\"herbs\":[]}}}}",
+        "created_at": "2025-12-10T01:58:37.048285"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近有感觉到皮肤上有任何不舒服的地方吗？比如红肿、瘙痒、脱皮或者起疹子之类的？",
+        "created_at": "2025-12-10T01:58:37.049059"
+      },
+      {
+        "role": "user",
+        "content": "红肿起疹子",
+        "created_at": "2025-12-10T01:58:39.851854"
+      },
+      {
+        "role": "assistant",
+        "content": "了解啦～这个红肿起疹子的情况大概从什么时候开始的呢？大约持续了多久？",
+        "created_at": "2025-12-10T01:58:39.852537"
+      },
+      {
+        "role": "user",
+        "content": "大概持续了三天",
+        "created_at": "2025-12-10T01:58:45.875371"
+      },
+      {
+        "role": "assistant",
+        "content": "您这些红肿起疹子的部位是在身体的哪个地方呢？比如脸上、手臂、腿部，还是其他部位？",
+        "created_at": "2025-12-10T01:58:45.876477"
+      },
+      {
+        "role": "user",
+        "content": "腿部出现红斑",
+        "created_at": "2025-12-10T01:58:50.569411"
+      },
+      {
+        "role": "assistant",
+        "content": "哦，这个症状的严重程度如何呢？有没有觉得特别痒、痛，或者影响到日常活动？",
+        "created_at": "2025-12-10T01:58:50.570234"
+      },
+      {
+        "role": "user",
+        "content": "皮肤瘙痒明显",
+        "created_at": "2025-12-10T01:58:56.486997"
+      },
+      {
+        "role": "assistant",
+        "content": "您之前有去看过医生或者接受过治疗吗？",
+        "created_at": "2025-12-10T01:58:56.487724"
+      },
+      {
+        "role": "user",
+        "content": "医生开过药",
+        "created_at": "2025-12-10T01:59:02.077183"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近有没有吃过或用过什么特别的食物或药物，可能引起了皮肤的不适呢？",
+        "created_at": "2025-12-10T01:59:02.077711"
+      },
+      {
+        "role": "user",
+        "content": "芒果",
+        "created_at": "2025-12-10T01:59:05.361399"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近有没有长期在使用什么药物呢？比如降压药、降糖药或者其他慢性病的药物？",
+        "created_at": "2025-12-10T01:59:05.361881"
+      },
+      {
+        "role": "user",
+        "content": "长期服用降压药",
+        "created_at": "2025-12-10T01:59:10.812984"
+      },
+      {
+        "role": "assistant",
+        "content": "您平时抽烟频繁吗？每天大概抽多少支呢？",
+        "created_at": "2025-12-10T01:59:10.813498"
+      },
+      {
+        "role": "user",
+        "content": "已戒烟",
+        "created_at": "2025-12-10T01:59:14.189117"
+      },
+      {
+        "role": "assistant",
+        "content": "您平时喝酒的频率是怎样的呢？比如每周喝几次，或者每次喝多少？",
+        "created_at": "2025-12-10T01:59:14.189603"
+      },
+      {
+        "role": "user",
+        "content": "不喝酒",
+        "created_at": "2025-12-10T01:59:16.770697"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近有没有吃过或用过什么特别的食物或药物，可能引起了皮肤的不适呢？",
+        "created_at": "2025-12-10T01:59:16.771192"
+      },
+      {
+        "role": "user",
+        "content": "吃了海鲜过敏",
+        "created_at": "2025-12-10T01:59:19.431409"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近的睡眠情况怎么样呀？平时晚上大概几点睡，几点起呢？",
+        "created_at": "2025-12-10T01:59:19.431919"
+      },
+      {
+        "role": "user",
+        "content": "睡眠质量差",
+        "created_at": "2025-12-10T01:59:22.127400"
+      },
+      {
+        "role": "assistant",
+        "content": "",
+        "created_at": "2025-12-10T01:59:22.127906"
+      }
+    ]
+  },
+  {
+    "chat_session_id": "ab85a032-93b8-4b6a-ae9b-4706be8862e2",
+    "history": [
+      {
+        "role": "user",
+        "content": "{\"patientIdentity\":{\"patientId\":\"PID1234543\",\"idType\":\"01\",\"idNumber\":\"110101199001011235\",\"patientName\":\"李铁惠\"},\"visitInfo\":{\"department\":\"呼吸科\",\"visitNumber\":\"V0000222\"},\"latestMedicalRecord\":{\"basicInfo\":{\"gender\":\"男\",\"birthday\":\"1985-05-20\",\"aboBloodType\":\"A\",\"rhBloodType\":\"+\"},\"vitalSigns\":{\"systolicPressure\":118,\"diastolicPressure\":76,\"height\":178,\"weight\":75},\"marriageChildInfo\":{\"marriageStatus\":\"已婚\",\"fullTermCount\":0,\"prematureCount\":0,\"abortionCount\":0,\"livingChildrenCount\":0},\"pastHistory\":{\"personalHistory\":\"\",\"bloodTransfusionHistory\":\"2015年输过2U红细胞\",\"diseaseHistory\":\"\",\"epidemiologicalHistory\":\"否认出国及接触史\",\"surgeryHistory\":\"无手术史\",\"familyHistory\":\"否认家族性遗传病、精神病、肿瘤等类似病史\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"}},\"allergyHistory\":\"无\",\"childGrowthInfo\":null},\"revisitInfo\":{\"isRevisit\":0,\"lastRecord\":{\"chiefComplaint\":\"\",\"presentIllness\":\"\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"},\"tcmFourExams\":{\"inspection\":\"\",\"inquiry\":\"\",\"listeningAndSmelling\":\"\",\"palpation\":\"\"},\"physicalExam\":\"\",\"auxiliaryExam\":\"\",\"diagnosis\":{\"tcmDiagnosisName\":\"\",\"tcmDiagnosisCode\":\"\",\"tcmSyndromeName\":\"\",\"westernDiagnosisName\":\"\",\"westernDiagnosisCode\":\"\"},\"treatmentPrinciple\":\"\",\"treatmentAdvice\":\"\",\"prescription\":{\"prescriptionName\":\"\",\"herbs\":[]}}}}",
+        "created_at": "2025-12-10T07:59:48.890788"
+      },
+      {
+        "role": "assistant",
+        "content": "",
+        "created_at": "2025-12-10T07:59:48.893787"
+      }
+    ]
+  },
+  {
+    "chat_session_id": "af843d1a-8ec5-46ef-b2b0-aae694d0fa84",
+    "history": [
+      {
+        "role": "user",
+        "content": "{\"patientIdentity\":{\"patientId\":\"PID1234588\",\"idType\":\"01\",\"idNumber\":\"110101199001011235\",\"patientName\":\"李铁西\"},\"visitInfo\":{\"department\":\"肛肠科\",\"visitNumber\":\"V0000222\"},\"latestMedicalRecord\":{\"basicInfo\":{\"gender\":\"男\",\"birthday\":\"1985-05-20\",\"aboBloodType\":\"A\",\"rhBloodType\":\"+\"},\"vitalSigns\":{\"systolicPressure\":118,\"diastolicPressure\":76,\"height\":178,\"weight\":75},\"marriageChildInfo\":{\"marriageStatus\":\"已婚\",\"fullTermCount\":0,\"prematureCount\":0,\"abortionCount\":0,\"livingChildrenCount\":0},\"pastHistory\":{\"personalHistory\":\"\",\"bloodTransfusionHistory\":\"2015年输过2U红细胞\",\"diseaseHistory\":\"\",\"epidemiologicalHistory\":\"否认出国及接触史\",\"surgeryHistory\":\"无手术史\",\"familyHistory\":\"否认家族性遗传病、精神病、肿瘤等类似病史\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"}},\"allergyHistory\":\"无\",\"childGrowthInfo\":null},\"revisitInfo\":{\"isRevisit\":0,\"lastRecord\":{\"chiefComplaint\":\"\",\"presentIllness\":\"\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"},\"tcmFourExams\":{\"inspection\":\"\",\"inquiry\":\"\",\"listeningAndSmelling\":\"\",\"palpation\":\"\"},\"physicalExam\":\"\",\"auxiliaryExam\":\"\",\"diagnosis\":{\"tcmDiagnosisName\":\"\",\"tcmDiagnosisCode\":\"\",\"tcmSyndromeName\":\"\",\"westernDiagnosisName\":\"\",\"westernDiagnosisCode\":\"\"},\"treatmentPrinciple\":\"\",\"treatmentAdvice\":\"\",\"prescription\":{\"prescriptionName\":\"\",\"herbs\":[]}}}}",
+        "created_at": "2025-12-10T00:01:10.847404"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近有没有感到咳嗽、咳痰、胸闷或者呼吸不畅这些基本症状呢？",
+        "created_at": "2025-12-10T00:01:10.847892"
+      }
+    ]
+  },
+  {
+    "chat_session_id": "bd9a7339-55da-4fff-a99e-7c97efa1e7e2",
+    "history": [
+      {
+        "role": "user",
+        "content": "{\"patientIdentity\":{\"patientId\":\"PID1234563\",\"idType\":\"01\",\"idNumber\":\"110101199001011235\",\"patientName\":\"王刚\"},\"visitInfo\":{\"department\":\"皮肤医美中心\",\"visitNumber\":\"V0000222\"},\"latestMedicalRecord\":{\"basicInfo\":{\"gender\":\"男\",\"birthday\":\"1985-05-20\",\"aboBloodType\":\"A\",\"rhBloodType\":\"+\"},\"vitalSigns\":{\"systolicPressure\":118,\"diastolicPressure\":76,\"height\":178,\"weight\":75},\"marriageChildInfo\":{\"marriageStatus\":\"已婚\",\"fullTermCount\":0,\"prematureCount\":0,\"abortionCount\":0,\"livingChildrenCount\":0},\"pastHistory\":{\"personalHistory\":\"无烟酒不良嗜好，否认冶游史。\",\"bloodTransfusionHistory\":\"无\",\"diseaseHistory\":\"患者平素体健，有过敏性鼻炎，无重大慢性疾病无传染病史\",\"epidemiologicalHistory\":\"无传染病史，流行病学史\",\"surgeryHistory\":\"无手术史\",\"familyHistory\":\"否认家族性遗传病、精神病、肿瘤等类似病史.\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"}},\"allergyHistory\":\"未发现\",\"childGrowthInfo\":null},\"revisitInfo\":{\"isRevisit\":1,\"lastRecord\":{\"chiefComplaint\":\"下肢红斑、丘疹、抓痕伴瘙痒8日\",\"presentIllness\":\"8日前无明显诱因下下肢红斑、丘疹、抓痕，伴瘙痒，外院多次就诊（卤米松乳膏 外用应急软膏 氯雷他定片 ），皮疹仍反复发作口不渴，睡眠安，大便便次正常，小便尿次正常\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"},\"tcmFourExams\":{\"inspection\":\"红黄隐隐，明润含蓄\",\"inquiry\":\"时有腹胀便溏，倦怠乏力\",\"listeningAndSmelling\":\"口气\",\"palpation\":\"脉弦\"},\"physicalExam\":\"无\",\"auxiliaryExam\":\"血常规：WBC 9.5×10^9/L，CRP 12 mg/L\",\"diagnosis\":{\"tcmDiagnosisName\":\"湿疮\",\"tcmDiagnosisCode\":\"A08.01.07\",\"tcmSyndromeName\":\"脾虚湿困证\",\"westernDiagnosisName\":\"特应性皮炎\",\"westernDiagnosisCode\":\"L20.900\"},\"treatmentPrinciple\":\"健脾化湿\",\"treatmentAdvice\":\"少食多餐，避免辛辣油腻\",\"prescription\":{\"prescriptionName\":\"复方参蝉汤\",\"herbs\":[\"党参\",\"蝉蜕\",\"生白术\",\"茯苓\",\"温山药\",\"炒白扁豆\",\"薏苡仁\",\"生黄芪\",\"炒麦芽\",\"炒稻芽\",\"炒鸡内金\",\"大枣\",\"生甘草\",\"蚕砂\"]}}}}",
+        "created_at": "2025-12-10T01:10:55.085160"
+      },
+      {
+        "role": "assistant",
+        "content": "",
+        "created_at": "2025-12-10T01:10:55.085773"
+      }
+    ]
+  },
+  {
+    "chat_session_id": "be7fcfc1-ac0a-45b2-80a2-bbfd95c2a37b",
+    "history": [
+      {
+        "role": "user",
+        "content": "{\"patientIdentity\":{\"patientId\":\"PID1234562\",\"idType\":\"01\",\"idNumber\":\"110101199001011234\",\"patientName\":\"王雨\"},\"visitInfo\":{\"department\":\"皮肤医美中心\",\"visitNumber\":\"V0000123\"},\"latestMedicalRecord\":{\"basicInfo\":{\"gender\":\"女\",\"birthday\":\"1985-05-20\",\"aboBloodType\":\"A\",\"rhBloodType\":\"+\"},\"vitalSigns\":{\"systolicPressure\":120,\"diastolicPressure\":80,\"height\":165,\"weight\":60},\"marriageChildInfo\":{\"marriageStatus\":\"已婚\",\"fullTermCount\":1,\"prematureCount\":0,\"abortionCount\":0,\"livingChildrenCount\":1},\"pastHistory\":{\"personalHistory\":\"无烟酒不良嗜好，否认冶游史。\",\"bloodTransfusionHistory\":\"无\",\"diseaseHistory\":\"患者平素体健，无重大慢性疾病无传染病史\",\"epidemiologicalHistory\":\"无传染病史，流行病学史\",\"menstrualHistory\":{\"menarcheAge\":13,\"intervalDays\":28,\"durationDays\":5,\"isSterilization\":false,\"lastMenstrualDate\":\"2025-10-25\"},\"surgeryHistory\":\"无\",\"familyHistory\":\"否认家族性遗传病、精神病、肿瘤等类似病史。\"},\"allergyHistory\":\"未发现\",\"childGrowthInfo\":null},\"revisitInfo\":{\"isRevisit\":1,\"lastRecord\":{\"chiefComplaint\":\"颈项部红斑、抓痕伴瘙痒2月\",\"presentIllness\":\"2月前无明显诱因下颈项部红斑、抓痕，伴瘙痒，未予特殊处理食欲减退，睡眠安，大便溏结不调，小便尿次正常\",\"menstrualHistory\":{\"menarcheAge\":13,\"intervalDays\":28,\"durationDays\":5,\"isSterilization\":false,\"lastMenstrualDate\":\"2024-09-25\"},\"tcmFourExams\":{\"inspection\":\"红黄隐隐，明润含蓄\",\"inquiry\":\"时有腹胀便溏，倦怠乏力\",\"listeningAndSmelling\":\"口气\",\"palpation\":\"脉弦\"},\"physicalExam\":\"无\",\"auxiliaryExam\":\"血常规：WBC 9.5×10^9/L，CRP 12 mg/L\",\"diagnosis\":{\"tcmDiagnosisName\":\"湿疮\",\"tcmDiagnosisCode\":\"A08.01.07\",\"tcmSyndromeName\":\"脾虚湿困证\",\"westernDiagnosisName\":\"特应性皮炎\",\"westernDiagnosisCode\":\"L20.900\"},\"treatmentPrinciple\":\"健脾化湿\",\"treatmentAdvice\":\"少食多餐，避免辛辣油腻\",\"prescription\":{\"prescriptionName\":\"复方参蝉汤\",\"herbs\":[\"党参\",\"蝉蜕\",\"生白术\",\"茯苓\",\"温山药\",\"炒白扁豆\",\"薏苡仁\",\"生黄芪\",\"炒麦芽\",\"炒稻芽\",\"炒鸡内金\",\"大枣\",\"生甘草\",\"蚕砂\"]}}}}",
+        "created_at": "2025-12-09T09:18:49.750642"
+      },
+      {
+        "role": "assistant",
+        "content": "这次的红斑和抓痕情况，比起上次有改善吗？",
+        "created_at": "2025-12-09T09:18:49.751425"
+      },
+      {
+        "role": "user",
+        "content": "红斑有所减轻",
+        "created_at": "2025-12-09T09:18:52.968663"
+      },
+      {
+        "role": "assistant",
+        "content": "那这次饮食方面有没有什么变化呢？现在吃饭的情况怎么样？",
+        "created_at": "2025-12-09T09:18:52.969322"
+      },
+      {
+        "role": "user",
+        "content": "最近吃辣比较多",
+        "created_at": "2025-12-09T09:18:55.725956"
+      },
+      {
+        "role": "assistant",
+        "content": "那最近睡觉的情况有没有受到影响，比如是不是比之前更容易醒来或者睡不踏实了？",
+        "created_at": "2025-12-09T09:18:55.726499"
+      },
+      {
+        "role": "user",
+        "content": "睡眠不好",
+        "created_at": "2025-12-09T09:18:58.536823"
+      },
+      {
+        "role": "assistant",
+        "content": "这次大便的情况有没有什么变化？是比之前更规律了，还是还是和之前一样呢？",
+        "created_at": "2025-12-09T09:18:58.537350"
+      },
+      {
+        "role": "user",
+        "content": "大便次数增多",
+        "created_at": "2025-12-09T09:19:02.552714"
+      },
+      {
+        "role": "assistant",
+        "content": "那这次除了红斑、睡眠和大便情况，还有没有其他不舒服的地方呢？",
+        "created_at": "2025-12-09T09:19:02.553331"
+      },
+      {
+        "role": "user",
+        "content": "无其他不适",
+        "created_at": "2025-12-09T09:19:05.770660"
+      },
+      {
+        "role": "assistant",
+        "content": "主诉：颈项部红斑、抓痕伴瘙痒较上次有所减轻，但近期食欲减退，睡眠质量下降。\n\n现病史：本次饮食口味较上次有所改变，最近吃辣比较多；睡眠较上次变差，出现睡眠不好的情况；大小便情况中，大便次数较上次增多，但小便尿次仍正常。\n\n既往史：无长期用药记录，无过敏史，无不良习惯，无月经史记录。\n\n家族史：无直系亲属慢病或遗传病史。",
+        "created_at": "2025-12-09T09:19:05.771319"
+      }
+    ]
+  },
+  {
+    "chat_session_id": "c1565e36-64e6-4131-b8db-25e4def2b636",
+    "history": [
+      {
+        "role": "user",
+        "content": "{\"patientIdentity\":{\"patientId\":\"PID1234563\",\"idType\":\"01\",\"idNumber\":\"110101199001011235\",\"patientName\":\"王刚\"},\"visitInfo\":{\"department\":\"皮肤医美中心\",\"visitNumber\":\"V0000222\"},\"latestMedicalRecord\":{\"basicInfo\":{\"gender\":\"男\",\"birthday\":\"1985-05-20\",\"aboBloodType\":\"A\",\"rhBloodType\":\"+\"},\"vitalSigns\":{\"systolicPressure\":118,\"diastolicPressure\":76,\"height\":178,\"weight\":75},\"marriageChildInfo\":{\"marriageStatus\":\"已婚\",\"fullTermCount\":0,\"prematureCount\":0,\"abortionCount\":0,\"livingChildrenCount\":0},\"pastHistory\":{\"personalHistory\":\"无烟酒不良嗜好，否认冶游史。\",\"bloodTransfusionHistory\":\"无\",\"diseaseHistory\":\"患者平素体健，有过敏性鼻炎，无重大慢性疾病无传染病史\",\"epidemiologicalHistory\":\"无传染病史，流行病学史\",\"surgeryHistory\":\"无手术史\",\"familyHistory\":\"否认家族性遗传病、精神病、肿瘤等类似病史.\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"}},\"allergyHistory\":\"未发现\",\"childGrowthInfo\":null},\"revisitInfo\":{\"isRevisit\":1,\"lastRecord\":{\"chiefComplaint\":\"下肢红斑、丘疹、抓痕伴瘙痒8日\",\"presentIllness\":\"8日前无明显诱因下下肢红斑、丘疹、抓痕，伴瘙痒，外院多次就诊（卤米松乳膏 外用应急软膏 氯雷他定片 ），皮疹仍反复发作口不渴，睡眠安，大便便次正常，小便尿次正常\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"},\"tcmFourExams\":{\"inspection\":\"红黄隐隐，明润含蓄\",\"inquiry\":\"时有腹胀便溏，倦怠乏力\",\"listeningAndSmelling\":\"口气\",\"palpation\":\"脉弦\"},\"physicalExam\":\"无\",\"auxiliaryExam\":\"血常规：WBC 9.5×10^9/L，CRP 12 mg/L\",\"diagnosis\":{\"tcmDiagnosisName\":\"湿疮\",\"tcmDiagnosisCode\":\"A08.01.07\",\"tcmSyndromeName\":\"脾虚湿困证\",\"westernDiagnosisName\":\"特应性皮炎\",\"westernDiagnosisCode\":\"L20.900\"},\"treatmentPrinciple\":\"健脾化湿\",\"treatmentAdvice\":\"少食多餐，避免辛辣油腻\",\"prescription\":{\"prescriptionName\":\"复方参蝉汤\",\"herbs\":[\"党参\",\"蝉蜕\",\"生白术\",\"茯苓\",\"温山药\",\"炒白扁豆\",\"薏苡仁\",\"生黄芪\",\"炒麦芽\",\"炒稻芽\",\"炒鸡内金\",\"大枣\",\"生甘草\",\"蚕砂\"]}}}}",
+        "created_at": "2025-12-10T01:12:09.159370"
+      },
+      {
+        "role": "assistant",
+        "content": "",
+        "created_at": "2025-12-10T01:12:09.160569"
+      }
+    ]
+  },
+  {
+    "chat_session_id": "c1c3df19-c364-4f97-bc8b-7bdb2e896fb6",
+    "history": [
+      {
+        "role": "user",
+        "content": "{\"patientIdentity\":{\"patientId\":\"PID1234588\",\"idType\":\"01\",\"idNumber\":\"110101199001011235\",\"patientName\":\"李铁西\"},\"visitInfo\":{\"department\":\"肛肠科\",\"visitNumber\":\"V0000222\"},\"latestMedicalRecord\":{\"basicInfo\":{\"gender\":\"男\",\"birthday\":\"1985-05-20\",\"aboBloodType\":\"A\",\"rhBloodType\":\"+\"},\"vitalSigns\":{\"systolicPressure\":118,\"diastolicPressure\":76,\"height\":178,\"weight\":75},\"marriageChildInfo\":{\"marriageStatus\":\"已婚\",\"fullTermCount\":0,\"prematureCount\":0,\"abortionCount\":0,\"livingChildrenCount\":0},\"pastHistory\":{\"personalHistory\":\"\",\"bloodTransfusionHistory\":\"2015年输过2U红细胞\",\"diseaseHistory\":\"\",\"epidemiologicalHistory\":\"否认出国及接触史\",\"surgeryHistory\":\"无手术史\",\"familyHistory\":\"否认家族性遗传病、精神病、肿瘤等类似病史\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"}},\"allergyHistory\":\"无\",\"childGrowthInfo\":null},\"revisitInfo\":{\"isRevisit\":0,\"lastRecord\":{\"chiefComplaint\":\"\",\"presentIllness\":\"\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"},\"tcmFourExams\":{\"inspection\":\"\",\"inquiry\":\"\",\"listeningAndSmelling\":\"\",\"palpation\":\"\"},\"physicalExam\":\"\",\"auxiliaryExam\":\"\",\"diagnosis\":{\"tcmDiagnosisName\":\"\",\"tcmDiagnosisCode\":\"\",\"tcmSyndromeName\":\"\",\"westernDiagnosisName\":\"\",\"westernDiagnosisCode\":\"\"},\"treatmentPrinciple\":\"\",\"treatmentAdvice\":\"\",\"prescription\":{\"prescriptionName\":\"\",\"herbs\":[]}}}}",
+        "created_at": "2025-12-10T01:11:46.509230"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近有没有感觉到皮肤上有什么特别的异常或者不适呢？比如红肿、瘙痒、脱皮之类的？",
+        "created_at": "2025-12-10T01:11:46.510116"
+      }
+    ]
+  },
+  {
+    "chat_session_id": "cf127dde-fc30-4eb6-a1f2-b91a0c535552",
+    "history": [
+      {
+        "role": "user",
+        "content": "咳嗽",
+        "created_at": "2025-12-09T08:09:21.183282"
+      },
+      {
+        "role": "assistant",
+        "content": "了解啦～这个咳嗽的情况大概持续了多久呢？",
+        "created_at": "2025-12-09T08:09:21.184109"
+      },
+      {
+        "role": "user",
+        "content": "持续了三天",
+        "created_at": "2025-12-09T08:10:16.677166"
+      },
+      {
+        "role": "assistant",
+        "content": "您这个咳嗽是在胸部的哪个位置呢？比如是嗓子、胸部或者喉咙部位？",
+        "created_at": "2025-12-09T08:10:16.677733"
+      },
+      {
+        "role": "user",
+        "content": "胸部中间疼痛",
+        "created_at": "2025-12-09T08:10:25.147226"
+      },
+      {
+        "role": "assistant",
+        "content": "哦，这个胸部中间的疼痛感觉怎么样呢？是隐隐作痛、刺痛，还是其他什么感觉？",
+        "created_at": "2025-12-09T08:10:25.148072"
+      },
+      {
+        "role": "user",
+        "content": "隐隐作痛",
+        "created_at": "2025-12-09T08:10:31.408001"
+      },
+      {
+        "role": "assistant",
+        "content": "您之前有去看过医生或者接受过治疗吗？",
+        "created_at": "2025-12-09T08:10:31.409721"
+      },
+      {
+        "role": "user",
+        "content": "接受过治疗",
+        "created_at": "2025-12-09T08:11:19.500806"
+      },
+      {
+        "role": "assistant",
+        "content": "您之前就诊时，医生给出的诊断是什么呢？",
+        "created_at": "2025-12-09T08:11:19.501335"
+      },
+      {
+        "role": "user",
+        "content": "过敏性皮疹",
+        "created_at": "2025-12-09T08:11:38.560927"
+      },
+      {
+        "role": "assistant",
+        "content": "您之前有自行使用过什么药物吗？",
+        "created_at": "2025-12-09T08:11:38.561522"
+      }
+    ]
+  },
+  {
+    "chat_session_id": "def3c5a8-7bc4-4162-9503-8fc83bdcf57c",
+    "history": [
+      {
+        "role": "user",
+        "content": "{\"patientIdentity\":{\"patientId\":\"PID1234565\",\"idType\":\"01\",\"idNumber\":\"110101199001011235\",\"patientName\":\"李铁\"},\"visitInfo\":{\"department\":\"皮肤医美中心\",\"visitNumber\":\"V0000222\"},\"latestMedicalRecord\":{\"basicInfo\":{\"gender\":\"男\",\"birthday\":\"1985-05-20\",\"aboBloodType\":\"A\",\"rhBloodType\":\"+\"},\"vitalSigns\":{\"systolicPressure\":118,\"diastolicPressure\":76,\"height\":178,\"weight\":75},\"marriageChildInfo\":{\"marriageStatus\":\"已婚\",\"fullTermCount\":0,\"prematureCount\":0,\"abortionCount\":0,\"livingChildrenCount\":0},\"pastHistory\":{\"personalHistory\":\"\",\"bloodTransfusionHistory\":\"2015年输过2U红细胞\",\"diseaseHistory\":\"\",\"epidemiologicalHistory\":\"否认出国及接触史\",\"surgeryHistory\":\"无手术史\",\"familyHistory\":\"否认家族性遗传病、精神病、肿瘤等类似病史\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"}},\"allergyHistory\":\"无\",\"childGrowthInfo\":null},\"revisitInfo\":{\"isRevisit\":0,\"lastRecord\":{\"chiefComplaint\":\"\",\"presentIllness\":\"\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"},\"tcmFourExams\":{\"inspection\":\"\",\"inquiry\":\"\",\"listeningAndSmelling\":\"\",\"palpation\":\"\"},\"physicalExam\":\"\",\"auxiliaryExam\":\"\",\"diagnosis\":{\"tcmDiagnosisName\":\"\",\"tcmDiagnosisCode\":\"\",\"tcmSyndromeName\":\"\",\"westernDiagnosisName\":\"\",\"westernDiagnosisCode\":\"\"},\"treatmentPrinciple\":\"\",\"treatmentAdvice\":\"\",\"prescription\":{\"prescriptionName\":\"\",\"herbs\":[]}}}}",
+        "created_at": "2025-12-10T01:33:24.349089"
+      },
+      {
+        "role": "assistant",
+        "content": "您好，能和我分享一下您目前主要的皮肤问题是什么吗？",
+        "created_at": "2025-12-10T01:33:24.350197"
+      },
+      {
+        "role": "user",
+        "content": "皮肤瘙痒",
+        "created_at": "2025-12-10T01:33:28.899477"
+      },
+      {
+        "role": "assistant",
+        "content": "了解啦～这个皮肤瘙痒的情况大概从什么时候开始的呢？持续了多久？",
+        "created_at": "2025-12-10T01:33:28.899959"
+      },
+      {
+        "role": "user",
+        "content": "一个月前开始的",
+        "created_at": "2025-12-10T01:33:32.162598"
+      },
+      {
+        "role": "assistant",
+        "content": "那这个瘙痒主要出现在身体的哪个部位呢？",
+        "created_at": "2025-12-10T01:33:32.163095"
+      },
+      {
+        "role": "user",
+        "content": "手臂有瘙痒",
+        "created_at": "2025-12-10T01:33:34.767678"
+      },
+      {
+        "role": "assistant",
+        "content": "哦，这个瘙痒的严重程度怎么样呢？是轻微的还是特别厉害？",
+        "created_at": "2025-12-10T01:33:34.768153"
+      },
+      {
+        "role": "user",
+        "content": "轻微瘙痒",
+        "created_at": "2025-12-10T01:33:37.886658"
+      },
+      {
+        "role": "assistant",
+        "content": "您还有其他不舒服的症状吗？比如是否有皮疹、红肿、脱皮或者干燥等情况？",
+        "created_at": "2025-12-10T01:33:37.887281"
+      },
+      {
+        "role": "user",
+        "content": "皮疹发痒",
+        "created_at": "2025-12-10T01:34:08.379397"
+      },
+      {
+        "role": "assistant",
+        "content": "您之前有去看过医生或者接受过治疗吗？",
+        "created_at": "2025-12-10T01:34:08.379898"
+      },
+      {
+        "role": "user",
+        "content": "没有",
+        "created_at": "2025-12-10T01:34:11.318550"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近有没有吃过或用过什么可能引起过敏的食物或药物呢？",
+        "created_at": "2025-12-10T01:34:11.319032"
+      },
+      {
+        "role": "user",
+        "content": "没有",
+        "created_at": "2025-12-10T01:34:14.215254"
+      },
+      {
+        "role": "assistant",
+        "content": "您平时有长期服用什么药物吗？",
+        "created_at": "2025-12-10T01:34:14.215878"
+      },
+      {
+        "role": "user",
+        "content": "没有",
+        "created_at": "2025-12-10T01:34:17.185394"
+      },
+      {
+        "role": "assistant",
+        "content": "您平时有抽烟的习惯吗？大概每天抽多少支呢？",
+        "created_at": "2025-12-10T01:34:17.186129"
+      },
+      {
+        "role": "user",
+        "content": "不吸烟",
+        "created_at": "2025-12-10T01:34:19.544825"
+      },
+      {
+        "role": "assistant",
+        "content": "您平时喝酒的频率是怎样的呢？比如每周喝几次，或者每次喝多少？",
+        "created_at": "2025-12-10T01:34:19.545368"
+      },
+      {
+        "role": "user",
+        "content": "不喝酒",
+        "created_at": "2025-12-10T01:34:22.116844"
+      },
+      {
+        "role": "assistant",
+        "content": "您平时的饮食习惯怎么样？喜欢吃辣的、油腻的，还是偏清淡呢？",
+        "created_at": "2025-12-10T01:34:22.117428"
+      },
+      {
+        "role": "user",
+        "content": "偏爱清淡饮食",
+        "created_at": "2025-12-10T01:34:25.404974"
+      },
+      {
+        "role": "assistant",
+        "content": "您平时的睡眠情况怎么样呀？一般每天能睡几个小时呢？",
+        "created_at": "2025-12-10T01:34:25.405472"
+      },
+      {
+        "role": "user",
+        "content": "每天睡6小时",
+        "created_at": "2025-12-10T01:34:28.710880"
+      },
+      {
+        "role": "assistant",
+        "content": "那您平时的大小便情况怎么样呢？最近有没有什么异常？",
+        "created_at": "2025-12-10T01:34:28.711395"
+      },
+      {
+        "role": "user",
+        "content": "排便正常",
+        "created_at": "2025-12-10T01:34:47.267579"
+      },
+      {
+        "role": "assistant",
+        "content": "主诉：\n\n手臂皮肤瘙痒一个月。\n\n现病史：\n\n症状为轻度瘙痒，伴随皮疹发痒，发病后未进行特殊治疗，无明确加重因素，饮食口味偏清淡，睡眠每日6 小时，大小便正常。\n\n既往史：\n\n无长期用药记录，无过敏食物或药物记录，无不良生活习惯，无月经史记录。\n\n婚育史：\n\n已婚，足月生产个数0，早产个数0，流产个数0，现存子女数量0，已育子女数量0。\n\n家族史：\n\n无记录。",
+        "created_at": "2025-12-10T01:34:47.268075"
+      }
+    ]
+  },
+  {
+    "chat_session_id": "e2390a4e-764a-4c10-912d-b2850884e577",
+    "history": [
+      {
+        "role": "user",
+        "content": "{\"patientIdentity\":{\"patientId\":\"PID1234562\",\"idType\":\"01\",\"idNumber\":\"110101199001011234\",\"patientName\":\"王雨\"},\"visitInfo\":{\"department\":\"皮肤医美中心\",\"visitNumber\":\"V0000123\"},\"latestMedicalRecord\":{\"basicInfo\":{\"gender\":\"女\",\"birthday\":\"1985-05-20\",\"aboBloodType\":\"A\",\"rhBloodType\":\"+\"},\"vitalSigns\":{\"systolicPressure\":120,\"diastolicPressure\":80,\"height\":165,\"weight\":60},\"marriageChildInfo\":{\"marriageStatus\":\"已婚\",\"fullTermCount\":1,\"prematureCount\":0,\"abortionCount\":0,\"livingChildrenCount\":1},\"pastHistory\":{\"personalHistory\":\"无烟酒不良嗜好，否认冶游史。\",\"bloodTransfusionHistory\":\"无\",\"diseaseHistory\":\"患者平素体健，无重大慢性疾病无传染病史\",\"epidemiologicalHistory\":\"无传染病史，流行病学史\",\"menstrualHistory\":{\"menarcheAge\":13,\"intervalDays\":28,\"durationDays\":5,\"isSterilization\":false,\"lastMenstrualDate\":\"2025-10-25\"},\"surgeryHistory\":\"无\",\"familyHistory\":\"否认家族性遗传病、精神病、肿瘤等类似病史。\"},\"allergyHistory\":\"未发现\",\"childGrowthInfo\":null},\"revisitInfo\":{\"isRevisit\":1,\"lastRecord\":{\"chiefComplaint\":\"颈项部红斑、抓痕伴瘙痒2月\",\"presentIllness\":\"2月前无明显诱因下颈项部红斑、抓痕，伴瘙痒，未予特殊处理食欲减退，睡眠安，大便溏结不调，小便尿次正常\",\"menstrualHistory\":{\"menarcheAge\":13,\"intervalDays\":28,\"durationDays\":5,\"isSterilization\":false,\"lastMenstrualDate\":\"2024-09-25\"},\"tcmFourExams\":{\"inspection\":\"红黄隐隐，明润含蓄\",\"inquiry\":\"时有腹胀便溏，倦怠乏力\",\"listeningAndSmelling\":\"口气\",\"palpation\":\"脉弦\"},\"physicalExam\":\"无\",\"auxiliaryExam\":\"血常规：WBC 9.5×10^9/L，CRP 12 mg/L\",\"diagnosis\":{\"tcmDiagnosisName\":\"湿疮\",\"tcmDiagnosisCode\":\"A08.01.07\",\"tcmSyndromeName\":\"脾虚湿困证\",\"westernDiagnosisName\":\"特应性皮炎\",\"westernDiagnosisCode\":\"L20.900\"},\"treatmentPrinciple\":\"健脾化湿\",\"treatmentAdvice\":\"少食多餐，避免辛辣油腻\",\"prescription\":{\"prescriptionName\":\"复方参蝉汤\",\"herbs\":[\"党参\",\"蝉蜕\",\"生白术\",\"茯苓\",\"温山药\",\"炒白扁豆\",\"薏苡仁\",\"生黄芪\",\"炒麦芽\",\"炒稻芽\",\"炒鸡内金\",\"大枣\",\"生甘草\",\"蚕砂\"]}}}}",
+        "created_at": "2025-12-09T08:51:17.365375"
+      },
+      {
+        "role": "assistant",
+        "content": "这次的红斑和抓痕情况，比起上次有改善吗？",
+        "created_at": "2025-12-09T08:51:17.366022"
+      }
+    ]
+  },
+  {
+    "chat_session_id": "e395c09b-c074-4cd9-b3b1-01d73d91e77a",
+    "history": [
+      {
+        "role": "user",
+        "content": "{\"patientIdentity\":{\"patientId\":\"PID1234565\",\"idType\":\"01\",\"idNumber\":\"110101199001011235\",\"patientName\":\"李铁\"},\"visitInfo\":{\"department\":\"皮肤医美中心\",\"visitNumber\":\"V0000222\"},\"latestMedicalRecord\":{\"basicInfo\":{\"gender\":\"男\",\"birthday\":\"1985-05-20\",\"aboBloodType\":\"A\",\"rhBloodType\":\"+\"},\"vitalSigns\":{\"systolicPressure\":118,\"diastolicPressure\":76,\"height\":178,\"weight\":75},\"marriageChildInfo\":{\"marriageStatus\":\"已婚\",\"fullTermCount\":0,\"prematureCount\":0,\"abortionCount\":0,\"livingChildrenCount\":0},\"pastHistory\":{\"personalHistory\":\"\",\"bloodTransfusionHistory\":\"2015年输过2U红细胞\",\"diseaseHistory\":\"\",\"epidemiologicalHistory\":\"否认出国及接触史\",\"surgeryHistory\":\"无手术史\",\"familyHistory\":\"否认家族性遗传病、精神病、肿瘤等类似病史\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"}},\"allergyHistory\":\"无\",\"childGrowthInfo\":null},\"revisitInfo\":{\"isRevisit\":0,\"lastRecord\":{\"chiefComplaint\":\"\",\"presentIllness\":\"\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"},\"tcmFourExams\":{\"inspection\":\"\",\"inquiry\":\"\",\"listeningAndSmelling\":\"\",\"palpation\":\"\"},\"physicalExam\":\"\",\"auxiliaryExam\":\"\",\"diagnosis\":{\"tcmDiagnosisName\":\"\",\"tcmDiagnosisCode\":\"\",\"tcmSyndromeName\":\"\",\"westernDiagnosisName\":\"\",\"westernDiagnosisCode\":\"\"},\"treatmentPrinciple\":\"\",\"treatmentAdvice\":\"\",\"prescription\":{\"prescriptionName\":\"\",\"herbs\":[]}}}}",
+        "created_at": "2025-12-10T01:32:42.402835"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近有没有感觉到皮肤上有任何异常的情况呢？比如红肿、瘙痒、脱皮或者起疹子之类的？",
+        "created_at": "2025-12-10T01:32:42.403330"
+      },
+      {
+        "role": "user",
+        "content": "脱皮严重",
+        "created_at": "2025-12-10T01:32:47.599712"
+      },
+      {
+        "role": "assistant",
+        "content": "了解啦～这个脱皮的情况大概从什么时候开始的呢？持续了多久？",
+        "created_at": "2025-12-10T01:32:47.600359"
+      }
+    ]
+  },
+  {
+    "chat_session_id": "f4a40214-8689-417c-9793-92876e30c654",
+    "history": [
+      {
+        "role": "user",
+        "content": "{\"patientIdentity\":{\"patientId\":\"PID1234562\",\"idType\":\"01\",\"idNumber\":\"110101199001011234\",\"patientName\":\"王雨\"},\"visitInfo\":{\"department\":\"皮肤医美中心\",\"visitNumber\":\"V0000123\"},\"latestMedicalRecord\":{\"basicInfo\":{\"gender\":\"女\",\"birthday\":\"1985-05-20\",\"aboBloodType\":\"A\",\"rhBloodType\":\"+\"},\"vitalSigns\":{\"systolicPressure\":120,\"diastolicPressure\":80,\"height\":165,\"weight\":60},\"marriageChildInfo\":{\"marriageStatus\":\"已婚\",\"fullTermCount\":1,\"prematureCount\":0,\"abortionCount\":0,\"livingChildrenCount\":1},\"pastHistory\":{\"personalHistory\":\"无烟酒不良嗜好，否认冶游史。\",\"bloodTransfusionHistory\":\"无\",\"diseaseHistory\":\"患者平素体健，无重大慢性疾病无传染病史\",\"epidemiologicalHistory\":\"无传染病史，流行病学史\",\"menstrualHistory\":{\"menarcheAge\":13,\"intervalDays\":28,\"durationDays\":5,\"isSterilization\":false,\"lastMenstrualDate\":\"2025-10-25\"},\"surgeryHistory\":\"无\",\"familyHistory\":\"否认家族性遗传病、精神病、肿瘤等类似病史。\"},\"allergyHistory\":\"未发现\",\"childGrowthInfo\":null},\"revisitInfo\":{\"isRevisit\":1,\"lastRecord\":{\"chiefComplaint\":\"颈项部红斑、抓痕伴瘙痒2月\",\"presentIllness\":\"2月前无明显诱因下颈项部红斑、抓痕，伴瘙痒，未予特殊处理食欲减退，睡眠安，大便溏结不调，小便尿次正常\",\"menstrualHistory\":{\"menarcheAge\":13,\"intervalDays\":28,\"durationDays\":5,\"isSterilization\":false,\"lastMenstrualDate\":\"2024-09-25\"},\"tcmFourExams\":{\"inspection\":\"红黄隐隐，明润含蓄\",\"inquiry\":\"时有腹胀便溏，倦怠乏力\",\"listeningAndSmelling\":\"口气\",\"palpation\":\"脉弦\"},\"physicalExam\":\"无\",\"auxiliaryExam\":\"血常规：WBC 9.5×10^9/L，CRP 12 mg/L\",\"diagnosis\":{\"tcmDiagnosisName\":\"湿疮\",\"tcmDiagnosisCode\":\"A08.01.07\",\"tcmSyndromeName\":\"脾虚湿困证\",\"westernDiagnosisName\":\"特应性皮炎\",\"westernDiagnosisCode\":\"L20.900\"},\"treatmentPrinciple\":\"健脾化湿\",\"treatmentAdvice\":\"少食多餐，避免辛辣油腻\",\"prescription\":{\"prescriptionName\":\"复方参蝉汤\",\"herbs\":[\"党参\",\"蝉蜕\",\"生白术\",\"茯苓\",\"温山药\",\"炒白扁豆\",\"薏苡仁\",\"生黄芪\",\"炒麦芽\",\"炒稻芽\",\"炒鸡内金\",\"大枣\",\"生甘草\",\"蚕砂\"]}}}}",
+        "created_at": "2025-12-10T01:18:48.177099"
+      },
+      {
+        "role": "assistant",
+        "content": "这次的红斑和抓痕情况，比上次有好转吗？或者有没有什么新的变化？",
+        "created_at": "2025-12-10T01:18:48.177577"
+      },
+      {
+        "role": "user",
+        "content": "抓痕变浅了",
+        "created_at": "2025-12-10T01:19:13.374974"
+      },
+      {
+        "role": "assistant",
+        "content": "那这次食欲减退的情况有改善吗？",
+        "created_at": "2025-12-10T01:19:13.375480"
+      },
+      {
+        "role": "user",
+        "content": "胃口好转了",
+        "created_at": "2025-12-10T01:19:15.748111"
+      },
+      {
+        "role": "assistant",
+        "content": "那最近睡觉的情况比之前好一些了吗？",
+        "created_at": "2025-12-10T01:19:15.748601"
+      },
+      {
+        "role": "user",
+        "content": "睡眠质量有所改善",
+        "created_at": "2025-12-10T01:19:18.317332"
+      },
+      {
+        "role": "assistant",
+        "content": "那这次大便的情况有没有什么变化呢？比之前好一些了吗？",
+        "created_at": "2025-12-10T01:19:18.318193"
+      },
+      {
+        "role": "user",
+        "content": "有黏液便",
+        "created_at": "2025-12-10T01:19:20.810669"
+      },
+      {
+        "role": "assistant",
+        "content": "那这次皮肤红斑的情况相比上次有变化吗？现在是怎样的状态呢？",
+        "created_at": "2025-12-10T01:19:20.811436"
+      },
+      {
+        "role": "user",
+        "content": "红斑颜色很淡，比较轻微",
+        "created_at": "2025-12-10T01:19:22.971676"
+      },
+      {
+        "role": "assistant",
+        "content": "这次水肿、浸润和丘疹的情况相比上次有变化吗？现在是怎样的状态呢？",
+        "created_at": "2025-12-10T01:19:22.972153"
+      },
+      {
+        "role": "user",
+        "content": "无",
+        "created_at": "2025-12-10T01:19:24.984557"
+      },
+      {
+        "role": "assistant",
+        "content": "那这次皮肤上的鳞屑情况相比上次有变化吗？现在是不是比之前少了一些呢？",
+        "created_at": "2025-12-10T01:19:24.985062"
+      },
+      {
+        "role": "user",
+        "content": "脱屑特别明显，脱屑范围大，而且鳞屑特别多",
+        "created_at": "2025-12-10T01:19:27.473490"
+      },
+      {
+        "role": "assistant",
+        "content": "那这次皮肤的苔藓样改变相比上次有变化吗？现在是不是比之前轻了一些呢？",
+        "created_at": "2025-12-10T01:19:27.474011"
+      },
+      {
+        "role": "user",
+        "content": "皮肤纹理增厚，像牛皮纸一样，情况严重",
+        "created_at": "2025-12-10T01:19:30.249134"
+      },
+      {
+        "role": "assistant",
+        "content": "那除了这些皮肤情况，最近还有没有其他不太舒服的地方呢？",
+        "created_at": "2025-12-10T01:19:30.249666"
+      },
+      {
+        "role": "user",
+        "content": "轻微乏力",
+        "created_at": "2025-12-10T01:19:34.039627"
+      },
+      {
+        "role": "assistant",
+        "content": "主诉：颈项部红斑、抓痕伴瘙痒较上次有所减轻，但仍有轻微乏力感。\n\n现病史：本次食欲较上次有所好转，睡眠质量有所改善，但大小便情况较上次有所变化，出现有黏液便，大便溏结不调。其他无明显不适。\n\n既往史：无长期用药记录，无过敏史，无不良习惯，月经史无记录。\n\n家族史：无直系亲属慢病或遗传病史。",
+        "created_at": "2025-12-10T01:19:34.040171"
+      }
+    ]
+  }
+]

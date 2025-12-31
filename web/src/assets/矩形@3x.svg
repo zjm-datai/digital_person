@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="150px" height="86px" viewBox="0 0 150 86" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>矩形</title>
+    <defs>
+        <linearGradient x1="163.687314%" y1="62.106324%" x2="-2.48475877%" y2="50%" id="linearGradient-1">
+            <stop stop-color="#62C3FC" offset="0%"></stop>
+            <stop stop-color="#8B81FF" offset="100%"></stop>
+        </linearGradient>
+        <path d="M12,0 L126,0 L126,0 L126,50 C126,56.627417 120.627417,62 114,62 L12,62 C5.372583,62 8.11624501e-16,56.627417 0,50 L0,12 C-8.11624501e-16,5.372583 5.372583,1.21743675e-15 12,0 Z" id="path-2"></path>
+        <filter x="-14.3%" y="-29.0%" width="128.6%" height="158.1%" filterUnits="objectBoundingBox" id="filter-3">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="6" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.1 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="对话框-已选" transform="translate(-1096.000000, -436.000000)">
+            <g id="编组-8" transform="translate(0.000000, 209.000000)">
+                <g id="编组-7" transform="translate(340.000000, 24.000000)">
+                    <g id="编组-3备份-5" transform="translate(768.000000, 212.000000)">
+                        <g id="矩形" transform="translate(0.000000, 3.000000)">
+                            <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+                            <use fill="url(#linearGradient-1)" fill-rule="evenodd" xlink:href="#path-2"></use>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

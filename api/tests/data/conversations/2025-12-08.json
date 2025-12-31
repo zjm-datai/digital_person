@@ -1,0 +1,472 @@
+[
+  {
+    "chat_session_id": "07ca2c7b-7c93-4b0b-be88-8d41225769c2",
+    "history": [
+      {
+        "role": "user",
+        "content": "{\"patientIdentity\":{\"patientId\":\"PID1234548\",\"idType\":\"01\",\"idNumber\":\"110101199001011234\",\"patientName\":\"王雨惠\"},\"visitInfo\":{\"department\":\"呼吸科\",\"visitNumber\":\"V0000123\"},\"latestMedicalRecord\":{\"basicInfo\":{\"gender\":\"女\",\"birthday\":\"1985-05-20\",\"aboBloodType\":\"A\",\"rhBloodType\":\"+\"},\"vitalSigns\":{\"systolicPressure\":120,\"diastolicPressure\":80,\"height\":165,\"weight\":60},\"marriageChildInfo\":{\"marriageStatus\":\"已婚\",\"fullTermCount\":1,\"prematureCount\":0,\"abortionCount\":0,\"livingChildrenCount\":1},\"pastHistory\":{\"personalHistory\":\"无烟酒不良嗜好，否认冶游史。\",\"bloodTransfusionHistory\":\"无\",\"diseaseHistory\":\"患者平素体健，无重大慢性疾病无传染病史\",\"epidemiologicalHistory\":\"无传染病史，流行病学史\",\"menstrualHistory\":{\"menarcheAge\":13,\"intervalDays\":28,\"durationDays\":5,\"isSterilization\":false,\"lastMenstrualDate\":\"2025-10-25\"},\"surgeryHistory\":\"无\",\"familyHistory\":\"无家族性遗传病、精神病、肿瘤等类似病史。\"},\"allergyHistory\":\"未发现\",\"childGrowthInfo\":null},\"revisitInfo\":{\"isRevisit\":1,\"lastRecord\":{\"chiefComplaint\":\"反复咳嗽、咳痰10年，活动后气促5年，加重1周。\",\"presentIllness\":\"患者近10年来每于冬春季节出现咳嗽、咳白色黏痰，晨起明显。近5年逐渐出现登楼或快走时气促，休息后可缓解。1周前受凉后咳嗽加剧，痰量增多呈黄脓性，气促加重，日常活动受限，无发热、咯血、夜间阵发性呼吸困难。自服“头孢类抗生素”及止咳药效果不佳，今来诊。\",\"menstrualHistory\":{\"menarcheAge\":13,\"intervalDays\":28,\"durationDays\":5,\"isSterilization\":false,\"lastMenstrualDate\":\"2024-09-25\"},\"tcmFourExams\":{\"inspection\":\"红黄隐隐，明润含蓄\",\"inquiry\":\"时有腹胀便溏，倦怠乏力\",\"listeningAndSmelling\":\"口气\",\"palpation\":\"脉弦\"},\"physicalExam\":\"无\",\"auxiliaryExam\":\"血常规：WBC 9.5×10^9/L，CRP 12 mg/L\",\"diagnosis\":{\"tcmDiagnosisName\":\"湿疮\",\"tcmDiagnosisCode\":\"A08.01.07\",\"tcmSyndromeName\":\"脾虚湿困证\",\"westernDiagnosisName\":\"特应性皮炎\",\"westernDiagnosisCode\":\"L20.900\"},\"treatmentPrinciple\":\"健脾化湿\",\"treatmentAdvice\":\"少食多餐，避免辛辣油腻\",\"prescription\":{\"prescriptionName\":\"复方参蝉汤\",\"herbs\":[\"党参\",\"蝉蜕\",\"生白术\",\"茯苓\",\"温山药\",\"炒白扁豆\",\"薏苡仁\",\"生黄芪\",\"炒麦芽\",\"炒稻芽\",\"炒鸡内金\",\"大枣\",\"生甘草\",\"蚕砂\"]}}}}",
+        "created_at": "2025-12-08T10:05:35.762690"
+      },
+      {
+        "role": "assistant",
+        "content": "这次咳嗽、咳痰和气促的情况，比起上次有改善吗？",
+        "created_at": "2025-12-08T10:05:35.763467"
+      },
+      {
+        "role": "user",
+        "content": "咳嗽减轻了",
+        "created_at": "2025-12-08T10:05:46.699722"
+      },
+      {
+        "role": "assistant",
+        "content": "这次饮食方面有没有什么变化呢？比如吃的东西有没有更注意或者有什么特别的调整？",
+        "created_at": "2025-12-08T10:05:46.700223"
+      },
+      {
+        "role": "user",
+        "content": "最近吃了很多海鲜",
+        "created_at": "2025-12-08T10:05:50.258973"
+      },
+      {
+        "role": "assistant",
+        "content": "最近睡觉的情况有改善吗？",
+        "created_at": "2025-12-08T10:05:50.259449"
+      },
+      {
+        "role": "user",
+        "content": "睡眠质量一般",
+        "created_at": "2025-12-08T10:05:53.621425"
+      },
+      {
+        "role": "assistant",
+        "content": "这次排便的情况有变化吗？现在是正常还是有什么不舒服？",
+        "created_at": "2025-12-08T10:05:53.621922"
+      },
+      {
+        "role": "user",
+        "content": "排便次数增多",
+        "created_at": "2025-12-08T10:05:57.960967"
+      },
+      {
+        "role": "assistant",
+        "content": "那最近除了咳嗽、睡眠和排便之外，还有没有其他让您觉得不舒服的地方呢？",
+        "created_at": "2025-12-08T10:05:57.961438"
+      },
+      {
+        "role": "user",
+        "content": "无其他不适",
+        "created_at": "2025-12-08T10:06:01.776298"
+      },
+      {
+        "role": "assistant",
+        "content": "主诉：反复咳嗽、咳痰10年，活动后气促5年，较上次加重1周，但咳嗽已减轻。\n\n现病史：本次饮食口味较上次有所改变，最近吃了很多海鲜；睡眠质量较上次无明显变化，仍为一般；大小便情况较上次有变化，排便次数增多；无其他不适。\n\n既往史：无记录。\n\n家族史：无家族性遗传病、精神病、肿瘤等类似病史。",
+        "created_at": "2025-12-08T10:06:01.777289"
+      }
+    ]
+  },
+  {
+    "chat_session_id": "3424a6aa-05e8-4cef-850b-8ec41912e7d1",
+    "history": [
+      {
+        "role": "user",
+        "content": "{\"patientIdentity\":{\"patientId\":\"PID1234549\",\"idType\":\"01\",\"idNumber\":\"110101199001011235\",\"patientName\":\"王刚惠\"},\"visitInfo\":{\"department\":\"肛肠科\",\"visitNumber\":\"V0000222\"},\"latestMedicalRecord\":{\"basicInfo\":{\"gender\":\"男\",\"birthday\":\"1985-05-20\",\"aboBloodType\":\"A\",\"rhBloodType\":\"+\"},\"vitalSigns\":{\"systolicPressure\":118,\"diastolicPressure\":76,\"height\":178,\"weight\":75},\"marriageChildInfo\":{\"marriageStatus\":\"已婚\",\"fullTermCount\":0,\"prematureCount\":0,\"abortionCount\":0,\"livingChildrenCount\":0},\"pastHistory\":{\"personalHistory\":\"无烟酒不良嗜好，否认冶游史。\",\"bloodTransfusionHistory\":\"无\",\"diseaseHistory\":\"患者平素体健，有过敏性鼻炎，无重大慢性疾病无传染病史\",\"epidemiologicalHistory\":\"无传染病史，流行病学史\",\"surgeryHistory\":\"无手术史\",\"familyHistory\":\"无家族性遗传病、精神病、肿瘤等类似病史.\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"}},\"allergyHistory\":\"未发现\",\"childGrowthInfo\":null},\"revisitInfo\":{\"isRevisit\":1,\"lastRecord\":{\"chiefComplaint\":\"反复咳嗽、咳痰10年，活动后气促5年，加重1周。\",\"presentIllness\":\"患者近10年来每于冬春季节出现咳嗽、咳白色黏痰，晨起明显。近5年逐渐出现登楼或快走时气促，休息后可缓解。1周前受凉后咳嗽加剧，痰量增多呈黄脓性，气促加重，日常活动受限，无发热、咯血、夜间阵发性呼吸困难。自服“头孢类抗生素”及止咳药效果不佳，今来诊。\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"},\"tcmFourExams\":{\"inspection\":\"红黄隐隐，明润含蓄\",\"inquiry\":\"时有腹胀便溏，倦怠乏力\",\"listeningAndSmelling\":\"口气\",\"palpation\":\"脉弦\"},\"physicalExam\":\"无\",\"auxiliaryExam\":\"血常规：WBC 9.5×10^9/L，CRP 12 mg/L\",\"diagnosis\":{\"tcmDiagnosisName\":\"湿疮\",\"tcmDiagnosisCode\":\"A08.01.07\",\"tcmSyndromeName\":\"脾虚湿困证\",\"westernDiagnosisName\":\"特应性皮炎\",\"westernDiagnosisCode\":\"L20.900\"},\"treatmentPrinciple\":\"健脾化湿\",\"treatmentAdvice\":\"少食多餐，避免辛辣油腻\",\"prescription\":{\"prescriptionName\":\"复方参蝉汤\",\"herbs\":[\"党参\",\"蝉蜕\",\"生白术\",\"茯苓\",\"温山药\",\"炒白扁豆\",\"薏苡仁\",\"生黄芪\",\"炒麦芽\",\"炒稻芽\",\"炒鸡内金\",\"大枣\",\"生甘草\",\"蚕砂\"]}}}}",
+        "created_at": "2025-12-08T10:03:44.498166"
+      },
+      {
+        "role": "assistant",
+        "content": "这次咳嗽和咳痰的情况，比起上次有没有什么变化呢？",
+        "created_at": "2025-12-08T10:03:44.498797"
+      },
+      {
+        "role": "user",
+        "content": "痰变多了",
+        "created_at": "2025-12-08T10:03:59.055816"
+      },
+      {
+        "role": "assistant",
+        "content": "最近饮食方面有注意到什么变化吗？比如有没有比上次更注意清淡或者更喜欢吃辛辣的？",
+        "created_at": "2025-12-08T10:03:59.056464"
+      },
+      {
+        "role": "user",
+        "content": "没怎么改变饮食",
+        "created_at": "2025-12-08T10:04:01.021510"
+      },
+      {
+        "role": "assistant",
+        "content": "最近睡觉的情况有没有什么变化呢？",
+        "created_at": "2025-12-08T10:04:01.021982"
+      },
+      {
+        "role": "user",
+        "content": "睡眠不好",
+        "created_at": "2025-12-08T10:04:03.297367"
+      },
+      {
+        "role": "assistant",
+        "content": "这次排便的情况和之前相比有变化吗？比如有没有感觉更频繁或者更困难？",
+        "created_at": "2025-12-08T10:04:03.298331"
+      },
+      {
+        "role": "user",
+        "content": "排便困难",
+        "created_at": "2025-12-08T10:04:05.765197"
+      },
+      {
+        "role": "assistant",
+        "content": "最近除了痰多和排便困难，还有其他不舒服的地方吗？",
+        "created_at": "2025-12-08T10:04:05.765924"
+      },
+      {
+        "role": "user",
+        "content": "轻微乏力",
+        "created_at": "2025-12-08T10:04:09.486694"
+      },
+      {
+        "role": "assistant",
+        "content": "主诉：反复咳嗽、咳痰较上次加重，活动后气促持续存在，加重1周，伴有轻微乏力。现病史：本次饮食口味无明显变化，较上次不详；睡眠状态较上次加重，表现为睡眠不好；大小便情况较上次无明显变化，但排便困难较上次加重。既往史：长期用药无记录；无药物或食物过敏史；无吸烟、饮酒等不良习惯。家族史：无家族性遗传病、精神病、肿瘤等类似病史。",
+        "created_at": "2025-12-08T10:04:09.487517"
+      }
+    ]
+  },
+  {
+    "chat_session_id": "47dd5de9-4877-4d9b-af40-3d8987ccd892",
+    "history": [
+      {
+        "role": "user",
+        "content": "{\"patientIdentity\":{\"patientId\":\"PID1234548\",\"idType\":\"01\",\"idNumber\":\"110101199001011234\",\"patientName\":\"王雨惠\"},\"visitInfo\":{\"department\":\"呼吸科\",\"visitNumber\":\"V0000123\"},\"latestMedicalRecord\":{\"basicInfo\":{\"gender\":\"女\",\"birthday\":\"1985-05-20\",\"aboBloodType\":\"A\",\"rhBloodType\":\"+\"},\"vitalSigns\":{\"systolicPressure\":120,\"diastolicPressure\":80,\"height\":165,\"weight\":60},\"marriageChildInfo\":{\"marriageStatus\":\"已婚\",\"fullTermCount\":1,\"prematureCount\":0,\"abortionCount\":0,\"livingChildrenCount\":1},\"pastHistory\":{\"personalHistory\":\"无烟酒不良嗜好，否认冶游史。\",\"bloodTransfusionHistory\":\"无\",\"diseaseHistory\":\"患者平素体健，无重大慢性疾病无传染病史\",\"epidemiologicalHistory\":\"无传染病史，流行病学史\",\"menstrualHistory\":{\"menarcheAge\":13,\"intervalDays\":28,\"durationDays\":5,\"isSterilization\":false,\"lastMenstrualDate\":\"2025-10-25\"},\"surgeryHistory\":\"无\",\"familyHistory\":\"无家族性遗传病、精神病、肿瘤等类似病史。\"},\"allergyHistory\":\"未发现\",\"childGrowthInfo\":null},\"revisitInfo\":{\"isRevisit\":1,\"lastRecord\":{\"chiefComplaint\":\"反复咳嗽、咳痰10年，活动后气促5年，加重1周。\",\"presentIllness\":\"患者近10年来每于冬春季节出现咳嗽、咳白色黏痰，晨起明显。近5年逐渐出现登楼或快走时气促，休息后可缓解。1周前受凉后咳嗽加剧，痰量增多呈黄脓性，气促加重，日常活动受限，无发热、咯血、夜间阵发性呼吸困难。自服“头孢类抗生素”及止咳药效果不佳，今来诊。\",\"menstrualHistory\":{\"menarcheAge\":13,\"intervalDays\":28,\"durationDays\":5,\"isSterilization\":false,\"lastMenstrualDate\":\"2024-09-25\"},\"tcmFourExams\":{\"inspection\":\"红黄隐隐，明润含蓄\",\"inquiry\":\"时有腹胀便溏，倦怠乏力\",\"listeningAndSmelling\":\"口气\",\"palpation\":\"脉弦\"},\"physicalExam\":\"无\",\"auxiliaryExam\":\"血常规：WBC 9.5×10^9/L，CRP 12 mg/L\",\"diagnosis\":{\"tcmDiagnosisName\":\"湿疮\",\"tcmDiagnosisCode\":\"A08.01.07\",\"tcmSyndromeName\":\"脾虚湿困证\",\"westernDiagnosisName\":\"特应性皮炎\",\"westernDiagnosisCode\":\"L20.900\"},\"treatmentPrinciple\":\"健脾化湿\",\"treatmentAdvice\":\"少食多餐，避免辛辣油腻\",\"prescription\":{\"prescriptionName\":\"复方参蝉汤\",\"herbs\":[\"党参\",\"蝉蜕\",\"生白术\",\"茯苓\",\"温山药\",\"炒白扁豆\",\"薏苡仁\",\"生黄芪\",\"炒麦芽\",\"炒稻芽\",\"炒鸡内金\",\"大枣\",\"生甘草\",\"蚕砂\"]}}}}",
+        "created_at": "2025-12-08T10:05:31.687235"
+      },
+      {
+        "role": "assistant",
+        "content": "这次咳嗽和咳痰的情况比上次好一些了吗？",
+        "created_at": "2025-12-08T10:05:31.687858"
+      },
+      {
+        "role": "user",
+        "content": "咳痰变少了",
+        "created_at": "2025-12-08T10:05:34.574705"
+      },
+      {
+        "role": "assistant",
+        "content": "那这次的饮食习惯有没有什么变化呢？现在吃的东西和之前相比，有没有更注意或者有什么调整？",
+        "created_at": "2025-12-08T10:05:34.575305"
+      },
+      {
+        "role": "user",
+        "content": "最近吃辣多了",
+        "created_at": "2025-12-08T10:05:36.787087"
+      },
+      {
+        "role": "assistant",
+        "content": "最近睡觉的情况有没有比上次好一些呢？",
+        "created_at": "2025-12-08T10:05:36.787562"
+      },
+      {
+        "role": "user",
+        "content": "比之前好点",
+        "created_at": "2025-12-08T10:05:39.403736"
+      },
+      {
+        "role": "assistant",
+        "content": "那这次的大便情况和之前相比有变化吗？现在排便规律吗？",
+        "created_at": "2025-12-08T10:05:39.404214"
+      },
+      {
+        "role": "user",
+        "content": "大便带黏液",
+        "created_at": "2025-12-08T10:05:42.279332"
+      },
+      {
+        "role": "assistant",
+        "content": "那最近除了咳痰和大便带黏液，还有没有其他不太舒服的地方呢？",
+        "created_at": "2025-12-08T10:05:42.280501"
+      },
+      {
+        "role": "user",
+        "content": "偶头晕",
+        "created_at": "2025-12-08T10:05:45.653120"
+      },
+      {
+        "role": "assistant",
+        "content": "主诉：反复咳嗽、咳痰10年，活动后气促5年，加重1周，较上次咳痰变少了。\n\n现病史：本次饮食口味较上次加重，近期吃辣多了；睡眠状态较上次有所改善，比之前好点；大小便情况较上次有变化，出现大便带黏液；偶有头晕，无其他明显不适。\n\n既往史：无记录。\n\n家族史：无家族性遗传病、精神病、肿瘤等类似病史。",
+        "created_at": "2025-12-08T10:05:45.653937"
+      }
+    ]
+  },
+  {
+    "chat_session_id": "90d124a8-fdd7-47ff-97e4-67640475a9bb",
+    "history": [
+      {
+        "role": "user",
+        "content": "{\"patientIdentity\":{\"patientId\":\"PID1234588\",\"idType\":\"01\",\"idNumber\":\"110101199001011235\",\"patientName\":\"李铁西\"},\"visitInfo\":{\"department\":\"肛肠科\",\"visitNumber\":\"V0000222\"},\"latestMedicalRecord\":{\"basicInfo\":{\"gender\":\"男\",\"birthday\":\"1985-05-20\",\"aboBloodType\":\"A\",\"rhBloodType\":\"+\"},\"vitalSigns\":{\"systolicPressure\":118,\"diastolicPressure\":76,\"height\":178,\"weight\":75},\"marriageChildInfo\":{\"marriageStatus\":\"已婚\",\"fullTermCount\":0,\"prematureCount\":0,\"abortionCount\":0,\"livingChildrenCount\":0},\"pastHistory\":{\"personalHistory\":\"\",\"bloodTransfusionHistory\":\"2015年输过2U红细胞\",\"diseaseHistory\":\"\",\"epidemiologicalHistory\":\"否认出国及接触史\",\"surgeryHistory\":\"无手术史\",\"familyHistory\":\"否认家族性遗传病、精神病、肿瘤等类似病史\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"}},\"allergyHistory\":\"无\",\"childGrowthInfo\":null},\"revisitInfo\":{\"isRevisit\":0,\"lastRecord\":{\"chiefComplaint\":\"\",\"presentIllness\":\"\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"},\"tcmFourExams\":{\"inspection\":\"\",\"inquiry\":\"\",\"listeningAndSmelling\":\"\",\"palpation\":\"\"},\"physicalExam\":\"\",\"auxiliaryExam\":\"\",\"diagnosis\":{\"tcmDiagnosisName\":\"\",\"tcmDiagnosisCode\":\"\",\"tcmSyndromeName\":\"\",\"westernDiagnosisName\":\"\",\"westernDiagnosisCode\":\"\"},\"treatmentPrinciple\":\"\",\"treatmentAdvice\":\"\",\"prescription\":{\"prescriptionName\":\"\",\"herbs\":[]}}}}",
+        "created_at": "2025-12-08T09:59:21.217699"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近有没有感到咳嗽、咳痰、胸闷或者呼吸不畅这些基本症状呢？",
+        "created_at": "2025-12-08T09:59:21.218331"
+      }
+    ]
+  },
+  {
+    "chat_session_id": "9a9274bb-7928-424a-bd03-cc92867db11f",
+    "history": [
+      {
+        "role": "user",
+        "content": "{\"patientIdentity\":{\"patientId\":\"PID1234588\",\"idType\":\"01\",\"idNumber\":\"110101199001011235\",\"patientName\":\"李铁西\"},\"visitInfo\":{\"department\":\"肛肠科\",\"visitNumber\":\"V0000222\"},\"latestMedicalRecord\":{\"basicInfo\":{\"gender\":\"男\",\"birthday\":\"1985-05-20\",\"aboBloodType\":\"A\",\"rhBloodType\":\"+\"},\"vitalSigns\":{\"systolicPressure\":118,\"diastolicPressure\":76,\"height\":178,\"weight\":75},\"marriageChildInfo\":{\"marriageStatus\":\"已婚\",\"fullTermCount\":0,\"prematureCount\":0,\"abortionCount\":0,\"livingChildrenCount\":0},\"pastHistory\":{\"personalHistory\":\"\",\"bloodTransfusionHistory\":\"2015年输过2U红细胞\",\"diseaseHistory\":\"\",\"epidemiologicalHistory\":\"否认出国及接触史\",\"surgeryHistory\":\"无手术史\",\"familyHistory\":\"否认家族性遗传病、精神病、肿瘤等类似病史\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"}},\"allergyHistory\":\"无\",\"childGrowthInfo\":null},\"revisitInfo\":{\"isRevisit\":0,\"lastRecord\":{\"chiefComplaint\":\"\",\"presentIllness\":\"\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"},\"tcmFourExams\":{\"inspection\":\"\",\"inquiry\":\"\",\"listeningAndSmelling\":\"\",\"palpation\":\"\"},\"physicalExam\":\"\",\"auxiliaryExam\":\"\",\"diagnosis\":{\"tcmDiagnosisName\":\"\",\"tcmDiagnosisCode\":\"\",\"tcmSyndromeName\":\"\",\"westernDiagnosisName\":\"\",\"westernDiagnosisCode\":\"\"},\"treatmentPrinciple\":\"\",\"treatmentAdvice\":\"\",\"prescription\":{\"prescriptionName\":\"\",\"herbs\":[]}}}}",
+        "created_at": "2025-12-08T09:50:13.158244"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近有没有感到咳嗽、咳痰、胸闷或者呼吸不畅这些基本症状呢？",
+        "created_at": "2025-12-08T09:50:13.158747"
+      },
+      {
+        "role": "user",
+        "content": "咳嗽",
+        "created_at": "2025-12-08T09:50:23.262062"
+      },
+      {
+        "role": "assistant",
+        "content": "了解啦～这个咳嗽的情况大概从什么时候开始的呢？持续了多久呢？",
+        "created_at": "2025-12-08T09:50:23.262874"
+      },
+      {
+        "role": "user",
+        "content": "一周前开始的",
+        "created_at": "2025-12-08T09:50:25.746525"
+      },
+      {
+        "role": "assistant",
+        "content": "您这个咳嗽主要是在胸部的哪个位置呢？比如是喉咙、胸部或者肺部感觉不舒服？",
+        "created_at": "2025-12-08T09:50:25.747251"
+      },
+      {
+        "role": "user",
+        "content": "胸部中间疼痛",
+        "created_at": "2025-12-08T09:50:28.569641"
+      },
+      {
+        "role": "assistant",
+        "content": "哦，这个胸部中间的疼痛感觉严重吗？是轻微的不适，还是比较剧烈的疼痛呢？",
+        "created_at": "2025-12-08T09:50:28.570132"
+      },
+      {
+        "role": "user",
+        "content": "轻微疼痛",
+        "created_at": "2025-12-08T09:50:31.357270"
+      },
+      {
+        "role": "assistant",
+        "content": "您还有其他不舒服的感觉吗？比如有没有发热、喉咙痛、流鼻涕或者乏力这些症状？",
+        "created_at": "2025-12-08T09:50:31.358106"
+      },
+      {
+        "role": "user",
+        "content": "喉咙痛",
+        "created_at": "2025-12-08T09:50:34.834840"
+      },
+      {
+        "role": "assistant",
+        "content": "您之前有去看过医生或者接受过治疗吗？",
+        "created_at": "2025-12-08T09:50:34.835338"
+      },
+      {
+        "role": "user",
+        "content": "没有",
+        "created_at": "2025-12-08T09:50:38.426660"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近有没有对某些食物或药物特别敏感，比如海鲜、坚果、青霉素类药物等等？",
+        "created_at": "2025-12-08T09:50:38.427170"
+      },
+      {
+        "role": "user",
+        "content": "没有",
+        "created_at": "2025-12-08T09:50:41.577004"
+      },
+      {
+        "role": "assistant",
+        "content": "您平时有长期服用什么药物吗？比如降压药、降糖药或者慢性病的药物。",
+        "created_at": "2025-12-08T09:50:41.577751"
+      },
+      {
+        "role": "user",
+        "content": "没有",
+        "created_at": "2025-12-08T09:50:44.884604"
+      },
+      {
+        "role": "assistant",
+        "content": "您家里有没有人有类似的咳嗽或者呼吸系统方面的疾病呢？比如哮喘、慢性支气管炎或者肺部感染之类的？",
+        "created_at": "2025-12-08T09:50:44.885099"
+      },
+      {
+        "role": "user",
+        "content": "没有",
+        "created_at": "2025-12-08T09:50:47.515719"
+      },
+      {
+        "role": "assistant",
+        "content": "您平时抽烟吗？如果有的话，一天大概抽多少支呢？",
+        "created_at": "2025-12-08T09:50:47.516221"
+      },
+      {
+        "role": "user",
+        "content": "每天半包",
+        "created_at": "2025-12-08T09:50:59.237826"
+      },
+      {
+        "role": "assistant",
+        "content": "您平时喝酒频率怎么样呢？比如每周喝几次，每次喝多少？",
+        "created_at": "2025-12-08T09:50:59.238445"
+      },
+      {
+        "role": "user",
+        "content": "不喝酒",
+        "created_at": "2025-12-08T09:51:01.943143"
+      },
+      {
+        "role": "assistant",
+        "content": "您平时的饮食习惯怎么样？喜欢吃什么口味的食物，比如辛辣、油腻还是清淡的？",
+        "created_at": "2025-12-08T09:51:01.944184"
+      },
+      {
+        "role": "user",
+        "content": "饮食比较清淡",
+        "created_at": "2025-12-08T09:51:07.910552"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近的睡眠情况怎么样？通常每天能睡几个小时呢？",
+        "created_at": "2025-12-08T09:51:07.911035"
+      },
+      {
+        "role": "user",
+        "content": "睡眠不好，经常失眠",
+        "created_at": "2025-12-08T09:51:10.660960"
+      },
+      {
+        "role": "assistant",
+        "content": "近期排便和排尿情况怎么样？有没有便秘、腹泻或者尿频、尿痛的情况呢？",
+        "created_at": "2025-12-08T09:51:10.661527"
+      },
+      {
+        "role": "user",
+        "content": "便秘",
+        "created_at": "2025-12-08T09:52:22.838060"
+      },
+      {
+        "role": "assistant",
+        "content": "主诉：\n\n胸部中间咳嗽一周。\n\n现病史：\n\n咳嗽为轻度，伴随喉咙痛症状，未就诊治疗，无自行使用药物情况，咳嗽无明显加重因素，饮食口味清淡，睡眠质量不好，经常失眠，大小便状况为便秘，无记录小便情况。\n\n既往史：\n\n无长期用药记录，无过敏食物或药物记录，无不良生活习惯记录。\n\n家族史：\n\n无直系亲属健康问题或遗传病记录。",
+        "created_at": "2025-12-08T09:52:22.838593"
+      }
+    ]
+  },
+  {
+    "chat_session_id": "b1ff5e37-2424-4e44-968f-341313846e38",
+    "history": [
+      {
+        "role": "user",
+        "content": "{\"patientIdentity\":{\"patientId\":\"PID1234588\",\"idType\":\"01\",\"idNumber\":\"110101199001011235\",\"patientName\":\"李铁西\"},\"visitInfo\":{\"department\":\"肛肠科\",\"visitNumber\":\"V0000222\"},\"latestMedicalRecord\":{\"basicInfo\":{\"gender\":\"男\",\"birthday\":\"1985-05-20\",\"aboBloodType\":\"A\",\"rhBloodType\":\"+\"},\"vitalSigns\":{\"systolicPressure\":118,\"diastolicPressure\":76,\"height\":178,\"weight\":75},\"marriageChildInfo\":{\"marriageStatus\":\"已婚\",\"fullTermCount\":0,\"prematureCount\":0,\"abortionCount\":0,\"livingChildrenCount\":0},\"pastHistory\":{\"personalHistory\":\"\",\"bloodTransfusionHistory\":\"2015年输过2U红细胞\",\"diseaseHistory\":\"\",\"epidemiologicalHistory\":\"否认出国及接触史\",\"surgeryHistory\":\"无手术史\",\"familyHistory\":\"否认家族性遗传病、精神病、肿瘤等类似病史\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"}},\"allergyHistory\":\"无\",\"childGrowthInfo\":null},\"revisitInfo\":{\"isRevisit\":0,\"lastRecord\":{\"chiefComplaint\":\"\",\"presentIllness\":\"\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"},\"tcmFourExams\":{\"inspection\":\"\",\"inquiry\":\"\",\"listeningAndSmelling\":\"\",\"palpation\":\"\"},\"physicalExam\":\"\",\"auxiliaryExam\":\"\",\"diagnosis\":{\"tcmDiagnosisName\":\"\",\"tcmDiagnosisCode\":\"\",\"tcmSyndromeName\":\"\",\"westernDiagnosisName\":\"\",\"westernDiagnosisCode\":\"\"},\"treatmentPrinciple\":\"\",\"treatmentAdvice\":\"\",\"prescription\":{\"prescriptionName\":\"\",\"herbs\":[]}}}}",
+        "created_at": "2025-12-08T09:59:08.944580"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近有没有感觉到咳嗽、咳痰、胸闷或者呼吸不畅这些基本症状呢？",
+        "created_at": "2025-12-08T09:59:08.945324"
+      }
+    ]
+  },
+  {
+    "chat_session_id": "cf127dde-fc30-4eb6-a1f2-b91a0c535552",
+    "history": [
+      {
+        "role": "user",
+        "content": "{\"patientIdentity\":{\"patientId\":\"PID1234588\",\"idType\":\"01\",\"idNumber\":\"110101199001011235\",\"patientName\":\"李铁西\"},\"visitInfo\":{\"department\":\"肛肠科\",\"visitNumber\":\"V0000222\"},\"latestMedicalRecord\":{\"basicInfo\":{\"gender\":\"男\",\"birthday\":\"1985-05-20\",\"aboBloodType\":\"A\",\"rhBloodType\":\"+\"},\"vitalSigns\":{\"systolicPressure\":118,\"diastolicPressure\":76,\"height\":178,\"weight\":75},\"marriageChildInfo\":{\"marriageStatus\":\"已婚\",\"fullTermCount\":0,\"prematureCount\":0,\"abortionCount\":0,\"livingChildrenCount\":0},\"pastHistory\":{\"personalHistory\":\"\",\"bloodTransfusionHistory\":\"2015年输过2U红细胞\",\"diseaseHistory\":\"\",\"epidemiologicalHistory\":\"否认出国及接触史\",\"surgeryHistory\":\"无手术史\",\"familyHistory\":\"否认家族性遗传病、精神病、肿瘤等类似病史\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"}},\"allergyHistory\":\"无\",\"childGrowthInfo\":null},\"revisitInfo\":{\"isRevisit\":0,\"lastRecord\":{\"chiefComplaint\":\"\",\"presentIllness\":\"\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"},\"tcmFourExams\":{\"inspection\":\"\",\"inquiry\":\"\",\"listeningAndSmelling\":\"\",\"palpation\":\"\"},\"physicalExam\":\"\",\"auxiliaryExam\":\"\",\"diagnosis\":{\"tcmDiagnosisName\":\"\",\"tcmDiagnosisCode\":\"\",\"tcmSyndromeName\":\"\",\"westernDiagnosisName\":\"\",\"westernDiagnosisCode\":\"\"},\"treatmentPrinciple\":\"\",\"treatmentAdvice\":\"\",\"prescription\":{\"prescriptionName\":\"\",\"herbs\":[]}}}}",
+        "created_at": "2025-12-09T07:41:46.652072"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近有没有感觉到身体有什么不舒服的地方？比如咳嗽、咳痰、胸闷、呼吸困难等等？",
+        "created_at": "2025-12-09T07:41:46.652855"
+      }
+    ]
+  },
+  {
+    "chat_session_id": "f330e1ba-8be9-4dae-8133-2c16eebb07d2",
+    "history": [
+      {
+        "role": "user",
+        "content": "{\"patientIdentity\":{\"patientId\":\"PID1234543\",\"idType\":\"01\",\"idNumber\":\"110101199001011235\",\"patientName\":\"李铁惠\"},\"visitInfo\":{\"department\":\"呼吸科\",\"visitNumber\":\"V0000222\"},\"latestMedicalRecord\":{\"basicInfo\":{\"gender\":\"男\",\"birthday\":\"1985-05-20\",\"aboBloodType\":\"A\",\"rhBloodType\":\"+\"},\"vitalSigns\":{\"systolicPressure\":118,\"diastolicPressure\":76,\"height\":178,\"weight\":75},\"marriageChildInfo\":{\"marriageStatus\":\"已婚\",\"fullTermCount\":0,\"prematureCount\":0,\"abortionCount\":0,\"livingChildrenCount\":0},\"pastHistory\":{\"personalHistory\":\"\",\"bloodTransfusionHistory\":\"2015年输过2U红细胞\",\"diseaseHistory\":\"\",\"epidemiologicalHistory\":\"否认出国及接触史\",\"surgeryHistory\":\"无手术史\",\"familyHistory\":\"否认家族性遗传病、精神病、肿瘤等类似病史\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"}},\"allergyHistory\":\"无\",\"childGrowthInfo\":null},\"revisitInfo\":{\"isRevisit\":0,\"lastRecord\":{\"chiefComplaint\":\"\",\"presentIllness\":\"\",\"menstrualHistory\":{\"menarcheAge\":0,\"intervalDays\":0,\"durationDays\":0,\"isSterilization\":false,\"lastMenstrualDate\":\"\"},\"tcmFourExams\":{\"inspection\":\"\",\"inquiry\":\"\",\"listeningAndSmelling\":\"\",\"palpation\":\"\"},\"physicalExam\":\"\",\"auxiliaryExam\":\"\",\"diagnosis\":{\"tcmDiagnosisName\":\"\",\"tcmDiagnosisCode\":\"\",\"tcmSyndromeName\":\"\",\"westernDiagnosisName\":\"\",\"westernDiagnosisCode\":\"\"},\"treatmentPrinciple\":\"\",\"treatmentAdvice\":\"\",\"prescription\":{\"prescriptionName\":\"\",\"herbs\":[]}}}}",
+        "created_at": "2025-12-08T10:04:26.926803"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近有没有感到咳嗽、咳痰、胸闷或者呼吸不畅这些基本症状呢？",
+        "created_at": "2025-12-08T10:04:26.927378"
+      },
+      {
+        "role": "user",
+        "content": "咳痰",
+        "created_at": "2025-12-08T10:04:30.306591"
+      },
+      {
+        "role": "assistant",
+        "content": "了解啦～咳痰的情况大概从什么时候开始的呢？持续了多久？",
+        "created_at": "2025-12-08T10:04:30.307075"
+      },
+      {
+        "role": "user",
+        "content": "一个月前开始的",
+        "created_at": "2025-12-08T10:04:32.842563"
+      },
+      {
+        "role": "assistant",
+        "content": "您最近咳痰的时候，感觉是在胸部的哪个位置呢？比如喉咙、胸部或者其他的部位？",
+        "created_at": "2025-12-08T10:04:32.843073"
+      },
+      {
+        "role": "user",
+        "content": "胸部中间",
+        "created_at": "2025-12-08T10:04:35.339082"
+      },
+      {
+        "role": "assistant",
+        "content": "哦，这个咳痰的严重程度如何呢？是轻微的，还是经常感到很不舒服？",
+        "created_at": "2025-12-08T10:04:35.339549"
+      },
+      {
+        "role": "user",
+        "content": "轻微咳痰",
+        "created_at": "2025-12-08T10:04:37.889381"
+      },
+      {
+        "role": "assistant",
+        "content": "您还有没有其他不舒服的症状，比如发热、乏力、盗汗或者体重减轻呢？",
+        "created_at": "2025-12-08T10:04:37.889894"
+      },
+      {
+        "role": "user",
+        "content": "发热",
+        "created_at": "2025-12-08T10:04:40.005183"
+      },
+      {
+        "role": "assistant",
+        "content": "您之前有去看过医生或者接受过治疗吗？",
+        "created_at": "2025-12-08T10:04:40.005688"
+      },
+      {
+        "role": "user",
+        "content": "之前看过医生",
+        "created_at": "2025-12-08T10:04:54.548982"
+      },
+      {
+        "role": "assistant",
+        "content": "您有没有对某些食物或药物过敏的情况呢？比如海鲜、坚果或者青霉素类药物之类的。",
+        "created_at": "2025-12-08T10:04:54.549462"
+      }
+    ]
+  }
+]

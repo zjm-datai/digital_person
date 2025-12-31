@@ -1,0 +1,653 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>流式播报机器人</title>
+
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: { 
+          accent:{DEFAULT:'#3b82f6'} /* Notion风：清爽蓝 */
+        },
+        fontFamily:{
+          sans:['Inter','system-ui','-apple-system','Segoe UI','Roboto','PingFang SC','Hiragino Sans GB','Noto Sans CJK SC','Microsoft YaHei','sans-serif']
+        },
+        maxWidth:{ 'screen-ctx':'900px' }
+      }
+    }
+  }
+</script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plyr@3/dist/plyr.css"/>
+<script src="https://cdn.jsdelivr.net/npm/plyr@3/dist/plyr.min.js"></script>
+
+<style>
+  :root{color-scheme:dark}
+  body { font-family: Inter, system-ui, sans-serif; }
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-thumb { background: rgba(120,120,160,0.25); border-radius: 3px; }
+</style>
+</head>
+<body class="min-h-screen bg-[#111] text-slate-100 flex flex-col">
+
+  <!-- Header -->
+  <header class="border-b border-slate-800 bg-[#1a1a1a]">
+    <div class="max-w-screen-ctx mx-auto flex items-center gap-2 py-3 px-4">
+      <div class="w-8 h-8 rounded-md grid place-items-center font-bold text-white text-xs bg-slate-700">TT</div>
+      <div class="font-medium">流式播报机器人</div>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="flex-1 grid grid-rows-[1fr_auto]">
+    <!-- Chat -->
+    <div id="chat" class="overflow-auto max-w-screen-ctx w-full mx-auto px-4 py-6 space-y-4"></div>
+
+    <!-- Dock -->
+    <div class="border-t border-slate-800 bg-[#1a1a1a]">
+      <div class="max-w-screen-ctx mx-auto px-4 py-3 flex items-center gap-2">
+        <input id="input"
+          class="flex-1 rounded-md border border-slate-700 bg-[#222] text-slate-100 px-3 py-2 text-sm placeholder:text-slate-500 outline-none focus:border-accent"
+          placeholder="输入你的问题..." />
+        <button id="send"
+          class="px-4 py-2 rounded-md text-sm font-medium text-white bg-accent hover:bg-blue-600">发送</button>
+        <button id="stop"
+          class="px-4 py-2 rounded-md text-sm font-medium border border-slate-700 bg-[#222] text-slate-200 hover:bg-slate-700"
+          disabled>停止</button>
+      </div>
+
+      <!-- TTS / 音频设置（Notion风格卡片） -->
+      <div class="max-w-screen-ctx mx-auto px-4 pb-4 text-sm">
+        <details open class="border border-slate-800 rounded-lg p-3 bg-[#181818]">
+          <summary class="cursor-pointer font-medium mb-2">TTS / 音频设置</summary>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <label class="flex items-center gap-2">WebSocket URI
+              <input id="tts_uri" type="text" class="flex-1 rounded border border-slate-700 bg-[#222] px-2 py-1 text-sm"
+                     value="ws://211.90.240.240:30055/v1/ws/audio/speech">
+            </label>
+            <label class="flex items-center gap-2">音色
+              <select id="tts_voice" class="flex-1 rounded border border-slate-700 bg-[#222] px-2 py-1 text-sm">
+                <option value="doctor_woman" selected>doctor_woman</option>
+                <option value="my_zero_shot_spk">zjm</option>
+              </select>
+            </label>
+            <label class="flex items-center gap-2">格式
+              <select id="tts_fmt" class="w-50 rounded border border-slate-700 bg-[#222] px-2 py-1 text-sm">
+                <option value="pcm" selected>pcm（推荐，时延低）</option>
+                <option value="mp3">mp3（推荐，音质一般）</option>
+                <option value="wav">wav（WebAudio 流播）</option>
+                <option value="opus">opus（webm）</option>
+                <option value="aac">aac（fMP4）</option>
+                <option value="flac">flac（收齐后播放）</option>
+              </select>
+            </label>
+            <label class="flex items-center gap-2">采样率（Hz）
+              <input id="tts_sr" type="number" class="w-36 rounded border border-slate-700 bg-[#222] px-2 py-1 text-sm" value="24000">
+            </label>
+            <label class="flex items-center gap-2">语速
+              <input id="tts_speed" type="number" step="0.1" class="w-28 rounded border border-slate-700 bg-[#222] px-2 py-1 text-sm" value="1.0">
+            </label>
+            <label class="flex items-center gap-2">码率（kbps）
+              <input id="tts_bitrate" type="number" step="1" class="w-28 rounded border border-slate-700 bg-[#222] px-2 py-1 text-sm" value="192">
+            </label>
+            <label class="flex items-center gap-2">WebAudio 强化
+              <select id="fx_mode" class="w-40 rounded border border-slate-700 bg-[#222] px-2 py-1 text-sm">
+                <option value="light" selected>轻度（默认）</option>
+                <option value="off">关闭</option>
+                <option value="bright">明亮</option>
+                <option value="warm">温暖</option>
+              </select>
+            </label>
+          </div>
+        </details>
+      </div>
+    </div>
+  </main>
+
+  <!-- Audio Panel -->
+  <div class="sticky bottom-0 left-0 w-full py-2 mb-4">
+    <div class="max-w-screen-ctx mx-auto px-3">
+      <div class="border border-slate-800 rounded-md bg-[#181818] px-3 py-2 flex items-center gap-3">
+        <audio id="player" class="plyr w-full" controls playsinline></audio>
+        <div class="text-xs text-slate-400 min-w-[180px] leading-snug">
+          <div><span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-[#222] text-accent">实时播放</span></div>
+          <div><span id="bytes" class="tabular-nums">0</span> bytes · 缓冲 <span id="buf" class="tabular-nums">0.00</span>s</div>
+          <div id="download"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script>
+/* ===================== 固定 LLM 参数 ===================== */
+const LLM_ENDPOINT = 'http://211.90.240.240:30055/api/chat';
+const LLM_MODEL = 'Lingshu-32B';
+const LLM_TEMP = 0.7;
+const LLM_MAXTOK = 1024;
+const LLM_SYS_PROMPT = '你是一个幽默风趣的 AI 助手。无论用户提问什么，返回的字数不超过 100 字。';
+
+/* ===================== 片段聚合器（中英标点 + 超时） ===================== */
+const FLUSH_MAX_CHARS = 60;
+const FLUSH_PUNCTUATION = "。！？；，,.!?\\n";
+const FLUSH_MIN_CHARS = 12;
+const FLUSH_TIMEOUT_MS = 220;
+
+/* ===================== UI 基础 ===================== */
+const chatEl = document.getElementById('chat');
+function addMsg(role, html=''){
+  const wrap = document.createElement('div');
+  wrap.className = `flex items-end gap-2 ${role==='me'?'justify-end':'justify-start'}`;
+  if(role==='me'){
+    wrap.innerHTML = `
+      <div class="max-w-[70%] rounded-md px-3 py-2 bg-slate-600 text-white text-sm">
+        <div class="content">${html}</div>
+      </div>
+      <div class="w-8 h-8 rounded bg-slate-700 text-[11px] grid place-items-center">我</div>
+    `;
+  } else {
+    wrap.innerHTML = `
+      <div class="w-8 h-8 rounded bg-slate-800 text-[11px] grid place-items-center text-slate-300">AI</div>
+      <div class="max-w-[70%] rounded-md px-3 py-2 bg-slate-800 text-slate-100 text-sm">
+        <div class="content">${html}</div>
+      </div>
+    `;
+  }
+  chatEl.appendChild(wrap);
+  chatEl.scrollTop = chatEl.scrollHeight;
+  return wrap.querySelector('.content');
+}
+function escapeHtml(s){return s.replace(/[&<>"']/g, m=>({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[m]))}
+function mdToHtml(md){
+  let s = md.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  s = s.replace(/```([\s\S]*?)```/g, (_,code)=>`<pre class="not-prose"><code class="block p-3 rounded-lg border border-slate-800 bg-slate-900 overflow-auto">${code}</code></pre>`);
+  s = s.replace(/`([^`]+)`/g, '<code>$1</code>');
+  s = s.replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>');
+  s = s.replace(/^- (.*)$/gm,'<li>$1</li>');
+  s = s.replace(/(<li>.*<\/li>)(\n<li>.*<\/li>)+/gs, m=>`<ul>${m}</ul>`);
+  s = s.replace(/\n{2,}/g,'</p><p>');
+  return `<p>${s}</p>`;
+}
+
+/* ===================== rAF 渲染节流（避免高频重排） ===================== */
+class RafRenderer {
+  constructor(targetEl){ this.target = targetEl; this.buf=''; this.dirty=false; this._raf=null; }
+  append(text){ this.buf += text; this.dirty = true; this._tick(); }
+  setAll(text){ this.buf = text; this.dirty = true; this._tick(); }
+  _tick(){
+    if (this._raf) return;
+    this._raf = requestAnimationFrame(()=>{
+      if (this.dirty){
+        this.target.innerHTML = mdToHtml(this.buf);
+        this.dirty = false;
+        chatEl.scrollTop = chatEl.scrollHeight;
+      }
+      this._raf = null;
+    });
+  }
+  text(){ return this.buf; }
+}
+
+/* ===================== LLM NDJSON 解析（健壮拆包） ===================== */
+async function* ndjsonStream(response){
+  const reader = response.body.getReader();
+  const decoder = new TextDecoder();
+  let carry = '';
+  try{
+    while(true){
+      const {value, done} = await reader.read();
+      if (done) break;
+      carry += decoder.decode(value, {stream:true});
+      let nl;
+      while((nl = carry.indexOf('\n')) >= 0){
+        const line = carry.slice(0, nl).trim();
+        carry = carry.slice(nl+1);
+        if (!line) continue; // 跳过空行/心跳
+        let obj; try{ obj = JSON.parse(line); }catch{ continue; }
+        yield obj;
+      }
+    }
+    const tail = carry.trim();
+    if (tail) { try{ yield JSON.parse(tail); }catch{} }
+  } finally {
+    reader.releaseLock?.();
+  }
+}
+
+/* ===================== LLM 拉流（返回 async generator） ===================== */
+async function* chatStream(messages, abortSignal){
+  const resp = await fetch(LLM_ENDPOINT, {
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body: JSON.stringify({
+      messages,
+      temperature: LLM_TEMP,
+      max_tokens: LLM_MAXTOK,
+      model: LLM_MODEL
+    }),
+    signal: abortSignal
+  });
+  if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+  for await (const obj of ndjsonStream(resp)){
+    if (obj.delta) yield { type:'delta', data: obj.delta };
+    if (obj.event === 'done') yield { type:'done' };
+  }
+}
+
+/* ===================== 片段聚合器 ===================== */
+function createCoalescer(onFlush){
+  let buf=''; let timer=null; let closed=false;
+  function schedule(){ clearTimeout(timer); timer=setTimeout(flush, FLUSH_TIMEOUT_MS); }
+  function flush(){
+    if (!buf) return;
+    const t = buf.trim(); buf='';
+    if (t) onFlush(t);
+  }
+  return {
+    push(tok){
+      if (closed) return;
+      buf += tok;
+      if (buf.length >= FLUSH_MAX_CHARS){ flush(); schedule(); return; }
+      for (const p of FLUSH_PUNCTUATION){
+        if (buf.endsWith(p) && buf.length >= FLUSH_MIN_CHARS){ flush(); schedule(); return; }
+      }
+      schedule();
+    },
+    end(){
+      if (closed) return;
+      clearTimeout(timer); flush(); closed = true;
+    }
+  };
+}
+
+/* ===================== 播放相关（MSE + WebAudio PCM + 回退） ===================== */
+const playerEl = document.getElementById('player');
+const bytesEl = document.getElementById('bytes');
+const bufEl   = document.getElementById('buf');
+const dlEl    = document.getElementById('download');
+const plyr = new Plyr('#player', { controls:['play','progress','current-time','duration','mute','volume','settings'], settings:['speed'], speed:{selected:1, options:[0.75,1,1.25,1.5,2]} });
+
+let mediaSource=null, sourceBuffer=null, pending=[], ended=false, audioMime='audio/mpeg', msOpen=false;
+let totalBuffers=[], appended=0, fallbackCollect=false;
+
+function canUseMSE(mime){ return !!(window.MediaSource && MediaSource.isTypeSupported && MediaSource.isTypeSupported(mime)); }
+
+// ====== MIME / 容器映射（修正 opus/aac）======
+function mimeFor(fmt){
+  switch(fmt){
+    case 'mp3':  return 'audio/mpeg';                         // MSE ✅
+    case 'opus': return 'audio/webm; codecs="opus"';          // MSE ✅（webm）
+    case 'aac':  return 'audio/mp4; codecs="mp4a.40.2"';      // MSE ✅（fMP4）
+    default:     return null;                                 // wav/pcm/flac 走 WebAudio/收齐后播放
+  }
+}
+
+/* ====== WebAudio PCM 实时播放通道 ====== */
+let waCtx=null, waQueue=[], waRunning=false, waSR=24000;
+function ensureAudioContext(sr){
+  if (!waCtx) waCtx = new (window.AudioContext || window.webkitAudioContext)({sampleRate: sr});
+  if (Math.abs(waCtx.sampleRate - sr) > 1){
+    try{ waCtx.close?.(); }catch{}
+    waCtx = new (window.AudioContext || window.webkitAudioContext)({sampleRate: sr});
+  }
+  return waCtx;
+}
+function int16ToFloat32(int16){
+  const f32 = new Float32Array(int16.length);
+  for (let i=0;i<int16.length;i++){ f32[i] = Math.max(-1, Math.min(1, int16[i] / 32768)); }
+  return f32;
+}
+function scheduleNextBuffer(){
+  if (waRunning) return;
+  waRunning = true;
+  (function pump(){
+    if (!waQueue.length){ waRunning=false; return; }
+    const {f32, sr} = waQueue.shift();
+    const ctx = ensureAudioContext(sr);
+    const buf = ctx.createBuffer(1, f32.length, sr);
+    buf.getChannelData(0).set(f32);
+    const src = ctx.createBufferSource();
+    src.buffer = buf;
+    src.connect(ctx.destination);
+    src.onended = pump;
+    src.start();
+  })();
+}
+function waFeedPCM(int16Chunk, sr){
+  const f32 = int16ToFloat32(int16Chunk);
+  waQueue.push({f32, sr});
+  scheduleNextBuffer();
+}
+function concatUint8(chunks){
+  let total = 0; for (const c of chunks) total += c.byteLength;
+  const out = new Uint8Array(total);
+  let off=0; for (const c of chunks){ out.set(c, off); off += c.byteLength; }
+  return out;
+}
+function waFinishToWavBlob(){
+  const pcmU8 = concatUint8(totalBuffers);
+  const dataLen = pcmU8.byteLength;
+  const header = new ArrayBuffer(44);
+  const dv = new DataView(header);
+  const writeStr = (o, s)=>{ for(let i=0;i<s.length;i++) dv.setUint8(o+i, s.charCodeAt(i)); };
+  writeStr(0, 'RIFF');
+  dv.setUint32(4, 36 + dataLen, true);
+  writeStr(8, 'WAVE');
+  writeStr(12,'fmt ');
+  dv.setUint32(16, 16, true);
+  dv.setUint16(20, 1, true);
+  dv.setUint16(22, 1, true);
+  dv.setUint32(24, waSR, true);
+  dv.setUint32(28, waSR*2, true);
+  dv.setUint16(32, 2, true);
+  dv.setUint16(34, 16, true);
+  writeStr(36,'data');
+  dv.setUint32(40, dataLen, true);
+  return new Blob([header, pcmU8], {type:'audio/wav'});
+}
+
+/* ====== 自适应媒体准备 ====== */
+let streamFmt = 'mp3';           // 用户选择的格式（UI）
+let useWebAudio = false;         // wav/pcm -> true；flac -> 特殊收齐
+let collectOnly = false;         // flac 等：仅收集不实时播
+
+function initMedia(fmt){
+  console.log("initMedia format:", fmt);
+  streamFmt = fmt;
+  // 策略：
+  // - wav/pcm：WebAudio 实时播（后端应发 s16le）
+  // - flac：仅收集（collectOnly=true），结束再回放
+  // - 其它（mp3/opus/aac）：MSE
+  useWebAudio = (fmt === 'wav' || fmt === 'pcm');
+  collectOnly = (fmt === 'flac');
+
+  appended=0; totalBuffers.length=0; pending.length=0; ended=false; msOpen=false; fallbackCollect=false;
+  dlEl.innerHTML=''; bytesEl.textContent='0'; bufEl.textContent='0.00';
+
+  if (useWebAudio || collectOnly){
+    // 不用 MSE：清空 <audio> 源
+    playerEl.removeAttribute('src'); playerEl.load();
+    return;
+  }
+
+  const m = mimeFor(fmt);
+  audioMime = m || 'application/octet-stream';
+
+  if (!m || !canUseMSE(m)){
+    // MSE 不可用时，退化为“收齐后再播”
+    fallbackCollect = true;
+    playerEl.removeAttribute('src'); playerEl.load();
+    return;
+  }
+
+  mediaSource = new MediaSource();
+  playerEl.src = URL.createObjectURL(mediaSource);
+  mediaSource.addEventListener('sourceopen', ()=>{
+    try{
+      sourceBuffer = mediaSource.addSourceBuffer(m);
+      sourceBuffer.mode = 'sequence';
+      msOpen = true;
+      sourceBuffer.addEventListener('updateend', ()=>{
+        try{
+          const br = playerEl.buffered; if (br.length){ const end = br.end(br.length-1); bufEl.textContent = Math.max(0, end - playerEl.currentTime).toFixed(2); }
+        }catch{}
+        if (pending.length && !sourceBuffer.updating){
+          const next = pending.shift();
+          try{ sourceBuffer.appendBuffer(next); }catch(e){ pending.unshift(next); }
+        }else if (ended && !sourceBuffer.updating){ try{ mediaSource.endOfStream(); }catch{} }
+      });
+      if (pending.length && !sourceBuffer.updating){ const first = pending.shift(); sourceBuffer.appendBuffer(first); }
+    }catch(e){ fallbackCollect = true; console.warn('MSE init failed, fallback', e); }
+  }, {once:true});
+}
+
+function feedAudioMSE(buf){
+  totalBuffers.push(buf);
+  appended += buf.byteLength; bytesEl.textContent = appended.toLocaleString();
+  if (fallbackCollect) return;
+  if (!msOpen){ pending.push(buf); return; }
+  if (!sourceBuffer || sourceBuffer.updating){ pending.push(buf); return; }
+  try{ sourceBuffer.appendBuffer(buf); }catch(e){ pending.push(buf); }
+  if (playerEl.paused){ playerEl.play().catch(()=>{}); }
+}
+
+function finishAudio(){
+  ended = true;
+
+  // 汇总 Blob & 下载链接
+  let blob, url, ext='bin';
+
+  if (useWebAudio){
+    blob = waFinishToWavBlob(); ext = 'wav';
+    url = URL.createObjectURL(blob);
+    const now = new Date().toISOString().replace(/[:.]/g,'-');
+    dlEl.innerHTML = `<a class="underline" href="${url}" download="tts_stream_${now}.${ext}">下载音频</a>`;
+    return; // WebAudio 已经实时播过，不需要 MSE endOfStream
+  }
+
+  if (collectOnly || fallbackCollect){
+    // 收齐后再播
+    let type = 'application/octet-stream';
+    if (streamFmt==='flac') { type='audio/flac'; ext='flac'; }
+    else if (streamFmt==='mp3'){ type='audio/mpeg'; ext='mp3'; }
+    else if (streamFmt==='opus'){ type='audio/webm; codecs="opus"'; ext='webm'; }
+    else if (streamFmt==='aac'){ type='audio/mp4; codecs="mp4a.40.2"'; ext='m4a'; }
+    else if (streamFmt==='wav'){ type='audio/wav'; ext='wav'; } // 理论上不会走到这里
+    blob = new Blob(totalBuffers, {type});
+    url = URL.createObjectURL(blob);
+    const now = new Date().toISOString().replace(/[:.]/g,'-');
+    dlEl.innerHTML = `<a class="underline" href="${url}" download="tts_stream_${now}.${ext}">下载音频</a>`;
+    // 用 <audio> 直接播整文件
+    playerEl.src = url; playerEl.play().catch(()=>{});
+    return;
+  }
+
+  // MSE 正常流
+  const type = audioMime;
+  blob = new Blob(totalBuffers, {type});
+  if (type.includes('mpeg')) ext='mp3';
+  else if (type.includes('webm')) ext='webm';
+  else if (type.includes('mp4')) ext='m4a';
+  else if (type.includes('flac')) ext='flac';
+  else if (type.includes('wav')) ext='wav';
+  url = URL.createObjectURL(blob);
+  const now = new Date().toISOString().replace(/[:.]/g,'-');
+  dlEl.innerHTML = `<a class="underline" href="${url}" download="tts_stream_${now}.${ext}">下载音频</a>`;
+  if (mediaSource && msOpen && sourceBuffer && !sourceBuffer.updating){ try{ mediaSource.endOfStream(); }catch{} }
+}
+
+/* ===================== WebAudio（可选增强） ===================== */
+let audioCtxFX=null, mediaNode=null, comp=null, eq1=null, eq2=null;
+function setupFX(mode){
+  if (mode==='off'){
+    if (mediaNode) { try{ mediaNode.disconnect(); mediaNode.connect(audioCtxFX.destination); }catch{} }
+    [comp,eq1,eq2].forEach(n=>n&&n.disconnect());
+    return;
+  }
+  if (!audioCtxFX) audioCtxFX = new (window.AudioContext || window.webkitAudioContext)();
+  if (!mediaNode) mediaNode = audioCtxFX.createMediaElementSource(playerEl);
+  comp = audioCtxFX.createDynamicsCompressor();
+  comp.threshold.value = -18; comp.knee.value = 20; comp.ratio.value = 3; comp.attack.value = 0.003; comp.release.value = 0.25;
+  eq1 = audioCtxFX.createBiquadFilter(); eq1.type='highshelf';
+  eq2 = audioCtxFX.createBiquadFilter(); eq2.type='lowshelf';
+  if (mode==='light'){ eq1.frequency.value=3800; eq1.gain.value=1.8; eq2.frequency.value=180; eq2.gain.value=0.8; }
+  if (mode==='bright'){ eq1.frequency.value=3500; eq1.gain.value=3.0; eq2.frequency.value=160; eq2.gain.value=0.5; }
+  if (mode==='warm'){ eq1.frequency.value=4200; eq1.gain.value=1.2; eq2.frequency.value=140; eq2.gain.value=1.6; }
+  try{ mediaNode.disconnect(); }catch{}
+  eq2.connect(eq1); eq1.connect(comp); comp.connect(audioCtxFX.destination);
+  mediaNode.connect(eq2);
+}
+
+/* ===================== TTS WebSocket：队列 + 就绪态 ===================== */
+let ws=null, wsReady=false, ttsQueue=[], eofSent=false, stopped=false;
+
+function ttsSendRaw(msg){
+  if (!ws || ws.readyState !== WebSocket.OPEN) return false;
+  ws.send(msg); return true;
+}
+function ttsSendTextSegment(seg){
+  const payload = JSON.stringify({type:'text', data: seg});
+  if (wsReady){ ttsSendRaw(payload); }
+  else { ttsQueue.push(payload); }
+}
+function ttsSendEOFOnce(){
+  if (eofSent) return;
+  eofSent = true;
+  const payload = JSON.stringify({type:'eof'});
+  if (wsReady) ttsSendRaw(payload); else ttsQueue.push(payload);
+}
+
+async function ttsConnect({uri, voice, fmt, sr, speed, bitrate, fx}){
+  eofSent=false; wsReady=false; ttsQueue.length=0; stopped=false;
+  if (ws && (ws.readyState===WebSocket.OPEN || ws.readyState===WebSocket.CONNECTING)) try{ws.close()}catch{}
+  initMedia(fmt);
+  setupFX(fx);
+  waSR = +sr || 24000; // WebAudio 播放采样率（按 UI 值）
+
+  ws = new WebSocket(uri);
+  ws.binaryType = 'arraybuffer';
+
+  await new Promise((res,rej)=>{ ws.onopen=()=>res(); ws.onerror=e=>rej(e); });
+
+  ws.onmessage = (ev)=>{
+    if (typeof ev.data === 'string'){
+      try{
+        const obj = JSON.parse(ev.data);
+        if (obj.type === 'ready'){ wsReady = true; while(ttsQueue.length) ws.send(ttsQueue.shift()); }
+        if (obj.type === 'end'){ finishAudio(); }
+        if (obj.type === 'error'){ console.warn('TTS error', obj); }
+      }catch{}
+      return;
+    }
+    // 二进制音频片段
+    const u8 = new Uint8Array(ev.data);
+    totalBuffers.push(u8);
+    appended += u8.byteLength; bytesEl.textContent = appended.toLocaleString();
+
+    if (useWebAudio){
+      // 假定后端流式发 s16le（WAV 选择时服务端也发 PCM）
+      const i16 = new Int16Array(u8.buffer, u8.byteOffset, (u8.byteLength/2)|0);
+      waFeedPCM(i16, waSR);
+      if (playerEl.paused){ playerEl.play().catch(()=>{}); }
+      return;
+    }
+
+    if (collectOnly){
+      // flac：仅收集，结束后一次性回放
+      return;
+    }
+
+    // MSE 路径
+    feedAudioMSE(u8);
+  };
+  ws.onclose = ()=>{ finishAudio(); };
+
+  // 初始化参数
+  const initMsg = { voice, response_format: fmt, speed: +speed, sample_rate: +sr };
+  if (bitrate && +bitrate>0) initMsg.bitrate = (+bitrate)*1000;
+  ws.send(JSON.stringify(initMsg));
+
+  wsReady = true; while(ttsQueue.length) ws.send(ttsQueue.shift());
+}
+
+/* ===================== 发送流程（LLM → TTS） ===================== */
+const inputEl = document.getElementById('input');
+const sendBtn  = document.getElementById('send');
+const stopBtn  = document.getElementById('stop');
+
+function ttsCfg(){
+  return {
+    tts_uri: document.getElementById('tts_uri').value,
+    tts_voice: document.getElementById('tts_voice').value,
+    tts_fmt: document.getElementById('tts_fmt').value,
+    tts_sr: parseInt(document.getElementById('tts_sr').value,10),
+    tts_speed: parseFloat(document.getElementById('tts_speed').value),
+    tts_bitrate: parseInt(document.getElementById('tts_bitrate').value,10),
+    fx_mode: document.getElementById('fx_mode').value
+  }
+}
+
+function addThinking(){ return addMsg('bot', '<span class="text-slate-400">思考中…</span>'); }
+
+let currentAbort = null;
+
+async function handleSend(){
+  const q = inputEl.value.trim();
+  if (!q) return;
+  inputEl.value = '';
+  addMsg('me', escapeHtml(q));
+  const botEl = addThinking();
+  const renderer = new RafRenderer(botEl);
+
+  sendBtn.disabled = true; stopBtn.disabled=false;
+
+  const c = ttsCfg();
+
+  // 1) 连接 TTS（先就绪，保证前几片段不会丢）
+  try{
+    await ttsConnect({
+      uri:c.tts_uri, voice:c.tts_voice, fmt:c.tts_fmt, sr:c.tts_sr,
+      speed:c.tts_speed, bitrate:c.tts_bitrate, fx:c.fx_mode
+    });
+  }catch(e){
+    renderer.setAll(`<span class="text-rose-300">TTS 连接失败：${(e?.message||e)}</span>`);
+    sendBtn.disabled = false; stopBtn.disabled=true;
+    return;
+  }
+
+  // 2) 拉取 LLM 流（边显示边推送）
+  const messages = [
+    {role:'system', content: LLM_SYS_PROMPT},
+    {role:'user',   content: q}
+  ];
+  const controller = new AbortController();
+  currentAbort = controller;
+
+  const coalescer = createCoalescer(seg => {
+    if (stopped) return;
+    ttsSendTextSegment(seg);
+  });
+
+  try{
+    for await (const evt of chatStream(messages, controller.signal)){
+      if (stopped) break;
+      if (evt.type === 'delta'){
+        renderer.append(evt.data);   // 视觉流式
+        coalescer.push(evt.data);    // 推送聚合
+      }else if (evt.type === 'done'){
+        coalescer.end();
+        ttsSendEOFOnce();
+      }
+    }
+  }catch(e){
+    if (!controller.signal.aborted){
+      renderer.setAll(`<span class="text-rose-300">LLM 流式失败：${(e?.message||e)}</span>`);
+    }
+  }finally{
+    sendBtn.disabled = false;
+    stopBtn.disabled = true;
+    currentAbort = null;
+  }
+}
+
+sendBtn.addEventListener('click', handleSend);
+inputEl.addEventListener('keydown', (e)=>{ if (e.key==='Enter' && !e.shiftKey){ e.preventDefault(); handleSend(); }});
+
+/* 停止：终止 LLM 拉流、停止继续推送、关闭 WS、暂停播放器 */
+stopBtn.addEventListener('click', ()=>{
+  stopped = true;
+  try{ currentAbort?.abort(); }catch{}
+  try{ ttsSendEOFOnce(); ws?.close(); }catch{}
+  playerEl.pause();
+  stopBtn.disabled = true;
+  sendBtn.disabled = false;
+});
+
+/* 初始焦点 */
+window.addEventListener('load', ()=>{ inputEl.focus(); });
+</script>
+</body>
+</html>
