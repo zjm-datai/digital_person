@@ -7,6 +7,7 @@ from flask_restx import Resource, fields, reqparse
 from werkzeug.exceptions import InternalServerError
 
 from controllers.console import console_ns, api
+from models.conversation import MessageRole
 
 from services.app_generate_service import AppGenerateService
 from services.message_service import MessageService
@@ -57,7 +58,10 @@ class CompletionMessageApi(Resource):
                 opc_id=opc_id, app_type=app_type, conversation_id=conversation_id,
             )
             message_id = MessageService.create_message(
-                conversation_id=conversation_id, message=message
+                conversation_id=conversation_id,
+                message=message,
+                app_type=app_type,
+                role=MessageRole.USER
             )
 
             g.llm_run_context = {

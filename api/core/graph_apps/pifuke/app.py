@@ -1,7 +1,7 @@
 
 from typing import Any, Dict, Generator, Mapping, Union, Optional
 
-from langchain_core.messages import AIMessageChunk
+from langchain_core.messages import AIMessageChunk, AIMessage
 from langchain_core.runnables.config import RunnableConfig
 from langgraph.graph import StateGraph, END
 from langgraph.graph.state import CompiledStateGraph
@@ -10,7 +10,6 @@ from langgraph.checkpoint.postgres import PostgresSaver
 
 from core.graph_apps.graph_app_base import GraphApp
 from extensions.ext_apps_database import init_connection_pool
-  
 
 from .state import State
 from .nodes.utils import progress_counts
@@ -78,13 +77,12 @@ class App(GraphApp):
             "configurable": {"thread_id": conversation_id}
         }
 
-        input = {
+        inputs = {
             "messages": message, "session_id": conversation_id,
         }
 
         if not streaming:
-            # TODO: have problem
-            result = self.graph.invoke(input=input, config=config)
+            result = self.graph.invoke(input=inputs, config=config)
             
             return result
 
@@ -93,7 +91,7 @@ class App(GraphApp):
             is_summary = False
 
             for mode, chunk in self.graph.stream(
-                input, config, stream_mode=["messages", "values"]
+                inputs, config, stream_mode=["messages", "values"]
             ):
                 if mode == "messages":
                     if isinstance(chunk, tuple):
@@ -104,10 +102,17 @@ class App(GraphApp):
                             if not content:
                                 continue
                             if node == "ask":
-                                yield {"event": "stream_output", "content": content}
+                                if isinstance(msg, AIMessageChunk):
+                                    yield {"event": "ask_stream", "content": content}
+                                elif isinstance(msg, AIMessage):
+                                    yield {"event": "ask_end", "content": content}
+
                             elif node == "summarize":
                                 is_summary = True
-                                yield {"event": "summarize", "content": content}
+                                if isinstance(msg, AIMessageChunk):
+                                    yield {"event": "summarize_stream", "content": content}
+                                elif isinstance(msg, AIMessage):
+                                    yield {"event": "summarize_end", "content": content}
                     elif hasattr(chunk, "content"):
                         content = chunk.content
                         if content:
@@ -118,40 +123,32 @@ class App(GraphApp):
             if last_end_state:
 
                 if isinstance(last_end_state, dict):
-                    current_stage = last_end_state.get("current_stage")
-                    current_missing_field = last_end_state.get("current_missing_field")
-                    progress = last_end_state.get("progress", None)
+                    current_stage = last_end_state.get("current_stage", "")
+                    current_field = last_end_state.get("current_missing_field", "")
+                    progress = last_end_state.get("progress")
+                    all_done = last_end_state.get("all_done")
                 else:
-                    current_stage = getattr(last_end_state, "current_stage", None)
-                    current_missing_field = getattr(last_end_state, "current_missing_field", None)
+                    current_stage = getattr(last_end_state, "current_stage", "")
+                    current_field = getattr(last_end_state, "current_missing_field", "")
                     progress = progress_counts(last_end_state)
+                    all_done = getattr(last_end_state, "all_done", None)
 
                 yield {
                     "event": "message_context",
                     "content": {
                         "assistant": {
+                            "conversation_id": conversation_id,
                             "message_kind": "summary" if is_summary else "question",
-                            "target_stage": current_stage,
-                            "target_field": current_missing_field,
+                            "current_stage": current_stage,
+                            "current_field": current_field,
                             "progress": progress,
-                        },
-                        "user": {
-                            "message_kind": "answer",
-                            "target_stage": getattr(last_end_state, "last_asked_stage", None)
-                                        if not isinstance(last_end_state, dict)
-                                        else last_end_state.get("last_asked_stage"),
-                            "target_field": getattr(last_end_state, "last_asked_field", None)
-                                        if not isinstance(last_end_state, dict)
-                                        else last_end_state.get("last_asked_field"),
-                        },
+                        }
                     },
                 }
 
                 yield {
-                    "event": "is_end", 
-                    "content": getattr(last_end_state, "all_done", None) 
-                    if not isinstance(last_end_state, dict) 
-                    else last_end_state.get("all_done")
+                    "event": "is_end",
+                    "content": all_done,
                 }
-        
+
         return stream_generator()

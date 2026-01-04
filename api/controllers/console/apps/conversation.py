@@ -1,9 +1,8 @@
 
 
-from calendar import c
 from flask_restx import fields, reqparse
 from flask_restx.resource import Resource
-from controllers.console import console_ns, api
+from controllers.console import console_ns
 from services.conversation_service import ConversationService
 
 conversation_model = console_ns.model(

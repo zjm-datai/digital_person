@@ -3,10 +3,7 @@
 from enum import StrEnum
 
 from core.graph_apps.pifuke_app_generator import PifukeAppGenerator
-
-class AppType(StrEnum):
-    
-    PIFUKE = "pifuke"
+from models.models import AppType
 
 
 class AppGenerateService:
@@ -23,6 +20,6 @@ class AppGenerateService:
             else:
                 raise ValueError(f"Unsupported app_type: {app_type}")
         except Exception as e:
-            raise 
+            raise
         finally:
             pass

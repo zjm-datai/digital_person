@@ -87,7 +87,7 @@ def build_context_json_str() -> str:
 
 if __name__ == "__main__":
     app = App()
-    conversation_id = "test_pid1234567_stream"
+    conversation_id = "test_pid12345678_stream"
 
     config = {
         "configurable": {"thread_id": conversation_id}

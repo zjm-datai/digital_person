@@ -99,29 +99,46 @@ def llm_log(type: str):
             t0 = time.perf_counter()
             inputs_obj = {"args": args, "kwargs": kwargs}
 
-            resp: Any = None
-            err: Optional[BaseException] = None
+            resp_content: Any = None
+            raw_output: str = ""
+            err: Optional[str] = None
+            status: str = "failed"
 
             try:
-                resp = func(cls, *args, **kwargs)
-                return resp
+                result = func(cls, *args, **kwargs)
+
+                if isinstance(result, tuple) and len(result) == 3:
+                    success_flag, parsed_result, raw_output = result
+                    resp_content = parsed_result
+                    status = "success" if success_flag else "failed"
+                else:
+                    raw_output = str(result)
+                    resp_content = None
+                    status = "success"
+
+                return result
             except BaseException as e:
-                err = e
+                err = str(e)
+                status = "failed"
                 raise
             finally:
-                status = "success" if err is None else "failed"
                 payload = _build_payload(
                     context=context,
                     type=type,
                     inputs_obj=inputs_obj,
-                    outputs_obj=resp,
+                    outputs_obj={
+                        **({"parsed_result": resp_content} if resp_content is not None else {}),
+                        "raw_output": raw_output
+                    },
                     start_time=start_time,
                     t0=t0,
                     status=status,
-                    error=None if err is None else str(err),
+                    error=err,
                 )
                 print(payload)
                 _safe_delay(payload)
 
         return wrapper
     return deco
+
+
