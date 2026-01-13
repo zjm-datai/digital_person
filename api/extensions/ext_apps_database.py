@@ -1,8 +1,6 @@
-
-
+import atexit
 import logging
 from psycopg_pool import ConnectionPool
-from psycopg.rows import dict_row
 
 from flask.app import Flask
 
@@ -36,6 +34,15 @@ def init_connection_pool() -> ConnectionPool | None:
 def init_app(app: Flask):
     
     init_connection_pool()
+
+def close_pool():
+    global connection_pool
+    logger.info("closing connection pool")
+    if connection_pool is not None:
+        connection_pool.close()
+        logger.info("close connection pool successfully")
+
+atexit.register(close_pool)
         
     
     

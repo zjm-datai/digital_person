@@ -4,7 +4,7 @@ from typing import Generator, Mapping, Union, Any
 from core.graph_apps.pifuke.app import App
 from libs.orjson import orjson_dumps
 from models.conversation import MessageRole
-from models.models import AppType
+from models.model import AppType
 from services.message_service import MessageService
 
 

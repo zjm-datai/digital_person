@@ -6,6 +6,8 @@ from urllib.parse import parse_qsl, quote_plus
 from pydantic import Field, NonNegativeInt, PositiveInt, computed_field, SecretStr
 from pydantic_settings import BaseSettings
 
+from configs.middleware.cache.redis_config import RedisConfig
+
 
 class StorageConfig(BaseSettings):
     STORAGE_TYPE: Literal[
@@ -232,6 +234,9 @@ class MiddlewareConfig(
     CeleryConfig,
     # configs of storage and storage providers
     StorageConfig,
+
+    RedisConfig,
+
     LLMConfig
 ):
     pass

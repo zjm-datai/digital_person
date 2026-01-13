@@ -1,5 +1,6 @@
-### GET request to example server
-GET https://examples.http-client.intellij.net/get
-    ?generated-in=PyCharm
+
+GET http://127.0.0.1:5001/console/api/apps/chat-messages?conversation_id=f93ec829-84a3-455a-8c65-48ea43f0d746
+accept: application/json
+Authorization: Bearer zhujunmiao
 
 ###

@@ -43,3 +43,9 @@ class PatientDetailApi(Resource):
             raise InternalServerError() from e
 
         return patient_detail
+
+@console_ns.route('/patient_all')
+class PatientAllApi(Resource):
+    def get(self):
+
+        return PatientService.get_all_patients()

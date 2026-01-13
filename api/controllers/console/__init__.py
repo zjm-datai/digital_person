@@ -21,19 +21,33 @@ console_ns = Namespace(
 RESOURCE_MODULES = (
     "controllers.console.apps.completion",
     "controllers.console.apps.conversation",
-    "controllers.console.auth.patient"
+    "controllers.console.apps.message",
+    "controllers.console.apps.asr_suggest",
+    "controllers.console.auth.patient",
+    "controllers.console.auth.login",
+    "controllers.console.workspace.account",
+    "controllers.console.setup"
 )
 
 for module_name in RESOURCE_MODULES:
     import_module(module_name)
+
+from . import (
+    setup
+)
     
 from .apps import (
     completion,
     conversation,
     message,
+    asr_suggest
 )
 from .auth import (
-    patient
+    patient,
+    login
+)
+from .workspace import (
+    account
 )
 
 api.add_namespace(console_ns)
@@ -42,5 +56,10 @@ __all__ = [
     "console_ns",
     "completion",
     "conversation",
-    "patient"
+    "message",
+    "asr_suggest",
+    "patient",
+    "login",
+    "setup",
+    "account",
 ]

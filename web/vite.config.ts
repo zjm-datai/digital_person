@@ -13,12 +13,12 @@ export default defineConfig({
 
   server: {
     proxy: {
-      "/api": {
-        target: "http://127.0.0.1:9090",
+      "/console_api": {
+        target: "http://127.0.0.1:5001",
         changeOrigin: true,
         ws: true,
         secure: false,
-        rewrite: (path) => path,
+        rewrite: (path) => path.replace(/^\/console_api/, "console/api"),
       },
       "/dify_api": {
         target: "http://211.90.240.240:30010",

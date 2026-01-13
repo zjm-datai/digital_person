@@ -6,6 +6,9 @@ WORKDIR /app/api
 # Install uv
 ENV UV_VERSION=0.8.9
 
+RUN pip config set global.index-url https://mirrors.aliyun.com/pypi/simple/ && \
+    pip config set global.trusted-host mirrors.aliyun.com
+
 RUN pip install --no-cache-dir uv=${UV_VERSION}
 
 FROM base AS packages
@@ -14,23 +17,19 @@ RUN sed -i 's@deb.debian.org@mirrors.aliyun.com@g' /etc/apt/sources.list.d/debia
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
-          g++ \
-          libmpfr-dev libmpc-dev
+        build-essential \
+        python3-dev \
+    && rm -rf /var/lib/apt/lists/*
 
 # Install Python dependencies
 COPY pyproject.toml uv.lock ./
-RUN uv sync --locked --no-dev
+RUN uv sync --locked --no-dev --default-index https://pypi.tuna.tsinghua.edu.cn/simple
 
 # production stage
 FROM base AS production
 
 ENV FLASK_APP=app.py
-ENV EDITION=SELF_HOSTED
 ENV DEPLOY_ENV=PRODUCTION
-ENV CONSOLE_API_URL=http://127.0.0.1:5001
-ENV CONSOLE_WEB_URL=http://127.0.0.1:3000
-ENV SERVICE_API_URL=http://127.0.0.1:5001
-ENV APP_WEB_URL=http://127.0.0.1:3000
 
 EXPOSE 5001
 
@@ -49,18 +48,6 @@ ARG dp_uid=1001
 RUN groupadd -r -g ${dp_uid} dp && \
     useradd -r -u ${dp_uid} -g ${dp_uid} -s /bin/bash dp && \
     chown -R dp:dp /app
-
-RUN \
-    apt-get update \
-    && apt-get install -y --no-install-recommends \
-        curl nodejs \
-        libgmp-dev libmpfr-dev libmpc-dev \
-        expat libldap-2.5-0=2.5.13+dfsg-5 perl libsqlite3-0=3.40.1-2+deb12u2 zlib1g=1:1.2.13.dfsg-1 \
-        fonts-noto-cjk \
-        media-types \
-        libmagic1 \
-    && apt-get autoremove -y \
-    && rm -rf /var/lib/apt/lists/*
 
 # Copy Python environment and packages
 ENV VIRTUAL_ENV=/app/api/.venv

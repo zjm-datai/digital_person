@@ -1,0 +1,14 @@
+.env
+*.env.*
+
+storage/
+
+logs
+*.log*
+
+.idea
+.vscode
+.mypy_cache
+.ruff_cache
+
+.venv

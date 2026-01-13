@@ -145,7 +145,10 @@ async function exchangeCodeForOpenId(code: string) {
     if (!openid) throw new Error('后端未返回 openid');
 
     patientStore.setOpenId(openid);
-    await patientStore.recordScan("PID1234563").finally(() => toChat());
+    
+    const opcId = "PID1234563";
+    await patientStore.recordScan(opcId);
+    await createConversationAndGoChat(opcId);
 
     ElNotification({
       title: '授权成功',
@@ -164,8 +167,8 @@ async function exchangeCodeForOpenId(code: string) {
     isExchanging.value = false;
   }
 }
-// ========= 换取 openid 相关 =========
 
+// ========= 换取 openid 相关 =========
 function syncPlatformFromUrl() {
   const fromRoute = route.query as Record<string, any>;
   const parsed = Object.keys(fromRoute || {}).length > 0 ? fromRoute : getQueryFromHash();
@@ -173,41 +176,63 @@ function syncPlatformFromUrl() {
   appStore.setPlatform(p);
 }
 
-import { apiCreateSession } from '@/api/session';
+import { apiCreateConversation } from '@/api/conversation';
 
-function getAuthToken(): string | null {
-  // 仅示例：勿在生产中硬编码 Token
-  return "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxIiwiZXhwIjoxNzY5MTYxNTA2LCJpYXQiOjE3NjYzOTY3MDYsImp0aSI6IjEtMTc2NjM5NjcwNi45NTkyMDEifQ.R22n_rEY93Ef7HataexTfZuhMY6C7v-I3qRv0WfmVrQ";
+function normalizeAppTypeFromDepartment(dept: string) {
+  const d = (dept || "").trim();
+  const map: Record<string, string> = { 
+    "呼吸科": "huxike",
+    "皮肤医美中心": "pifuke",
+    "肛肠科": "gangchangke" 
+  
+  };
+  return map[d] || "huxike";
 }
 
-async function toChat(extraQuery: Record<string, any> = {}) {
+async function createConversationAndGoChat(opcId: string, extraQuery: Record<string, any> = {}) {
   try {
-    const data = await apiCreateSession(getAuthToken);              // 创建新会话
-    const q = { ...extraQuery, sid: data.session_id };              // 带上 sid
+    const dept = patientStore.detail?.visitInfo?.department || "";
+    const appType = normalizeAppTypeFromDepartment(dept);
+    const conversation = await apiCreateConversation({ appType, opcId });
+    
+    const q = { ...extraQuery, sid: conversation.id };
     if (appStore.platform !== 'web') {
         // @ts-ignore
         q.platform = appStore.platform;
     }
-    router.push({ path: '/chat', query: q });                       // 跳转
+    router.push({ path: '/chat', query: q });
   } catch (e) {
     console.error('创建会话失败：', e);
-    // 可根据需要提示或禁止进入
   }
 }
 
 function handleScan(code: string) {
   const trimmed = (code || '').trim();
   if (!trimmed) return;
-  patientStore.recordScan(trimmed).finally(() => {
-    setTimeout(() => toChat(), 300);
+
+  patientStore.recordScan(trimmed).then((detail) => {
+    if (!detail) {
+      console.error("拉取病人详情失败")
+      return;
+    }
+    setTimeout(() => createConversationAndGoChat(trimmed), 300);
   });
+
   scanCode.value = '';
 }
+
 
 function handleInput(code: string) {
   const trimmed = (code || '').trim();
   if (!trimmed) return;
-  patientStore.recordScan(trimmed).finally(() => toChat());
+  
+  patientStore.recordScan(trimmed).then((detail) => {
+    if (!detail) {
+      console.error("拉取病人详情失败")
+      return;
+    }
+    setTimeout(() => createConversationAndGoChat(trimmed), 300);
+  });
 }
 
 onMounted(async () => {

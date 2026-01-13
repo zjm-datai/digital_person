@@ -12,34 +12,48 @@ interface AccState {
 }
 
 function parseAll(raw: string): { visible: string; thinking: string } {
-    let visible = "";
-    let thinking = "";
-    let i = 0;
-    let inThink = false;
+  let visible = "";
+  let thinking = "";
+  let i = 0;
+  let inThink = false;
 
-    while (i < raw.length) {
-        // 注意：用 startsWith 做前缀匹配，能处理跨分片后重新解析的完整串
-        if (raw.startsWith("<think>", i)) {
-        inThink = true;
-        i += 7;
-        continue;
-        }
-        if (raw.startsWith("</think>", i)) {
-        inThink = false;
-        i += 8;
-        continue;
-        }
-
-        const ch = raw[i];
-        if (inThink) {
-        thinking += ch;
-        } else {
-        visible += ch;
-        }
-        i++;
+  while (i < raw.length) {
+    if (raw.startsWith("<think>", i)) {
+      inThink = true;
+      i += 7;
+      continue;
     }
 
-    return { visible, thinking };
+    if (raw.startsWith("</think>", i)) {
+      inThink = false;
+      i += 8;
+
+      // ✅ 吞掉 </think> 后紧跟的换行（最多吞 2 个 \n；兼容 \r\n）
+      // 目标：去掉你看到的 </think>\n\n
+      if (raw.startsWith("\r\n", i)) {
+        i += 2;
+      } else if (raw.startsWith("\n", i)) {
+        i += 1;
+      }
+
+      // 第二个换行（如果存在）
+      if (raw.startsWith("\r\n", i)) {
+        i += 2;
+      } else if (raw.startsWith("\n", i)) {
+        i += 1;
+      }
+
+      continue;
+    }
+
+    const ch = raw[i];
+    if (inThink) thinking += ch;
+    else visible += ch;
+
+    i++;
+  }
+
+  return { visible, thinking };
 }
 
 /**

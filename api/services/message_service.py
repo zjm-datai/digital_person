@@ -5,7 +5,7 @@ from werkzeug.exceptions import InternalServerError
 
 from extensions.ext_database import db
 from models.conversation import Message
-from models.models import AppType
+from models.model import AppType
 from services.errors.message import MessageNotExistsError
 from services.llm_service import LLMService
 

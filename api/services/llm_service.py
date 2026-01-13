@@ -201,3 +201,23 @@ class LLMService:
                 logger.warning("suggest_answers_after_question: 未找到 JSON 数组")
 
         return success, parsed_result, raw_output
+
+    @classmethod
+    @llm_log("asr_suggest")
+    def asr_suggest(
+            cls,
+            prompt_template: str,
+            asr: str,
+            ai: Optional[str] = None,
+            k: int = 6,
+            lang: str = "中文",
+    ) -> str:
+        filled = prompt_template.format(
+            asr=asr or "",
+            ai=ai or "(无)",
+            k=k,
+            lang=lang,
+        )
+
+        resp = cls.llm.invoke([SystemMessage(content=filled)])
+        return getattr(resp, "content", str(resp or "")) or ""

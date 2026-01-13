@@ -11,9 +11,6 @@
         </el-button>
         <h1 class="title">测试患者列表（Mock）</h1>
       </div>
-      <!-- <div class="right">
-        <img class="logo" src="/logo@2x.png" alt="logo" draggable="false" />
-      </div> -->
     </header>
 
     <!-- 内容区域 -->
@@ -164,15 +161,18 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
-import { useRouter } from 'vue-router';
-import { ElMessage } from 'element-plus';
+import { ref, onMounted } from "vue";
+import { useRouter } from "vue-router";
+import { ElMessage } from "element-plus";
 
-import { usePatientStore } from '@/stores/patient';
-import { useAppStore } from '@/stores/app';
-import { apiCreateSession } from '@/api/session';
+import { usePatientStore } from "@/stores/patient";
+import { useAppStore } from "@/stores/app";
 
-import type { PatientDetail } from '@/types/web/patient';
+// ✅ 改：用你新的 api 层
+import { apiGetAllPatients } from "@/api/patient";
+import { apiCreateConversation } from "@/api/conversation";
+
+import type { PatientDetail } from "@/types/web/patient";
 
 const router = useRouter();
 const patientStore = usePatientStore();
@@ -189,9 +189,7 @@ function computeAge(birthday: string): number {
   const today = new Date();
   let age = today.getFullYear() - birth.getFullYear();
   const m = today.getMonth() - birth.getMonth();
-  if (m < 0 || (m === 0 && today.getDate() < birth.getDate())) {
-    age--;
-  }
+  if (m < 0 || (m === 0 && today.getDate() < birth.getDate())) age--;
   return age;
 }
 
@@ -204,47 +202,57 @@ function openDetail(item: PatientDetail) {
   detailVisible.value = true;
 }
 
-function getAuthToken(): string | null {
-  // 与 WelcomePage 中保持一致（这里只是 demo）
-  return "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxIiwiZXhwIjoxNzY5MTYxNTA2LCJpYXQiOjE3NjYzOTY3MDYsImp0aSI6IjEtMTc2NjM5NjcwNi45NTkyMDEifQ.R22n_rEY93Ef7HataexTfZuhMY6C7v-I3qRv0WfmVrQ";
+// ✅ 与 chat 页一致的 dept->appType 映射（建议统一抽公共 utils）
+function normalizeAppTypeFromDepartment(dept: string) {
+  const d = (dept || "").trim();
+  const map: Record<string, string> = {
+    "呼吸科": "huxike",
+    "皮肤医美中心": "pifuke",
+    "肛肠科": "gangchangke",
+    "皮肤科": "pifuke",
+  };
+  return map[d] || "huxike";
 }
 
-async function toChat(extraQuery: Record<string, any> = {}) {
-  try {
-    const data = await apiCreateSession(getAuthToken);
-    const q = { ...extraQuery, sid: data.session_id };
-    if (appStore.platform !== 'web') {
-      // @ts-ignore
-      q.platform = appStore.platform;
-    }
-    router.push({ path: '/chat', query: q });
-  } catch (e) {
-    console.error('创建会话失败：', e);
-    ElMessage.error('创建会话失败');
-  }
-}
-
+/**
+ * ✅ 进入问诊：
+ * 1) recordScan(opc_id)（你 store 里叫 recordScan）
+ * 2) 调后端创建 conversation（返回 conversation.id）
+ * 3) 跳转 chat，并使用 query: conversation_id（不要再用 sid）
+ */
 async function startConsult(item: PatientDetail) {
   try {
-    const pid = item.patientIdentity.patientId;
-    await patientStore.recordScan(pid);
-    await toChat({ from: 'patient_list', pid });
-  } catch (e) {
+    const opcId = item.patientIdentity.patientId; // 你这里 pid 实际就是 opc_id（按你后端定义）
+    await patientStore.recordScan(opcId);
+
+    const appType = normalizeAppTypeFromDepartment(item.visitInfo.department || "");
+
+    const conv = await apiCreateConversation({ appType, opcId });
+
+    const q: Record<string, any> = {
+      from: "patient_list",
+      pid: opcId,
+      conversation_id: conv.id, // ✅ 对齐 chat 页读取的 conversation_id
+    };
+
+    if (appStore.platform !== "web") q.platform = appStore.platform;
+
+    router.push({ path: "/chat", query: q });
+  } catch (e: any) {
     console.error(e);
-    ElMessage.error('进入问诊失败');
+    ElMessage.error(e?.message || "进入问诊失败");
   }
 }
 
 onMounted(async () => {
   try {
     isLoading.value = true;
-    const resp = await fetch('/api/v1/patient/all');
-    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
-    const data = await resp.json();
-    patients.value = data || [];
+    // ✅ 改：走新接口 /console_api/patient_all（带 refresh）
+    const data = await apiGetAllPatients<PatientDetail[]>();
+    patients.value = Array.isArray(data) ? data : [];
   } catch (e: any) {
-    console.error('加载病人列表失败：', e);
-    ElMessage.error(`加载病人列表失败：${e?.message || '未知错误'}`);
+    console.error("加载病人列表失败：", e);
+    ElMessage.error(`加载病人列表失败：${e?.message || "未知错误"}`);
   } finally {
     isLoading.value = false;
   }

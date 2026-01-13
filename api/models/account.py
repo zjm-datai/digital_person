@@ -27,7 +27,14 @@ class Account(UserMixin, Base):
     email: Mapped[str] = mapped_column(String(255))
     password: Mapped[str | None] = mapped_column(String(255), default=None)
     password_salt: Mapped[str | None] = mapped_column(String(255), default=None)
-    
+
+    interface_language: Mapped[str | None] = mapped_column(String(255), default=None)
+    timezone: Mapped[str | None] = mapped_column(String(255), default=None)
+
+    last_login_at: Mapped[datetime | None] = mapped_column(DateTime, nullable=True, default=None)
+    last_login_ip: Mapped[str | None] = mapped_column(String(255), nullable=True, default=None)
+    initialized_at: Mapped[datetime | None] = mapped_column(DateTime, nullable=True, default=None)
+
     created_at: Mapped[datetime] = mapped_column(
         DateTime, server_default=func.current_timestamp(), nullable=False
     )

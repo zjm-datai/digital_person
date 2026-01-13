@@ -11,6 +11,7 @@ from libs.token import extract_access_token
 
 from configs import app_config
 from models import Account
+from services.account_service import AccountService
 
 login_manager = flask_login.LoginManager()
 
@@ -44,6 +45,8 @@ def load_user_from_request(request_from_flask_login):
         logged_in_account = AccountService.load_logged_in_account(account_id=user_id)
 
         return logged_in_account
+
+    return None
 
 @user_logged_in.connect
 @user_loaded_from_request.connect

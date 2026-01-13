@@ -1,88 +1,105 @@
 // frontend/src/composables/useChatStream.ts
-
 import { ref, type Ref, unref } from "vue";
-import { ttsBus } from '@/bus/ttsBus';
-import type { ChatMessage, BackendStreamChunk } from "@/types/web/chat";
+import { ttsBus } from "@/bus/ttsBus";
+import type { ChatMessage } from "@/types/web/chat";
 import { createThinkAccumulator } from "./useThinkParser";
 
-type MaybeRef<T> = T | Ref<T>
+import { apiCompletionMessages, apiGetSuggestedAnswers } from "@/api/chat";
+
+type MaybeRef<T> = T | Ref<T>;
+
+/**
+ * 适配你们后端 SSE 的 chunk 结构：
+ * - ask_stream: 增量文本（主回答）
+ * - ask_end: 完整文本（主回答兜底）
+ * - summarize_stream: 增量文本（总结）
+ * - summarize_end: 完整文本（总结兜底，可选）
+ * - message_context: 携带 conversation_id / progress / message_id（可能分多条发）
+ * - is_end: bool
+ */
+type ConsoleStreamChunk =
+  | { event: "ask_stream"; content: string }
+  | { event: "ask_end"; content: string }
+  | { event: "summarize_stream"; content: string }
+  | { event: "summarize_end"; content: string }
+  | { event: "message_context"; content: any }
+  | { event: "is_end"; content: boolean }
+  | { event: string; content: any };
 
 export function useChatStream(opts: {
   messages: MaybeRef<ChatMessage[]>;
   ttsText: Ref<string>;
   ttsPlay: Ref<boolean>;
-  scrollToBottom?: () => void;            // ← 改为可选
-  getAuthToken: () => string | null;
-  getSessionId?: () => string | null;
-  getAppType?: () => string | null;
+  scrollToBottom?: () => void;
+
+  // 新接口必须
+  getAppType?: () => string | null; // URL path param
+  getOpcId?: () => string | null; // body.opc_id
+  getConversationId?: () => string | null; // body.conversation_id（可选）
+
+  // 可选：后端会在 message_context 里返回 conversation_id
+  setConversationId?: (cid: string) => void;
+
+  /**
+   * 可选：是否拉取推荐回答
+   * - 默认：当本次流里出现 summarize_stream / summarize_end 时，不拉推荐
+   */
+  shouldFetchSuggestions?: (ctx: {
+    hasSummaryStream: boolean;
+    hasAskStream: boolean;
+    msg: ChatMessage;
+  }) => boolean;
 }) {
   const {
     messages,
     ttsText,
     ttsPlay,
-    scrollToBottom = () => {},            // ← 默认 no-op
-    getAuthToken,
-    getSessionId = () => null,
+    scrollToBottom = () => {},
     getAppType = () => null,
+    getOpcId = () => null,
+    getConversationId = () => null,
+    setConversationId = () => {},
+    shouldFetchSuggestions = ({ hasSummaryStream }) => !hasSummaryStream,
   } = opts;
 
-  const sessionReady = ref(false);
-  const creatingSession = ref(false);
   const streamingIndex = ref<number | null>(null);
+
+  // 进度：后端 message_context 里可能给，也可能 null
   const progress = ref<{ completed: number; total: number }>({ completed: 0, total: 0 });
 
   const thinkAcc = createThinkAccumulator();
 
-  // 统一封装带会话头
-  function withSessionHeaders(h: Record<string, string>) {
-    const sid = getSessionId?.() || null;
-    console.log("会话 id 为：", sid);
-    if (sid) h['X-Session-Id'] = sid;
-    return h;
+  /**
+   * 新接口只需要单条 message：从 messagesForApi 里找最后一条 user
+   */
+  function getLastUserMessage(messagesForApi: ChatMessage[]) {
+    for (let i = messagesForApi.length - 1; i >= 0; i--) {
+      const m = messagesForApi[i];
+      if (m?.role === "user") return (m.content || "").trim();
+    }
+    return "";
   }
 
-  async function createSession(): Promise<void> {
-    const token = getAuthToken();
-    if (creatingSession.value || sessionReady.value) return;
-    creatingSession.value = true;
-    try {
-      const resp = await fetch("/api/v1/auth/session", {
-        method: "POST",
-        headers: {
-          Accept: "application/json",
-          ...(token ? { Authorization: `Bearer ${token}` } : {}),
-        },
-        body: "",
-      });
-      if (!resp.ok) throw new Error(`创建会话失败，状态：${resp.status}`);
-      sessionReady.value = true;
-    } finally {
-      creatingSession.value = false;
-    }
-  }
+  /**
+   * 调用新 SSE 接口：POST /apps/<app_type>/completion-messages
+   */
+  async function postCompletionStream(messagesForApi: ChatMessage[]): Promise<Response> {
+    const appType = (getAppType?.() || "").trim();
+    if (!appType) throw new Error("缺少 appType（getAppType 返回空）");
 
-  async function postChatStream(messagesForApi: ChatMessage[]): Promise<Response> {
-    const url = "/api/v1/chatbot/chat/stream";
-    const token = getAuthToken();
-    const headers: Record<string, string> = withSessionHeaders({
-      "Content-Type": "application/json",
-      Accept: "text/event-stream",
-      ...(token ? { Authorization: `Bearer ${token}` } : {}),
-    });
-    const appType = getAppType() || undefined;
-    const payload: any = { messages: messagesForApi };
-    if (appType) {
-      payload.app_type = appType;
-    }
+    const opcId = (getOpcId?.() || "").trim();
+    if (!opcId) throw new Error("缺少 opc_id（getOpcId 返回空）");
 
-    const resp = await fetch(url, {
-      method: "POST",
-      headers,
-      body: JSON.stringify(payload),
-      credentials: 'include',
+    const conversationId = (getConversationId?.() || "").trim() || undefined;
+    const message = getLastUserMessage(messagesForApi);
+    if (!message) throw new Error("缺少用户 message（messagesForApi 中未找到 user 消息）");
+
+    return await apiCompletionMessages(appType, {
+      opc_id: opcId,
+      conversation_id: conversationId,
+      message,
+      response_mode: "streaming",
     });
-    if (!resp.ok) throw new Error(`请求失败，状态：${resp.status}`);
-    return resp;
   }
 
   let ttsCache = "";
@@ -94,6 +111,9 @@ export function useChatStream(opts: {
     messagesForApi: ChatMessage[];
     index: number;
   }): Promise<void> {
+    let hasSummaryStream = false;
+    let hasAskStream = false;
+
     try {
       // 为本条消息重置解析状态
       thinkAcc.reset(index);
@@ -103,11 +123,11 @@ export function useChatStream(opts: {
       ttsPlay.value = false;
       streamingIndex.value = index;
 
-      ttsBus.emit('tts:start');
+      // 默认开启 TTS（主回答阶段使用）
+      ttsBus.emit("tts:start");
 
-      const response = await postChatStream(messagesForApi);
+      const response = await postCompletionStream(messagesForApi);
       const reader = response.body?.getReader();
-      let is_summary = false;
       if (!reader) return;
 
       const decoder = new TextDecoder("utf-8");
@@ -128,97 +148,163 @@ export function useChatStream(opts: {
           const jsonStr = line.slice(6);
           if (!jsonStr || jsonStr === "[DONE]") continue;
 
-          let parsed: BackendStreamChunk;
+          let parsed: ConsoleStreamChunk;
           try {
             parsed = JSON.parse(jsonStr);
           } catch {
             continue;
           }
 
-          // 统一拿到可变的消息数组引用
           const list = unref(messages) as ChatMessage[];
+          const msg = list[index];
+          if (!msg) continue;
 
-          if (parsed.event === "stream_output" && typeof parsed.content === "string") {
-            const msg = list[index];
-            if (!msg) continue;
+          // ================
+          // 1) ask_stream：主回答增量输出
+          // ================
+          if (parsed.event === "ask_stream" && typeof parsed.content === "string") {
+            hasAskStream = true;
 
-            const { visibleDelta, thinkingDelta } = thinkAcc.ingest(index, parsed.content);
+            let { visibleDelta, thinkingDelta } = thinkAcc.ingest(index, parsed.content);
+
+            // 去掉 </think> 后多余的 \n\n
+            if (visibleDelta) {
+              const prev = msg.content || "";
+
+              // 如果刚好以 </think> 结尾，而当前是纯换行 → 丢弃
+              if (prev.endsWith("</think>") && /^\s*$/.test(visibleDelta)) {
+                visibleDelta = "";
+              }
+
+              // 如果本段包含 </think>\n\n 这种，也顺手清掉
+              visibleDelta = visibleDelta.replace(/<\/think>\s*\n+/g, "</think>");
+            }
 
             if (thinkingDelta && msg.role === "assistant") {
               msg.thinking = (msg.thinking || "") + thinkingDelta;
             }
+
             if (visibleDelta && msg.role === "assistant") {
-              msg.content += visibleDelta;
+              msg.content = (msg.content || "") + visibleDelta;
+
+              // 主回答才走 TTS
               ttsCache += visibleDelta;
               ttsText.value = ttsCache;
-
-              ttsBus.emit('tts:delta', visibleDelta);
+              ttsBus.emit("tts:delta", visibleDelta);
             }
 
             scrollToBottom();
-          } else if (parsed.event === "summarize" && typeof parsed.content === "string") {
+            continue;
+          }
 
-            ttsBus.emit('tts:stop');
+          // ================
+          // 2) summarize_stream：总结增量输出（写入 msg.summary）
+          //    且：总结阶段默认不拉推荐回答（由 shouldFetchSuggestions 控制）
+          // ================
+          if (parsed.event === "summarize_stream" && typeof parsed.content === "string") {
+            hasSummaryStream = true;
+let { visibleDelta, thinkingDelta } = thinkAcc.ingest(index, parsed.content);
 
-            is_summary = true;
+            // 去掉 </think> 后多余的 \n\n
+            if (visibleDelta) {
+              const prev = msg.content || "";
 
-            const msg = (unref(messages) as ChatMessage[])[index];
-            if (!msg) continue;
+              // 如果刚好以 </think> 结尾，而当前是纯换行 → 丢弃
+              if (prev.endsWith("</think>") && /^\s*$/.test(visibleDelta)) {
+                visibleDelta = "";
+              }
 
-            const { visibleDelta, thinkingDelta } = thinkAcc.ingest(index, parsed.content);
+              // 如果本段包含 </think>\n\n 这种，也顺手清掉
+              visibleDelta = visibleDelta.replace(/<\/think>\s*\n+/g, "</think>");
+            }
+
+            if (thinkingDelta && msg.role === "assistant") {
+              msg.summary = (msg.summary || "") + thinkingDelta;
+            }
+
+            if (visibleDelta && msg.role === "assistant") {
+              msg.summary = (msg.summary || "") + visibleDelta;
+
+              // 主回答才走 TTS
+              ttsCache += visibleDelta;
+              ttsText.value = ttsCache;
+              ttsBus.emit("tts:delta", visibleDelta);
+            }
+
+            scrollToBottom();
+            continue;
+          }
+
+          // ================
+          // 3) ask_end：主回答完整输出（兜底校准）
+          // ================
+          if (parsed.event === "ask_end" && typeof parsed.content === "string") {
+            let { visibleDelta, thinkingDelta } = thinkAcc.ingest(index, parsed.content);
 
             if (thinkingDelta && msg.role === "assistant") {
               msg.thinking = (msg.thinking || "") + thinkingDelta;
             }
-            if (visibleDelta && msg.role === "assistant") {
-              msg.summary = (msg.summary ?? "") + visibleDelta;
-              ttsCache += visibleDelta;
-              ttsText.value = ttsCache;
 
-              ttsBus.emit('tts:delta', visibleDelta);
+            if (msg.role === "assistant") {
+              const finalText = (visibleDelta || parsed.content) as string;
+
+              // 若 finalText 更长，覆盖以保证最终一致；否则保留已有内容
+              const currentText = msg.content || "";
+              if (finalText.length >= currentText.length) {
+                msg.content = finalText;
+              } else if (!currentText) {
+                msg.content = finalText;
+              }
+
+              // 同步 TTS 缓存（仍然只针对主回答）
+              ttsCache = msg.content || "";
+              ttsText.value = ttsCache;
             }
 
             scrollToBottom();
-          } else if (parsed.event === "done") {
-            console.log("流式输出已经结束，开始获取推荐回答")
-    
-            let messageData = {};
-            const content = parsed.content;
-            
-            // 详细日志，帮助排查格式问题
-            console.log("原始content类型:", typeof content);
-            console.log("原始content值:", content);
-            
-            try {
-                if (typeof content === 'string') {
-                    // 尝试清理可能的无效字符（常见问题处理）
-                    const cleanedContent = content
-                        .trim()
-                        .replace(/^[\u200B-\u200D\uFEFF]/, ''); // 移除可能的零宽字符
-                    
-                    messageData = JSON.parse(cleanedContent);
-                } else if (typeof content === 'object' && content !== null) {
-                    messageData = content;
-                } else {
-                    console.warn("content既不是字符串也不是对象，无法解析");
-                }
-            } catch (e) {
-                console.error("解析messageData失败:", e);
-                // 尝试提取可能的message_id（应急方案）
-                if (typeof content === 'string') {
-                    const idMatch = content.match(/"message_id"\s*:\s*"([^"]+)"/);
-                    if (idMatch && idMatch[1]) {
-                        console.log("通过正则提取到message_id:", idMatch[1]);
-                        messageData.message_id = idMatch[1];
-                    }
-                }
+            continue;
+          }
+
+          // ================
+          // 4) summarize_end：总结完整输出（兜底校准，可选）
+          // ================
+          if (parsed.event === "summarize_end" && typeof parsed.content === "string") {
+            hasSummaryStream = true;
+
+            if (msg.role === "assistant") {
+              const finalSummary = parsed.content;
+              const currentSummary = msg.summary || "";
+              if (finalSummary.length >= currentSummary.length) {
+                msg.summary = finalSummary;
+              } else if (!currentSummary) {
+                msg.summary = finalSummary;
+              }
             }
-            
-            // 提取进度信息（兼容后端直接返回 progress）
-            const p = (messageData.assistant?.progress || messageData.progress) as {
-              completed?: number;
-              total?: number;
-            };
+
+            scrollToBottom();
+            continue;
+          }
+
+          // ================
+          // 5) message_context：拿 message_id / conversation_id / progress
+          // ================
+          if (parsed.event === "message_context" && parsed.content) {
+            const c = parsed.content;
+
+            // message_id（后续用于推荐回答）
+            const mid = c?.message_id;
+            if (typeof mid === "string" && mid) {
+              (msg as any)._messageId = mid;
+            }
+
+            // conversation_id（后端真实会话 id）
+            const cid = c?.assistant?.conversation_id;
+            if (typeof cid === "string" && cid) {
+              setConversationId(cid);
+            }
+
+            // progress（可能为 null）
+            const p = c?.assistant?.progress;
             if (p && typeof p.completed === "number" && typeof p.total === "number") {
               progress.value = {
                 completed: Math.max(0, p.completed),
@@ -226,78 +312,60 @@ export function useChatStream(opts: {
               };
             }
 
-             // 如果不需要推荐回答，直接跳过后续逻辑
-            if (is_summary) {
-              continue; // 或者直接 return，视你想不想继续处理其他 done 之后的逻辑
-            }
-            
-            // 提取消息 ID
-            const messageId = messageData.message_id || "";
-            console.log("最终获取到的message_id:", messageId)
-            
-            if (!messageId) {
-                console.log("未获取到有效的message_id，请检查content格式");
-                return;
-            }
-
-
-            try {
-              const token = getAuthToken();
-              console.log("开始请求推荐回答接口")
-              const listSuggested = await fetchSuggestedAnswers(messageId, token || undefined);
-              const msg = (unref(messages) as ChatMessage[])[index];
-              if (msg && msg.role === "assistant") {
-                msg.suggestions = listSuggested || [];
-                scrollToBottom();
-              }
-            } catch (e) {
-              console.error("获取推荐回答失败：", e);
-            }
+            continue;
           }
 
+          // ================
+          // 6) is_end：流程是否结束
+          // ================
+          if (parsed.event === "is_end") {
+            // 未来若 true，可在这里做 “完成问诊” 的 UI 处理
+            continue;
+          }
+
+          // 其他事件：忽略
         }
       }
 
-      ttsBus.emit('tts:end');
+      // =========================
+      // 流结束后：拉推荐回答（可按总结阶段关闭）
+      // =========================
+      try {
+        const list = unref(messages) as ChatMessage[];
+        const msg = list[index];
+        if (!msg || msg.role !== "assistant") return;
 
+        // ✅ 总结阶段默认不拉推荐（也可以通过 shouldFetchSuggestions 覆盖）
+        if (!shouldFetchSuggestions({ hasSummaryStream, hasAskStream, msg })) return;
+
+        const messageId = (msg as any)?._messageId as string | undefined;
+        if (messageId) {
+          const appType = (getAppType?.() || "").trim();
+          if (appType) {
+            const suggested = await apiGetSuggestedAnswers(appType, messageId);
+            msg.suggestions = suggested || [];
+            scrollToBottom();
+          }
+        }
+      } catch (e) {
+        console.error("获取推荐回答失败：", e);
+      }
+
+      ttsBus.emit("tts:end");
       ttsPlay.value = true;
     } catch (err) {
       console.error(err);
       const list = unref(messages) as ChatMessage[];
-      if (list[index]) list[index].content += "\n[对话失败，请稍后重试]";
-      ttsBus.emit('tts:end');
+      if (list[index]) list[index].content = (list[index].content || "") + "\n[对话失败，请稍后重试]";
+      ttsBus.emit("tts:end");
     } finally {
       streamingIndex.value = null;
     }
   }
 
-  async function fetchSuggestedAnswers(messageId: string, token?: string): Promise<string[]> {
-    const appType = getAppType?.() || "";
-    const qs = new URLSearchParams();
-    if (appType) qs.set("app_type", appType);
-
-    const url =
-      `/api/v1/chatbot/message/suggested/${encodeURIComponent(messageId)}` +
-      (qs.toString() ? `?${qs.toString()}` : "");
-
-    const headers: Record<string, string> = withSessionHeaders({
-      Accept: "application/json",
-      ...(token ? { Authorization: `Bearer ${token}` } : {}),
-    });
-
-    const resp = await fetch(url, { method: "GET", headers, credentials: "include" });
-    if (!resp.ok) throw new Error(`获取推荐回答失败：${resp.status}`);
-    const data = await resp.json();
-    return Array.isArray(data) ? data : [];
-  }
-
   return {
-    sessionReady,
-    creatingSession,
     streamingIndex,
-    createSession,
     streamAnswer,
-    fetchSuggestedAnswers,
     progress,
   };
 }

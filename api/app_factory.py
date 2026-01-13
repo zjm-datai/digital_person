@@ -20,7 +20,7 @@ def create_flask_app_with_configs() -> Flask:
     # add before request hook
     @app.before_request
     def before_request():
-        # add an unique identifier to each request
+        # add a unique identifier to each request
         RecyclableContextVar.increment_thread_recycles()
         
     _ = before_request
@@ -45,6 +45,7 @@ def initialize_extensions(app: Flask) -> None:
         ext_warnings,
         ext_import_modules,
         ext_migrate,
+        ext_redis,
         ext_orjson,
         ext_database,
         ext_apps_database,
@@ -62,12 +63,13 @@ def initialize_extensions(app: Flask) -> None:
         ext_warnings,
         ext_import_modules,
         ext_migrate,
+        ext_redis,
         ext_orjson,
         ext_database,
         ext_apps_database,
         ext_app_metrics,
         ext_celery,
-        # ext_login,
+        ext_login,
         ext_blueprints,
         ext_commands,
         ext_request_logging,  

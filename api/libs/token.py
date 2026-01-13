@@ -1,5 +1,8 @@
+from datetime import timedelta, datetime
+
 from flask import Response
 from flask.wrappers import Request
+from pytz import UTC
 
 from configs import app_config
 from constants import (
@@ -7,6 +10,8 @@ from constants import (
     COOKIE_NAME_CSRF_TOKEN,
     COOKIE_NAME_REFRESH_TOKEN,
 )
+from libs.passport import PassportService
+
 
 def is_secure() -> bool:
     return app_config.CONSOLE_WEB_URL.startswith("https") and app_config.CONSOLE_API_URL.startswith("https")
@@ -93,3 +98,12 @@ def set_csrf_token_to_cookie(request: Request, response: Response, token: str):
         max_age=int(60 * app_config.ACCESS_TOKEN_EXPIRE_MINUTES),
         path="/",
     )
+
+def generate_csrf_token(user_id: str) -> str:
+    exp_dt = datetime.now(UTC) + timedelta(minutes=app_config.ACCESS_TOKEN_EXPIRE_MINUTES)
+    payload = {
+        "exp": int(exp_dt.timestamp()),
+        "sub": user_id,
+    }
+
+    return PassportService().issue(payload)

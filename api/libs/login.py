@@ -1,11 +1,12 @@
 from functools import wraps
-from typing import Callable, ParamSpec, TypeVar
+from typing import Callable, ParamSpec, TypeVar, Any
 
-from flask import current_app, request
-from flask_login import current_user
+from flask import current_app, request, has_request_context, g
 from flask_login.config import EXEMPT_METHODS
+from werkzeug.local import LocalProxy
 
 from configs import app_config
+from models import Account
 
 P = ParamSpec("P")
 R = TypeVar("R")
@@ -53,3 +54,28 @@ def login_required(func: Callable[P, R]):
         return current_app.ensure_sync(func)(*args, **kwargs)
 
     return decorated_view
+
+def _get_user() -> Account | None:
+    if has_request_context():
+        if "_login_user" not in g:
+            current_app.login_manager._load_user()  # type: ignore
+
+        return g._login_user
+
+    return None
+
+
+# A proxy for the current user. If no user is logged in, this will be an anonymous user
+# NOTE: Any here, but use _get_current_object to check the fields
+current_user: Any = LocalProxy(lambda: _get_user())
+
+def current_account():
+    user_proxy = current_user
+
+    get_current_object = getattr(user_proxy, "_get_current_object", None)
+    user = get_current_object() if callable(get_current_object) else user_proxy  # type: ignore
+
+    if not isinstance(user, Account):
+        raise ValueError("current_user must be an Account instance")
+
+    return user

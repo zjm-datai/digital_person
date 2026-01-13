@@ -1,14 +1,14 @@
 
 from typing import Generator, Mapping, Union, Any
 
-from core.graph_apps.pifuke.app import App
+from core.graph_apps.gaoxuezhi.app import App
 from libs.orjson import orjson_dumps
 from models.conversation import MessageRole
-from models.models import AppType
+from models.model import AppType
 from services.message_service import MessageService
 
 
-class PifukeAppGenerator:
+class GaoxuezhiAppGenerator:
     
     def __init__(
         self,
@@ -84,7 +84,7 @@ class PifukeAppGenerator:
                 if final_message:
                     message_id = MessageService.create_message(
                         conversation_id=conversation_id,
-                        app_type=AppType.PIFUKE,
+                        app_type=AppType.GAOXUEZHI,
                         message=final_message,
                         role=MessageRole.ASSISTANT,
                         current_stage=current_stage,

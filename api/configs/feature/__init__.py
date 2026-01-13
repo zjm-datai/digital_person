@@ -252,8 +252,10 @@ class SwaggerUIConfig(BaseSettings):
     
 class FeatureConfig(
     HttpConfig,
+    EndpointConfig,
     LoggingConfig,
     SwaggerUIConfig,
-    SecurityConfig
+    SecurityConfig,
+    AuthConfig
 ):
     pass
