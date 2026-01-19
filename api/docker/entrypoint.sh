@@ -8,7 +8,14 @@ export LC_ALL=${LC_ALL:-en_US.UTF-8}
 export PYTHONIOENCODING=${PYTHONIOENCODING:-utf-8}
 
 if [[ "${MODE}" == "worker" ]]; then
-  echo "worker"
+  
+  CONCURRENCY_OPTION="-c ${CELERY_WORKER_AMOUNT:-1}"
+  WORKER_POOL="${CELERY_WORKER_POOL:-${CELERY_WORKER_CLASS:-gevent}}"
+
+  exec celery -A app.celery worker -P ${WORKER_POOL} $CONCURRENCY_OPTION \
+    --max-tasks-per-child ${MAX_TASKS_PER_CHILD:-50} --loglevel ${LOG_LEVEL:-INFO} \
+    --prefetch-multiplier=${CELERY_PREFETCH_MULTIPLIER:-1}
+
 else
   if [[ "${DEBUG}" == "true" ]]; then
     exec flask run --host=${APP_BIND_ADDRESS:-0.0.0.0} --port=${APP_PORT:-5001} --debug

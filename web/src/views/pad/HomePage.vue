@@ -78,18 +78,14 @@
     <div class="bottom-panel">
       <div class="steps-grid">
         <!-- STEP 1 -->
-        <a
-          :href="appStore.platform === 'phone'
-            ? '/#/welcome?platform=phone'
-            : '/#/welcome?platform=app'"
+        <router-link
+          :to="appStore.platform === 'phone'
+            ? { path: '/welcome', query: { platform: 'phone' } }
+            : { path: '/welcome', query: { platform: 'app' } }"
           class="step-card step-card-link"
         >
           <div class="step-card-image-wrapper">
-            <img
-              src="@/assets/AI预问诊@2x.png"
-              class="step-card-image"
-              alt="step1"
-            />
+            <img src="@/assets/AI预问诊@2x.png" class="step-card-image" alt="step1" />
           </div>
 
           <div class="step-card-body">
@@ -97,11 +93,9 @@
               <span class="step-card-title-dot"></span>
               STEP 1
             </h3>
-            <p class="step-card-desc">
-              AI 预问诊
-            </p>
+            <p class="step-card-desc">AI 预问诊</p>
           </div>
-        </a>
+        </router-link>
 
         <!-- STEP 2 -->
         <div class="step-card">

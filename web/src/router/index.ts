@@ -86,7 +86,7 @@ const routes: RouteRecordRaw[] = [
 ]
 
 const router = createRouter({
-    history: createWebHashHistory(),  // HTML5 模式
+    history: createWebHashHistory("/consultation/"),
     routes,
 });
 

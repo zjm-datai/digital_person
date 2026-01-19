@@ -40,6 +40,7 @@ def _dumps(x: Any, max_len: int = 50000) -> str:
 def _safe_delay(payload: dict) -> None:
     try:
         save_llm_run_log.delay(payload)  # type: ignore[attr-defined]
+        logger.info("log task delay successfully")
     except Exception:
         logger.exception("日志任务入队失败")
 

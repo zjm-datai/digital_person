@@ -4,6 +4,7 @@ import vue from '@vitejs/plugin-vue'
 import { defineConfig } from 'vite'
 
 export default defineConfig({
+  base: "/consultation/",
   plugins: [vue(), tailwindcss()],
   resolve: {
     alias: {
@@ -19,6 +20,13 @@ export default defineConfig({
         ws: true,
         secure: false,
         rewrite: (path) => path.replace(/^\/console_api/, "console/api"),
+      },
+      "/audio_api": {
+        target: "http://127.0.0.1:30033",
+        changeOrigin: true,
+        ws: true,
+        secure: false,
+        rewrite: (path) => path.replace(/^\/audio_api/, ""),
       },
       "/dify_api": {
         target: "http://211.90.240.240:30010",

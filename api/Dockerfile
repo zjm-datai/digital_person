@@ -9,7 +9,7 @@ ENV UV_VERSION=0.8.9
 RUN pip config set global.index-url https://mirrors.aliyun.com/pypi/simple/ && \
     pip config set global.trusted-host mirrors.aliyun.com
 
-RUN pip install --no-cache-dir uv=${UV_VERSION}
+RUN pip install --no-cache-dir uv==${UV_VERSION}
 
 FROM base AS packages
 
@@ -23,7 +23,8 @@ RUN apt-get update \
 
 # Install Python dependencies
 COPY pyproject.toml uv.lock ./
-RUN uv sync --locked --no-dev --default-index https://pypi.tuna.tsinghua.edu.cn/simple
+# RUN uv sync --locked --no-dev --default-index https://pypi.tuna.tsinghua.edu.cn/simple
+RUN uv sync --no-dev --default-index https://pypi.tuna.tsinghua.edu.cn/simple
 
 # production stage
 FROM base AS production
@@ -62,4 +63,4 @@ COPY --chown=dp:dp --chmod=755 docker/entrypoint.sh /entrypoint.sh
 
 USER dp
 
-ENTRYPOINT ["/bin/bash", "entrypoint.sh"]
+ENTRYPOINT ["/bin/bash", "/entrypoint.sh"]

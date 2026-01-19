@@ -1,22 +1,16 @@
 // frontend/src/composables/useChatStream.ts
+
+
 import { ref, type Ref, unref } from "vue";
 import { ttsBus } from "@/bus/ttsBus";
 import type { ChatMessage } from "@/types/web/chat";
 import { createThinkAccumulator } from "./useThinkParser";
+import { appendAndTrim, trimEnds } from "@/utils/textNormalize";
 
 import { apiCompletionMessages, apiGetSuggestedAnswers } from "@/api/chat";
 
 type MaybeRef<T> = T | Ref<T>;
 
-/**
- * 适配你们后端 SSE 的 chunk 结构：
- * - ask_stream: 增量文本（主回答）
- * - ask_end: 完整文本（主回答兜底）
- * - summarize_stream: 增量文本（总结）
- * - summarize_end: 完整文本（总结兜底，可选）
- * - message_context: 携带 conversation_id / progress / message_id（可能分多条发）
- * - is_end: bool
- */
 type ConsoleStreamChunk =
   | { event: "ask_stream"; content: string }
   | { event: "ask_end"; content: string }
@@ -26,24 +20,20 @@ type ConsoleStreamChunk =
   | { event: "is_end"; content: boolean }
   | { event: string; content: any };
 
+type TargetField = "content" | "summary";
+
 export function useChatStream(opts: {
   messages: MaybeRef<ChatMessage[]>;
   ttsText: Ref<string>;
   ttsPlay: Ref<boolean>;
   scrollToBottom?: () => void;
 
-  // 新接口必须
-  getAppType?: () => string | null; // URL path param
-  getOpcId?: () => string | null; // body.opc_id
-  getConversationId?: () => string | null; // body.conversation_id（可选）
+  getAppType?: () => string | null;
+  getOpcId?: () => string | null;
+  getConversationId?: () => string | null;
 
-  // 可选：后端会在 message_context 里返回 conversation_id
   setConversationId?: (cid: string) => void;
 
-  /**
-   * 可选：是否拉取推荐回答
-   * - 默认：当本次流里出现 summarize_stream / summarize_end 时，不拉推荐
-   */
   shouldFetchSuggestions?: (ctx: {
     hasSummaryStream: boolean;
     hasAskStream: boolean;
@@ -64,33 +54,28 @@ export function useChatStream(opts: {
 
   const streamingIndex = ref<number | null>(null);
 
-  // 进度：后端 message_context 里可能给，也可能 null
   const progress = ref<{ completed: number; total: number }>({ completed: 0, total: 0 });
 
-  const thinkAcc = createThinkAccumulator();
+  // 解析 think 标签（增量、支持切片、吞 </think> 后换行）
+  const thinkAcc = createThinkAccumulator({ swallowAfterClose: 2 });
 
-  /**
-   * 新接口只需要单条 message：从 messagesForApi 里找最后一条 user
-   */
   function getLastUserMessage(messagesForApi: ChatMessage[]) {
     for (let i = messagesForApi.length - 1; i >= 0; i--) {
       const m = messagesForApi[i];
-      if (m?.role === "user") return (m.content || "").trim();
+      if (m?.role === "user") return trimEnds((m.content || "").toString());
     }
     return "";
   }
 
-  /**
-   * 调用新 SSE 接口：POST /apps/<app_type>/completion-messages
-   */
   async function postCompletionStream(messagesForApi: ChatMessage[]): Promise<Response> {
-    const appType = (getAppType?.() || "").trim();
+    const appType = trimEnds(getAppType?.() || "");
     if (!appType) throw new Error("缺少 appType（getAppType 返回空）");
 
-    const opcId = (getOpcId?.() || "").trim();
+    const opcId = trimEnds(getOpcId?.() || "");
     if (!opcId) throw new Error("缺少 opc_id（getOpcId 返回空）");
 
-    const conversationId = (getConversationId?.() || "").trim() || undefined;
+    const conversationId = trimEnds(getConversationId?.() || "") || undefined;
+
     const message = getLastUserMessage(messagesForApi);
     if (!message) throw new Error("缺少用户 message（messagesForApi 中未找到 user 消息）");
 
@@ -102,7 +87,29 @@ export function useChatStream(opts: {
     });
   }
 
-  let ttsCache = "";
+  function applyThinking(msg: any, delta: string) {
+    if (!delta) return;
+    msg.thinking = appendAndTrim(msg.thinking || "", delta);
+  }
+
+  function applyToField(msg: any, field: TargetField, delta: string) {
+    if (!delta) return;
+    msg[field] = appendAndTrim(msg[field] || "", delta);
+  }
+
+  function hardTrimAll(msg: any) {
+    if (!msg) return;
+    msg.content = trimEnds(msg.content || "");
+    msg.summary = trimEnds(msg.summary || "");
+    msg.thinking = trimEnds(msg.thinking || "");
+  }
+
+  function ttsAppend(visibleDelta: string, ttsCacheRef: { value: string }) {
+    if (!visibleDelta) return;
+    ttsCacheRef.value += visibleDelta;
+    ttsText.value = ttsCacheRef.value;
+    ttsBus.emit("tts:delta", visibleDelta);
+  }
 
   async function streamAnswer({
     messagesForApi,
@@ -114,16 +121,17 @@ export function useChatStream(opts: {
     let hasSummaryStream = false;
     let hasAskStream = false;
 
+    const ttsCacheRef = { value: "" };
+
     try {
-      // 为本条消息重置解析状态
       thinkAcc.reset(index);
 
-      ttsCache = "";
+      ttsCacheRef.value = "";
       ttsText.value = "";
       ttsPlay.value = false;
       streamingIndex.value = index;
 
-      // 默认开启 TTS（主回答阶段使用）
+      // 默认开启 TTS（只在主回答阶段实际输出 delta）
       ttsBus.emit("tts:start");
 
       const response = await postCompletionStream(messagesForApi);
@@ -156,154 +164,19 @@ export function useChatStream(opts: {
           }
 
           const list = unref(messages) as ChatMessage[];
-          const msg = list[index];
-          if (!msg) continue;
+          const msg: any = list[index];
+          if (!msg || msg.role !== "assistant") continue;
 
-          // ================
-          // 1) ask_stream：主回答增量输出
-          // ================
-          if (parsed.event === "ask_stream" && typeof parsed.content === "string") {
-            hasAskStream = true;
-
-            let { visibleDelta, thinkingDelta } = thinkAcc.ingest(index, parsed.content);
-
-            // 去掉 </think> 后多余的 \n\n
-            if (visibleDelta) {
-              const prev = msg.content || "";
-
-              // 如果刚好以 </think> 结尾，而当前是纯换行 → 丢弃
-              if (prev.endsWith("</think>") && /^\s*$/.test(visibleDelta)) {
-                visibleDelta = "";
-              }
-
-              // 如果本段包含 </think>\n\n 这种，也顺手清掉
-              visibleDelta = visibleDelta.replace(/<\/think>\s*\n+/g, "</think>");
-            }
-
-            if (thinkingDelta && msg.role === "assistant") {
-              msg.thinking = (msg.thinking || "") + thinkingDelta;
-            }
-
-            if (visibleDelta && msg.role === "assistant") {
-              msg.content = (msg.content || "") + visibleDelta;
-
-              // 主回答才走 TTS
-              ttsCache += visibleDelta;
-              ttsText.value = ttsCache;
-              ttsBus.emit("tts:delta", visibleDelta);
-            }
-
-            scrollToBottom();
-            continue;
-          }
-
-          // ================
-          // 2) summarize_stream：总结增量输出（写入 msg.summary）
-          //    且：总结阶段默认不拉推荐回答（由 shouldFetchSuggestions 控制）
-          // ================
-          if (parsed.event === "summarize_stream" && typeof parsed.content === "string") {
-            hasSummaryStream = true;
-let { visibleDelta, thinkingDelta } = thinkAcc.ingest(index, parsed.content);
-
-            // 去掉 </think> 后多余的 \n\n
-            if (visibleDelta) {
-              const prev = msg.content || "";
-
-              // 如果刚好以 </think> 结尾，而当前是纯换行 → 丢弃
-              if (prev.endsWith("</think>") && /^\s*$/.test(visibleDelta)) {
-                visibleDelta = "";
-              }
-
-              // 如果本段包含 </think>\n\n 这种，也顺手清掉
-              visibleDelta = visibleDelta.replace(/<\/think>\s*\n+/g, "</think>");
-            }
-
-            if (thinkingDelta && msg.role === "assistant") {
-              msg.summary = (msg.summary || "") + thinkingDelta;
-            }
-
-            if (visibleDelta && msg.role === "assistant") {
-              msg.summary = (msg.summary || "") + visibleDelta;
-
-              // 主回答才走 TTS
-              ttsCache += visibleDelta;
-              ttsText.value = ttsCache;
-              ttsBus.emit("tts:delta", visibleDelta);
-            }
-
-            scrollToBottom();
-            continue;
-          }
-
-          // ================
-          // 3) ask_end：主回答完整输出（兜底校准）
-          // ================
-          if (parsed.event === "ask_end" && typeof parsed.content === "string") {
-            let { visibleDelta, thinkingDelta } = thinkAcc.ingest(index, parsed.content);
-
-            if (thinkingDelta && msg.role === "assistant") {
-              msg.thinking = (msg.thinking || "") + thinkingDelta;
-            }
-
-            if (msg.role === "assistant") {
-              const finalText = (visibleDelta || parsed.content) as string;
-
-              // 若 finalText 更长，覆盖以保证最终一致；否则保留已有内容
-              const currentText = msg.content || "";
-              if (finalText.length >= currentText.length) {
-                msg.content = finalText;
-              } else if (!currentText) {
-                msg.content = finalText;
-              }
-
-              // 同步 TTS 缓存（仍然只针对主回答）
-              ttsCache = msg.content || "";
-              ttsText.value = ttsCache;
-            }
-
-            scrollToBottom();
-            continue;
-          }
-
-          // ================
-          // 4) summarize_end：总结完整输出（兜底校准，可选）
-          // ================
-          if (parsed.event === "summarize_end" && typeof parsed.content === "string") {
-            hasSummaryStream = true;
-
-            if (msg.role === "assistant") {
-              const finalSummary = parsed.content;
-              const currentSummary = msg.summary || "";
-              if (finalSummary.length >= currentSummary.length) {
-                msg.summary = finalSummary;
-              } else if (!currentSummary) {
-                msg.summary = finalSummary;
-              }
-            }
-
-            scrollToBottom();
-            continue;
-          }
-
-          // ================
-          // 5) message_context：拿 message_id / conversation_id / progress
-          // ================
+          // message_context：message_id / conversation_id / progress
           if (parsed.event === "message_context" && parsed.content) {
             const c = parsed.content;
 
-            // message_id（后续用于推荐回答）
             const mid = c?.message_id;
-            if (typeof mid === "string" && mid) {
-              (msg as any)._messageId = mid;
-            }
+            if (typeof mid === "string" && mid) msg._messageId = mid;
 
-            // conversation_id（后端真实会话 id）
             const cid = c?.assistant?.conversation_id;
-            if (typeof cid === "string" && cid) {
-              setConversationId(cid);
-            }
+            if (typeof cid === "string" && cid) setConversationId(cid);
 
-            // progress（可能为 null）
             const p = c?.assistant?.progress;
             if (p && typeof p.completed === "number" && typeof p.total === "number") {
               progress.value = {
@@ -311,36 +184,86 @@ let { visibleDelta, thinkingDelta } = thinkAcc.ingest(index, parsed.content);
                 total: Math.max(0, p.total),
               };
             }
-
             continue;
           }
 
-          // ================
-          // 6) is_end：流程是否结束
-          // ================
-          if (parsed.event === "is_end") {
-            // 未来若 true，可在这里做 “完成问诊” 的 UI 处理
+          // ask_stream / summarize_stream：同一套处理逻辑
+          if (
+            (parsed.event === "ask_stream" || parsed.event === "summarize_stream") &&
+            typeof parsed.content === "string"
+          ) {
+            const isAsk = parsed.event === "ask_stream";
+            hasAskStream ||= isAsk;
+            hasSummaryStream ||= !isAsk;
+
+            const { visibleDelta, thinkingDelta } = thinkAcc.ingest(index, parsed.content);
+
+            applyThinking(msg, thinkingDelta);
+            applyToField(msg, isAsk ? "content" : "summary", visibleDelta);
+
+            // ✅ 只有主回答走 TTS
+            if (isAsk) ttsAppend(visibleDelta, ttsCacheRef);
+
+            scrollToBottom();
             continue;
           }
 
-          // 其他事件：忽略
+          // ask_end：完整输出兜底（只校准 content）
+          if (parsed.event === "ask_end" && typeof parsed.content === "string") {
+            const { visibleDelta, thinkingDelta } = thinkAcc.ingest(index, parsed.content);
+
+            applyThinking(msg, thinkingDelta);
+
+            // 兜底：如果流式 content 为空，就用 visibleDelta 补；然后强制 trim
+            if (!msg.content) applyToField(msg, "content", visibleDelta || "");
+            msg.content = trimEnds(msg.content || "");
+
+            // 同步 TTS 缓存（只对主回答）
+            ttsCacheRef.value = msg.content || "";
+            ttsText.value = ttsCacheRef.value;
+
+            scrollToBottom();
+            continue;
+          }
+
+          // summarize_end：完整输出兜底（校准 summary）
+          if (parsed.event === "summarize_end" && typeof parsed.content === "string") {
+            const { visibleDelta, thinkingDelta } = thinkAcc.ingest(index, parsed.content);
+
+            applyThinking(msg, thinkingDelta);
+
+            if (!msg.summary) applyToField(msg, "summary", visibleDelta || "");
+            msg.summary = trimEnds(msg.summary || "");
+
+            scrollToBottom();
+            continue;
+          }
+
+          // is_end：预留
+          if (parsed.event === "is_end") continue;
+
+          // 其他事件忽略
         }
       }
 
-      // =========================
-      // 流结束后：拉推荐回答（可按总结阶段关闭）
-      // =========================
+      // 流结束：确保落盘/展示一致：全部 trim
+      {
+        const list = unref(messages) as any[];
+        const msg = list[index];
+        if (msg?.role === "assistant") hardTrimAll(msg);
+      }
+
+      // 流结束后：拉推荐回答
       try {
         const list = unref(messages) as ChatMessage[];
-        const msg = list[index];
+        const msg: any = list[index];
         if (!msg || msg.role !== "assistant") return;
 
-        // ✅ 总结阶段默认不拉推荐（也可以通过 shouldFetchSuggestions 覆盖）
         if (!shouldFetchSuggestions({ hasSummaryStream, hasAskStream, msg })) return;
 
-        const messageId = (msg as any)?._messageId as string | undefined;
+        const messageId = msg?._messageId as string | undefined;
         if (messageId) {
-          const appType = (getAppType?.() || "").trim();
+          const appType = trimEnds(getAppType?.() || "");
           if (appType) {
             const suggested = await apiGetSuggestedAnswers(appType, messageId);
             msg.suggestions = suggested || [];
@@ -355,8 +278,10 @@ let { visibleDelta, thinkingDelta } = thinkAcc.ingest(index, parsed.content);
       ttsPlay.value = true;
     } catch (err) {
       console.error(err);
-      const list = unref(messages) as ChatMessage[];
-      if (list[index]) list[index].content = (list[index].content || "") + "\n[对话失败，请稍后重试]";
+      const list = unref(messages) as any[];
+      if (list[index]) {
+        list[index].content = trimEnds((list[index].content || "") + "\n[对话失败，请稍后重试]");
+      }
       ttsBus.emit("tts:end");
     } finally {
       streamingIndex.value = null;

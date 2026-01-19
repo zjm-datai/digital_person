@@ -3,14 +3,15 @@ services:
   
   # API service
   api:
-    image: ningtang/digital_person_api:1.0.0
+    image: ningtang/consultation-api:1.0.0
     restart: always
     environment:
       # Use the shared environment variables
       <<: *shared-api-worker-env
       # Startup mode, 'api' starts the API server.
       MODE: api
-
+    ports:
+      - "30032:${APP_PORT}"
     volumes:
       # Mount the storage directory to the container, for storing user files.
       - ./volumes/app/storage:/app/api/storage
@@ -18,13 +19,13 @@ services:
   # worker service
   # The Celery worker for processing all queues
   worker:
-    image: ningtang/digital_person_api:1.0.0
+    image: ningtang/consultation-api:1.0.0
     restart: always
     environment:
       # Use the shared environment variables
       <<: *shared-api-worker-env
       # Startup mode, 'api' starts the API server.
-      MODE: api
+      MODE: worker
 
     volumes:
       # Mount the storage directory to the container, for storing user files.

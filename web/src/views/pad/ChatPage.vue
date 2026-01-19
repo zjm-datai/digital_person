@@ -475,7 +475,11 @@ const { isRecording, startRecording, stopRecording, handleReceiveAudio } = useAu
 
     appendUserMessage(t);
     fetchNearestOptions(t);
-  }
+  },
+
+  organizeCode: computed(() => patientStore.scanCode || "zhonyiyuan"),
+
+  conversationId: sid,
 });
 
 /* =========================
@@ -563,6 +567,7 @@ watch(roundPtr, (v) => {
  * ========================= */
 onMounted(async () => {
   sid.value = String(route.query.conversation_id || "").trim() || null;
+  console.log("sid.value:", sid.value)
   if (!sid.value) {
     router.push({ path: "/home" });
     return;
@@ -805,7 +810,7 @@ async function fetchNearestOptions(asrText: string) {
       nearestOptions.value = [];
       return;
     }
-    const url = new URL("/console_app/asr/suggest", window.location.origin);
+    const url = new URL("/console_api/asr/suggest", window.location.origin);
     url.searchParams.set("asr", asrText);
     url.searchParams.set("k", "3");
     url.searchParams.set("locale", "zh");

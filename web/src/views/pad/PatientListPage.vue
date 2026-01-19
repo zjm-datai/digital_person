@@ -168,7 +168,6 @@ import { ElMessage } from "element-plus";
 import { usePatientStore } from "@/stores/patient";
 import { useAppStore } from "@/stores/app";
 
-// ✅ 改：用你新的 api 层
 import { apiGetAllPatients } from "@/api/patient";
 import { apiCreateConversation } from "@/api/conversation";
 

@@ -164,7 +164,7 @@ class LLMService:
         return resp
 
     @classmethod
-    @llm_log("suggest_answers_after_question")
+    # @llm_log("suggest_answers_after_question")
     def suggest_answers_after_question(
             cls,
             stage: str,

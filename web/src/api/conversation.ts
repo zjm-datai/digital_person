@@ -26,7 +26,7 @@ export async function apiCreateConversation(params: {
     const { appType, opcId } = params;
 
     const resp = await fetchWithRefresh(
-        `console_api/apps/${encodeURIComponent(appType)}/conversation`,
+        `/console_api/apps/${encodeURIComponent(appType)}/conversation`,
         {
             method: "POST",
             headers: {

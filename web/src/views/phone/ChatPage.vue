@@ -334,7 +334,7 @@
  * Imports
  * ========================= */
 import { ref, computed, reactive, watchEffect, onMounted, watch, onBeforeUnmount } from "vue";
-import { useRouter } from "vue-router";
+import { useRouter, useRoute } from "vue-router";
 import { ElNotification } from "element-plus";
 import {
   User, Calendar, Stethoscope, Keyboard, Mic, Send,
@@ -342,9 +342,8 @@ import {
   VolumeXIcon, AudioWaveformIcon
 } from "lucide-vue-next";
 
-
-import doctorAvatar from "@/assets/医生头像@1x.png";
-import userAvatar from "@/assets/头像.svg";
+import doctorAvatar from "@/assets/doctor.svg";
+import userAvatar from "@/assets/patient.svg";
 
 import { useAudioRecorder } from "@/composables/useAudioRecorder";
 import { useChatStream } from "@/composables/useChatStream";
@@ -357,13 +356,15 @@ import { useSummaryStore } from "@/stores/summary";
 import type { ChatMessage } from "@/types/web/chat";
 
 import WebsocketTTS from "@/components/WebsocketTTS.vue";
+import { ttsBus } from "@/bus/ttsBus";
 
-import { ttsBus } from '@/bus/ttsBus';
+import { getChatMessages } from "@/api/chat";
 
 /* =========================
  * Stores & Refs
  * ========================= */
 const router = useRouter();
+const route = useRoute();
 
 const chatHistory = useChatHistoryStore();
 const { messages } = storeToRefs(chatHistory);
@@ -373,12 +374,8 @@ const { base, detail } = storeToRefs(patientStore);
 
 const summaryStore = useSummaryStore();
 
-import { useRoute } from 'vue-router';
-import { apiCreateSession } from '@/api/session';
-
-const route = useRoute();
 const sid = ref<string | null>(
-  typeof route.query.sid === 'string'
+  typeof route.query.sid === "string"
     ? route.query.sid
     : Array.isArray(route.query.sid)
       ? route.query.sid[0]
@@ -389,9 +386,6 @@ const sid = ref<string | null>(
  * UI State
  * ========================= */
 const overwriteTargetId = ref<string | null>(null);
-const total = computed(() => progress.value.total || 0);
-const current = computed(() => Math.min(progress.value.completed || 0, total.value));
-const percent = computed(() => total.value ? Math.min(100, Math.max(0, (current.value / total.value) * 100)) : 0);
 
 const isTypingMode = ref(false);
 const inputValue = ref("");
@@ -436,7 +430,9 @@ const hasUserInCurrentRound = computed(() => {
   return false;
 });
 
-/* Patient basic info (fallback) */
+/* =========================
+ * Patient basic info (fallback)
+ * ========================= */
 const patient = reactive({
   name: "刘德华",
   gender: "男",
@@ -445,94 +441,104 @@ const patient = reactive({
   department: "皮肤科",
 });
 
+/* =========================
+ * Progress UI (来自 useChatStream)
+ * ========================= */
+const progress = ref<{ completed: number; total: number }>({ completed: 0, total: 0 });
+const total = computed(() => progress.value.total || 0);
+const current = computed(() => Math.min(progress.value.completed || 0, total.value));
+const percent = computed(() => total.value ? Math.min(100, Math.max(0, (current.value / total.value) * 100)) : 0);
+
+/* =========================
+ * History
+ * ========================= */
 const historyLoaded = ref(false);
 
-async function loadHistory(sessionId: string) {
+async function loadHistory(conversationId: string) {
   try {
-    // 每次换 session 时先清空旧对话，避免残留
-    // messages.value = [];
+    const appType = normalizeAppTypeFromDepartment(patient.department || "");
+    const list = await getChatMessages({ conversationId, appType });
 
-    const url = `/api/v1/chatbot/history?sid=${encodeURIComponent(sessionId)}`;
-    const resp = await fetch(url, {
-      method: "GET",
-      headers: {
-        Accept: "application/json",
-      },
-      credentials: "include",
-    });
+    messages.value = list;
 
-    if (!resp.ok) {
-      console.error("加载历史失败：HTTP", resp.status);
-      return;
-    }
-
-    const data = await resp.json();
-    if (Array.isArray(data) && data.length > 0) {
-      messages.value = data.map((m: any) => ({
-        id: m.id,
-        role: m.role,
-        content: m.content || "",
-        thinking: m.thinking || "",
-        summary: m.summary || "",
-        suggestions: Array.isArray(m.suggestions) ? m.suggestions : [],
-      })) as ChatMessage[];
-
-      roundPtr.value = 0;
-      syncAnchorForLatestRound();
-    } else {
-      console.log("该会话暂无历史消息，视为新对话");
-      // 确保为空，不保留旧会话消息
-      messages.value = [];
-    }
+    roundPtr.value = 0;
+    syncAnchorForLatestRound();
   } catch (err) {
     console.error("loadHistory 出错：", err);
-    // 出错时也别把旧会话内容留在新会话里
     messages.value = [];
   } finally {
     historyLoaded.value = true;
   }
 }
 
-/* TTS & stream */
+
+/* =========================
+ * 科室 -> app_type 映射（与你 welcome 页一致）
+ * ========================= */
+function normalizeAppTypeFromDepartment(dept: string) {
+  const d = (dept || "").trim();
+  const map: Record<string, string> = {
+    "呼吸科": "huxike",
+    "皮肤医美中心": "pifuke",
+    "肛肠科": "gangchangke",
+    "皮肤科": "pifuke",
+  };
+  return map[d] || "huxike";
+}
+
+/* =========================
+ * TTS & Stream (新接口版 useChatStream)
+ * ========================= */
 const ttsText = ref("");
 const ttsPlay = ref(false);
-function getAuthToken(): string | null {
-  // 仅示例：勿在生产中硬编码 Token
-  return "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxIiwiZXhwIjoxNzY5MTYxNTA2LCJpYXQiOjE3NjYzOTY3MDYsImp0aSI6IjEtMTc2NjM5NjcwNi45NTkyMDEifQ.R22n_rEY93Ef7HataexTfZuhMY6C7v-I3qRv0WfmVrQ";
-}
-const { streamAnswer, progress } = useChatStream({
-  messages, ttsText, ttsPlay, getAuthToken, getSessionId: () => sid.value,
-});
 
-/* Audio recorder */
+// 把 composable 的 progress 同步到本页面 progress（如果你 composable 已经返回 progress，直接解构使用也行）
+const streamHook = useChatStream({
+  messages,
+  ttsText,
+  ttsPlay,
+  getConversationId: () => sid.value,
+  getOpcId: () => patientStore.scanCode || "",
+  getAppType: () => normalizeAppTypeFromDepartment(patient.department || ""),
+});
+/**
+ * 你原来是 const { streamAnswer, progress } = useChatStream(...)
+ * 但你现在上面已经调用一次了。为了不重复实例化，我这里建议你只保留一次。
+ * 为了兼容你当前文件，我在下面做一次“就地修复”：只用第二次的实例（带 progress）。
+ */
+const _streamAnswer = streamHook.streamAnswer;
+progress.value = streamHook.progress.value;
+watch(streamHook.progress, (p) => (progress.value = p), { deep: true });
+
+/* =========================
+ * Audio recorder
+ * ========================= */
 const { isRecording, startRecording, stopRecording, handleReceiveAudio } = useAudioRecorder({
   isApp,
   onSTT(text: string) {
     const t = (text || "").trim();
     if (!t) return;
 
-    // 若点击了「重新输入」进入的录音，则覆盖锚定消息，而不是新增
     if (overwriteTargetId.value) {
-      const i = messages.value.findIndex(
-        m => m.id === overwriteTargetId.value && m.role === "user"
-      );
+      const i = messages.value.findIndex(m => m.id === overwriteTargetId.value && m.role === "user");
       if (i !== -1) {
-        messages.value[i].content = t;            // 覆盖内容
-        actionAnchorId.value = overwriteTargetId.value; // 保持锚定
-        overwriteTargetId.value = null;           // 清空覆盖态
-        fetchNearestOptions(t);                   // 需要的话继续出接近选项
+        messages.value[i].content = t;
+        actionAnchorId.value = overwriteTargetId.value;
+        overwriteTargetId.value = null;
+        fetchNearestOptions(t);
         return;
       }
-      // 兜底：万一没找到要覆盖的那条，就按原逻辑追加
       overwriteTargetId.value = null;
     }
 
-    // 原逻辑：正常录音结果 -> 追加一条用户消息
     appendUserMessage(t);
     fetchNearestOptions(t);
-  }
-});
+  },
 
+  organizeCode: computed(() => patientStore.scanCode || "zhonyiyuan"),
+
+  conversationId: sid,
+});
 
 /* =========================
  * Effects & Watchers
@@ -541,27 +547,27 @@ watchEffect(() => {
   if (base.value) {
     patient.name = base.value.name || "";
     patient.age = base.value.age || 0;
-    patient.caseNo = base.value.visit_number ?? "";
-    patient.department = base.value.department ?? "";
+    patient.caseNo = (base.value as any).visit_number ?? "";
+    patient.department = (base.value as any).department ?? "";
   }
 });
 
-/* 首轮触发对话 */
-
+/**
+ * 首轮触发对话（新接口：需要 opc_id + app_type + conversation_id）
+ */
 watch(
-  [() => detail.value, () => sid.value, () => historyLoaded.value],
-  async ([newVal, curSid, loaded]) => {
-    // 还没拉完历史就不要动
+  [() => detail.value, () => sid.value, () => historyLoaded.value, () => patientStore.scanCode],
+  async ([newVal, curSid, loaded, opcId]) => {
     if (!loaded) return;
+    if (messages.value.length > 0) return;      // 有历史就不触发首轮
 
-    // 有历史消息，认为是老会话，不触发首轮问诊
-    if (messages.value.length > 0) return;
-
-    if (!newVal || !curSid) return;  // 等到有病人详情和 sid 才开始
+    if (!newVal || !curSid) return;
+    if (!opcId) return;
 
     messages.value.push({ role: "assistant", content: "", thinking: "" });
     const idx = messages.value.length - 1;
-    streamAnswer({
+
+    _streamAnswer({
       messagesForApi: [{ role: "user", content: JSON.stringify(newVal), thinking: "" }],
       index: idx,
     }).catch(err => {
@@ -572,12 +578,12 @@ watch(
   { immediate: true }
 );
 
-
 /* 保存总结：防抖 & 去重 */
 let saveTimer: number | null = null;
 const DEBOUNCE_MS = 700;
 let pendingSummary = "";
 let lastCommitted = "";
+
 watch(
   () => messages.value,
   (list) => {
@@ -593,13 +599,13 @@ watch(
           if (pendingSummary && pendingSummary !== lastCommitted) {
             summaryStore.setSummary({ text: pendingSummary, rawMessage: m });
             lastCommitted = pendingSummary;
-            // ElNotification({
-            //   title: "已保存总结",
-            //   message: "总结已在流式完成后保存。",
-            //   type: "success",
-            //   position: "top-right",
-            //   duration: 1600,
-            // });
+            ElNotification({
+              title: "已保存总结",
+              message: "总结已在流式完成后保存。",
+              type: "success",
+              position: "top-right",
+              duration: 1600,
+            });
           }
           saveTimer = null;
         }, DEBOUNCE_MS);
@@ -610,35 +616,25 @@ watch(
   { deep: true }
 );
 
-/* 回到最新轮时，同步锚定 */
 watch(roundPtr, (v) => {
   if (v === 0) syncAnchorForLatestRound();
 });
 
-/* 生命周期 */
+/* =========================
+ * Lifecycle
+ * ========================= */
 onMounted(async () => {
-
-  sid.value = String(route.query.sid || '').trim() || null;
-  console.log('sid:', sid.value);
-
-  // 兜底：直达 /chat 没带 sid，则现建一条并 replace 附上 sid
+  sid.value = String(route.query.conversation_id || "").trim() || null;
+  console.log("sid.value:", sid.value)
   if (!sid.value) {
-    const data = await apiCreateSession(getAuthToken);
-    sid.value = data.session_id;
-    router.replace({ path: route.path, query: { ...route.query, sid: sid.value } });
+    router.push({ path: "/home" });
+    return;
   }
 
-  // 告诉 chatHistory：现在的会话是这个 sid，如果变了就清空 messages
   chatHistory.resetForSession(sid.value);
 
-  // 有了 sid，再拉历史
-  if (sid.value) {
-    await loadHistory(sid.value);
-  } else {
-    // 极小概率：建 session 失败 / 没有 sid，也要放开后续流程
-    historyLoaded.value = true;
-  }
-
+  if (sid.value) await loadHistory(sid.value);
+  else historyLoaded.value = true;
 
   const hash = window.location.hash.split("?")[1] || "";
   const params = new URLSearchParams(hash);
@@ -662,11 +658,8 @@ onBeforeUnmount(() => {
     saveTimer = null;
   }
   stopTick();
-
-  // 组件离场确保停止播报
-  stopTTS(); // <--- ✅ 新增
+  stopTTS();
 });
-
 
 /* =========================
  * Functions (UI actions)
@@ -714,6 +707,7 @@ function handleNext() {
   if (!target) return;
   sendForUserMessage(target);
 }
+
 function startRecordingUI() {
   if (!isLatestRound.value) {
     ElNotification({ message: "当前在历史浏览，无法录音。请先回到最新一轮。", type: "info" });
@@ -721,7 +715,6 @@ function startRecordingUI() {
   }
   if (isRecording.value) return;
 
-  // 停止当前播报，避免与录音冲突
   stopTTS();
 
   isTypingMode.value = false;
@@ -736,10 +729,11 @@ function endRecordingUI() {
   stopTick();
   stopRecording();
 }
+
 function endRecording() {
   stopTick();
   isRecording.value = false;
-  const transcript = ""; // 预留 ASR
+  const transcript = "";
   if (transcript.trim()) messages.value.push({ role: "user", content: transcript.trim() });
 }
 
@@ -751,17 +745,16 @@ function startTick() {
     else endRecording();
   }, 1000);
 }
+
 function stopTick() {
   if (timer !== null) { clearInterval(timer); timer = null; }
 }
-function togglePause() { isPaused.value = !isPaused.value; }
 
 function isAnchor(msg: ChatMessage) {
   return Boolean(msg.id && actionAnchorId.value && msg.id === actionAnchorId.value);
 }
-function appendUserMessage(text: string) {
 
-  // 输入即打断播报
+function appendUserMessage(text: string) {
   stopTTS();
 
   const msg: ChatMessage = {
@@ -772,6 +765,7 @@ function appendUserMessage(text: string) {
   messages.value.push(msg);
   actionAnchorId.value = msg.id;
 }
+
 function onSuggestionClick(text: string) {
   if (!isLatestRound.value) {
     ElNotification({ message: "正在浏览历史记录，无法操作。请先返回最新一轮。", type: "warning" });
@@ -794,10 +788,12 @@ function onSuggestionClick(text: string) {
   actionAnchorId.value = msg.id;
   sendForUserMessage(msg);
 }
+
 function handleSummaryClick() {
   stopTTS();
   router.push("/report");
 }
+
 function onPickNearest(opt: { label: string; value: string }) {
   if (!isLatestRound.value) {
     ElNotification({ message: "正在浏览历史记录，无法操作。请先返回最新一轮。", type: "warning" });
@@ -809,6 +805,7 @@ function onPickNearest(opt: { label: string; value: string }) {
   messages.value[idx].content = opt.label;
   sendForUserMessage(messages.value[idx]);
 }
+
 function syncAnchorForLatestRound() {
   if (!isLatestRound.value) return;
   const { start, end } = roundRange.value;
@@ -819,6 +816,7 @@ function syncAnchorForLatestRound() {
   }
   actionAnchorId.value = lastUser?.id ?? null;
 }
+
 function resetInputUI() {
   isTypingMode.value = false;
   if (isRecording.value) {
@@ -827,6 +825,7 @@ function resetInputUI() {
   }
   nearestOptions.value = [];
 }
+
 function onRetryInput() {
   if (!isLatestRound.value) {
     ElNotification({ message: "正在浏览历史记录，无法操作。请先返回最新一轮。", type: "warning" });
@@ -834,16 +833,14 @@ function onRetryInput() {
   }
   if (!actionAnchorId.value) return;
 
-  // 找到当前锚定的用户消息，清空其文本，让旧内容不再显示
   const idx = messages.value.findIndex(m => m.id === actionAnchorId.value && m.role === "user");
   if (idx === -1) return;
 
-  messages.value[idx].content = "";      // 隐藏旧文本
-  nearestOptions.value = [];             // 清空推荐
-  isTypingMode.value = false;            // 保证不是键盘模式
-  overwriteTargetId.value = actionAnchorId.value; // 记录要被覆盖的目标
+  messages.value[idx].content = "";
+  nearestOptions.value = [];
+  isTypingMode.value = false;
+  overwriteTargetId.value = actionAnchorId.value;
 
-  // 直接进入录音
   startRecordingUI();
 }
 
@@ -853,6 +850,7 @@ function dedupeArray(arr: string[]) {
   for (const s of arr) { if (!set.has(s)) { set.add(s); out.push(s); } }
   return out;
 }
+
 function withTimeout<T>(p: Promise<T>, ms = 15000): Promise<T> {
   return new Promise((resolve, reject) => {
     const id = setTimeout(() => reject(new Error("Request timeout")), ms);
@@ -862,6 +860,7 @@ function withTimeout<T>(p: Promise<T>, ms = 15000): Promise<T> {
     );
   });
 }
+
 type NearestOption = { label: string; value: string };
 async function fetchNearestOptions(asrText: string) {
   try {
@@ -869,7 +868,7 @@ async function fetchNearestOptions(asrText: string) {
       nearestOptions.value = [];
       return;
     }
-    const url = new URL("/api/v1/chatbot/audio/suggest", window.location.origin);
+    const url = new URL("/console_api/asr/suggest", window.location.origin);
     url.searchParams.set("asr", asrText);
     url.searchParams.set("k", "3");
     url.searchParams.set("locale", "zh");
@@ -893,46 +892,39 @@ async function fetchNearestOptions(asrText: string) {
 }
 
 function sendForUserMessage(userMsg: ChatMessage) {
-  // 发请求前确保静音当前播报（防止 TTS 与新一轮语音/消息重叠）
   stopTTS();
+
   messages.value.push({ role: "assistant", content: "", thinking: "" });
   const idx = messages.value.length - 1;
+
   actionAnchorId.value = null;
   nearestOptions.value = [];
-  streamAnswer({
+
+  _streamAnswer({
     messagesForApi: [{ role: "user", content: userMsg.content, thinking: "" }],
     index: idx,
   }).catch(err => {
     console.error("发送失败:", err);
     messages.value[idx].content = "[发送失败，请重试]";
   });
+
   roundPtr.value = 0;
 }
 
-/* ===== 播报控制（进度条右侧喇叭按钮） ===== */
+/* ===== 播报控制 ===== */
 function stopTTS() {
-  ttsBus.emit('tts:stop');
+  ttsBus.emit("tts:stop");
   ttsPlay.value = false;
   ttsText.value = "";
 }
 
-/* ===== 播报控制（进度条右侧喇叭按钮） ===== */
 const isAudioing = ref(true);
 function toggleAudio() {
   isAudioing.value = !isAudioing.value;
-  if (!isAudioing.value) {
-    // 立刻停止当前播报
-    stopTTS();
-  }
+  if (!isAudioing.value) stopTTS();
 }
 
-// 守卫：当静音时，任何地方把 ttsPlay 设为 true 都被强制为 false，防止自动播报
 watch(ttsPlay, (v) => {
-  if (!isAudioing.value && v) {
-    stopTTS(); // <--- ✅ 改为统一停止（含事件总线）
-  }
+  if (!isAudioing.value && v) stopTTS();
 });
-// 若需要在 UI 上记忆用户选择，可按需持久化（可选）
-// onMounted(() => { const s = localStorage.getItem('tts-enabled'); if (s !== null) isAudioing.value = s === '1'; });
-// watch(isAudioing, v => localStorage.setItem('tts-enabled', v ? '1' : '0'));
 </script>
